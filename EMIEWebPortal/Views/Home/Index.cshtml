@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+
+    <title>Enterprise Mode Self-service</title>
+
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+
+
+    <!-- Main Angular Js scripts source -->
+
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/dirPagination.js"></script>
+    <script src="~/Scripts/angular-disable-all.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.js"></script>*@
+    <script src="~/Scripts/loading-bar.js"></script>
+    <script src="~/Scripts/loading-bar.min.js"></script>
+    <script src="~/Scripts/angular-file-saver.bundle.min.js"></script>
+    <script src="~/Scripts/ChartNew.js"></script>
+    <script src="~/Scripts/xlsx.core.min.js"></script>
+    <script src="~/Scripts/alasql.min.js"></script>
+    <script src="~/Scripts/angular-growl.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/canvas-toBlob.js"></script>
+    <!-- End -->
+
+
+    <!-- Place here application Module script source -->
+    <script src="~/App/Modules/Module.js"></script>
+    <!-- Module area End -->
+
+    <script src="~/App/Utilities/message-center.js"></script>
+
+    <script src="~/App/Config/ManageSiteConfig.js"></script>
+    <script src="~/App/Config/AllRequestsConfig.js"></script>
+    <script src="~/App/Config/ChangeRequestConfig.js"></script>
+    <script src="~/App/Config/ApprovalConfig.js"></script>
+    <script src="~/App/Config/VerifySandboxConfig.js"></script>
+    <script src="~/App/Config/LoginConfig.js"></script>
+    <script src="~/App/Config/UserConfig.js"></script>
+    <script src="~/App/Config/ConfigurationSettingsConfig.js"></script>
+
+
+    <script src="~/Scripts/ui-bootstrap-tpls-1.3.2.js"></script>
+
+    <!-- Place here application Service script source -->
+    <script src="~/App/Services/ManageSiteService.js"></script>
+    <script src="~/App/Services/AllRequestsService.js"></script>
+    <script src="~/App/Services/ChangeRequestService.js"></script>
+    <script src="~/App/Services/ApprovalsService.js"></script>
+    <script src="~/App/Services/VerifySandboxService.js"></script>
+    <script src="~/App/Services/UserService.js"></script>
+    <script src="~/App/Services/LoginService.js"></script>
+    <script src="~/App/Services/ProdChangesService.js"></script>
+    <script src="~/App/Services/UserService.js"></script>
+    <script src="~/App/Services/VerifyProductionService.js"></script>
+    <script src="~/App/Services/LogoutService.js"></script>
+    <script src="~/App/Services/ReportsService.js"></script>
+    <script src="~/App/Services/ConfigurationService.js"></script>
+    <script src="~/App/Services/ModalService.js"></script>
+
+
+    <!-- Service area End -->
+    <!---Factory-->
+    <script src="~/App/Factory/SandboxProductionFactory.js"></script>
+    <script src="~/App/Factory/CommonFunctionsFactory.js"></script>
+    <!-- Factory End-->
+    <!-- Constants use as enum script link  -->
+    <script src="~/App/Constants.js"></script>
+    <script src="~/App/status.js"></script>
+    <script src="~/App/utility.js"></script>
+    <script src="~/App/Utilities/Values.js"></script>
+    <script src="~/App/SaveXml.js"></script>
+    <!-- Constants area End -->
+    <!-- Place here application Controller script source -->
+    <script src="~/App/Controllers/SiteListsController.js"></script>
+    <script src="~/App/Controllers/ManageSiteController.js"></script>
+    <script src="~/App/Controllers/AllRequestsController.js"></script>
+    <script src="~/App/Controllers/ChangeRequestController.js"></script>
+    <script src="~/App/Controllers/ApprovalController.js"></script>
+    <script src="~/App/Controllers/MyApprovalController.js"></script>
+    <script src="~/App/Controllers/UserController.js"></script>
+    <script src="~/App/Controllers/VerifySandboxController.js"></script>
+    <script src="~/App/Controllers/LoginController.js"></script>
+    <script src="~/App/Controllers/ProdChangesController.js"></script>
+    <script src="~/App/Controllers/UserController.js"></script>
+    <script src="~/App/Controllers/VerifyProductionController.js"></script>
+    <script src="~/App/Controllers/LayoutController.js"></script>
+    <script src="~/App/Controllers/ReportsController.js"></script>
+    <script src="~/App/status.js"></script>
+    <script src="~/App/Controllers/LogoutController.js"></script>
+    <script src="~/App/Controllers/ConfigurationController.js"></script>
+    <script src="~/App/Controllers/EMIEUserManagementController.js"></script>
+    <!-- Controller area End -->
+    <!-- Script source of bootstrapp-->
+    <script src="../Scripts/bootstrap.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    @*<link data-require="bootstrap" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />*@
+    <link href="~/App/Views/css/bootstrap3.2.css" rel="stylesheet" />
+
+    @*<link data-require="font-awesome" data-semver="4.2.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />*@
+    <link href="~/App/Views/css/font-awesome.css" rel="stylesheet" />
+
+    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">*@
+    <link href="~/App/Views/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/App/Views/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/App/Views/css/SidePanel.css" rel="stylesheet" />
+    <link href="~/App/Views/css/EMIEStyle.css" rel="stylesheet" />
+
+    @*<link href="http://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" />*@
+    <link href="~/App/Views/css/jquery-ui.css" rel="stylesheet" />
+
+    <link href="~/Content/loading-bar.min.css" rel="stylesheet" />
+    <link href="~/Content/loading-bar.css" rel="stylesheet" />
+    <link href="~/App/Views/css/angular-growl.css" rel="stylesheet" />
+    <link href="~/App/Views/css/angular-growl.min.css" rel="stylesheet" />
+
+    @*// These are kept for now, will delete in future*@
+
+    @*<script data-require="angular.js@1.2.25" data-semver="1.2.25" src="https://code.angularjs.org/1.2.25/angular.js"></script>*@
+    <script src="~/Scripts/angular1.2.25.js"></script>
+
+    @*<script data-require="ui-bootstrap" data-semver="0.11.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>*@
+    @*<script src="~/Scripts/ui-bootstrap-tpls-1.2.5.min.js"></script>*@
+  
+
+    @*<script data-require="angular.js@1.2.25" data-semver="1.2.25" src="https://code.angularjs.org/1.2.25/angular.js"></script>
+        <link data-require="bootstrap" data-semver="3.2.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+        <link data-require="bootstrap-css~3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link data-require="font-awesome" data-semver="4.2.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+        <script data-require="ui-bootstrap" data-semver="0.11.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>*@
+
+    @*<script src="~/Scripts/ui-bootstrap-tpls-1.2.5.min.js"></script>*@
+
+    @*<script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>*@
+    <script src="~/Scripts/ngStorage.js"></script>
+</head>
+
+<body data-ng-app="EMIEModule">   
+    
+    <div data-ng-include="'../App/Views/Layout.html'" ng-controller="LayoutController"></div>
+</body>
+</html>

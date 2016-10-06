@@ -1,0 +1,597 @@
+<?xml version="1.0" standalone="yes"?>
+<rules version="5">
+  <emie>
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bugzillait.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bugzillait.nokia.com/szilladevelopment/" docMode="IE11 Document Mode" OpenInIE="None" parentId="bugzillait.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bugzillait.nokia.com/nzillatraining/" docMode="IE10 Document Mode" OpenInIE="None" parentId="bugzillait.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="reflex003.returnpool.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="reflex003.returnpool.com/servoy-webclient/solutions/solution/rp_us_hmt" docMode="IE11 Document Mode" OpenInIE="None" parentId="reflex003.returnpool.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="plm.it.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="plm.dev.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sanfswebd001.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm-login.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm-login.qa.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm.it.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm.dev.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm.dev.europe.nokia.com/nokiapdm" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="pdm.dev.europe.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="plm.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="plm.qa.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="epm.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="121hub.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cccp.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cccp.nokia.com/callcenter_enu/start.swe" docMode="IE8 Document Mode" OpenInIE="None" parentId="cccp.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="www.fastrac-dev.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mncms.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wahlogon.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="support.cdmatech.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="in.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="in.nokia.com/ss/it/pages/cardgroup.aspx" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="in.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="in.nokia.com/sites/collaborationparties/Pages/default.aspx" docMode="IE8 Document Mode" OpenInIE="None" parentId="in.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="in.nokia.com/sites/ConfidentialWarning/Pages/Home.aspx" docMode="IE8 Document Mode" OpenInIE="None" parentId="in.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="in.nokia.com/sites/CSOEMEA/" docMode="IE8 Document Mode" OpenInIE="None" parentId="in.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="backstage.in.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="downloads.cdmatech.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sanfswebd001" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sanfswebd001/workspace/index.jsp" docMode="IE9 Document Mode" OpenInIE="None" parentId="sanfswebd001" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sanfswebd001/interop/index.jsp" docMode="IE9 Document Mode" OpenInIE="None" parentId="sanfswebd001" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="nfsqa.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="nfsqa.nokia.com/workspace/index.jsp" docMode="IE10 Document Mode" OpenInIE="None" parentId="nfsqa.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="147.243.108.116" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="147.243.108.116/AdminTool/Security/Login.aspx" docMode="IE9 Document Mode" OpenInIE="None" parentId="147.243.108.116" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="fdsqa.mmd.microsoft.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="fdsqa.mmd.microsoft.com/rest/ipmapping/100.26.205.140" docMode="IE7 Document Mode" OpenInIE="None" parentId="fdsqa.mmd.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="fdsqa.mmd.microsoft.com/rest/ipmapping/213.26.205.140" docMode="IE7 Document Mode" OpenInIE="None" parentId="fdsqa.mmd.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="onprem.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="onprem.nokia.com/sites/Leo/" docMode="IE11 Document Mode" OpenInIE="None" parentId="onprem.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sandi10d.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sandi10d.nokia.com/administrator" docMode="IE11 Document Mode" OpenInIE="None" parentId="sandi10d.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.nocs.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.nocs.nokia.com/nocs" docMode="IE11 Document Mode" OpenInIE="None" parentId="qa.nocs.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="finaplan-qa.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="finaplan-qa.nokia.com/workspace/index.jsp" docMode="IE10 Document Mode" OpenInIE="None" parentId="finaplan-qa.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mqa.webapps.microsoft.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mqa.webapps.microsoft.com/en-ie/mobile/" docMode="IE11 Document Mode" OpenInIE="None" parentId="mqa.webapps.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="req.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="req.nokia.com/mesPortal/login.jsp" docMode="IE5 Document Mode" OpenInIE="None" parentId="req.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="tucsonadmin-qa.online.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="tucsonadmin-qa.online.nokia.com/ruleadmin/" docMode="IE11 Document Mode" OpenInIE="None" parentId="tucsonadmin-qa.online.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ech-qa.europe.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ech-qa.europe.nokia.com/EchAdminTool/Default.aspx" docMode="IE9 Document Mode" OpenInIE="None" parentId="ech-qa.europe.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="monitoring.nokia.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="monitoring.nokia.com/topaz/" docMode="IE5 Document Mode" OpenInIE="None" parentId="monitoring.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="supplychain.microsoft.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="supplychain.microsoft.com/internal" docMode="IE11 Document Mode" OpenInIE="None" parentId="supplychain.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm.qa.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm.europe.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="nfsprod.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sawpmc103025.ext.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sawpmc103025.ext.nokia.com/global" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="sawpmc103025.ext.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sawpmc102036" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sawpmc102036/sites" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="sawpmc102036" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mdm2.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mdm2.nokia.com/MDS" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="mdm2.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="devicesmdm.corp.microsoft.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="devicesmdm.corp.microsoft.com/MDS/" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="devicesmdm.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="devicesmdm" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="devicesmdm/MDS/" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="devicesmdm" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="hfm.corp.microsoft.com" docMode="IE8 Enterprise Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rebate.nokia.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rebate.nokia.com/modeln/app/launchPage.html" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="rebate.nokia.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ep.nokia.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm2.corp.microsoft.com" docMode="IE8 Enterprise Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdm2.corp.microsoft.com/pdm2/" docMode="Default Mode" OpenInIE="IE11" parentId="pdm2.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="147.243.6.26" docMode="IE9 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rbmqa.europe.nokia.com" docMode="IE7 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cronline-qa.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="it.nuagevs.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="it.sarge.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="it.vbr.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="it.vs.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="it.vs-blue.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.nuagevs.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="saenaq20-m" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="devicetelemetry.corp.microsoft.com" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.sarge.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.vbr.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.vs.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qa.vs-blue.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qaphonevariantpoint.corp.microsoft.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="itphonevariantpoint.corp.microsoft.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="csxdev.crm.dynamics.com" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="csxtest.crm.dynamics.com" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mdm2-dev.nokia.com" docMode="IE7 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sagmesqa.nmp.nokia.com" docMode="IE5 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qaicknowledge.corp.microsoft.com" docMode="IE7 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="nzillaqa.nokia.com" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="test-nzilla.nokia.com" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mqrqa.nokia.com" docMode="IE5 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="evrd.nokia.com" docMode="IE7 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="test-lumiazilla.microsoft.com" docMode="IE10 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rebate-qa.europe.nokia.com" docMode="IE7 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="admin.sw.update.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="roger-dev.nokia.com" docMode="IE11 Document Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/temtool" docMode="IE11 Document Mode" OpenInIE="None" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="finaplan.nokia.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ev.nokia.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="enoviaplm.corp.microsoft.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teamstats" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teamstats/groupadmin" docMode="Default Mode" OpenInIE="IE11" parentId="teamstats" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teamstats/reports" docMode="Default Mode" OpenInIE="IE11" parentId="teamstats" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ddweb" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ddweb/teamstats/groupadmin" docMode="Default Mode" OpenInIE="IE11" parentId="ddweb" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ddweb/teamstats/reports" docMode="Default Mode" OpenInIE="IE11" parentId="ddweb" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ddweb/dad" docMode="Default Mode" OpenInIE="IE11" parentId="ddweb" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ddweb/faqease" docMode="Default Mode" OpenInIE="IE11" parentId="ddweb" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dad" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/aer" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/it_video" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/upgradeyourworld" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/give" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/contractsearch" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/contractpro" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/ieevent1" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/ieevent2" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/ieevent3" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/ieevent4" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/GTR" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/dartint" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/dartedog" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/dart" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/offnrtint" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/offnrtedog" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/offnrt" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/businessshipping" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aka.ms/personalshipping" docMode="Default Mode" OpenInIE="IE11" parentId="aka.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="alfred" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dpsreporting" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="etrax" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gtobiweb" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gtoinvoicing" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="suppliercentral" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="informaweb" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="intellimirror" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ivfeedback" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ivfeedback/ivf" docMode="Default Mode" OpenInIE="IE11" parentId="ivfeedback" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lca-in.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lccams" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lccams/lcc" docMode="Default Mode" OpenInIE="IE11" parentId="lccams" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msbred" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mspager" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="recweb" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="smartdash" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msspace" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msspace/spaceadmin/besearch.aspx/" docMode="Default Mode" OpenInIE="IE11" parentId="msspace" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="vru" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="parking" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="jem" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teleinventory" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teleinventory/teleinventory" docMode="Default Mode" OpenInIE="IE11" parentId="teleinventory" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msclosechecklist.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="unearnedrevenue" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="execplanning.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="execplanning.partners.extranet.microsoft.com/executionplanning/" docMode="Default Mode" OpenInIE="IE11" parentId="execplanning.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="iat" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbp" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="readytogo.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="clicktoattend.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="syndication.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="customers.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mseventsww.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mseventsww.microsoft.com/EventStudio2" docMode="Default Mode" OpenInIE="IE11" parentId="mseventsww.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="anaqua.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="anaqua.partners.extranet.microsoft.com/anaqua" docMode="Default Mode" OpenInIE="IE11" parentId="anaqua.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="baat" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="baat/baat" docMode="Default Mode" OpenInIE="IE11" parentId="baat" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="fwa" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msimmigrationservices.inszoom.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gppwui" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gps" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="globalvmf" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="informa" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lcaweb" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lcaweb/imipandl/workspace/ipgworkspace/Pages/Settings.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="lcaweb" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msvendor" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mssales" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="benefitsadmin.microsoft.ehr.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="benefitsadmin.microsoft.ehr.com/sda" docMode="Default Mode" OpenInIE="IE11" parentId="benefitsadmin.microsoft.ehr.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="benefits" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pcrs" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="performance" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="roleguide" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teammate.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teammate.redmond.corp.microsoft.com/teamcentral" docMode="Default Mode" OpenInIE="IE11" parentId="teammate.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teammate.redmond.corp.microsoft.com/teamrisk" docMode="Default Mode" OpenInIE="IE11" parentId="teammate.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teammate.redmond.corp.microsoft.com/teamschedule" docMode="Default Mode" OpenInIE="IE11" parentId="teammate.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="teammate.redmond.corp.microsoft.com/tec" docMode="Default Mode" OpenInIE="IE11" parentId="teammate.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rmailer" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="stockplantool" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="uct" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="uct/Process/FinalReport.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="uct" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sirreportingpor" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbp.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qp" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qp.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="qp.binginternal.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="queryprobe.ritools-prod-co3.co3.ap.gbl" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="egrc" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="psig.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="psig.partners.extranet.microsoft.com/PSIGlobal/splash.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="psig.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="tdwiis" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="contracts" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="contracts/iea/ndaplus/" docMode="Default Mode" OpenInIE="IE11" parentId="contracts" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="icmods.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dpcommunity" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dpcommunity/users/home.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="dpcommunity" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pistore" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="nebulavmc" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="essharepoint.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="essharepoint.redmond.corp.microsoft.com/sites/Scorecard/ES/ESScorecard.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="essharepoint.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="connectus.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="connectus.partners.extranet.microsoft.com/Microsoft/main.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="connectus.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mic" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mic1" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="actool" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wwicpact" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wwicpact1" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitaweb.gtm.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitaweb.gtm.corp.microsoft.com/pkitaweb" docMode="Default Mode" OpenInIE="IE11" parentId="pkitaweb.gtm.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitaaocgtm.gtm.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitaaocgtm.gtm.corp.microsoft.com/pkitaweb" docMode="Default Mode" OpenInIE="IE11" parentId="pkitaaocgtm.gtm.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitamoprgtm.gtm.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitamoprgtm.gtm.corp.microsoft.com/pkitaweb" docMode="Default Mode" OpenInIE="IE11" parentId="pkitamoprgtm.gtm.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitaaocweb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pkitaaocweb.redmond.corp.microsoft.com/pkitaweb" docMode="Default Mode" OpenInIE="IE11" parentId="pkitaaocweb.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cp1pd1pkiweb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cp1pd1pkiweb.redmond.corp.microsoft.com/pkitaweb" docMode="Default Mode" OpenInIE="IE11" parentId="cp1pd1pkiweb.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="clot" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="co2cpdmiis01" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoftclub.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="emeaonlinecat" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gcrcss" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="azjpfasmprodis1" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="azjpfasmprodis1/support/" docMode="Default Mode" OpenInIE="IE11" parentId="azjpfasmprodis1" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="azjpfasmprodis2" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="azjpfasmprodis2/Support/" docMode="Default Mode" OpenInIE="IE11" parentId="azjpfasmprodis2" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="omt" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="biznavi" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wwmal" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wwmalplan" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="piics" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="tendoors" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pakeyinfoext.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pakeyinfoext.one.microsoft.com/KIT/Default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="pakeyinfoext.one.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoftoem.biz" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoftoem.info" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ph1oempwblw1" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ph1oempwblw1/saweb" docMode="Default Mode" OpenInIE="IE11" parentId="ph1oempwblw1" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ph1oempwblw1/oemdocrouting/" docMode="Default Mode" OpenInIE="IE11" parentId="ph1oempwblw1" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ph1oemuawblw1" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ph1oemuawblw1/saweb" docMode="Default Mode" OpenInIE="IE11" parentId="ph1oemuawblw1" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ph1oemuawblw1/oemdocrouting/" docMode="Default Mode" OpenInIE="IE11" parentId="ph1oemuawblw1" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msdnasia.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="apocsubs.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="apocsubs.partners.extranet.microsoft.com/subscriptiontool/WebUI/searchsubscription.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="apocsubs.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="clt.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="clt.partners.extranet.microsoft.com/CLT/" docMode="Default Mode" OpenInIE="IE11" parentId="clt.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="internalorders" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="esafee" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="licenseiq" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="licenseiq/sspv" docMode="Default Mode" OpenInIE="IE11" parentId="licenseiq" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsep" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsep/sites/DynamicsAX" docMode="Default Mode" OpenInIE="IE11" parentId="mbsep" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="businesscenter.mbs.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mert.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="vlodocmain.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="vlodocmain.corp.microsoft.com/PVE.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="vlodocmain.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="promoweb" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eocrebate" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sabcalculator.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="vstfsharepoint" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="vstfsharepoint/sites/TPC1/FIT_RPTPlanning" docMode="Default Mode" OpenInIE="IE11" parentId="vstfsharepoint" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="omnibus" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="hradminapp" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="intraviesprod" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="integratedcampaignprogram.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="integratedcampaignprogram.microsoft.com/Admin/" docMode="Default Mode" OpenInIE="IE11" parentId="integratedcampaignprogram.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cpdm" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ukapps" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ukapps/Events/Admin" docMode="Default Mode" OpenInIE="IE11" parentId="ukapps" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="terminology.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="termstudio" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dmt.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dmt.partners.extranet.microsoft.com/dmtweb" docMode="Default Mode" OpenInIE="IE11" parentId="dmt.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="hsmconsole" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msmds" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msmds/FamRefApprovers/FamRefHome.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="msmds" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msmds/Approvers/Home.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="msmds" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msmds/OEMExce" docMode="Default Mode" OpenInIE="IE11" parentId="msmds" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="consensus" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msexpense2" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="premiersdp.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ude.support.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msireports" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msireports/msipermissions/superadmin" docMode="Default Mode" OpenInIE="IE11" parentId="msireports" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msireports/msipermissions/admin" docMode="Default Mode" OpenInIE="IE11" parentId="msireports" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msireports/msipermissions/dmc" docMode="Default Mode" OpenInIE="IE11" parentId="msireports" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msireports/msipermissions/cst" docMode="Default Mode" OpenInIE="IE11" parentId="msireports" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eagreements.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="emsl" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="emsl.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eolas" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="licensingadmin.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbs.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbs2.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsinternal.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsinternal" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="moet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msdnopenmat.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msdn-pak.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="register.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="regmgmt.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="vvr.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rit" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="axis" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="adcrmim.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cp" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cp.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="csx.crm.dynamics.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gsxonline.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pidplus.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="smbsales.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ngimcrm.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ngimcrm.partners.extranet.microsoft.com/ngimmscrmclient/default.html" docMode="Default Mode" OpenInIE="IE11" parentId="ngimcrm.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="onepdm" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="onepdmtraining" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dart.officeapps.live-int.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dart.officeapps.live-int.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="dart.officeapps.live-int.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wus-dart.officeapps.live-int.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wus-dart.officeapps.live-int.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="wus-dart.officeapps.live-int.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eus2-dart.officeapps.live-int.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eus2-dart.officeapps.live-int.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="eus2-dart.officeapps.live-int.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dart.edog.officeapps.live.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dart.edog.officeapps.live.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="dart.edog.officeapps.live.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wus-dart.edog.officeapps.live.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wus-dart.edog.officeapps.live.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="wus-dart.edog.officeapps.live.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eus2-dart.edog.officeapps.live.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eus2-dart.edog.officeapps.live.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="eus2-dart.edog.officeapps.live.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dart.officeapps.live.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="dart.officeapps.live.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="dart.officeapps.live.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wus-dart.officeapps.live.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wus-dart.officeapps.live.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="wus-dart.officeapps.live.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eus2-dart.officeapps.live.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eus2-dart.officeapps.live.com/dart/" docMode="Default Mode" OpenInIE="IE11" parentId="eus2-dart.officeapps.live.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wac" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wac/live" docMode="Default Mode" OpenInIE="IE11" parentId="wac" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="wac/live/dogfood" docMode="Default Mode" OpenInIE="IE11" parentId="wac" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="au1.app-hlb.fareast.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eu1-app-hlb.europe.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="na1-app-hlb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rd2-app-hlb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rd3-app-hlb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msspend" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msmarket" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/advertising" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/asg/Power%20View%20Gallery" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/asg/_layouts" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/bingbi/Distribution%20Gallery" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/bingbi/_layouts" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/competitive" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/cortana" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/devices" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/finance" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/globalproductavailability" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/hololens" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/k" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/mp" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/msn" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/o365" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/officeclients" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/onedrive" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/onenote" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/outlooko365" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/partner" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/research" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/showpoint" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/skype" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/surface" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/user360" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/Windows%2010%20Search/Windows%2010%20Search%20Analytics" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/Windows%2010%20Search/_layouts" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/winphone" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/xbox" docMode="Default Mode" OpenInIE="IE11" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/asg/SitePages/ASG%20Analytics.aspx" docMode="Default Mode" OpenInIE="None" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/bingbi/SitePages/Bing%20Home.aspx" docMode="Default Mode" OpenInIE="None" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/SitePages/Home.aspx" docMode="Default Mode" OpenInIE="None" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/Windows%2010%20Search/SitePages/Home.aspx" docMode="Default Mode" OpenInIE="None" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msanalytics/windows/SitePages/Windows%20Analytics.aspx" docMode="Default Mode" OpenInIE="None" parentId="msanalytics" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msrne-resnet" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="resnet" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="resnet-asia" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="resnet-emea" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="resnet-india" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="resnet-svc" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="liciq" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="liciq/sspv/SSPVHome.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="liciq" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="servicesconnect.azurewebsites.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="classeval" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="competencyivq" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="hrweb" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="hrweb/_layouts/hrweb/AskHR.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="hrweb" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="termstudio.azurewebsites.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="stringtranslations.azurewebsites.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="leadershipivq" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="partnersales.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="partnersales.partners.extranet.microsoft.com/DynamicsCRM/main.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="partnersales.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="xpert" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="xpert/osg/legacy" docMode="Default Mode" OpenInIE="IE11" parentId="xpert" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="xpert/xbox/legacy" docMode="Default Mode" OpenInIE="IE11" parentId="xpert" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="eds.outlook.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="faqease" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sonarsearch" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="osgvmx" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="azcufitrptweb1:6011" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="assurenetppe" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="webaam" docMode="IE8 Enterprise Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="learningcentral" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="hcrs.microsoft.com" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="koreapay.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoftclubadmin.microsoft.com" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="aer.microsoft.com" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="career" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ppprcb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="managepointhr" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ccchat.custhelp.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="jemtestfront" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="usfinsaldev.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bart.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsinternal-pnb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsinternal-pnc.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gfsdeploy" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoftoem.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ude" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pireporting" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="stock" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="getapps" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sdpdev.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="myapps-prod.azurewebsites.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="weft" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="axis.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="idweb" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="explore.ms" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pidplus.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sirreporting" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="codesign.gtm.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="soda" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mbsauthor.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="deviceprofiler.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mastermaint" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rsmintqa.gtm.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rsmint.gtm.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rsmext.one.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gethelp" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="keicho.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bcweb.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mspacsr.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="circuit" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="applicationcatalog.gtm.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="useradmin" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="refep.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="smsgrms" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rapport.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="orion.microsoftoem.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="myorder" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="engageit.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="cort" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="rsmintst.gtm.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="axiswebdev.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pdscloud.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="getmscomppe.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="axisngdev.cloudapp.net" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="axisngdev.cloudapp.net/PremierNavigator" docMode="Default Mode" OpenInIE="IE11" parentId="axisngdev.cloudapp.net" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="financebi" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="financebi/gotrade/" docMode="Default Mode" OpenInIE="IE11" parentId="financebi" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="financebi/PBI/" docMode="Default Mode" OpenInIE="IE11" parentId="financebi" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="financebi/PBI/SitePages/Home.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="financebi" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az1oemiawblw" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az1oemiawblw/saweb" docMode="Default Mode" OpenInIE="IE11" parentId="az1oemiawblw" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az1oemiawblw/oemdocrouting" docMode="Default Mode" OpenInIE="IE11" parentId="az1oemiawblw" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ilmsrcb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ilmsrcb.redmond.corp.microsoft.com/ilms/Default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="ilmsrcb.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pakeyinfoexrca.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pakeyinfoexrca.redmond.corp.microsoft.com/KIT" docMode="Default Mode" OpenInIE="IE11" parentId="pakeyinfoexrca.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="gtamadmin" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/msbc/rssreader/home.axpx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/japan/msbc/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/japan/msbc/rss/msbcrss.xml" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/licensing/sabcalculator/default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/Licensing/servicecenter/default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/licensing/spur/products.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/licensing/mla" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/licensing/pur/products.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.com/licensing/licensewise" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="roqout.gtm.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="roqout.gtm.microsoft.com/ROQ/release/" docMode="Default Mode" OpenInIE="IE11" parentId="roqout.gtm.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="roqout.gtm.microsoft.com/ROQOnboarding" docMode="Default Mode" OpenInIE="IE11" parentId="roqout.gtm.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="portals" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="portals/refleaseprocurement/LOPPages/" docMode="Default Mode" OpenInIE="IE11" parentId="portals" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com" docMode="Default Mode" OpenInIE="None" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/fiscalcalendar/Pages/CalendarApp.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/FinanceApps/Pages/Hierarchy-Queries.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/matrixspotest/PivotTileMenu" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/LegalContactToolPPE/Pages/AppPage.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/LSWBizAppsTest/Pages/AppPartPage.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/informa/Pages/default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/MrmcTestReports/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/MRMCPPEReports/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/MRMCPRODReports/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/GMIntakeTool" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/sites/lcaweb/Pages/Applications/LegalContact.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/jpcpeuat/Pages/default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/whsportal" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/financeuseraccess/AccessRequest/PlanCast/Pages" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/financeuseraccess/AccessRequest/PlanCast/Lists" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/GovernmentTakeDownRequest/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/whs" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/softwaredonation" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/canadacitizenship/ivolunteer/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/jpnevents" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/jpcpe/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/msindia/" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/SMBAER/SitePages/Home.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/msspend/Pages/Default.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/sps-interview/leader/interviewtoolleader/msciqfe/leaderivq.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoft.sharepoint.com/teams/sps-interview/manager/interviewtoolmanager/msciqfe/compivq.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="microsoft.sharepoint.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="co1dscdn" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="co1dscdn/DsCdnUi/DSCdnUi.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="co1dscdn" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="co1dscdn/dscdnadminui/cdnadminui.aspx" docMode="Default Mode" OpenInIE="IE11" parentId="co1dscdn" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="getapps.ms" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="getapps.ms/vsc" docMode="Default Mode" OpenInIE="IE11" parentId="getapps.ms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pakeyinfoexrcb.redmond.corp.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pakeyinfoexrcb.redmond.corp.microsoft.com/KIT/" docMode="Default Mode" OpenInIE="IE11" parentId="pakeyinfoexrcb.redmond.corp.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mssolvetwip.partners.extranet.microsoft.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mssolvetwip.partners.extranet.microsoft.com/NGIMMSCrmClient/Default.html" docMode="Default Mode" OpenInIE="IE11" parentId="mssolvetwip.partners.extranet.microsoft.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="karnak" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="karnak/sites/karnak" docMode="Default Mode" OpenInIE="IE11" parentId="karnak" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bgeilms" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bgeilms/ilms/" docMode="Default Mode" OpenInIE="IE11" parentId="bgeilms" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="oemcrm.partners.extranet.microsoft.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="catalog.update.microsoft.com" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="redmondts.microsoft.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="businesstravelletter.microsoft.com" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="licensewise.microsoft.com" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="mla.microsoft.com" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="pur.microsoft.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="spur.microsoft.com" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="itshowcase.microsoft.com" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="microsoftoem.com" docMode="IE9 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lbsamerica.cloudapp.net" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lbsasia.cloudapp.net" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lbseurope.cloudapp.net" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="lbs.cloudapp.net" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="facs.cloudapp.net" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sso" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="elf-azure.cloudapp.net" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msvacation" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msvacationadmin" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="usfinsal.cloudapp.net" docMode="IE10 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="whoswho.cloudapp.net" docMode="IE8 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msimmigration.inszoom.com" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="nda" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="itsm" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="msexpense" docMode="IE5 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="tar" docMode="IE5 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="ore" docMode="IE5 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sitpodmshyder.microsoftoem.org" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="sitpodmshyder.microsoftoem.org/PODWeb" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="sitpodmshyder.microsoftoem.org" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bts.arkadasar.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="bts.arkadasar.com/podweb/homepage.aspx" docMode="IE7 Document Mode" OpenInIE="IE11" parentId="bts.arkadasar.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="patent" docMode="IE11 Document Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az.memotech.cpaglobal.com" docMode="Default Mode" OpenInIE="IE11" parentId="null" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az.memotech.cpaglobal.com/54455354" docMode="IE5 Document Mode" OpenInIE="IE11" parentId="az.memotech.cpaglobal.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az.memotech.cpaglobal.com/203he8c1" docMode="IE5 Document Mode" OpenInIE="IE11" parentId="az.memotech.cpaglobal.com" />
+    <domain LastModifiedBy="Supriya Pawar (Mindtree)" Notes="Bulk Added On 22/09/2016" FullURL="az.memotech.cpaglobal.com/prod" docMode="IE5 Document Mode" OpenInIE="IE11" parentId="az.memotech.cpaglobal.com" />
+  </emie>
+</rules>

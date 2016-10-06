@@ -1,0 +1,28 @@
+﻿<div class="modal fade " id="PopUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog mrgTop15p GetKeyPopUp" role="document">
+        <div class="modal-content">
+            <div class="modal-header" ng-class="setcss(ALERTCONTENT.Type)" style="padding-top:0px">
+                <div class="row" id="pop-up-header">
+                    <h3 class="textNormal mrgTop0 text-center">{{ALERTCONTENT.Title}}</h3>
+                </div>
+            </div>
+            <div class="modal-body paddTop0">
+                <div class="row">
+                    <div class="col-lg-12" style="text-align:left">
+                        <span class="EMIEControllabel" style="font-size:16px !important;padding-left:0px !important" ng-bind-html="MESSAGE"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-lg-6">
+                    </div>
+                    <div class="col-lg-6">                        
+                        <button type="button" class="btn btn-success EMIESubmit EMIEadd" data-ng-click="Confirm(ALERTCONTENT.MethodCase,ALERTCONTENT.Object)" data-dismiss="modal" title="{{'OK'}}"> {{'OK'}}</button>
+                        <button type="button" class="btn btn-success EMIESubmit EMIEadd" data-ng-click="CancelValidation(ALERTCONTENT.MethodCase)" ng-hide="HideCancelModal" data-dismiss="modal" title="{{'CANCEL'}}">{{'CANCEL'}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

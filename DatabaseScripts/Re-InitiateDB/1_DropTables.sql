@@ -1,0 +1,20 @@
+Use <database_name>;
+Go
+DROP TABLE [dbo].[Browsers];
+DROP TABLE [dbo].[EMIEConfigurationSettings];
+DROP TABLE [dbo].[EMIETicketsArch];
+DROP TABLE [dbo].[IssueType];
+DROP TABLE [dbo].[Logger];
+DROP TABLE [dbo].[NoOfUsers];
+DROP TABLE [dbo].[EMIETicketAprovals];
+DROP TABLE [dbo].[EMIETickets];
+DROP TABLE [dbo].[DocModes];
+DROP TABLE [dbo].[Applications];
+DROP TABLE [dbo].[EMIEChangeType];
+DROP TABLE [dbo].[EMIEReasonForChange];
+DROP TABLE [dbo].[EMIETicketState];
+DROP TABLE [dbo].[EMIETicketStatus];
+DROP TABLE [dbo].[UserRoleBPUMapping];
+DROP TABLE [dbo].[Users];
+DROP TABLE [dbo].[Roles];
+DROP TABLE [dbo].[BPU];

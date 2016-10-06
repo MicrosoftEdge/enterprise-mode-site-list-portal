@@ -1,0 +1,73 @@
+﻿
+<div><span class="EMIEpage-title">PRODUCTION CHANGES</span> <span class="EMIEpage-title pull-right" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div>
+
+<div class="row">
+</div>
+<div>
+    <div class="col-lg-12 alert alert-danger" role="alert" ng-show="IsFreezeDateDisplayed" ><b>Freezed Start Date</b> : {{StartDate}}       <b>Freezed End Date</b>: {{EndDate}}</div>
+</div>
+<div disable-all="DisableProdPage">
+    <div style="margin-top:70px!important;">
+        <div class="row">
+
+            <div class="col-lg-2" style="margin-top:48px">
+                <input type="radio" name="ProdDate" id="ProdDateNow" ng-model="NowProdDate" ng-change="ProdDateNow('Now')" ng-click="RadNowClicked($event)" ng-checked="RadNowChecked" value="time" />
+                <label for="ProdDateNow"> Now   </label>
+                <!--This part has been commented, as it is not to be shown now on the html, will be edited later-->
+                <!--<input type="radio" name="ProdDate" id="ProdDateOnDate" ng-model="NowProdDate" ng-change="ProdDateNow('Later')" value="time1" style="margin-left:20px;" />-->
+                <input type="radio" name="ProdDate" id="ProdDateOnDate" ng-model="LaterProdDate" ng-change="ProdDateNow('Later')" ng-click="RadLaterClicked($event)" ng-checked="RadLaterChecked" value="time1" style="margin-left:20px;" />
+                <label for="ProdDateOnDate"> Schedule </label>
+            </div>
+
+            <div class="col-lg-3" ng-hide="prodDatePicker" style="margin-top:48px">
+
+                 <p class="input-group">
+                     <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePick"
+                            is-open="popupStartDate.opened" ng-click="openStartDate()" ng-change="FilterSelected()" alt-input-formats="altInputFormats" ng-disabled="DisableProdDate"
+                            datepicker-options="dateOptions" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openStartDate()" ng-disabled="DisableProdDate"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+             
+            </div>
+
+           
+            <div class="col-lg-3" ng-hide="prodDatePickerTextBoxhidden" style="margin-top:48px">
+                <input type="text" id="prodDatePicker" class="form-control" ng-model="datePick" disabled />
+
+            </div>
+            <div class="col-lg-3" style="margin-top:6px" ng-show="IsRadButtonNowClicked">
+                <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+            </div>
+            <!--change EMIE style line: 649 uib-decrement/increment class-->
+            <div class="col-lg-3" style="margin-top:-20px" ng-show="IsSceduleProductionChangeClicked">
+                <!--  <label style="visibility:hidden">Preferred Time Slot - Start Time</label>-->
+                <label>Preferred Time Slot - Start Time</label>
+                <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+            </div>
+            <div class="col-lg-3" style="margin-top:-20px;" ng-show="IsSceduleProductionChangeClicked">
+                <!--<div class="col-lg-3" style="margin-top:-20px;visibility:hidden">-->
+                <!--<!--Code needed-->
+                <label ng-show="IsSceduleProductionChangeClicked">Preferred Time Slot - End Time</label>
+                <uib-timepicker ng-show="IsSceduleProductionChangeClicked" ng-model="timePickEnd" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+            </div>
+            <div class="col-lg-1">
+                <button ng-disabled="SaveProdDisabled" style="margin-top:47px" type="button" class="btn btn-default EMIEbtn ThemeBtn" data-dismiss="modal" ng-click="SaveProdDatetime()">SAVE</button>
+            </div>
+        </div>
+    </div>
+   
+
+    <message-center></message-center>
+    <div>
+        <div class="col-lg-12 alert alert-success" role="alert" ng-show="IsSceduleProductionChange">The change has been scheduled for selected date and time. You can test the configuration after this date and sign off...</div>
+    </div>
+
+</div>
+
+
+<script>
+
+    url();
+</script>

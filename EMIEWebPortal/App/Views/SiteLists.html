@@ -1,0 +1,214 @@
+﻿<div ng-model="disableAll">
+    <fieldset ng-disabled="disableAll" id="sitelistpage">
+        <div class="EMIEpage-title">ENTERPRISE MODE SITE LIST MANAGER</div>
+        <div class="row" style="margin:40px 0px 40px -15px !important" ng-hide="IsDuplicate">
+            <div class="col-lg-12">
+                <button type="button" ng-click="AddNewWebsite()" class="btn btn-success">ADD NEW SITE</button>
+                <button type="button" data-toggle="modal" data-target="#modalSavexml" title="Save XML file" ng-disabled="disableSave" ng-click="ClearVersionOfModel()" class="btn btn-success">SAVE AS XML</button>
+                <label class="btn btn-success custom-upload" style="padding-top: 8px" title="Add websites from XML file">
+                    <input type="file" class="form-control custom-upload" style="height:40px !important" id="file" name="file" title="Add websites from XML file" accept=".xml" on-read-file="showContent($fileContent)" />
+                    <span>BULK ADD FROM FILE</span>
+                </label>
+                <label class="btn btn-success custom-upload" style="padding-top: 8px" title="Add websites from Text file"><input type="file" class="form-control" style="height:40px !important;" id="fileImport" name="file" title="Add websites from Text file" accept=".emie" on-read-file="ImportTextFile($fileContent)" /><span>IMPORT</span></label>
+                <button type="button" title="Save Text file" data-toggle="modal" data-target="#modalSavetext" ng-click="ClearVersionOfModel()" ng-disabled="disableExport" class="btn btn-success">EXPORT</button>
+
+                <!-- Modal Save as xml -->
+                <div class="modal fade" id="modalSavexml" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">SELECT XML VERSION</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="radio">
+                                    <label ng-click="version='version1'"><input type="radio" ng-model="version" value="version1" name="optradio1">V 1</label>
+                                </div>
+                                <div class="radio">
+                                    <label ng-click="version='version2'"><input type="radio" ng-model="version" value="version2" name="optradio2">V 2</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" ng-click="SaveAsXml(siteInfo,version)" ng-disabled="!version" data-dismiss="modal">SAVE</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Modal-->
+                <!-- Modal Save as xml -->
+                <div class="modal fade" id="modalSavetext" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">SELECT XML VERSION</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="radio">
+                                    <label ng-click="version='version1'"><input type="radio" ng-model="version" value="version1" name="optradio">V 1</label>
+                                </div>
+                                <div class="radio">
+                                    <label ng-click="version='version2'"><input type="radio" ng-model="version" value="version2" name="optradio">V 2</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" ng-click="Export(siteInfo,version)" ng-disabled="!version" data-dismiss="modal">SAVE</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button type="button" ng-disabled="disableClear" ng-click="ClearLists()" class="btn btn-success">CLEAR LIST</button>
+                <div class="col-lg-3 pull-right ">
+                    <div class="input-group open">
+                        <input type="text" ng-hide="IsDuplicate" ng-model="search" ng-change="Search(search)" class="form-control" placeholder="Search Any Record" />
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
+                        <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px;  width: 271px; " ng-show="siteInfo.length==0 && search.length>1">No match for "{{search}}" found. </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row text-right" style="margin:40px 0px 40px -15px !important">
+            <div class="pull-right"><span style="font-size:17px;" ng-hide="IsDuplicate">Search: </span><input type="text" ng-hide="IsDuplicate" ng-model="search" /></div>
+            <div class="col-lg-3"></div>
+        </div>-->
+        <div class="row" ng-hide="disableAll">
+            <div class="col-md-12">
+                <dir-pagination-controls ng-disabled="disableAll" class="pull-right" max-size="10"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+        <div class="panel-group" style="margin-top:20px;" ng-hide="IsDuplicate">
+
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <div class="row">
+
+                        <div class="col-lg-2"><span id="EMIEsortinglink" ng-click="SortByURL(siteInfo)">URL</span> <span class="glyphicon glyphicon-sort text-right" ng-click="SortByURL(siteInfo)"></span></div>
+                        <div class="col-lg-2"> <span id="EMIEsortinglink" ng-click="SortByDocMode(siteInfo)">COMPAT MODE</span> <span class="glyphicon glyphicon-sort" ng-click="SortByDocMode(siteInfo)"></span></div>
+                        <div class="col-lg-3"><span id="EMIEsortinglink" ng-click="SortByNotesAboutURL(siteInfo)">NOTES ABOUT URL</span> <span class="glyphicon glyphicon-sort" ng-click="SortByNotesAboutURL(siteInfo)"></span></div>
+                        <div class="col-lg-1">OPEN IN</div>
+                        <div class="col-lg-2">LAST MODIFIED BY</div>
+                        <div class="col-lg-1">EDIT</div>
+                        <div class="col-lg-1">DELETE</div>
+                    </div>
+                </div>
+
+
+
+
+                <div id="requestPanel" class="panel-collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item" dir-paginate="site in siteInfo|itemsPerPage:itemsPerPage|limitTo:config.itemsDisplayedInList track by site.FullURL">
+                            <div class="row">
+                                <div class="col-lg-2" style="word-break:break-all">{{site.FullURL}}</div>
+                                <div class="col-lg-2">{{site.DomainDocMode}}</div>
+                                <div class="col-lg-3" style="word-break:break-all">{{site.NotesAboutURL}}</div>
+                                <div class="col-lg-1">{{site.OpenIn}}</div>
+
+                                <div class="col-lg-2">{{site.LastModifiedBy}}</div>
+                                <div class="col-lg-1">
+                                    <button type="button" ng-disabled="disableAll" ng-click="EditSite(site)" class="EMIEsmall-btn">EDIT</button>
+                                </div>
+                                <div class="col-lg-1">
+                                    <button type="button" ng-disabled="disableAll" ng-click="DeleteSite(site)" class="EMIEsmall-btn">DELETE</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div>
+            </div>
+        </div>
+
+
+
+        <!--this is for the bulk upload page, will be displayed when bulk upload file has url which is duplicate or fails the validation-->
+        <div ng-show="IsDuplicate" data-ng-model="validUrls">
+            <div ng-model="important">
+                <span style="font-weight:700">{{validUrls}}</span> websites passed validation and were added to your list.
+
+
+                The following websites didn't pass validation and need your input. To fix these problems, you can override each error and add the URLs by checking the add to list checkbox. If you don't want to override the error, ignore it.
+
+
+                When you are done, click OK to add the new URLs to your site list.
+            </div>
+            <div>
+                <button type="button" class="btn btn-success" ng-click="AddValidationFailedWebsites(failedBulkUpload)">OK</button>
+                <button type="button" class="btn btn-success" ng-click="CancelBulkUpload()">CANCEL</button>
+            </div>
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-6">URL</div>
+                    <div class="col-lg-4">ERROR</div>
+                    <div class="col-lg-2 pull-right"><input type="checkbox" data-ng-model="checkAll" ng-change="checkAllCheckboxes()" /> ADD TO LIST</div>
+                </div>
+            </div>
+            <div id="requestPanel" class="panel-collapse">
+                <ul class="list-group">
+                    <li class="list-group-item" data-ng-model="checkAllWebsites" dir-paginate="site in failedBulkUpload|itemsPerPage:itemsPerPage||limitTo:config.itemsDisplayedInList track by site.data.FullURL">
+                        <div class="row">
+                            <div class="col-lg-6" style="word-break:break-all">{{site.data.FullURL}}</div>
+                            <div class="col-lg-4">{{site.Error}}</div>
+                            <div class="col-lg-2 pull-right"><input type="checkbox" ng-change="UncheckAllCheckCheckBox(site.AddToList)" ng-model="site.AddToList" /></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div>
+                <button type="button" class="btn btn-success" ng-click="AddValidationFailedWebsites(failedBulkUpload)">OK</button>
+                <button type="button" class="btn btn-success" ng-click="CancelBulkUpload()">CANCEL</button>
+            </div>
+        </div>
+        <div ng-hide="disableAll">
+            <dir-pagination-controls ng-disabled="disableAll" class="pull-right" max-size="10"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+
+        <message-center></message-center>
+    </fieldset>
+</div>
+<script>
+
+    url();
+</script>
+
+<style>
+    .custom-upload {
+        background-color: #008000;
+        border: 1px solid #006400;
+        border-radius: 0px;
+        cursor: pointer;
+        color: #fff;
+        padding: 4px 10px;
+    }
+
+        .custom-upload input {
+            left: -9999px;
+            position: absolute;
+        }
+
+    input[type=text]::-ms-clear {
+        display: none;
+    }
+</style>

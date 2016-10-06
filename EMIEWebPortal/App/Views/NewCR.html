@@ -1,0 +1,432 @@
+﻿<!--<notifications-bar class="notifications"></notifications-bar>-->
+<!--<div notifications-bar class="notifications"></div>-->
+<div class="row">
+
+    <div class="col-lg-6"><span class="EMIEpage-title" ng-hide="IsNewRequest">CREATE NEW REQUEST</span><span class="EMIEpage-title" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div>
+
+    <div class="col-lg-6 pull-right">
+        <button type="button" class="btn btn-default btn-info EMIEbtn" data-toggle="modal" data-target="#contentModal" style="float:right;margin-right:20px;">SHOW SAMPLE CONTENT</button>
+        <div id="contentModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header"><span class="EMIEpage-title">SAMPLE ENTRIES</span></div>
+                    <div class="modal-body" style="padding-left:41px">
+                        <div class="row">
+                            <img src="../App/Views/img/ContentSample.png" style=" margin-left: 15px !important;margin-top: 3px;width: 98%;" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success EMIEbtn ThemeBtn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div>
+
+    <form name="form">
+        <div class="row" disable-all="NewCRDisabled">
+
+            <!--Left Panel-->
+            <div class="col-lg-6">
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">GROUP NAME</span><sup>*</sup></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Select your Organizational Group Name"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+
+                        <select ng-disabled="IsDisabledForEdit" class="form-control" name="BPUName" data-ng-model="GroupName"
+                                data-ng-options="var.BPU as var.BPU for var in AppName | unique:'BPU' | orderBy:'BPU'"
+                                data-ng-change="PopulateApplicationName()" required
+                                ng-class="{'erroneous-field' : (form.BPUName.$dirty || submitted) && form.BPUName.$error.required}">
+                            <option value="">--Select--</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">APPLICATION NAME</span><sup>*</sup></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Select your application name from the list to raise the request"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-7">
+                        <input type="text" ng-disabled="IsDisabledForEdit" title="{{TypedApplicationName}}" maxlength="130" name="txtApplicationOfBPU" id="txtApplicationOfBPU"
+                               ng-change="GetApplicationOfAutocompleteText(TypedApplicationName)" ng-minlength="2" class="form-control"
+                               data-ng-model="TypedApplicationName" required data-toggle="dropdown" ng-class="{'erroneous-field' : (form.txtApplicationOfBPU.$dirty || submitted) && form.txtApplicationOfBPU.$error.required}">
+                        <!--<span class="error" ng-show="(form.txtApplicationOfBPU.$dirty || submitted) && form.txtApplicationOfBPU.$error.required">Required!</span>-->
+                        <span class="error" ng-show="(form.txtApplicationOfBPU.$dirty || submitted) && form.txtApplicationOfBPU.$error.minlength">Too short!</span>
+                        <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="AppListOfSelectedBPUToShow.length>=1" style="margin-right:14px; width:313px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                            <li ng-repeat="app in AppListOfSelectedBPUToShow" class="input-lg" ng-click="searchedApplicationFromDDL(app)" title="{{app.ApplicationName}}" style="margin:5px">{{app.ApplicationName| limitTo: 30}}{{app.ApplicationName.length > 30 ? '...' : ''}}</li>
+                        </ul>
+                        <span class="dropdown-menu dropdown-menu-left error" ng-show="(form.TypedApplicationName.$dirty || submitted) && form.TypedApplicationName.$error.minlength">Too short!</span>
+                        <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 314px; " ng-show="AppListOfSelectedBPUToShow.length==0 && TypedApplicationName.length>1">No application matching "{{TypedApplicationName}}" were found. </span>
+                    </div>
+                    <div class="col-lg-1" style="padding-left:0px;">
+                        <button type="button" ng-disabled="IsDisabledForEdit" class="btn btn-success EMIEadd glyphicon glyphicon-search white-icon ThemeBtn" data-toggle="modal" data-target="#appModal" ng-click="LoadAllApplicationsToSearch()" style="margin:0px -8px;"></button>
+
+                    </div>
+                    <div id="appModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header"><span class="EMIEpage-title">ALL APPLICATION</span></div>
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="col-lg-8">
+
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="input-group">
+                                                <input type="text" name="modaltxtApplicationOfBPU" ng-minlength="2" id="modaltxtApplicationOfBPU" ng-change="GetApplicationOfAutocompleteText(ModalTypedApplicationName)" class="form-control" data-ng-model="ModalTypedApplicationName" placeholder="Search Application" data-toggle="dropdown">
+                                                <span class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </span>
+                                                <ul id="color-dropdown-menu" ng-show="AppListOfSelectedBPUToShowInModel.length>=1" class="dropdown-menu dropdown-menu-right" style="margin-right:14px; width:256px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                                                    <li ng-repeat="app in AppListOfSelectedBPUToShowInModel" class="input-lg" ng-click="ModalsearchedApplicationFromDDL(app)" style="margin:5px">{{app.ApplicationName | limitTo: 30}}{{app.ApplicationName.length > 30 ? '...' : ''}}</li>
+                                                </ul>
+                                                <span class="dropdown-menu dropdown-menu-left error" style="width: 232px; padding-left: 8px;" ng-show="(form.modaltxtApplicationOfBPU.$dirty || submitted) && form.modaltxtApplicationOfBPU.$error.minlength">Too short!</span>
+                                                <span class="dropdown-menu dropdown-menu-left" ng-show="AppListOfSelectedBPUToShowInModel.length==0 && ModalTypedApplicationName.length>1">No application matching "{{ModalTypedApplicationName}}" were found. </span>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top:10px; margin-bottom:10px;"></div>
+                                    </div>
+                                    <dir-pagination-controls class="pull-right" max-size="10"
+                                                             direction-links="true"
+                                                             boundary-links="true">
+                                    </dir-pagination-controls>
+                                    <div class="row">
+                                        <div class="col-lg-10">
+
+                                        </div>
+
+                                        <div class="row" style="margin-top:10px; margin-bottom:10px;"></div>
+                                    </div>
+
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" id="EMIEexpandr">
+                                            <div class="row">
+                                                <div class="col-lg-2"></div>
+                                                <div class="col-lg-7"><span id="EMIEsortinglink" ng-click="sortByAppName(LoadedApplicationList)">APPLICATION NAME</span></div>
+                                                <div class="col-lg-3">GROUP NAME</div>
+
+                                            </div>
+                                        </div>
+                                        <div id="UMpanel" class=" panel-collapse ">
+                                            <ul class="list-group">
+                                                <li class="list-group-item" dir-paginate="application in LoadedApplicationList |itemsPerPage:10">
+                                                    <div class="row">
+                                                        <div class="col-lg-2"><input type="checkbox" ng-click="updateSelection($index, application,LoadedApplicationList,isAppChecked)" ng-model="application.checked" ng-change="GetSelectedApplication(application)" /></div>
+                                                        <div class="col-lg-7">{{ application.ApplicationName }}</div>
+                                                        <div class="col-lg-3">{{application.BPU }}</div>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success EMIEbtn ThemeBtn" ng-disabled="disableSelectBtn" data-dismiss="modal" ng-click="BindApplicationNameAndBPU()">Select</button>
+                                    <button type="button" class="btn btn-success EMIEbtn ThemeBtn" data-dismiss="modal">Close</button>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="btn btn-success EMIEadd glyphicon glyphicon-plus" data-toggle="modal" data-target="#NewApplicationModal" ng-click="PopulateNewApplicationFormFields()" ng-disabled="IsAddAppDisabled"></button>
+                        <!-- Modal or Pop-up for Add Application -->
+                        <div id="NewApplicationModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">ADD APPLICATION</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row">
+                                            <div>
+                                                <span class="EMIEControllabel">APPLICATION NAME</span>
+                                                <sup>*</sup>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <input type="text" ng-model="NewApplicationName" maxlength="200" class="form-control">&nbsp;
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div>
+                                                <span class="EMIEControllabel">
+                                                    GROUP NAME
+                                                    <sup>*</sup>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="NewBPUName" data-ng-model="NewGroupName"
+                                                        data-ng-options=" var.BPU1 for var in NewAllBPUList">
+                                                    <option value="">--Select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <input type="checkbox" id="IsActiveCheckbox" name="ischeck" ng-disabled="true" ng-model="IsActiveApp" ng-checked="true">ACTIVE
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" ng-click="CreateNewApplication()">Save</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="ClearFiledsOnClose()">Close</button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">REQUESTED BY</span></div>
+                    <div class="col-lg-9">
+                        <textarea name="RequestedBy" data-ng-disabled="true" class="form-control" rows="1" data-ng-model="RequestedBy"></textarea>&nbsp;
+                    </div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Displays creator owner for the request"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">CHANGE DESCRIPTION</span><sup>*</sup></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Describe the change required with reasoning"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <textarea name="ChngDesc" class="form-control" rows="5" data-ng-model="ChangeDescription" required
+                                  ng-class="{'erroneous-field' : (form.ChngDesc.$dirty || submitted) && form.ChngDesc.$error.required}" maxlength="300"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">REQUESTED CHANGE</span><sup>*</sup></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Select change type"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <select name="ChngType" ng-disabled="IsDisabledForEdit" class="form-control" data-ng-model="Changetype" data-ng-change="DisableOnDelete()"
+                                data-ng-options="var as var.ChangeTypeName for var in ChangeType" required
+                                ng-class="{'erroneous-field' : (form.ChngType.$dirty || submitted) && form.ChngType.$error.required }">
+                            <option value="">-- Select --</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">REASON FOR CHANGE</span><sup>*</sup></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Specify the reason for change"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <!--<textarea class="form-control" rows="5"></textarea>-->
+                        <select name="ReasonfrChng" class="form-control" data-ng-model="ChangeReason" data-ng-disabled="DisableReasonfrChng"
+                                data-ng-options="var.ReasonForChangeId as var.ReasonForChangeName for var in ReasonForChange" ng-required="DisableReasonfrChng == false"
+                                ng-class="{'erroneous-field' : (form.ReasonfrChng.$dirty || submitted) && form.ReasonfrChng.$error.required }">
+                            <option value="">-- Select --</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">BUSINESS IMPACT</span></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Provide potential effects of the issue on business"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <textarea class="form-control" rows="5" data-ng-model="BusinessImpact" maxlength="200"></textarea>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--Left Panel-->
+            <!--Right Panel-->
+            <div class="col-lg-6">
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">APPLICATION URL</span><sup>*</sup></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Specify Application URL."><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <input name="URLName" id="DomainURL" type="url" class="form-control" data-ng-model="AppURL" placeholder="http://site-name" required ng-change="CheckPathIncluded(AppURL)"
+                               ng-class="{'erroneous-field' : (form.URLName.$dirty || submitted || valid) && form.URLName.$error.required}" maxlength="200" ng-init="AppURL='http://'">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">APPLICATION BEST VIEWED IN</span><sup>*</sup></div>
+
+                    <div class="col-lg-4">
+                        <select name="DocModeValidation" class="form-control" data-ng-model="DocModesModel" data-ng-disabled="DisableDocMode"
+                                data-ng-options="var as var.DocModeName disable when var.toggleDocmodeDisable for var in DocModes" ng-required="DisableDocMode == false"
+                                ng-class="{'erroneous-field' : (form.DocModeValidation.$dirty || submitted) && form.DocModeValidation.$error.required}">
+                            <option value="" ng-disabled="disableEdge.indexOf(DocModes.DocModeName) !== -1">-- Select --</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+                        <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Select browser version where issue mitigates"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                        <div ng-show="isPathIncluded">
+                            <!--<sup style="color:black" data-toggle="tooltip" data-placement="right" title=""></sup>-->
+                            <div class="col-lg-12" style="margin-left:27px; margin-top:-10px;">
+                                <input type="checkbox" value="" class="EMIEchkbox" data-ng-model="DomainOpenInEdge" ng-disabled="DisableDocMode" ng-change="DisableXUADetails()" />OPEN IN EDGE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div><span class="EMIEControllabel">IS APPLICATION PAGES USES AN X-UA TAG?<a href="https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx" target="_blank">&emsp;&emsp;&emsp;&emsp;Learn More</a></span></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Tell us if application pages uses X-UA compatible header to restrict a webpage to legacy document modes."><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <select class="form-control" data-ng-model="IsVisible" data-ng-change="ChangeRequired()" data-ng-disabled="DisableXUATag">
+                            <option value="">-- Select --</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div data-ng-show="IsVisible == 'true'">
+                    <div class="row">
+                        <div><span class="EMIEControllabel">HONOR X-UA COMPATIBLE TAG</span></div>
+                        <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Tell us if X-UA compatible tag gets applied to the app page"><span class='glyphicon glyphicon-info-sign'></span></sup>
+                        <div class="col-lg-9">
+                            <input type="checkbox" value="" class="EMIEchkbox" data-ng-model="HonorDomain" ng-change="DisableDocmodeList()">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div><span class="EMIEControllabel">X-UA COMPATIBLE TAG DETAILS</span><sup>*</sup></div>
+                        <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Provide X-UA compatible tag details in html format."><span class='glyphicon glyphicon-info-sign'></span></sup>
+                        <div class="col-lg-9">
+                            <input name="XUATag" type="text" class="form-control" data-ng-model="XUADetails" ng-required="IsVisible == 'true'"
+                                   ng-class="{'erroneous-field' : (form.XUATag.$dirty || submitted) && form.XUATag.$error.required}" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div><span class="EMIEControllabel">HAS MULTIPLE X-UA COMPATIBLE TAGS</span><sup>*</sup></div>
+                        <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Does application has multiple pages with different X-UA meta tag. "><span class='glyphicon glyphicon-info-sign'></span></sup>
+                        <div class="col-lg-9">
+                            <select name="Multipletag" class="form-control" data-ng-model="IsMultipleTags" ng-required="IsVisible == 'true'"
+                                    ng-class="{'erroneous-field' : (form.Multipletag.$dirty || submitted) && form.Multipletag.$error.required}">
+                                <option value="">-- Select --</option>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                            <!--<span class="error" ng-show="(form.Multiple-tag.$dirty || submitted) && form.Multiple-tag.$error.required  && IsVisible == true">Required!</span>-->
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div><span class="EMIEControllabel">FQDN IF EXTERNAL FACING</span></div>
+                    <sup style="color:black" data-toggle="tooltip" data-placement="right" title="Provide FQDN (Fully Qauilified Domain Name) if site is accessible to external world."><span class='glyphicon glyphicon-info-sign'></span></sup>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" data-ng-model="FQDN" data-ng-disabled="DisableFQDN">
+                    </div>
+                </div>-->
+                <!--<div class="row" ng-show="isPathIncluded">
+                    <div class="col-lg-6  text-left"><span class="EMIEControllabel text-primary">SUBDOMAIN DETAILS</span></div>
+                </div>-->
+
+                <div class="row" ng-show="isPathIncluded">
+
+                    <div><span class="EMIEControllabel">SUB DOMAIN</span></div>
+                    <div class="col-lg-9" ng-show="isPathIncluded">
+                        <!--<span data-ng-model="subURL" class="form-control">{{siteUrlWithPath}}</span>-->
+                        <input name="subdomainURLName" id="URLName" type="text" class="form-control" data-ng-model="siteUrlWithPath" ng-disabled="true" maxlength="200">
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="row" ng-show="isPathIncluded">
+                    <div> <span class="EMIEControllabel">DOCMODE</span><sup>*</sup></div>
+
+                    <div class="col-lg-5">
+                        <select name="SubDomainDocModeValidation" class="form-control" data-ng-model="DocModeNameSubURL" data-ng-disabled="DisableSubDocMode"
+                                data-ng-options="var as var.DocModeName for var in SubDomainDocModes" ng-required="isPathIncluded == true && DisableSubDocMode== false"
+                                ng-class="{'erroneous-field' : (form.SubDomainDocModeValidation.$dirty || submitted) && form.SubDomainDocModeValidation.$error.required}">
+                            <option value="">-- Select --</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-5">
+
+                        <sup style="color:black" data-toggle="tooltip" data-placement="right" title="">
+                        </sup>
+                        <div class="col-lg-9">
+                            <input type="checkbox" value="" class="EMIEchkbox" data-ng-model="HonorSubDomain" ng-change="DisableSubDomainDocmodeList()" ng-disabled="DisableSubDocModeXUAHonor" />HONOR X-UA
+                            <input type="checkbox" value="" class="EMIEchkbox" data-ng-model="SubDomainOpenInEdge" ng-disabled="DisableSubDocMode" ng-change="DisableSubDomainXUAHonor()" />OPEN IN EDGE
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--Right Panel-->
+        </div>
+
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                <button type="button" class="btn btn-default  btn-info EMIEbtn" ng-click="Reset()" ng-disabled="IsSubmitted" style="margin-right:28px;">RESET</button>
+                <button type="button" class="btn btn-default  btn-info EMIEbtn" ng-click="Cancel()" ng-disabled="IsSubmitted">CANCEL</button>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button type="button" class="btn btn-success EMIESubmit EMIEadd  col-lg-12" ng-click="SubmitTicket(AppURL,IsEdit)" ng-disabled="IsSubmitted">SAVE AND PROCEED</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="button" class="btn btn-success EMIESubmit EMIEadd  col-lg-12" ng-click="EditTicket(AppURL,true)" ng-disabled="IsEditDisabled">EDIT</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <message-center></message-center>
+
+
+    </form>
+
+
+    <div class="row" style="position:relative;bottom:-5px;">
+        <div class="text-danger">**Disclaimer</div>
+        The application information and details provided here are best to my knowledge. I solely responsible for any inferences occurred due to this change for selected application.
+
+    </div>
+    <script>
+
+        url();
+
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+</div>
+

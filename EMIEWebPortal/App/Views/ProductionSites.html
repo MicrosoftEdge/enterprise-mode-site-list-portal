@@ -1,0 +1,70 @@
+﻿
+<div class="row">
+    <div class="col-lg-9"><span class="EMIEpage-title">PRODUCTION SITES LIST</span></div>
+    <div class="col-lg-3 pull-right">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchProdSites" ng-change="SearchProductionSites(searchProdSites)" placeholder="Search by site">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="row" ng-hide="disableProduction">
+    <div class="col-md-12">
+        <dir-pagination-controls ng-disabled="disableAll" class="pull-right" max-size="10"
+                                 direction-links="true"
+                                 boundary-links="true">
+        </dir-pagination-controls>
+    </div>
+</div>
+<div class="panel-group" style="margin-top:20px;" ng-hide="IsDuplicate">
+
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <div class="row">
+                <!--<div class="col-lg-1">TicketId</div>
+                <div class="col-lg-2">Application Name</div>-->
+                <div class="col-lg-6"><span id="EMIEsortinglink" ng-click="filterByUrl(productionsiteInfo)">URL</span> <span class="glyphicon glyphicon-sort text-right" ng-click="filterByUrl(productionsiteInfo)"></span></div>
+                <div class="col-lg-4"> <span id="EMIEsortinglink" ng-click="filterByCompatmode(productionsiteInfo)">COMPAT MODE</span> <span class="glyphicon glyphicon-sort" ng-click="filterByCompatmode(productionsiteInfo)"></span></div>
+                <!--<div class="col-lg-2"><span id="EMIEsortinglink" ng-click="orderByField='NotesAboutURL'; reverseSort = !reverseSort">Notes About URL</span> <span class="glyphicon glyphicon-sort" ng-click="orderByField='NotesAboutURL'; reverseSort = !reverseSort"></span></div>-->
+                        <div class="col-lg-2"><span id="EMIEsortinglink" ng-click="filterByOpenIn(productionsiteInfo)">OPEN IN</span><span class="glyphicon glyphicon-sort text-right" ng-click="filterByOpenIn(productionsiteInfo)"></span></div>
+                <!--<div class="col-lg-2">Last Modified By</div>-->
+            </div>
+        </div>
+
+
+
+
+        <div id="requestPanel" class="panel-collapse">
+            <ul class="list-group">
+                <li class="list-group-item" dir-paginate="site in productionsiteInfo|itemsPerPage:itemsPerPage|limitTo:config.itemsDisplayedInList track by site.FullURL">
+                    <div class="row">
+                        <!--<div class="col-lg-1">{{site.TicketId}}</div>
+                        <div class="col-lg-2">{{site.ApplicationName}}</div>-->
+                        <div class="col-lg-6" style="word-break:break-all">{{site.FullURL}}</div>
+                        <div class="col-lg-4">{{site.DomainDocMode}}</div>
+                        <!--<div class="col-lg-2" style="word-break:break-all">{{site.NotesAboutURL}}</div>-->
+                        <div class="col-lg-2">{{site.OpenIn}}</div>
+                        <!--<div class="col-lg-2">{{site.LastModifiedBy}}</div>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div>
+    </div>
+</div>
+<div ng-hide="disableProduction">
+    <dir-pagination-controls ng-disabled="disableProduction" class="pull-right" max-size="10"
+                             direction-links="true"
+                             boundary-links="true">
+    </dir-pagination-controls>
+</div>
+<script>
+
+    url();
+</script>

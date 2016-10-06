@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50F6632D-FA9F-4A94-812F-26E5C63E05BA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EMIEWebPortal</RootNamespace>
+    <AssemblyName>EMIEWebPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\CodeAnalysis\LOB_App_Compat.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\Config\AllRequestsConfig.js" />
+    <Content Include="App\Config\ApprovalConfig.js" />
+    <Content Include="App\Config\ChangeRequestConfig.js" />
+    <Content Include="App\Config\ConfigurationSettingsConfig.js" />
+    <Content Include="App\Config\ManageSiteConfig.js" />
+    <Content Include="App\Config\UserConfig.js" />
+    <Content Include="App\Config\VerifySandboxConfig.js" />
+    <Content Include="App\Constants.js" />
+    <Content Include="App\Controllers\AllRequestsController.js" />
+    <Content Include="App\Controllers\ApprovalController.js" />
+    <Content Include="App\Config\LoginConfig.js" />
+    <Content Include="App\Controllers\ChangeRequestController.js" />
+    <Content Include="App\Controllers\EMIEUserManagementController.js" />
+    <Content Include="App\Controllers\ReportsController.js" />
+    <Content Include="App\Controllers\ConfigurationController.js" />
+    <Content Include="App\Controllers\LayoutController.js" />
+    <Content Include="App\Controllers\LoginController.js" />
+    <Content Include="App\Controllers\LogoutController.js" />
+    <Content Include="App\Controllers\ManageSiteController.js" />
+    <Content Include="App\Controllers\MyApprovalController.js" />
+    <Content Include="App\Controllers\ProdChangesController.js" />
+    <Content Include="App\Controllers\SiteListsController.js" />
+    <Content Include="App\Controllers\UserController.js" />
+    <Content Include="App\Controllers\VerifyProductionController.js" />
+    <Content Include="App\Controllers\VerifySandboxController.js" />
+    <Content Include="App\Factory\CommonFunctionsFactory.js" />
+    <Content Include="App\Factory\SandboxProductionFactory.js" />
+    <Content Include="App\Modules\Module.js" />
+    <Content Include="App\SaveXml.js" />
+    <Content Include="App\Services\AllRequestsService.js" />
+    <Content Include="App\Services\ApprovalsService.js" />
+    <Content Include="App\Services\ChangeRequestService.js" />
+    <Content Include="App\Services\ConfigurationService.js" />
+    <Content Include="App\Services\LogoutService.js" />
+    <Content Include="App\Services\ManageSiteService.js" />
+    <Content Include="App\Services\ModalService.js" />
+    <Content Include="App\Services\ProdChangesService.js" />
+    <Content Include="App\Services\ReportsService.js" />
+    <Content Include="App\Services\UserService.js" />
+    <Content Include="App\Services\VerifyProductionService.js" />
+    <Content Include="App\Services\VerifySandboxService.js" />
+    <Content Include="App\Services\LoginService.js" />
+    <Content Include="App\status.js" />
+    <Content Include="App\Uploads\LOB_MergedDBDiagram_15Dec.png" />
+    <Content Include="App\Utilities\message-center.html" />
+    <Content Include="App\Utilities\message-center.js" />
+    <Content Include="App\Utilities\proceed-modal.html" />
+    <Content Include="App\Utilities\Values.js" />
+    <Content Include="App\utility.js" />
+    <Content Include="App\Views\AllRequests.html" />
+    <Content Include="App\Views\Approvers.html" />
+    <Content Include="App\Views\Chart.html" />
+    <Content Include="App\Views\ConfigurationSetting.html" />
+    <Content Include="App\Views\CreateNewUser.html" />
+    <Content Include="App\Views\css\angular-growl.css" />
+    <Content Include="App\Views\css\angular-growl.min.css" />
+    <Content Include="App\Views\css\bootstrap-theme.css" />
+    <Content Include="App\Views\css\bootstrap-theme.min.css" />
+    <Content Include="App\Views\css\bootstrap.css" />
+    <Content Include="App\Views\css\bootstrap.min.css" />
+    <Content Include="App\Views\css\EMIEStyle.css" />
+    <Content Include="App\Views\css\SidePanel.css" />
+    <Content Include="App\Views\EMIERegisterUsers.html" />
+    <Content Include="App\Views\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App\Views\img\AddUser-icon.svg" />
+    <Content Include="App\Views\img\AddRequest-icon-2.svg" />
+    <Content Include="App\Views\img\ContentSample.PNG" />
+    <Content Include="App\Views\img\Dummy_newCR.png" />
+    <Content Include="App\Views\img\edit.png" />
+    <Content Include="App\Views\img\Last-complete-step_small.svg" />
+    <Content Include="App\Views\img\last_step_completed.svg" />
+    <Content Include="App\Views\img\newuser.png" />
+    <Content Include="App\Views\img\AddRequest-icon.svg" />
+    <Content Include="App\Views\img\alert_off.png" />
+    <Content Include="App\Views\img\alert_on.png" />
+    <Content Include="App\Views\img\complete-step_small.svg" />
+    <Content Include="App\Views\img\complete.png" />
+    <Content Include="App\Views\img\completed_step.svg" />
+    <Content Include="App\Views\img\current-step_small.svg" />
+    <Content Include="App\Views\img\current.png" />
+    <Content Include="App\Views\img\current_stage.svg" />
+    <Content Include="App\Views\img\dashboard_off.png" />
+    <Content Include="App\Views\img\dashboard_on.png" />
+    <Content Include="App\Views\img\Delete-request_icon.svg" />
+    <Content Include="App\Views\img\Edit-icon.svg" />
+    <Content Include="App\Views\img\First-complete-small.svg" />
+    <Content Include="App\Views\img\first_complete.png" />
+    <Content Include="App\Views\img\icon_addrequest.png" />
+    <Content Include="App\Views\img\icon_delete.png" />
+    <Content Include="App\Views\img\icon_delete_on.png" />
+    <Content Include="App\Views\img\icon_edit.png" />
+    <Content Include="App\Views\img\icon_edit_on.png" />
+    <Content Include="App\Views\img\incomplete-step_small.svg" />
+    <Content Include="App\Views\img\last-current-step_small.svg" />
+    <Content Include="App\Views\img\last-incomplete-step_small.svg" />
+    <Content Include="App\Views\img\last_step.svg" />
+    <Content Include="App\Views\img\pending_step.svg" />
+    <Content Include="App\Views\img\pending_step_2.svg" />
+    <Content Include="App\Views\img\step_1_complete.svg" />
+    <Content Include="App\Views\img\step_1_current.svg" />
+    <Content Include="App\Views\img\user.png" />
+    <Content Include="App\Views\Layout.html" />
+    <Content Include="App\Views\LoginHome.html" />
+    <Content Include="App\Views\ManageSite.html" />
+    <Content Include="App\Views\MyRequests.html" />
+    <Content Include="App\Views\NewCR.html" />
+    <Content Include="App\Views\ProductionChanges.html" />
+    <Content Include="App\Views\ProductionSites.html" />
+    <Content Include="App\Views\SiteLists.html" />
+    <Content Include="App\Views\UserManagement.html" />
+    <Content Include="App\Views\VerifyProduction.html" />
+    <Content Include="App\Views\VerifySandbox.html" />
+    <Content Include="App\XML\InternalURLs.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App\XML\noeprodsitelist.xml" />
+    <Content Include="App\XML\noesitelist.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App\XML\sites.xml" />
+    <Content Include="App_Data\EmailTemplates\ConfigurationSettings.html" />
+    <Content Include="App_Data\EmailTemplates\RequestApproval.html" />
+    <Content Include="App_Data\EmailTemplates\RequesterRaisedRequest.html" />
+    <Content Include="App_Data\EmailTemplates\RequestRejected.html" />
+    <Content Include="App_Data\EmailTemplates\RequestRollbackOnSandBox.html" />
+    <Content Include="App_Data\EmailTemplates\RequestScheduledForProduction.html" />
+    <Content Include="App_Data\EmailTemplates\UserManagement.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loading-bar.css" />
+    <Content Include="Content\loading-bar.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\alasql.min.js" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-aria.js" />
+    <Content Include="Scripts\angular-aria.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-disable-all.js" />
+    <Content Include="Scripts\angular-disable-all.min.js" />
+    <Content Include="Scripts\angular-file-saver.bundle.min.js" />
+    <Content Include="Scripts\angular-growl.min.js" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-message-format.js" />
+    <Content Include="Scripts\angular-message-format.min.js" />
+    <Content Include="Scripts\angular-messages.js" />
+    <Content Include="Scripts\angular-messages.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\canvas-toBlob.js" />
+    <Content Include="Scripts\ChartNew.js" />
+    <Content Include="Scripts\dirPagination.js" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="App\Views\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App\Views\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App\Views\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\Views\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loading-bar.js" />
+    <Content Include="Scripts\loading-bar.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ngStorage.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-1.2.5.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-1.3.2.js" />
+    <Content Include="Scripts\xlsx.core.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\SiteListXml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EMIEWebPortal.Common\EMIEWebPortal.Common.csproj">
+      <Project>{40c8573f-c903-4369-bbcf-6dc10c1de8d9}</Project>
+      <Name>EMIEWebPortal.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EMIEWebPortal.Controllers\EMIEWebPortal.Controllers.csproj">
+      <Project>{1d5e7924-7b4f-4c90-a754-18f12ec15d5e}</Project>
+      <Name>EMIEWebPortal.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EMIEWebPortal.DataModel\EMIEWebPortal.DataModel.csproj">
+      <Project>{8117c653-bea0-484d-89ae-29c1822e7e08}</Project>
+      <Name>EMIEWebPortal.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EMIEWebPortal.MailerLib\MailerLib\EMIEWebPortal.MailerLib.csproj">
+      <Project>{04476e66-5233-4ea9-8f1e-3162a49e98bf}</Project>
+      <Name>EMIEWebPortal.MailerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EMIEWebPortal.Models\EMIEWebPortal.Models.csproj">
+      <Project>{e2a994ae-00e9-4bdf-ae55-53a5d716c932}</Project>
+      <Name>EMIEWebPortal.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12107</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12107/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

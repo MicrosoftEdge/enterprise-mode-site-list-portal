@@ -1,0 +1,1693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LOBMergedModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ApplicationAppTypeMapping">
+    <Key>
+      <PropertyRef Name="ApplicationAppTypeMappingId" />
+    </Key>
+    <Property Name="ApplicationAppTypeMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="AppTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_ApplicationAppTypeMapping_Applications" FromRole="ApplicationAppTypeMapping" ToRole="Applications" />
+    <NavigationProperty Name="AppType" Relationship="Self.FK_ApplicationAppTypeMapping_AppType" FromRole="ApplicationAppTypeMapping" ToRole="AppType" />
+  </EntityType>
+  <EntityType Name="ApplicationDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="AppCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AppOwnerId" Type="Int32" />
+    <Property Name="TesterId" Type="Int32" />
+    <Property Name="ServiceManagerId" Type="Int32" />
+    <Property Name="SolutionDeliveryManagerId" Type="Int32" />
+    <Property Name="ApplicationVersion" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="DocModeId" Type="Int32" />
+    <Property Name="NOEApplicationIsPrimary" Type="Boolean" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_ApplicationDetails_Applications" FromRole="ApplicationDetails" ToRole="Applications" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="AppId" />
+    </Key>
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="Application1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Windows" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Web" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Office" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ETTOwned" Type="Int32" />
+    <Property Name="ProjectCategoryId" Type="Int32" />
+    <Property Name="BPUId" Type="Int32" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="ApplicationStateId" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ApplicationAppTypeMappings" Relationship="Self.FK_ApplicationAppTypeMapping_Applications" FromRole="Applications" ToRole="ApplicationAppTypeMapping" />
+    <NavigationProperty Name="ApplicationDetails" Relationship="Self.FK_ApplicationDetails_Applications" FromRole="Applications" ToRole="ApplicationDetails" />
+    <NavigationProperty Name="BPU" Relationship="Self.FK_Applications_BPU" FromRole="Applications" ToRole="BPU" />
+    <NavigationProperty Name="AppOnboardDetails" Relationship="Self.FK_AppOnboardDetails_Applications" FromRole="Applications" ToRole="AppOnboardDetails" />
+    <NavigationProperty Name="AppTechnologyMappings" Relationship="Self.FK_AppTechnologyMapping_Applications" FromRole="Applications" ToRole="AppTechnologyMapping" />
+    <NavigationProperty Name="AppUrlMappings" Relationship="Self.FK_AppUrlMapping_Applications" FromRole="Applications" ToRole="AppUrlMapping" />
+    <NavigationProperty Name="EMIETickets" Relationship="Self.FK_EMIETickets_Applications" FromRole="Applications" ToRole="EMIETickets" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_Applications" FromRole="Application" ToRole="TM_TelemetryData" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketsArch_Applications" FromRole="Application" ToRole="EMIETicketsArch" />
+    <NavigationProperty Name="User" Relationship="LOBMergedModel.FK_Applications_Users" FromRole="Application" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ApplicationState">
+    <Key>
+      <PropertyRef Name="ApplicationStateId" />
+    </Key>
+    <Property Name="ApplicationStateId" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationState1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AppOnboardDetail">
+    <Key>
+      <PropertyRef Name="AppOnboardId" />
+    </Key>
+    <Property Name="AppOnboardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="BPUId" Type="Int32" />
+    <Property Name="Windows" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Web" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Office" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryTestContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPersonForKT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AppTypeId" Type="Int32" />
+    <Property Name="TechDependencies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestCount" Type="Int32" />
+    <Property Name="Criticality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="SubBPU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumberOfUsersId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProdURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NetworkType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TestingType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccessToExternal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UserType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_AppOnboardDetails_Applications" FromRole="AppOnboardDetails" ToRole="Applications" />
+    <NavigationProperty Name="BPU" Relationship="Self.FK_AppOnboardDetails_BPU" FromRole="AppOnboardDetails" ToRole="BPU" />
+  </EntityType>
+  <EntityType Name="AppTechnologyMapping">
+    <Key>
+      <PropertyRef Name="AppTechnologyMappingId" />
+    </Key>
+    <Property Name="AppTechnologyMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" />
+    <Property Name="TechnologyId" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedId" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_AppTechnologyMapping_Applications" FromRole="AppTechnologyMapping" ToRole="Applications" />
+    <NavigationProperty Name="Technology" Relationship="Self.FK_AppTechnologyMapping_Technology" FromRole="AppTechnologyMapping" ToRole="Technology" />
+  </EntityType>
+  <EntityType Name="AppType">
+    <Key>
+      <PropertyRef Name="AppTypeId" />
+    </Key>
+    <Property Name="AppTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppType1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="ApplicationAppTypeMappings" Relationship="Self.FK_ApplicationAppTypeMapping_AppType" FromRole="AppType" ToRole="ApplicationAppTypeMapping" />
+    <NavigationProperty Name="TestResults" Relationship="Self.FK_TestResult_AppType" FromRole="AppType" ToRole="TestResult" />
+  </EntityType>
+  <EntityType Name="AppUrlMapping">
+    <Key>
+      <PropertyRef Name="AppUrlMappingId" />
+    </Key>
+    <Property Name="AppUrlMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" />
+    <Property Name="EnvironmentId" Type="Int32" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedId" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_AppUrlMapping_Applications" FromRole="AppUrlMapping" ToRole="Applications" />
+    <NavigationProperty Name="Environment" Relationship="Self.FK_AppUrlMapping_EnvironmentId" FromRole="AppUrlMapping" ToRole="Environment" />
+  </EntityType>
+  <EntityType Name="BPU">
+    <Key>
+      <PropertyRef Name="BPUId" />
+    </Key>
+    <Property Name="BPUId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BPU1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BPUFullName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OwningOrganization" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BPUTestLeadId" Type="Int32" />
+    <Property Name="RedmondLeadId" Type="Int32" />
+    <Property Name="EspooLeadId" Type="Int32" />
+    <Property Name="EngineeringTeamMembers" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_BPU" FromRole="BPU" ToRole="Applications" />
+    <NavigationProperty Name="AppOnboardDetails" Relationship="Self.FK_AppOnboardDetails_BPU" FromRole="BPU" ToRole="AppOnboardDetails" />
+    <NavigationProperty Name="EMIETickets" Relationship="Self.FK_EMIETicketAprovals_BPU" FromRole="BPU" ToRole="EMIETickets" />
+    <NavigationProperty Name="UserRoleBPUMappings" Relationship="LOBMergedModel.FK_UserRoleBPUMapping_BPU" FromRole="BPU" ToRole="UserRoleBPUMapping" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketArch_BPU" FromRole="BPU" ToRole="EMIETicketsArch" />
+  </EntityType>
+  <EntityType Name="DemoScheduler">
+    <Key>
+      <PropertyRef Name="siteid" />
+    </Key>
+    <Property Name="siteid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="siteurl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="docmode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="testAdded" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="testVerified" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="prodAdded" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="datetimeToProdAdd" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DocMode">
+    <Key>
+      <PropertyRef Name="DocModeId" />
+    </Key>
+    <Property Name="DocModeId" Type="Int32" Nullable="false" />
+    <Property Name="DocMode1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="EMIETickets" Relationship="Self.FK_EMIETicketAprovals_DocMode" FromRole="DocModes" ToRole="EMIETickets" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_DocMode" FromRole="DocMode" ToRole="TM_TelemetryData" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketArch_DocMode" FromRole="DocMode" ToRole="EMIETicketsArch" />
+    <NavigationProperty Name="EMIETickets2" Relationship="LOBMergedModel.FK_EMIETickets_SubDomainDocModes" FromRole="DocMode" ToRole="EMIETicket" />
+    <NavigationProperty Name="EMIETicketsArches2" Relationship="LOBMergedModel.FK_EMIETicketsArch_SubDomainDocModes" FromRole="DocMode" ToRole="EMIETicketsArch" />
+  </EntityType>
+  <EntityType Name="EMIEChangeType">
+    <Key>
+      <PropertyRef Name="ChangeTypeId" />
+    </Key>
+    <Property Name="ChangeTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChangeType" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="EMIETickets" Relationship="Self.FK_EMIETicketAprovals_ChangeType" FromRole="EMIEChangeType" ToRole="EMIETickets" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketArch_ChangeType" FromRole="EMIEChangeType" ToRole="EMIETicketsArch" />
+  </EntityType>
+  <EntityType Name="EMIEReasonForChange">
+    <Key>
+      <PropertyRef Name="ReasonForChangeId" />
+    </Key>
+    <Property Name="ReasonForChangeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReasonForChange" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="EMIETickets" Relationship="Self.FK_EMIETicketAprovals_ReasonForChange" FromRole="EMIEReasonForChange" ToRole="EMIETickets" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketArch_ReasonForChange" FromRole="EMIEReasonForChange" ToRole="EMIETicketsArch" />
+  </EntityType>
+  <EntityType Name="EMIETicket">
+    <Key>
+      <PropertyRef Name="TicketId" />
+    </Key>
+    <Property Name="TicketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="BPUId" Type="Int32" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ChangeTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ReasonForChangeId" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessImpact" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DocModeId" Type="Int32" />
+    <Property Name="X_UAMetaTage" Type="Boolean" />
+    <Property Name="X_UAMetaTageDetails" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="X_UAHonor" Type="Boolean" />
+    <Property Name="MultipleX_UA" Type="Boolean" />
+    <Property Name="ExternalFacingSite" Type="Boolean" />
+    <Property Name="FQDN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AppSiteLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FinalCRStatusId" Type="Int32" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Application" Relationship="Self.FK_EMIETickets_Applications" FromRole="EMIETickets" ToRole="Applications" />
+    <NavigationProperty Name="BPU" Relationship="Self.FK_EMIETicketAprovals_BPU" FromRole="EMIETickets" ToRole="BPU" />
+    <NavigationProperty Name="DocMode" Relationship="Self.FK_EMIETicketAprovals_DocMode" FromRole="EMIETickets" ToRole="DocModes" />
+    <NavigationProperty Name="EMIEChangeType" Relationship="Self.FK_EMIETicketAprovals_ChangeType" FromRole="EMIETickets" ToRole="EMIEChangeType" />
+    <NavigationProperty Name="EMIEReasonForChange" Relationship="Self.FK_EMIETicketAprovals_ReasonForChange" FromRole="EMIETickets" ToRole="EMIEReasonForChange" />
+    <NavigationProperty Name="EMIETicketStatu" Relationship="Self.FK_EMIETicket_TicketState" FromRole="EMIETickets" ToRole="EMIETicketStatus" />
+    <Property Name="ProductionDeployDateStart" Type="DateTime" Precision="0" />
+    <Property Name="ProductionDeployDateEnd" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="EMIETicketAprovals" Relationship="LOBMergedModel.FK_EMIETicketAprovals_EMIETickets" FromRole="EMIETicket" ToRole="EMIETicketAproval" />
+    <Property Name="SandBoxFailureComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionSuccessComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionFailureComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SubDomainSiteLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubDomainDocModeId" Type="Int32" />
+    <Property Name="SubDomainX_UAHonor" Type="Boolean" />
+    <NavigationProperty Name="DocMode2" Relationship="LOBMergedModel.FK_EMIETickets_SubDomainDocModes" FromRole="EMIETicket" ToRole="DocMode" />
+    <Property Name="DomainOpenInEdge" Type="Boolean" />
+    <Property Name="SubDomainOpenInEdge" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EMIETicketState">
+    <Key>
+      <PropertyRef Name="TicketStateId" />
+    </Key>
+    <Property Name="TicketStateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketState" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="EMIETicketAprovals" Relationship="LOBMergedModel.FK_EMIETicketAprovals_TicketState" FromRole="EMIETicketState" ToRole="EMIETicketAproval" />
+  </EntityType>
+  <EntityType Name="EMIETicketStatu">
+    <Key>
+      <PropertyRef Name="TicketStatusId" />
+    </Key>
+    <Property Name="TicketStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="EMIETickets" Relationship="Self.FK_EMIETicket_TicketState" FromRole="EMIETicketStatus" ToRole="EMIETickets" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketArch_TicketState" FromRole="EMIETicketStatu" ToRole="EMIETicketsArch" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Environment">
+    <Key>
+      <PropertyRef Name="EnvironmentId" />
+    </Key>
+    <Property Name="EnvironmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Environment1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AppUrlMappings" Relationship="Self.FK_AppUrlMapping_EnvironmentId" FromRole="Environment" ToRole="AppUrlMapping" />
+  </EntityType>
+  <EntityType Name="IssueType">
+    <Key>
+      <PropertyRef Name="IssueTypeId" />
+    </Key>
+    <Property Name="IssueTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IssueType1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TestResults" Relationship="Self.FK_TestResult_IssueType" FromRole="IssueType" ToRole="TestResult" />
+  </EntityType>
+  <EntityType Name="Logger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="LoggedOn" Type="DateTime" Precision="0" />
+    <Property Name="ActionMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NoOfUser">
+    <Key>
+      <PropertyRef Name="NoOfUsersId" />
+    </Key>
+    <Property Name="NoOfUsersId" Type="Int32" Nullable="false" />
+    <Property Name="NoOfUsers" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TestResults" Relationship="Self.FK_TestResult_NoOfUsers" FromRole="NoOfUsers" ToRole="TestResult" />
+  </EntityType>
+  <EntityType Name="ProjectCategory">
+    <Key>
+      <PropertyRef Name="ProjectCategoryId" />
+    </Key>
+    <Property Name="ProjectCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TestPasses" Relationship="Self.FK_TestPass_ProjectCategory" FromRole="ProjectCategory" ToRole="TestPass" />
+  </EntityType>
+  <EntityType Name="ResultType">
+    <Key>
+      <PropertyRef Name="ResultTypeId" />
+    </Key>
+    <Property Name="ResultTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResultType1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="SubResults" Relationship="Self.FK__SubResult__Resul__2CF2ADDF" FromRole="ResultType" ToRole="SubResult" />
+    <NavigationProperty Name="TestResults" Relationship="Self.FK_TestResult_ResultType" FromRole="ResultType" ToRole="TestResult" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="RoleDetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="RolePriority" Type="Int32" />
+    <Property Name="MandatoryApproval" Type="Boolean" />
+    <NavigationProperty Name="UserRoleBPUMappings" Relationship="LOBMergedModel.FK_UserRoleBPUMapping_Roles" FromRole="Role" ToRole="UserRoleBPUMapping" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Technology">
+    <Key>
+      <PropertyRef Name="TechnologyId" />
+    </Key>
+    <Property Name="TechnologyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TechnologyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TechnologyDetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="AppTechnologyMappings" Relationship="Self.FK_AppTechnologyMapping_Technology" FromRole="Technology" ToRole="AppTechnologyMapping" />
+    <NavigationProperty Name="TestPassTechnologyMappings" Relationship="Self.FK_TestPassTechnologyMapping_Technology" FromRole="Technology" ToRole="TestPassTechnologyMapping" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_Technology" FromRole="Technology" ToRole="TM_TelemetryData" />
+  </EntityType>
+  <EntityType Name="TestPass">
+    <Key>
+      <PropertyRef Name="TestPassId" />
+    </Key>
+    <Property Name="TestPassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestPassName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectCategoryId" Type="Int32" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="TestPassNameForReports" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeBuildNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="WindowsBuildNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProjectCategory" Relationship="Self.FK_TestPass_ProjectCategory" FromRole="TestPass" ToRole="ProjectCategory" />
+    <NavigationProperty Name="TestPassPrimSecMappings" Relationship="Self.FK_TestPassPrimSecMapping_TestPass" FromRole="TestPass" ToRole="TestPassPrimSecMapping" />
+    <NavigationProperty Name="TestPassTechnologyMappings" Relationship="Self.FK_TestPassTechnologyMapping_TestPass" FromRole="TestPass" ToRole="TestPassTechnologyMapping" />
+    <NavigationProperty Name="TestPassToTypeMappings" Relationship="Self.FK_TestPassToTypeMapping_TestPass" FromRole="TestPass" ToRole="TestPassToTypeMapping" />
+    <NavigationProperty Name="TestResults" Relationship="Self.FK_TestResult_TestPass" FromRole="TestPass" ToRole="TestResult" />
+  </EntityType>
+  <EntityType Name="TestPassPrimSecMapping">
+    <Key>
+      <PropertyRef Name="TestPassPrimSecCriteriaId" />
+    </Key>
+    <Property Name="TestPassPrimSecCriteriaId" Type="Int32" Nullable="false" />
+    <Property Name="TestPassId" Type="Int32" Nullable="false" />
+    <Property Name="PrimSecCriteriaId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TestPass" Relationship="Self.FK_TestPassPrimSecMapping_TestPass" FromRole="TestPassPrimSecMapping" ToRole="TestPass" />
+  </EntityType>
+  <EntityType Name="TestPassTechnologyMapping">
+    <Key>
+      <PropertyRef Name="TestPassTechnologyMappingId" />
+    </Key>
+    <Property Name="TestPassTechnologyMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestPassId" Type="Int32" Nullable="false" />
+    <Property Name="TechnologyId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Technology" Relationship="Self.FK_TestPassTechnologyMapping_Technology" FromRole="TestPassTechnologyMapping" ToRole="Technology" />
+    <NavigationProperty Name="TestPass" Relationship="Self.FK_TestPassTechnologyMapping_TestPass" FromRole="TestPassTechnologyMapping" ToRole="TestPass" />
+  </EntityType>
+  <EntityType Name="TestPassToTypeMapping">
+    <Key>
+      <PropertyRef Name="TestPassTypeMappingId" />
+    </Key>
+    <Property Name="TestPassTypeMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestPassId" Type="Int32" Nullable="false" />
+    <Property Name="TestPassTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TestPass" Relationship="Self.FK_TestPassToTypeMapping_TestPass" FromRole="TestPassToTypeMapping" ToRole="TestPass" />
+    <NavigationProperty Name="TestPassType" Relationship="Self.FK_TestPassToTypeMapping_TestPassType" FromRole="TestPassToTypeMapping" ToRole="TestPassType" />
+  </EntityType>
+  <EntityType Name="TestPassType">
+    <Key>
+      <PropertyRef Name="TestPassTypeId" />
+    </Key>
+    <Property Name="TestPassTypeId" Type="Int32" Nullable="false" />
+    <Property Name="TestPassType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TestPassToTypeMappings" Relationship="Self.FK_TestPassToTypeMapping_TestPassType" FromRole="TestPassType" ToRole="TestPassToTypeMapping" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRoleBPUMappings" Relationship="LOBMergedModel.FK_UserRoleBPUMapping_Users" FromRole="User" ToRole="UserRoleBPUMapping" />
+    <NavigationProperty Name="EMIETicketsArches" Relationship="LOBMergedModel.FK_EMIETicketsArch_Users" FromRole="User" ToRole="EMIETicketsArch" />
+    <NavigationProperty Name="Applications" Relationship="LOBMergedModel.FK_Applications_Users" FromRole="User" ToRole="Application" />
+  </EntityType>
+  <EntityType Name="PrimSecCriteria">
+    <Key>
+      <PropertyRef Name="PrimSecID" />
+    </Key>
+    <Property Name="PrimSecID" Type="Int32" Nullable="false" />
+    <Property Name="Criteria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SubResult">
+    <Key>
+      <PropertyRef Name="SubResultId" />
+    </Key>
+    <Property Name="SubResultId" Type="Int32" Nullable="false" />
+    <Property Name="SubResult1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ResultTypeId" Type="Int32" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="ResultType" Relationship="Self.FK__SubResult__Resul__2CF2ADDF" FromRole="SubResult" ToRole="ResultType" />
+  </EntityType>
+  <EntityType Name="TestResult">
+    <Key>
+      <PropertyRef Name="TestResultID" />
+    </Key>
+    <Property Name="TestResultID" Type="Int32" Nullable="false" />
+    <Property Name="AppId" Type="Int32" />
+    <Property Name="ResultTypeID" Type="Int32" />
+    <Property Name="BugIDS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="TestPassID" Type="Int32" />
+    <Property Name="Windows" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Web" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Office" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IssueTypeID" Type="Int32" />
+    <Property Name="IEResult" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ChromeResult" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NoOfUsersID" Type="Int32" />
+    <Property Name="MS_EdgeResultID" Type="Int32" />
+    <Property Name="Win10ClassicIEResultID" Type="Int32" />
+    <Property Name="Win8_1IEResultID" Type="Int32" />
+    <Property Name="SubResultID" Type="Int32" />
+    <Property Name="DeviceID" Type="Int32" />
+    <Property Name="BrowserID" Type="Int32" />
+    <Property Name="TesterName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ApptypeID" Type="Int32" />
+    <Property Name="Desktop_StoreResultID" Type="Int32" />
+    <Property Name="Office16ResultID" Type="Int32" />
+    <Property Name="Desktop_StoreSubResultID" Type="Int32" />
+    <Property Name="Office16SubResultID" Type="Int32" />
+    <NavigationProperty Name="AppType" Relationship="Self.FK_TestResult_AppType" FromRole="TestResult" ToRole="AppType" />
+    <NavigationProperty Name="IssueType" Relationship="Self.FK_TestResult_IssueType" FromRole="TestResult" ToRole="IssueType" />
+    <NavigationProperty Name="NoOfUser" Relationship="Self.FK_TestResult_NoOfUsers" FromRole="TestResult" ToRole="NoOfUsers" />
+    <NavigationProperty Name="ResultType" Relationship="Self.FK_TestResult_ResultType" FromRole="TestResult" ToRole="ResultType" />
+    <NavigationProperty Name="TestPass" Relationship="Self.FK_TestResult_TestPass" FromRole="TestResult" ToRole="TestPass" />
+    <Property Name="TestedDate" Type="DateTime" Precision="0" />
+    <Property Name="CTID" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_ApplicationAppTypeMapping_Applications">
+    <End Role="Applications" Type="Self.Application" Multiplicity="1" />
+    <End Role="ApplicationAppTypeMapping" Type="Self.ApplicationAppTypeMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="ApplicationAppTypeMapping">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationAppTypeMapping_AppType">
+    <End Role="AppType" Type="Self.AppType" Multiplicity="1" />
+    <End Role="ApplicationAppTypeMapping" Type="Self.ApplicationAppTypeMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppType">
+        <PropertyRef Name="AppTypeId" />
+      </Principal>
+      <Dependent Role="ApplicationAppTypeMapping">
+        <PropertyRef Name="AppTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationDetails_Applications">
+    <End Role="Applications" Type="Self.Application" Multiplicity="1" />
+    <End Role="ApplicationDetails" Type="Self.ApplicationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="ApplicationDetails">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_BPU">
+    <End Role="BPU" Type="Self.BPU" Multiplicity="0..1" />
+    <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BPU">
+        <PropertyRef Name="BPUId" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="BPUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppOnboardDetails_Applications">
+    <End Role="Applications" Type="Self.Application" Multiplicity="1" />
+    <End Role="AppOnboardDetails" Type="Self.AppOnboardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="AppOnboardDetails">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppTechnologyMapping_Applications">
+    <End Role="Applications" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="AppTechnologyMapping" Type="Self.AppTechnologyMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="AppTechnologyMapping">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUrlMapping_Applications">
+    <End Role="Applications" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="AppUrlMapping" Type="Self.AppUrlMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="AppUrlMapping">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETickets_Applications">
+    <End Role="Applications" Type="Self.Application" Multiplicity="1" />
+    <End Role="EMIETickets" Type="Self.EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="EMIETickets">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppOnboardDetails_BPU">
+    <End Role="BPU" Type="Self.BPU" Multiplicity="0..1" />
+    <End Role="AppOnboardDetails" Type="Self.AppOnboardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BPU">
+        <PropertyRef Name="BPUId" />
+      </Principal>
+      <Dependent Role="AppOnboardDetails">
+        <PropertyRef Name="BPUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppTechnologyMapping_Technology">
+    <End Role="Technology" Type="Self.Technology" Multiplicity="0..1" />
+    <End Role="AppTechnologyMapping" Type="Self.AppTechnologyMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Technology">
+        <PropertyRef Name="TechnologyId" />
+      </Principal>
+      <Dependent Role="AppTechnologyMapping">
+        <PropertyRef Name="TechnologyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestResult_AppType">
+    <End Role="AppType" Type="Self.AppType" Multiplicity="0..1" />
+    <End Role="TestResult" Type="Self.TestResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppType">
+        <PropertyRef Name="AppTypeId" />
+      </Principal>
+      <Dependent Role="TestResult">
+        <PropertyRef Name="ApptypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUrlMapping_EnvironmentId">
+    <End Role="Environment" Type="Self.Environment" Multiplicity="0..1" />
+    <End Role="AppUrlMapping" Type="Self.AppUrlMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Environment">
+        <PropertyRef Name="EnvironmentId" />
+      </Principal>
+      <Dependent Role="AppUrlMapping">
+        <PropertyRef Name="EnvironmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketAprovals_BPU">
+    <End Role="BPU" Type="Self.BPU" Multiplicity="0..1" />
+    <End Role="EMIETickets" Type="Self.EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BPU">
+        <PropertyRef Name="BPUId" />
+      </Principal>
+      <Dependent Role="EMIETickets">
+        <PropertyRef Name="BPUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketAprovals_DocMode">
+    <End Role="DocModes" Type="Self.DocMode" Multiplicity="0..1" />
+    <End Role="EMIETickets" Type="Self.EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocModes">
+        <PropertyRef Name="DocModeId" />
+      </Principal>
+      <Dependent Role="EMIETickets">
+        <PropertyRef Name="DocModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketAprovals_ChangeType">
+    <End Role="EMIEChangeType" Type="Self.EMIEChangeType" Multiplicity="1" />
+    <End Role="EMIETickets" Type="Self.EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIEChangeType">
+        <PropertyRef Name="ChangeTypeId" />
+      </Principal>
+      <Dependent Role="EMIETickets">
+        <PropertyRef Name="ChangeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketAprovals_ReasonForChange">
+    <End Role="EMIEReasonForChange" Type="Self.EMIEReasonForChange" Multiplicity="0..1" />
+    <End Role="EMIETickets" Type="Self.EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIEReasonForChange">
+        <PropertyRef Name="ReasonForChangeId" />
+      </Principal>
+      <Dependent Role="EMIETickets">
+        <PropertyRef Name="ReasonForChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicket_TicketState">
+    <End Role="EMIETicketStatus" Type="Self.EMIETicketStatu" Multiplicity="0..1" />
+    <End Role="EMIETickets" Type="Self.EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIETicketStatus">
+        <PropertyRef Name="TicketStatusId" />
+      </Principal>
+      <Dependent Role="EMIETickets">
+        <PropertyRef Name="FinalCRStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestResult_IssueType">
+    <End Role="IssueType" Type="Self.IssueType" Multiplicity="0..1" />
+    <End Role="TestResult" Type="Self.TestResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IssueType">
+        <PropertyRef Name="IssueTypeId" />
+      </Principal>
+      <Dependent Role="TestResult">
+        <PropertyRef Name="IssueTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestResult_NoOfUsers">
+    <End Role="NoOfUsers" Type="Self.NoOfUser" Multiplicity="0..1" />
+    <End Role="TestResult" Type="Self.TestResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NoOfUsers">
+        <PropertyRef Name="NoOfUsersId" />
+      </Principal>
+      <Dependent Role="TestResult">
+        <PropertyRef Name="NoOfUsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPass_ProjectCategory">
+    <End Role="ProjectCategory" Type="Self.ProjectCategory" Multiplicity="0..1" />
+    <End Role="TestPass" Type="Self.TestPass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectCategory">
+        <PropertyRef Name="ProjectCategoryId" />
+      </Principal>
+      <Dependent Role="TestPass">
+        <PropertyRef Name="ProjectCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubResult__Resul__2CF2ADDF">
+    <End Role="ResultType" Type="Self.ResultType" Multiplicity="0..1" />
+    <End Role="SubResult" Type="Self.SubResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResultType">
+        <PropertyRef Name="ResultTypeId" />
+      </Principal>
+      <Dependent Role="SubResult">
+        <PropertyRef Name="ResultTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestResult_ResultType">
+    <End Role="ResultType" Type="Self.ResultType" Multiplicity="0..1" />
+    <End Role="TestResult" Type="Self.TestResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResultType">
+        <PropertyRef Name="ResultTypeId" />
+      </Principal>
+      <Dependent Role="TestResult">
+        <PropertyRef Name="ResultTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPassTechnologyMapping_Technology">
+    <End Role="Technology" Type="Self.Technology" Multiplicity="1" />
+    <End Role="TestPassTechnologyMapping" Type="Self.TestPassTechnologyMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Technology">
+        <PropertyRef Name="TechnologyId" />
+      </Principal>
+      <Dependent Role="TestPassTechnologyMapping">
+        <PropertyRef Name="TechnologyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPassPrimSecMapping_TestPass">
+    <End Role="TestPass" Type="Self.TestPass" Multiplicity="1" />
+    <End Role="TestPassPrimSecMapping" Type="Self.TestPassPrimSecMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPass">
+        <PropertyRef Name="TestPassId" />
+      </Principal>
+      <Dependent Role="TestPassPrimSecMapping">
+        <PropertyRef Name="TestPassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPassTechnologyMapping_TestPass">
+    <End Role="TestPass" Type="Self.TestPass" Multiplicity="1" />
+    <End Role="TestPassTechnologyMapping" Type="Self.TestPassTechnologyMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPass">
+        <PropertyRef Name="TestPassId" />
+      </Principal>
+      <Dependent Role="TestPassTechnologyMapping">
+        <PropertyRef Name="TestPassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPassToTypeMapping_TestPass">
+    <End Role="TestPass" Type="Self.TestPass" Multiplicity="1" />
+    <End Role="TestPassToTypeMapping" Type="Self.TestPassToTypeMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPass">
+        <PropertyRef Name="TestPassId" />
+      </Principal>
+      <Dependent Role="TestPassToTypeMapping">
+        <PropertyRef Name="TestPassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestResult_TestPass">
+    <End Role="TestPass" Type="Self.TestPass" Multiplicity="0..1" />
+    <End Role="TestResult" Type="Self.TestResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPass">
+        <PropertyRef Name="TestPassId" />
+      </Principal>
+      <Dependent Role="TestResult">
+        <PropertyRef Name="TestPassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestPassToTypeMapping_TestPassType">
+    <End Role="TestPassType" Type="Self.TestPassType" Multiplicity="1" />
+    <End Role="TestPassToTypeMapping" Type="Self.TestPassToTypeMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestPassType">
+        <PropertyRef Name="TestPassTypeId" />
+      </Principal>
+      <Dependent Role="TestPassToTypeMapping">
+        <PropertyRef Name="TestPassTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LOBMergedEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ApplicationAppTypeMappings" EntityType="Self.ApplicationAppTypeMapping" />
+    <EntitySet Name="ApplicationDetails" EntityType="Self.ApplicationDetail" />
+    <EntitySet Name="Applications" EntityType="Self.Application" />
+    <EntitySet Name="ApplicationStates" EntityType="Self.ApplicationState" />
+    <EntitySet Name="AppOnboardDetails" EntityType="Self.AppOnboardDetail" />
+    <EntitySet Name="AppTechnologyMappings" EntityType="Self.AppTechnologyMapping" />
+    <EntitySet Name="AppTypes" EntityType="Self.AppType" />
+    <EntitySet Name="AppUrlMappings" EntityType="Self.AppUrlMapping" />
+    <EntitySet Name="BPUs" EntityType="Self.BPU" />
+    <EntitySet Name="DemoSchedulers" EntityType="Self.DemoScheduler" />
+    <EntitySet Name="DocModes" EntityType="Self.DocMode" />
+    <EntitySet Name="EMIEChangeTypes" EntityType="Self.EMIEChangeType" />
+    <EntitySet Name="EMIEReasonForChanges" EntityType="Self.EMIEReasonForChange" />
+    <EntitySet Name="EMIETickets" EntityType="Self.EMIETicket" />
+    <EntitySet Name="EMIETicketStates" EntityType="Self.EMIETicketState" />
+    <EntitySet Name="EMIETicketStatus" EntityType="Self.EMIETicketStatu" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Environments" EntityType="Self.Environment" />
+    <EntitySet Name="IssueTypes" EntityType="Self.IssueType" />
+    <EntitySet Name="Loggers" EntityType="Self.Logger" />
+    <EntitySet Name="NoOfUsers" EntityType="Self.NoOfUser" />
+    <EntitySet Name="ProjectCategories" EntityType="Self.ProjectCategory" />
+    <EntitySet Name="ResultTypes" EntityType="Self.ResultType" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Technologies" EntityType="Self.Technology" />
+    <EntitySet Name="TestPasses" EntityType="Self.TestPass" />
+    <EntitySet Name="TestPassPrimSecMappings" EntityType="Self.TestPassPrimSecMapping" />
+    <EntitySet Name="TestPassTechnologyMappings" EntityType="Self.TestPassTechnologyMapping" />
+    <EntitySet Name="TestPassToTypeMappings" EntityType="Self.TestPassToTypeMapping" />
+    <EntitySet Name="TestPassTypes" EntityType="Self.TestPassType" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="PrimSecCriterias" EntityType="Self.PrimSecCriteria" />
+    <EntitySet Name="SubResults" EntityType="Self.SubResult" />
+    <EntitySet Name="TestResults" EntityType="Self.TestResult" />
+    <AssociationSet Name="FK_ApplicationAppTypeMapping_Applications" Association="Self.FK_ApplicationAppTypeMapping_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ApplicationAppTypeMapping" EntitySet="ApplicationAppTypeMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationAppTypeMapping_AppType" Association="Self.FK_ApplicationAppTypeMapping_AppType">
+      <End Role="AppType" EntitySet="AppTypes" />
+      <End Role="ApplicationAppTypeMapping" EntitySet="ApplicationAppTypeMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationDetails_Applications" Association="Self.FK_ApplicationDetails_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ApplicationDetails" EntitySet="ApplicationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_BPU" Association="Self.FK_Applications_BPU">
+      <End Role="BPU" EntitySet="BPUs" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppOnboardDetails_Applications" Association="Self.FK_AppOnboardDetails_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="AppOnboardDetails" EntitySet="AppOnboardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppTechnologyMapping_Applications" Association="Self.FK_AppTechnologyMapping_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="AppTechnologyMapping" EntitySet="AppTechnologyMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUrlMapping_Applications" Association="Self.FK_AppUrlMapping_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="AppUrlMapping" EntitySet="AppUrlMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETickets_Applications" Association="Self.FK_EMIETickets_Applications">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="EMIETickets" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppOnboardDetails_BPU" Association="Self.FK_AppOnboardDetails_BPU">
+      <End Role="BPU" EntitySet="BPUs" />
+      <End Role="AppOnboardDetails" EntitySet="AppOnboardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppTechnologyMapping_Technology" Association="Self.FK_AppTechnologyMapping_Technology">
+      <End Role="Technology" EntitySet="Technologies" />
+      <End Role="AppTechnologyMapping" EntitySet="AppTechnologyMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestResult_AppType" Association="Self.FK_TestResult_AppType">
+      <End Role="AppType" EntitySet="AppTypes" />
+      <End Role="TestResult" EntitySet="TestResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUrlMapping_EnvironmentId" Association="Self.FK_AppUrlMapping_EnvironmentId">
+      <End Role="Environment" EntitySet="Environments" />
+      <End Role="AppUrlMapping" EntitySet="AppUrlMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketAprovals_BPU" Association="Self.FK_EMIETicketAprovals_BPU">
+      <End Role="BPU" EntitySet="BPUs" />
+      <End Role="EMIETickets" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketAprovals_DocMode" Association="Self.FK_EMIETicketAprovals_DocMode">
+      <End Role="DocModes" EntitySet="DocModes" />
+      <End Role="EMIETickets" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketAprovals_ChangeType" Association="Self.FK_EMIETicketAprovals_ChangeType">
+      <End Role="EMIEChangeType" EntitySet="EMIEChangeTypes" />
+      <End Role="EMIETickets" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketAprovals_ReasonForChange" Association="Self.FK_EMIETicketAprovals_ReasonForChange">
+      <End Role="EMIEReasonForChange" EntitySet="EMIEReasonForChanges" />
+      <End Role="EMIETickets" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicket_TicketState" Association="Self.FK_EMIETicket_TicketState">
+      <End Role="EMIETicketStatus" EntitySet="EMIETicketStatus" />
+      <End Role="EMIETickets" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestResult_IssueType" Association="Self.FK_TestResult_IssueType">
+      <End Role="IssueType" EntitySet="IssueTypes" />
+      <End Role="TestResult" EntitySet="TestResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestResult_NoOfUsers" Association="Self.FK_TestResult_NoOfUsers">
+      <End Role="NoOfUsers" EntitySet="NoOfUsers" />
+      <End Role="TestResult" EntitySet="TestResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPass_ProjectCategory" Association="Self.FK_TestPass_ProjectCategory">
+      <End Role="ProjectCategory" EntitySet="ProjectCategories" />
+      <End Role="TestPass" EntitySet="TestPasses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubResult__Resul__2CF2ADDF" Association="Self.FK__SubResult__Resul__2CF2ADDF">
+      <End Role="ResultType" EntitySet="ResultTypes" />
+      <End Role="SubResult" EntitySet="SubResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestResult_ResultType" Association="Self.FK_TestResult_ResultType">
+      <End Role="ResultType" EntitySet="ResultTypes" />
+      <End Role="TestResult" EntitySet="TestResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPassTechnologyMapping_Technology" Association="Self.FK_TestPassTechnologyMapping_Technology">
+      <End Role="Technology" EntitySet="Technologies" />
+      <End Role="TestPassTechnologyMapping" EntitySet="TestPassTechnologyMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPassPrimSecMapping_TestPass" Association="Self.FK_TestPassPrimSecMapping_TestPass">
+      <End Role="TestPass" EntitySet="TestPasses" />
+      <End Role="TestPassPrimSecMapping" EntitySet="TestPassPrimSecMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPassTechnologyMapping_TestPass" Association="Self.FK_TestPassTechnologyMapping_TestPass">
+      <End Role="TestPass" EntitySet="TestPasses" />
+      <End Role="TestPassTechnologyMapping" EntitySet="TestPassTechnologyMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPassToTypeMapping_TestPass" Association="Self.FK_TestPassToTypeMapping_TestPass">
+      <End Role="TestPass" EntitySet="TestPasses" />
+      <End Role="TestPassToTypeMapping" EntitySet="TestPassToTypeMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestResult_TestPass" Association="Self.FK_TestResult_TestPass">
+      <End Role="TestPass" EntitySet="TestPasses" />
+      <End Role="TestResult" EntitySet="TestResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestPassToTypeMapping_TestPassType" Association="Self.FK_TestPassToTypeMapping_TestPassType">
+      <End Role="TestPassType" EntitySet="TestPassTypes" />
+      <End Role="TestPassToTypeMapping" EntitySet="TestPassToTypeMappings" />
+    </AssociationSet>
+    <EntitySet Name="Devices" EntityType="LOBMergedModel.Device" />
+    <EntitySet Name="TM_APIDetails" EntityType="LOBMergedModel.TM_APIDetails" />
+    <EntitySet Name="TM_BrowserStateReason" EntityType="LOBMergedModel.TM_BrowserStateReason" />
+    <EntitySet Name="TM_DocModeReason" EntityType="LOBMergedModel.TM_DocModeReason" />
+    <EntitySet Name="TM_Domain" EntityType="LOBMergedModel.TM_Domain" />
+    <EntitySet Name="TM_TelemetryData" EntityType="LOBMergedModel.TM_TelemetryData" />
+    <AssociationSet Name="FK_TM_TelemetryData_Applications" Association="LOBMergedModel.FK_TM_TelemetryData_Applications">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_DocMode" Association="LOBMergedModel.FK_TM_TelemetryData_DocMode">
+      <End Role="DocMode" EntitySet="DocModes" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_Technology" Association="LOBMergedModel.FK_TM_TelemetryData_Technology">
+      <End Role="Technology" EntitySet="Technologies" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_DeprecatedAPIId" Association="LOBMergedModel.FK_TM_TelemetryData_DeprecatedAPIId">
+      <End Role="TM_APIDetails" EntitySet="TM_APIDetails" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_SupportedAPI" Association="LOBMergedModel.FK_TM_TelemetryData_SupportedAPI">
+      <End Role="TM_APIDetails" EntitySet="TM_APIDetails" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_BrowserStateReason" Association="LOBMergedModel.FK_TM_TelemetryData_BrowserStateReason">
+      <End Role="TM_BrowserStateReason" EntitySet="TM_BrowserStateReason" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_DocModeReason" Association="LOBMergedModel.FK_TM_TelemetryData_DocModeReason">
+      <End Role="TM_DocModeReason" EntitySet="TM_DocModeReason" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TM_TelemetryData_Domain" Association="LOBMergedModel.FK_TM_TelemetryData_Domain">
+      <End Role="TM_Domain" EntitySet="TM_Domain" />
+      <End Role="TM_TelemetryData" EntitySet="TM_TelemetryData" />
+    </AssociationSet>
+    <EntitySet Name="UserRoleBPUMappings" EntityType="LOBMergedModel.UserRoleBPUMapping" />
+    <AssociationSet Name="FK_UserRoleBPUMapping_BPU" Association="LOBMergedModel.FK_UserRoleBPUMapping_BPU">
+      <End Role="BPU" EntitySet="BPUs" />
+      <End Role="UserRoleBPUMapping" EntitySet="UserRoleBPUMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleBPUMapping_Roles" Association="LOBMergedModel.FK_UserRoleBPUMapping_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRoleBPUMapping" EntitySet="UserRoleBPUMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleBPUMapping_Users" Association="LOBMergedModel.FK_UserRoleBPUMapping_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRoleBPUMapping" EntitySet="UserRoleBPUMappings" />
+    </AssociationSet>
+    <EntitySet Name="EMIETicketAprovals" EntityType="LOBMergedModel.EMIETicketAproval" />
+    <AssociationSet Name="FK_EMIETicketAprovals_EMIETickets" Association="LOBMergedModel.FK_EMIETicketAprovals_EMIETickets">
+      <End Role="EMIETicket" EntitySet="EMIETickets" />
+      <End Role="EMIETicketAproval" EntitySet="EMIETicketAprovals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketAprovals_TicketState" Association="LOBMergedModel.FK_EMIETicketAprovals_TicketState">
+      <End Role="EMIETicketState" EntitySet="EMIETicketStates" />
+      <End Role="EMIETicketAproval" EntitySet="EMIETicketAprovals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketAprovals_UserRoleBPUMapping" Association="LOBMergedModel.FK_EMIETicketAprovals_UserRoleBPUMapping">
+      <End Role="UserRoleBPUMapping" EntitySet="UserRoleBPUMappings" />
+      <End Role="EMIETicketAproval" EntitySet="EMIETicketAprovals" />
+    </AssociationSet>
+    <EntitySet Name="EMIETicketsArches" EntityType="LOBMergedModel.EMIETicketsArch" />
+    <AssociationSet Name="FK_EMIETicketsArch_Applications" Association="LOBMergedModel.FK_EMIETicketsArch_Applications">
+      <End Role="Application" EntitySet="Applications" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketArch_BPU" Association="LOBMergedModel.FK_EMIETicketArch_BPU">
+      <End Role="BPU" EntitySet="BPUs" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketArch_DocMode" Association="LOBMergedModel.FK_EMIETicketArch_DocMode">
+      <End Role="DocMode" EntitySet="DocModes" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketArch_ChangeType" Association="LOBMergedModel.FK_EMIETicketArch_ChangeType">
+      <End Role="EMIEChangeType" EntitySet="EMIEChangeTypes" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketArch_ReasonForChange" Association="LOBMergedModel.FK_EMIETicketArch_ReasonForChange">
+      <End Role="EMIEReasonForChange" EntitySet="EMIEReasonForChanges" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketArch_TicketState" Association="LOBMergedModel.FK_EMIETicketArch_TicketState">
+      <End Role="EMIETicketStatu" EntitySet="EMIETicketStatus" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketsArch_Users" Association="LOBMergedModel.FK_EMIETicketsArch_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <EntitySet Name="EMIEConfigurations" EntityType="LOBMergedModel.EMIEConfiguration" />
+    <AssociationSet Name="FK_EMIETickets_SubDomainDocModes" Association="LOBMergedModel.FK_EMIETickets_SubDomainDocModes">
+      <End Role="DocMode" EntitySet="DocModes" />
+      <End Role="EMIETicket" EntitySet="EMIETickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMIETicketsArch_SubDomainDocModes" Association="LOBMergedModel.FK_EMIETicketsArch_SubDomainDocModes">
+      <End Role="DocMode" EntitySet="DocModes" />
+      <End Role="EMIETicketsArch" EntitySet="EMIETicketsArches" />
+    </AssociationSet>
+    <EntitySet Name="EMIEConfigurationSettings" EntityType="LOBMergedModel.EMIEConfigurationSetting" />
+    <AssociationSet Name="FK_Applications_Users" Association="LOBMergedModel.FK_Applications_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="DeviceId" />
+    </Key>
+    <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceOS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultBrowserId" Type="Int32" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TM_APIDetails">
+    <Key>
+      <PropertyRef Name="APIId" />
+    </Key>
+    <Property Name="APIId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="APIName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="APIDetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsObsolute" Type="Boolean" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_DeprecatedAPIId" FromRole="TM_APIDetails" ToRole="TM_TelemetryData" />
+    <NavigationProperty Name="TM_TelemetryData1" Relationship="LOBMergedModel.FK_TM_TelemetryData_SupportedAPI" FromRole="TM_APIDetails" ToRole="TM_TelemetryData" />
+  </EntityType>
+  <EntityType Name="TM_BrowserStateReason">
+    <Key>
+      <PropertyRef Name="BrowserStateReasonID" />
+    </Key>
+    <Property Name="BrowserStateReasonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrowserStateReason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_BrowserStateReason" FromRole="TM_BrowserStateReason" ToRole="TM_TelemetryData" />
+  </EntityType>
+  <EntityType Name="TM_DocModeReason">
+    <Key>
+      <PropertyRef Name="DocModeReasonID" />
+    </Key>
+    <Property Name="DocModeReasonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocModeReason" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_DocModeReason" FromRole="TM_DocModeReason" ToRole="TM_TelemetryData" />
+  </EntityType>
+  <EntityType Name="TM_Domain">
+    <Key>
+      <PropertyRef Name="DomainId" />
+    </Key>
+    <Property Name="DomainId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DomainName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DomainDetails" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="TM_TelemetryData" Relationship="LOBMergedModel.FK_TM_TelemetryData_Domain" FromRole="TM_Domain" ToRole="TM_TelemetryData" />
+  </EntityType>
+  <EntityType Name="TM_TelemetryData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="TechnologyId" Type="Int32" Nullable="false" />
+    <Property Name="ActiveXGuid" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DomainId" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DocModeId" Type="Int32" Nullable="false" />
+    <Property Name="DocModeReasonId" Type="Int32" Nullable="false" />
+    <Property Name="BrowserStateReasonId" Type="Int32" Nullable="false" />
+    <Property Name="CrashCount" Type="Int32" Nullable="false" />
+    <Property Name="HangCount" Type="Int32" Nullable="false" />
+    <Property Name="Extension" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SupportedAPIId" Type="Int32" Nullable="false" />
+    <Property Name="DeprecatedAPIId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Application" Relationship="LOBMergedModel.FK_TM_TelemetryData_Applications" FromRole="TM_TelemetryData" ToRole="Application" />
+    <NavigationProperty Name="DocMode" Relationship="LOBMergedModel.FK_TM_TelemetryData_DocMode" FromRole="TM_TelemetryData" ToRole="DocMode" />
+    <NavigationProperty Name="Technology" Relationship="LOBMergedModel.FK_TM_TelemetryData_Technology" FromRole="TM_TelemetryData" ToRole="Technology" />
+    <NavigationProperty Name="TM_APIDetails" Relationship="LOBMergedModel.FK_TM_TelemetryData_DeprecatedAPIId" FromRole="TM_TelemetryData" ToRole="TM_APIDetails" />
+    <NavigationProperty Name="TM_APIDetails1" Relationship="LOBMergedModel.FK_TM_TelemetryData_SupportedAPI" FromRole="TM_TelemetryData" ToRole="TM_APIDetails" />
+    <NavigationProperty Name="TM_BrowserStateReason" Relationship="LOBMergedModel.FK_TM_TelemetryData_BrowserStateReason" FromRole="TM_TelemetryData" ToRole="TM_BrowserStateReason" />
+    <NavigationProperty Name="TM_DocModeReason" Relationship="LOBMergedModel.FK_TM_TelemetryData_DocModeReason" FromRole="TM_TelemetryData" ToRole="TM_DocModeReason" />
+    <NavigationProperty Name="TM_Domain" Relationship="LOBMergedModel.FK_TM_TelemetryData_Domain" FromRole="TM_TelemetryData" ToRole="TM_Domain" />
+  </EntityType>
+  <Association Name="FK_TM_TelemetryData_Applications">
+    <End Type="LOBMergedModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_DocMode">
+    <End Type="LOBMergedModel.DocMode" Role="DocMode" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocMode">
+        <PropertyRef Name="DocModeId" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="DocModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_Technology">
+    <End Type="LOBMergedModel.Technology" Role="Technology" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Technology">
+        <PropertyRef Name="TechnologyId" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="TechnologyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_DeprecatedAPIId">
+    <End Type="LOBMergedModel.TM_APIDetails" Role="TM_APIDetails" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TM_APIDetails">
+        <PropertyRef Name="APIId" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="DeprecatedAPIId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_SupportedAPI">
+    <End Type="LOBMergedModel.TM_APIDetails" Role="TM_APIDetails" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TM_APIDetails">
+        <PropertyRef Name="APIId" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="SupportedAPIId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_BrowserStateReason">
+    <End Type="LOBMergedModel.TM_BrowserStateReason" Role="TM_BrowserStateReason" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TM_BrowserStateReason">
+        <PropertyRef Name="BrowserStateReasonID" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="BrowserStateReasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_DocModeReason">
+    <End Type="LOBMergedModel.TM_DocModeReason" Role="TM_DocModeReason" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TM_DocModeReason">
+        <PropertyRef Name="DocModeReasonID" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="DocModeReasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TM_TelemetryData_Domain">
+    <End Type="LOBMergedModel.TM_Domain" Role="TM_Domain" Multiplicity="1" />
+    <End Type="LOBMergedModel.TM_TelemetryData" Role="TM_TelemetryData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TM_Domain">
+        <PropertyRef Name="DomainId" />
+      </Principal>
+      <Dependent Role="TM_TelemetryData">
+        <PropertyRef Name="DomainId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserRoleBPUMapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="BPUId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="MappingDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="BPU" Relationship="LOBMergedModel.FK_UserRoleBPUMapping_BPU" FromRole="UserRoleBPUMapping" ToRole="BPU" />
+    <NavigationProperty Name="Role" Relationship="LOBMergedModel.FK_UserRoleBPUMapping_Roles" FromRole="UserRoleBPUMapping" ToRole="Role" />
+    <NavigationProperty Name="User" Relationship="LOBMergedModel.FK_UserRoleBPUMapping_Users" FromRole="UserRoleBPUMapping" ToRole="User" />
+    <NavigationProperty Name="EMIETicketAprovals" Relationship="LOBMergedModel.FK_EMIETicketAprovals_UserRoleBPUMapping" FromRole="UserRoleBPUMapping" ToRole="EMIETicketAproval" />
+    <Property Name="IsRegistered" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_UserRoleBPUMapping_BPU">
+    <End Type="LOBMergedModel.BPU" Role="BPU" Multiplicity="1" />
+    <End Type="LOBMergedModel.UserRoleBPUMapping" Role="UserRoleBPUMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BPU">
+        <PropertyRef Name="BPUId" />
+      </Principal>
+      <Dependent Role="UserRoleBPUMapping">
+        <PropertyRef Name="BPUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleBPUMapping_Roles">
+    <End Type="LOBMergedModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="LOBMergedModel.UserRoleBPUMapping" Role="UserRoleBPUMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserRoleBPUMapping">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleBPUMapping_Users">
+    <End Type="LOBMergedModel.User" Role="User" Multiplicity="1" />
+    <End Type="LOBMergedModel.UserRoleBPUMapping" Role="UserRoleBPUMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserRoleBPUMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EMIETicketAproval">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketId" Type="Int32" Nullable="false" />
+    <Property Name="UserRoleBPUMappingId" Type="Int32" />
+    <Property Name="ApproverComments" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="TicketStateId" Type="Int32" />
+    <Property Name="NoOfReminders" Type="Int32" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="EMIETicket" Relationship="LOBMergedModel.FK_EMIETicketAprovals_EMIETickets" FromRole="EMIETicketAproval" ToRole="EMIETicket" />
+    <NavigationProperty Name="EMIETicketState" Relationship="LOBMergedModel.FK_EMIETicketAprovals_TicketState" FromRole="EMIETicketAproval" ToRole="EMIETicketState" />
+    <NavigationProperty Name="UserRoleBPUMapping" Relationship="LOBMergedModel.FK_EMIETicketAprovals_UserRoleBPUMapping" FromRole="EMIETicketAproval" ToRole="UserRoleBPUMapping" />
+  </EntityType>
+  <Association Name="FK_EMIETicketAprovals_EMIETickets">
+    <End Type="LOBMergedModel.EMIETicket" Role="EMIETicket" Multiplicity="1" />
+    <End Type="LOBMergedModel.EMIETicketAproval" Role="EMIETicketAproval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIETicket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="EMIETicketAproval">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketAprovals_TicketState">
+    <End Type="LOBMergedModel.EMIETicketState" Role="EMIETicketState" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketAproval" Role="EMIETicketAproval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIETicketState">
+        <PropertyRef Name="TicketStateId" />
+      </Principal>
+      <Dependent Role="EMIETicketAproval">
+        <PropertyRef Name="TicketStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketAprovals_UserRoleBPUMapping">
+    <End Type="LOBMergedModel.UserRoleBPUMapping" Role="UserRoleBPUMapping" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketAproval" Role="EMIETicketAproval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoleBPUMapping">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMIETicketAproval">
+        <PropertyRef Name="UserRoleBPUMappingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EMIETicketsArch">
+    <Key>
+      <PropertyRef Name="TicketId" />
+    </Key>
+    <Property Name="TicketId" Type="Int32" Nullable="false" />
+    <Property Name="AppId" Type="Int32" Nullable="false" />
+    <Property Name="BPUId" Type="Int32" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ChangeTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ReasonForChangeId" Type="Int32" />
+    <Property Name="Comments" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessImpact" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DocModeId" Type="Int32" />
+    <Property Name="X_UAMetaTage" Type="Boolean" />
+    <Property Name="X_UAMetaTageDetails" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="X_UAHonor" Type="Boolean" />
+    <Property Name="MultipleX_UA" Type="Boolean" />
+    <Property Name="ExternalFacingSite" Type="Boolean" />
+    <Property Name="FQDN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AppSiteLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FinalCRStatusId" Type="Int32" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="ProductionDeployDateStart" Type="DateTime" Precision="0" />
+    <Property Name="ProductionDeployDateEnd" Type="DateTime" Precision="0" />
+    <Property Name="SandBoxFailureComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionSuccessComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionFailureComments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SandboxRollback" Type="Boolean" />
+    <Property Name="ProductionRollback" Type="Boolean" />
+    <NavigationProperty Name="Application" Relationship="LOBMergedModel.FK_EMIETicketsArch_Applications" FromRole="EMIETicketsArch" ToRole="Application" />
+    <NavigationProperty Name="BPU" Relationship="LOBMergedModel.FK_EMIETicketArch_BPU" FromRole="EMIETicketsArch" ToRole="BPU" />
+    <NavigationProperty Name="DocMode" Relationship="LOBMergedModel.FK_EMIETicketArch_DocMode" FromRole="EMIETicketsArch" ToRole="DocMode" />
+    <NavigationProperty Name="EMIEChangeType" Relationship="LOBMergedModel.FK_EMIETicketArch_ChangeType" FromRole="EMIETicketsArch" ToRole="EMIEChangeType" />
+    <NavigationProperty Name="EMIEReasonForChange" Relationship="LOBMergedModel.FK_EMIETicketArch_ReasonForChange" FromRole="EMIETicketsArch" ToRole="EMIEReasonForChange" />
+    <NavigationProperty Name="EMIETicketStatu" Relationship="LOBMergedModel.FK_EMIETicketArch_TicketState" FromRole="EMIETicketsArch" ToRole="EMIETicketStatu" />
+    <NavigationProperty Name="User" Relationship="LOBMergedModel.FK_EMIETicketsArch_Users" FromRole="EMIETicketsArch" ToRole="User" />
+    <Property Name="SubDomainSiteLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubDomainDocModeId" Type="Int32" />
+    <Property Name="SubDomainX_UAHonor" Type="Boolean" />
+    <NavigationProperty Name="DocMode2" Relationship="LOBMergedModel.FK_EMIETicketsArch_SubDomainDocModes" FromRole="EMIETicketsArch" ToRole="DocMode" />
+    <Property Name="DomainOpenInEdge" Type="Boolean" />
+    <Property Name="SubDomainOpenInEdge" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_EMIETicketsArch_Applications">
+    <End Type="LOBMergedModel.Application" Role="Application" Multiplicity="1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="AppId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketArch_BPU">
+    <End Type="LOBMergedModel.BPU" Role="BPU" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BPU">
+        <PropertyRef Name="BPUId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="BPUId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketArch_DocMode">
+    <End Type="LOBMergedModel.DocMode" Role="DocMode" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocMode">
+        <PropertyRef Name="DocModeId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="DocModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketArch_ChangeType">
+    <End Type="LOBMergedModel.EMIEChangeType" Role="EMIEChangeType" Multiplicity="1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIEChangeType">
+        <PropertyRef Name="ChangeTypeId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="ChangeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketArch_ReasonForChange">
+    <End Type="LOBMergedModel.EMIEReasonForChange" Role="EMIEReasonForChange" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIEReasonForChange">
+        <PropertyRef Name="ReasonForChangeId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="ReasonForChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketArch_TicketState">
+    <End Type="LOBMergedModel.EMIETicketStatu" Role="EMIETicketStatu" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMIETicketStatu">
+        <PropertyRef Name="TicketStatusId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="FinalCRStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketsArch_Users">
+    <End Type="LOBMergedModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EMIEConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SandboxEnvironment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SandboxUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SandboxPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionEnvironment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FreezeProductionChangeStartDate" Type="DateTime" Precision="0" />
+    <Property Name="FreezeProductionChangeEndDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="SandboxUserDomain" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductionUserDomain" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_EMIETickets_SubDomainDocModes">
+    <End Type="LOBMergedModel.DocMode" Role="DocMode" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicket" Role="EMIETicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocMode">
+        <PropertyRef Name="DocModeId" />
+      </Principal>
+      <Dependent Role="EMIETicket">
+        <PropertyRef Name="SubDomainDocModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMIETicketsArch_SubDomainDocModes">
+    <End Type="LOBMergedModel.DocMode" Role="DocMode" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.EMIETicketsArch" Role="EMIETicketsArch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocMode">
+        <PropertyRef Name="DocModeId" />
+      </Principal>
+      <Dependent Role="EMIETicketsArch">
+        <PropertyRef Name="SubDomainDocModeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EMIEConfigurationSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConfigItem" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ConfiguredValue" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedById" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedById" Type="Int32" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Applications_Users">
+    <End Type="LOBMergedModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="LOBMergedModel.Application" Role="Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="CreatedById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

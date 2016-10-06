@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c07c545c7c8a4a8994d7186eea17fe62" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="LOBMergedModel.ApplicationAppTypeMapping" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.ApplicationDetail" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.Application" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.ApplicationState" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.AppOnboardDetail" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.AppTechnologyMapping" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.AppType" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.AppUrlMapping" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.BPU" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.DemoScheduler" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.DocMode" Width="1.5" PointX="9" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIEChangeType" Width="1.5" PointX="9" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIEReasonForChange" Width="1.5" PointX="9" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIETicket" Width="1.5" PointX="11.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIETicketState" Width="1.5" PointX="11.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIETicketStatu" Width="1.5" PointX="9" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.Employee" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.Environment" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.IssueType" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.Logger" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.NoOfUser" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.ProjectCategory" Width="1.5" PointX="0.75" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.ResultType" Width="1.5" PointX="3" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.Role" Width="1.5" PointX="11.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.Technology" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.TestPass" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.TestPassPrimSecMapping" Width="1.5" PointX="5.25" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.TestPassTechnologyMapping" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.TestPassToTypeMapping" Width="1.5" PointX="8.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.TestPassType" Width="1.5" PointX="6" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.User" Width="1.5" PointX="11.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.PrimSecCriteria" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.SubResult" Width="1.5" PointX="5.25" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOBMergedModel.TestResult" Width="1.5" PointX="5.25" PointY="22.875" IsExpanded="true" />
+        <AssociationConnector Association="LOBMergedModel.FK_ApplicationAppTypeMapping_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_ApplicationAppTypeMapping_AppType" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_ApplicationDetails_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_Applications_BPU" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_AppOnboardDetails_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_AppTechnologyMapping_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_AppUrlMapping_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETickets_Applications" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_AppOnboardDetails_BPU" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_AppTechnologyMapping_Technology" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestResult_AppType" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_AppUrlMapping_EnvironmentId" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_BPU" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_DocMode" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_ChangeType" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_ReasonForChange" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_Approver" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicket_TicketState" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestResult_IssueType" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestResult_NoOfUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestPass_ProjectCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK__SubResult__Resul__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestResult_ResultType" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestPassTechnologyMapping_Technology" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestPassPrimSecMapping_TestPass" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestPassTechnologyMapping_TestPass" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestPassToTypeMapping_TestPass" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestResult_TestPass" ManuallyRouted="false" />
+        <AssociationConnector Association="LOBMergedModel.FK_TestPassToTypeMapping_TestPassType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LOBMergedModel.Device" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="LOBMergedModel.TM_APIDetails" Width="1.5" PointX="12" PointY="4.25" />
+        <EntityTypeShape EntityType="LOBMergedModel.TM_BrowserStateReason" Width="1.5" PointX="12" PointY="0.875" />
+        <EntityTypeShape EntityType="LOBMergedModel.TM_DocModeReason" Width="1.5" PointX="12" PointY="34.75" />
+        <EntityTypeShape EntityType="LOBMergedModel.TM_Domain" Width="1.5" PointX="12" PointY="31.25" />
+        <EntityTypeShape EntityType="LOBMergedModel.TM_TelemetryData" Width="1.5" PointX="14.25" PointY="7.625" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_Applications" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_DocMode" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_Technology" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_DeprecatedAPIId" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_SupportedAPI" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_BrowserStateReason" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_DocModeReason" />
+        <AssociationConnector Association="LOBMergedModel.FK_TM_TelemetryData_Domain" />
+        <EntityTypeShape EntityType="LOBMergedModel.UserRoleBPUMapping" Width="2.25" PointX="18.5" PointY="22.375" />
+        <AssociationConnector Association="LOBMergedModel.FK_UserRoleBPUMapping_BPU" />
+        <AssociationConnector Association="LOBMergedModel.FK_UserRoleBPUMapping_Roles" />
+        <AssociationConnector Association="LOBMergedModel.FK_UserRoleBPUMapping_Users" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIETicketAproval" Width="1.5" PointX="21.5" PointY="15.875" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_EMIETickets" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_TicketState" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketAprovals_UserRoleBPUMapping" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIETicketsArch" Width="1.5" PointX="14.25" PointY="15.5" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketsArch_Applications" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketArch_BPU" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketArch_DocMode" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketArch_ChangeType" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketArch_ReasonForChange" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketArch_TicketState" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketsArch_Users" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIEConfiguration" Width="2.375" PointX="16.375" PointY="0.75" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETickets_SubDomainDocModes" />
+        <AssociationConnector Association="LOBMergedModel.FK_EMIETicketsArch_SubDomainDocModes" />
+        <EntityTypeShape EntityType="LOBMergedModel.EMIEConfigurationSetting" Width="1.5" PointX="16.375" PointY="5.75" />
+        <AssociationConnector Association="LOBMergedModel.FK_Applications_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

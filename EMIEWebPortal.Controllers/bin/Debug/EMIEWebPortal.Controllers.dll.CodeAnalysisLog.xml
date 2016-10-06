@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\bin\Debug\EMIEWebPortal.Controllers.dll">
+   <Modules>
+    <Module Name="emiewebportal.controllers.dll">
+     <Namespaces>
+      <Namespace Name="EMIEWebPortal.Controllers">
+       <Types>
+        <Type Name="ApplicationController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetAllBPUOfUser(EMIEWebPortal.Models.Users)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApplicationController.cs" Line="245">In externally visible method 'ApplicationController.GetAllBPUOfUser(Users)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ApprovalController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddNewlyAddedEMIEChamp(System.Int32,System.Int32,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="EMIE" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="391">Correct the casing of 'EMIE' in member name 'ApprovalController.AddNewlyAddedEMIEChamp(int, int, bool)' by changing it to 'Emie'.</Issue>
+            </Message>
+            <Message Id="ticketid" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="75" Level="CriticalWarning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="391">In method 'ApprovalController.AddNewlyAddedEMIEChamp(int, int, bool)', correct the spelling of 'ticketid' in parameter name 'ticketid' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetPendingApproverList(EMIEWebPortal.Models.Users,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="94">'ApprovalController.GetPendingApproverList(Users, bool)' is coupled with 43 different types from 10 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="94">'ApprovalController.GetPendingApproverList(Users, bool)' has a cyclomatic complexity of 37. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="94">'ApprovalController.GetPendingApproverList(Users, bool)' has a maintainability index of 6. Rewrite or refactor the method to increase its maintainability index (MI). An MI below 10 indicates poor maintainability, an MI between 10 and 20 indicates moderate maintainability, and an MI above 20 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PerformRequest(System.Collections.Generic.List`1&lt;System.Int32&gt;,System.Boolean,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="276">'ApprovalController.PerformRequest(List&lt;int&gt;, bool, int)' is coupled with 36 different types from 11 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="366">In method 'ApprovalController.PerformRequest(List&lt;int&gt;, bool, int)', call System.IDisposable.Dispose on object 'controller' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SendReminder(System.Collections.Generic.List`1&lt;EMIEWebPortal.Models.Approvals&gt;,EMIEWebPortal.Models.Tickets)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="532">In method 'ApprovalController.SendReminder(List&lt;Approvals&gt;, Tickets)', call System.IDisposable.Dispose on object 'cntrlr' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="540">In method 'ApprovalController.SendReminder(List&lt;Approvals&gt;, Tickets)', call System.IDisposable.Dispose on object 'userController' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="userController" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="540">'ApprovalController.SendReminder(List&lt;Approvals&gt;, Tickets)' declares a variable, 'userController', of type 'UserController', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ApprovalController.cs" Line="530">In externally visible method 'ApprovalController.SendReminder(List&lt;Approvals&gt;, Tickets)', validate parameter 'ticket' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CommonFunctions" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetValueLFromConfigSettings(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Common" File="Common.cs" Line="54">In method 'CommonFunctions.GetValueLFromConfigSettings(string)', call System.IDisposable.Dispose on object 'config' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ConfigurationController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddConfigurationSetting(System.Collections.Generic.List`1&lt;EMIEWebPortal.Models.ConfigurationData&gt;,EMIEWebPortal.Models.Users)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="103">'ConfigurationController.AddConfigurationSetting(List&lt;ConfigurationData&gt;, Users)' is coupled with 33 different types from 11 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CheckUNCAccess(System.Collections.Generic.List`1&lt;EMIEWebPortal.Models.ConfigurationData&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UNC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="46">Correct the casing of 'UNC' in member name 'ConfigurationController.CheckUNCAccess(List&lt;ConfigurationData&gt;)' by changing it to 'Unc'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Decrypt(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="324">In method 'ConfigurationController.Decrypt(string)', call System.IDisposable.Dispose on object 'pdb' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="333">Object 'cs' can be disposed more than once in method 'ConfigurationController.Decrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 333</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="333">Object 'ms' can be disposed more than once in method 'ConfigurationController.Decrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 333, 335</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EditGroup(EMIEWebPortal.Models.UserMapping)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="504">Modify 'ConfigurationController.EditGroup(UserMapping)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EditRoleName(System.String,System.String,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Is" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="347">In member 'ConfigurationController.EditRoleName(string, string, bool)', correct the casing of 'Is' in parameter name 'IsMandatory' by changing it to 'is'.</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="359">'ConfigurationController.EditRoleName(string, string, bool)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Encrypt(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="297">In method 'ConfigurationController.Encrypt(string)', call System.IDisposable.Dispose on object 'pdb' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="306">Object 'cs' can be disposed more than once in method 'ConfigurationController.Encrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 306</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="306">Object 'ms' can be disposed more than once in method 'ConfigurationController.Encrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 306, 308</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAllGroupList()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ConfigurationController.cs" Line="518">Change 'ConfigurationController.GetAllGroupList()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LoginController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#config" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Warning">Consider making 'LoginController.config' non-public or a constant.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReportsHelperController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetBPUWiseTicketCount(System.Nullable`1&lt;System.DateTime&gt;,System.Nullable`1&lt;System.DateTime&gt;,System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ReportsHelperController.cs" Line="94">'ReportsHelperController.GetBPUWiseTicketCount(DateTime?, DateTime?, List&lt;string&gt;)' is coupled with 34 different types from 10 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="ReportsHelperController.cs" Line="94">'ReportsHelperController.GetBPUWiseTicketCount(DateTime?, DateTime?, List&lt;string&gt;)' has a cyclomatic complexity of 26. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TicketController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="90" Level="Error">'TicketController' is coupled with 147 different types from 22 different namespaces. Rewrite or refactor this class's methods to decrease its class coupling, or consider moving some of the class's methods to some of the other types it is tightly coupled with. A class coupling above 95 indicates poor maintainability, a class coupling between 95 and 80 indicates moderate maintainability, and a class coupling below 80 indicates good maintainability.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#AddApprovalData(EMIEWebPortal.Models.Tickets,System.Collections.Generic.List`1&lt;System.Collections.Generic.Dictionary`2&lt;System.String,System.String&gt;&gt;,System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1002">In method 'TicketController.AddApprovalData(Tickets, List&lt;Dictionary&lt;string, string&gt;&gt;, List&lt;string&gt;)', call System.IDisposable.Dispose on object 'UserContollerObj' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="998">Consider a design where 'TicketController.AddApprovalData(Tickets, List&lt;Dictionary&lt;string, string&gt;&gt;, List&lt;string&gt;)' doesn't nest generic type 'List&lt;Dictionary&lt;string, string&gt;&gt;'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddComments(EMIEWebPortal.Models.Tickets,EMIEWebPortal.Common.VerifyActions)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1308">In method 'TicketController.AddComments(Tickets, VerifyActions)', call System.IDisposable.Dispose on object 'xmlHelper' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1379">Modify 'TicketController.AddComments(Tickets, VerifyActions)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="ex" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1379">'TicketController.AddComments(Tickets, VerifyActions)' declares a variable, 'ex', of type 'Exception', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ChangeRequest(EMIEWebPortal.Models.Tickets,EMIEWebPortal.Common.Operation)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="70">'TicketController.ChangeRequest(Tickets, Operation)' is coupled with 44 different types from 15 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="304">Object 'tc' can be disposed more than once in method 'TicketController.ChangeRequest(Tickets, Operation)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 304</Issue>
+            </Message>
+            <Message Id="ex" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="292">'TicketController.ChangeRequest(Tickets, Operation)' declares a variable, 'ex', of type 'Exception', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConfigUNCPath" Kind="Field" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'TicketController.ConfigUNCPath' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ContactSupportTeam(EMIEWebPortal.Models.Tickets,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1832">In externally visible method 'TicketController.ContactSupportTeam(Tickets, string)', validate parameter 'ticket' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteFile(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1281">Modify 'TicketController.DeleteFile(string, string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DownLoadAttachment(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="DownLoad" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeDiscreteTerm" Certainty="80" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1847">The compound word 'DownLoad' in member name 'TicketController.DownLoadAttachment(string)' exists as a discrete term. If your usage is intended to be single word, case it as 'Download' or strip the first token entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DownloadFile(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1242">Modify 'TicketController.DownloadFile(string, string)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAllCounts(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1736">In method 'TicketController.GetAllCounts(int)', call System.IDisposable.Dispose on object 'userController' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAllDataOfSubmittedTicket(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="557">'TicketController.GetAllDataOfSubmittedTicket(int)' is coupled with 37 different types from 10 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="557">'TicketController.GetAllDataOfSubmittedTicket(int)' has a maintainability index of 18. Rewrite or refactor the method to increase its maintainability index (MI). An MI below 10 indicates poor maintainability, an MI between 10 and 20 indicates moderate maintainability, and an MI above 20 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTicketDataForAllRequest(System.String,System.Nullable`1&lt;System.Boolean&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="503">'TicketController.GetTicketDataForAllRequest(string, bool?)' is coupled with 31 different types from 10 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetTicketObjectData(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="403">'TicketController.GetTicketObjectData(int)' is coupled with 43 different types from 9 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="403">'TicketController.GetTicketObjectData(int)' has a maintainability index of 10. Rewrite or refactor the method to increase its maintainability index (MI). An MI below 10 indicates poor maintainability, an MI between 10 and 20 indicates moderate maintainability, and an MI above 20 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetUploadFileAccessCredentials()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="1197">In method 'TicketController.GetUploadFileAccessCredentials()', call System.IDisposable.Dispose on object 'configcntrlr' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateProductionDeployDate(EMIEWebPortal.Models.Tickets)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ex" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="729">'TicketController.UpdateProductionDeployDate(Tickets)' declares a variable, 'ex', of type 'Exception', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#VerifySandbox(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="TicketController.cs" Line="911">'TicketController.VerifySandbox(string)' is coupled with 34 different types from 9 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetAllUsersOfRole(EMIEWebPortal.Common.UserRole)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="UserController.cs" Line="887">'UserController.GetAllUsersOfRole(UserRole)' is coupled with 31 different types from 10 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetUserFromDifferentDomain(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="UserController.cs" Line="101">In method 'UserController.GetUserFromDifferentDomain(string)', call System.IDisposable.Dispose on object '&lt;&gt;g__initLocal0' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="XMLHelperController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BulkAddFromFile1(EMIEWebPortal.Models.ManageSitesModel[],System.Nullable`1&lt;System.Boolean&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="539">In method 'XMLHelperController.BulkAddFromFile1(ManageSitesModel[], bool?)', call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="498">Object 'reader' can be disposed more than once in method 'XMLHelperController.BulkAddFromFile1(ManageSitesModel[], bool?)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 498</Issue>
+            </Message>
+            <Message Id="isSingleAddition" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="476">Parameter 'isSingleAddition' of 'XMLHelperController.BulkAddFromFile1(ManageSitesModel[], bool?)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="520">In externally visible method 'XMLHelperController.BulkAddFromFile1(ManageSitesModel[], bool?)', validate parameter 'info' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSite(EMIEWebPortal.Models.ManageSitesModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="598">In method 'XMLHelperController.DeleteSite(ManageSitesModel)', call System.IDisposable.Dispose on object 'ds' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="567">In externally visible method 'XMLHelperController.DeleteSite(ManageSitesModel)', validate parameter 'siteInfo' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateXMLData(EMIEWebPortal.Models.ManageSitesModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="XML" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="306">Correct the casing of 'XML' in member name 'XMLHelperController.UpdateXMLData(ManageSitesModel)' by changing it to 'Xml'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2016-09-07 04:58:39Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Controllers\Controllers" File="XMLHelperController.cs" Line="316">In externally visible method 'XMLHelperController.UpdateXMLData(ManageSitesModel)', validate parameter 'newInfo' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506">
+   <Name>Avoid excessive class coupling</Name>
+   <Description>Types and methods with a high degree of class coupling can be difficult to maintain.</Description>
+   <Resolution Name="Method">{0} is coupled with {1} different types from {2} different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above {3} indicates poor maintainability, a class coupling between {3} and {4} indicates moderate maintainability, and a class coupling below {4} indicates good maintainability.</Resolution>
+   <Resolution Name="Type">{0} is coupled with {1} different types from {2} different namespaces. Rewrite or refactor this class's methods to decrease its class coupling, or consider moving some of the class's methods to some of the other types it is tightly coupled with. A class coupling above {3} indicates poor maintainability, a class coupling between {3} and {4} indicates moderate maintainability, and a class coupling below {4} indicates good maintainability.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb397994.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Avoid excessive complexity</Name>
+   <Description>Method implementations that are exceedingly complex increase the challenge of understanding and maintaining code.</Description>
+   <Resolution Name="Default">{0} has a cyclomatic complexity of {1}. Rewrite or refactor the method to reduce complexity to {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505">
+   <Name>Avoid unmaintainable code</Name>
+   <Description>Types and methods with a high degree of class coupling, cyclomatic complexity and/or program length can be difficult to maintain.</Description>
+   <Resolution Name="Method">{0} has a maintainability index of {1}. Rewrite or refactor the method to increase its maintainability index (MI). An MI below {2} indicates poor maintainability, an MI between {2} and {3} indicates moderate maintainability, and an MI above {3} indicates good maintainability.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386043.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberShouldBeDiscreteTerm">The compound word '{0}' in member name {1} exists as a discrete term. If your usage is intended to be single word, case it as '{2}' or strip the first token entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="NonExceptionEdge">In method {0}, call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 498</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006">
+   <Name>Do not nest generic types in member signatures</Name>
+   <Description>Avoid API that require users to instantiate a generic type with another generic type as type argument. The syntax gets too complex.</Description>
+   <Resolution Name="Default">Consider a design where {0} doesn't nest generic type {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182144.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="MemberParameter">In member {0}, correct the casing of '{1}' in parameter name {2} by changing it to '{3}'.</Resolution>
+   <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+   <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
+   <Name>Non-constant fields should not be visible</Name>
+   <Description>Static fields should be constant unless you carefully manage access to the field using locks. Using static variables without making them thread safe can compromise execution state. This rule applies to managed code libraries. If the analyzed assembly is an application, it is usually safe to exclude violations of this rule.</Description>
+   <Resolution Name="Default">Consider making {0} non-public or a constant.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182353.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Review unused parameters</Name>
+   <Description>Review parameters in non-virtual methods that are not used in the method body to ensure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+   <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+   <Name>Use properties where appropriate</Name>
+   <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+   <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182181.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

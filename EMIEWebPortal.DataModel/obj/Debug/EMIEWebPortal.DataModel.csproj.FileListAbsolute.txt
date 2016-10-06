@@ -1,0 +1,10 @@
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EMIEWebPortal.DataModel.dll.config
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EMIEWebPortal.DataModel.dll
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EMIEWebPortal.DataModel.pdb
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EntityFramework.dll
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EntityFramework.xml
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\obj\Debug\EMIEWebPortal.DataModel.csprojResolveAssemblyReference.cache
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\obj\Debug\EMIEWebPortal.DataModel.dll
+D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.DataModel\obj\Debug\EMIEWebPortal.DataModel.pdb

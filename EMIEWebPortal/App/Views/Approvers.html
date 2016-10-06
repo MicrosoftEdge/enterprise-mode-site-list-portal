@@ -1,0 +1,39 @@
+﻿<!--<div class="panel-group" data-ng-controller="ApprovalController">-->
+
+<div class="">
+    <div><span class="EMIEpage-title">MY APPROVERS</span><span class="EMIEpage-title pull-right" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div><br/>
+</div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-lg-1"><input type="checkbox" disabled /></div>
+            <div class="col-lg-2">Approver</div>
+            <div class="col-lg-3">Email</div>
+            <div class="col-lg-2">Status</div>
+            <div class="col-lg-4">Comment<button class=" EMIEsmall-btn pull-right" ng-disabled="isreminderbuttondisabled" data-placement="top" ng-click="SendReminderToAll(reminderCheckBox)">SEND REMINDER</button></div>
+
+        </div>
+    </div>
+    <div id="collapse" class=" panel-collapse" ng-disabled="IsCompletePaneDisabled">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="approver in approvals">
+                <div class="row">
+                    <div class="col-lg-1"><input type="checkbox" data-ng-model="reminderCheckBox" ng-disabled="{{approver.ApprovalState}}!=3 || IsCompletePaneDisabled" ng-change="CheckedApproverId(approver.Approver.UserId,approver)" /></div>
+                    <div class="col-lg-2">{{ approver.Approver.UserRole.RoleName }}</div>
+                    <div class="col-lg-3">{{ approver.Approver.Email }}</div>
+                    <div class="col-lg-2" ng-show="{{ value == approver.ApprovalState}}" ng-repeat="(key, value) in ApprovalStateEnum ">
+                        {{key}}
+                    </div>
+                    <div class="col-lg-4 EMIEhide-overflow">{{ approver.ApproverComments }}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+        <message-center></message-center>
+</div>
+
+<script>
+
+
+    url();
+</script>

@@ -1,0 +1,135 @@
+﻿<div>
+
+    <div class="row">
+        <div class="col-lg-9"><span class="EMIEpage-title">MY APPROVALS</span></div>
+        <div class="col-lg-3 pull-right">
+            <div class="input-group">
+                <input type="text" name="serachTcktId" id="serachTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by Name or ID" data-toggle="dropdown">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" <!--ng-show="TicketListToShow.length>0"--> style="margin-right:14px; width:250px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                <li ng-repeat="tckt in TicketListToShow" class="input-lg" ng-click="BindEsrchedTicketToGrid(tckt)" style="margin:5px">{{tckt.TicketId}} {{tckt.Application | limitTo: 20}}{{tckt.Application.length > 30 ? '...' : ''}}</li>
+            </ul>
+                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; width: 263px; " ng-model="NoResultText" ng-show="TicketListToShow.length==0 && SearchTicketFromTextBox.length>0">No tickets matching "{{SearchTicketFromTextBox}}" were found. </span>
+            </div>
+        </div>
+
+    </div>
+    <div disable-all="isMyrequestsDisabled">
+        <br />
+        <div class="alert alert-success" role="alert" ng-show="NoPendinglist">{{NoPendingRequets}}</div>
+        <div class="alert alert-info" role="alert" ng-show="DisplayWaitMessage">{{RetrievalProgress}}</div>
+
+
+        <div class="panel-group" id="accordion">
+
+            <div class="row">
+                <div class="col-lg-6">
+                </div>
+                <div class="col-lg-6">
+                    <dir-pagination-controls class="pull-right" max-size="10"
+                                             direction-links="true"
+                                             boundary-links="true">
+                    </dir-pagination-controls>
+                </div>
+            </div>
+
+            <div class="EMIEHeaderTitle" ng-hide="HideTitle" style="background:#737373 !important;color:#fff !important">
+                <div class="col-lg-2"><span id="EMIEsortinglink" ng-click="SortById(Tickets)">ID</span><span class="glyphicon glyphicon-sort" ng-click="SortById(Tickets)"></span></div>
+                <div class="col-lg-4"><span id="EMIEsortinglink" ng-click="SortByName(Tickets)">APPLICATION NAME</span><span class="glyphicon glyphicon-sort" ng-click="SortByName(Tickets)"></span></div>
+                <div class="col-lg-4">REQUESTER</div>
+                <div class="col-lg-2"><button ng-click="ToggleAllPanels()" style="position: relative; right: -10px;" class="EMIEexpndr pull-right glyphicon glyphicon-sound-stereo"></button></div>
+            </div>
+
+
+            <div class="Whole set">
+                <div dir-paginate="ticket in Tickets|itemsPerPage:10" class="EMIEmyreqpanel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading EMIEmyreqpanelbg" data-toggle="collapse" href="#{{ticket.TicketId}}" style="cursor:pointer">
+                            <div class="row">
+
+                                <div class="col-lg-2" style="font-weight: 600"><a href="#/Request" ng-click="GetTicketId(ticket)">{{ticket.TicketId}}</a></div>
+                                <div class="col-lg-4 text-capitalize" style="font-weight: 600">{{ticket.Application}}</div>
+                                <div class="col-lg-4 text-capitalize" style="font-weight: 600">{{ticket.RequestedBy}}</div>
+                                <div class="col-lg-2"><button data-toggle="collapse" href="#{{ticket.TicketId}}" class="EMIEexpndr {{ticket.TicketId}} pull-right glyphicon glyphicon-sound-stereo"></button></div>
+                            </div>
+
+                        </div>
+
+                        <div id="{{ticket.TicketId}}" class=" panel-collapse collapse approvalPendingPanels">
+                            <div class="row EMIEPanelHeader">
+                                <div class="col-lg-2"><input type="checkbox" style="margin-left:-9px;" disabled /></div>
+                                <div class="col-lg-4" style="padding-left:9px">APPROVED BY</div>
+                                <div class="col-lg-4">EMAIL</div>
+                                <div class="col-lg-2">STATUS</div>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="approval in ticket.Approvers">
+
+                                    <div class="row">
+                                        <div class="col-lg-2"><input type="checkbox" id="{{ticket.TicketId}}" ng-checked="{{ approval.Approver.UserId }} == {{User}} && IsDoubleApprover(ticket.TicketId) " value="{{ticket.TicketId}}" ng-disabled="{{ approval.Approver.UserId }} != {{User}} || approval.ApprovalState==4" ng-click="CheckedTicketid(ticket.TicketId)" /></div>
+                                        <div class="col-lg-4">{{approval.Approver.UserRole.RoleName }}</div>
+                                        <div class="col-lg-4">{{ approval.Approver.Email}}</div>
+                                        <div class="col-lg-2" ng-show="{{ value == approval.ApprovalState}}" ng-repeat="(key, value) in ApprovalStateEnum "> {{ key }}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <button type="button" ng-model="Approved" id="Approve" value="Approve" ng-disabled="IsControlDisabled" ng-show="ShowApproveButton" class="btn btn-success" ng-click="SetForUpdation($event)">APPROVE</button>
+                <button type="button" ng-model="Rejected" id="Reject" value="Reject" ng-disabled="IsControlDisabled" ng-click="rejectionComments=''" data-toggle="modal" data-target="#modalForRejectRequest" ng-show="ShowRejectButton" class="btn btn-success">REJECT</button>
+            </div>
+            <div class="col-lg-6">
+                <dir-pagination-controls class="pull-right" max-size="10"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+            <div class="modal fade" id="modalForRejectRequest" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Do you want to reject request?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div><span class="EMIEControllabel">REASON:</span></div>
+                                <div class="col-lg-9">
+                                    <textarea name="rejectionComments" id="idrejectionComments" data-ng-model="rejectionComments" class="form-control" maxlength="100"></textarea>
+                                </div>
+                                <div class="col-lg-3"></div>
+                            </div>                       
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-success" ng-click="SetForUpdation($event)" ng-disabled="!rejectionComments" data-dismiss="modal">REJECT</button>
+                            <button type="button" class="btn btn-default btn-success" data-dismiss="modal">CANCEL</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <message-center></message-center>
+
+    </div>
+</div>
+
+<script>
+
+    url();  
+
+</script>

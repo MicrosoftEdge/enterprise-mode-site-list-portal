@@ -1,0 +1,271 @@
+﻿
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-top:99px;
+}
+
+
+#wrapper.toggled {
+    padding-left: 182px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 182px;
+    top:0px;
+    width: 0;
+    height: 100%;
+    margin-left: -182px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    background: #d2d2d2;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 182px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: relative;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: -182px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    /*position: absolute;*/
+    top: 0;
+    width: 182px;
+    margin-top: -5px !important;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    float:left;
+    margin-left:9px;
+}
+
+
+.sidebar-nav li a{
+      display: block;
+    }
+
+
+.sidebar-nav li a:hover{
+      text-decoration:none;
+    }
+
+.req-tab
+{
+    height:9rem;
+    width:15.7rem;
+    margin-top:7px;
+   
+}
+
+.req-all:hover
+{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+.newcr-tab:hover
+{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+.newcr-tab{
+    height:3rem;
+    width:15.7rem;
+    margin-top:15px;
+    background-color:#00B294;
+    margin-left:25px !important;
+}
+
+.newcr-tab:hover
+{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+.newcr-btn {
+    height: 3rem;
+    width: 14rem;
+    background-color: #00B294;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+
+.req-tab:hover
+{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+.req-tab span.req-type
+{
+    color:#fff;
+    position:relative;
+   top:-10px;
+   left:17px;
+   font-size:11.5px;
+   font-weight:600;
+
+}
+
+.req-tab span.counts
+{
+ position: relative;
+    top: 15px;
+    left:-5px;
+    color: #fff;
+    font-size: 42px;
+    font-weight:200;
+
+}
+
+.in-progress{
+     background-color:#FF8901;
+}
+
+.req-all
+{
+     background-color:#6452A9;
+}
+.closed{
+     background-color:#32145A;
+}
+
+.rejected{
+     background-color:#A80000;
+
+}
+
+.rollbacks{
+     background-color:#01BCF3;
+
+}
+
+.pending
+{
+    background-color:#004B50;
+
+
+}
+
+.total-count{
+   position:relative;
+   top:70px;
+   left:25px;
+    color:#383838;
+    font-size:36px;
+    font-weight:bold;
+    text-align:left;
+}
+
+.total-count-txt{
+    position:relative;
+   top:60px;
+   left:25px;
+    color:#383838;
+    font-size:17px;
+  text-align:left;
+
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 182px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 182px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+.toggler {
+   position: fixed;
+    left: 0px;
+    top: 70px;
+    width: 30px;
+    height: 45px;
+    background-color: #d2d2d2;
+    border-radius: 0px 7px 7px 0px;
+    box-shadow: 1px 1px 1px #928B8B;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    padding: 7px 0px 0px 7px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    z-index:1000;
+}
+
+a.toggler:hover{
+    text-decoration:none;
+}
+
+a.toggler::after(2){
+    text-decoration:none;
+}
+
+
+.toggler.toggled {
+    margin-left:182px;
+}
+
+.panel {
+    background-color:rgba(0,0,0,0) !important;
+    border:none !important;
+}
+
+#EMIEsortinglink
+{
+ cursor:pointer;
+}

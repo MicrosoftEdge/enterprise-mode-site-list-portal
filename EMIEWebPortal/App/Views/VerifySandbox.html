@@ -1,0 +1,121 @@
+﻿
+
+    <form name="SandboxForm">
+    <div class="EMIEpage-title">PRE-PRODUCTION VERIFICATION <span class="EMIEpage-title pull-right" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div>
+       
+        <div class="EMIEHeaderTitle">Test Result With Pre-Production Environment</div>
+
+    <div style="margin-top:2.9rem">
+            <div class="col-lg-4" disable-all="isVerifyPageDisabled">
+                <label class="radio-inline EMIEControllabel"><input ng-disabled="IsSuccessDivReadOnly" id="RadSuccessful" type="radio" ng-click="RadSuccessClicked($event)" ng-model="Successchecked" ng-checked="RadSuccessChecked" value="Checked">Successful</label>
+                <label class="radio-inline EMIEControllabel" style="margin-left:70px;"><input ng-disabled="IsSuccessDivReadOnly" id="RadFailed" type="radio" ng-click="RadFailedClicked($event)" ng-model="Failedchecked" ng-checked="RadFailedChecked" value="Checked">Failed</label>
+
+            </div>
+
+            <div class="col-lg-8 form-horizontal" disable-all="isVerifyPageDisabled ||isDisableAfterComments">
+                <div class="col-lg-3 EMIEControllabel text-right">Attachments</div>
+                <div class="col-lg-4"> 
+                    <input type="file" id="file" class="form-control" name="file" style="height:40px !important;display:none" accept=".txt,.png,.jpg,.jpeg" multiple onchange="angular.element(this).scope().getFileDetails(this)" /> 
+                    <button class="btn btn-default btn-sm btn-info" formnovalidate style="width:200px" onclick="document.getElementById('file').click();" data-toggle="tooltip" data-placement="top" title="Only .jpeg, .png, .jpg and .txt files allowed.">BROWSE...</button> 
+                </div>
+                <div class="col-lg-5"><button class="btn btn-default btn-sm btn-success" type="button" ng-click="uploadFiles()" ng-disabled="DisableUploadButton">UPLOAD</button></div>
+            </div>
+        </div>
+    <div class="row" ng-hide="IsSelectedFIlesDivHidden" ng-show="filesSelected.length>=1">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+            <div class="text-info" style="padding:10px;">
+                {{SelectedFilesMessage}}
+            </div>
+            <div class="alert alert-danger" style="margin-left:10px;" ng-repeat="SelectedFile in filesSelected">
+                <span>
+                    <button class="close" ng-disabled="IsSelectedFileDeleteDisable"  data-dismiss="alert" ng-click="DeleteSelectedFile(SelectedFile)" aria-label="close">&times;</button>
+                    <span class="EMIEuploadedfile">{{SelectedFile.name}}</span>
+
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-lg-6"></div>
+            <div class="col-lg-6">
+            <div ng-hide="IsDownloadedDivHidded" ng-show="UploadedFiles.array.length>=1" style="margin-top:20px !important;padding:10px;" class="col-lg-4 text-success">File(s) uploaded:</div><div class="text-success col-lg-8" style="margin-top:20px !important" ng-show="Messages">{{Messages}}</div>
+                <div class="row"></div>
+                <div ng-repeat="SingleFile in UploadedFiles.array" style="margin-left:10px;">
+                    <div class="alert alert-success">
+                        <button class="close" ng-disabled="IsClosedDisable" data-dismiss="alert" ng-click="Delete(SingleFile)" aria-label="close">&times;</button>
+                        <span class="EMIEuploadedfile">
+                            <a style="cursor: pointer;" ng-click="DownloadSelectedAttchment(DownloadPathOfUploadedFiles,SingleFile)">{{SingleFile}}</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Success Section-->
+    <div ng-hide="IsSuccessDivHidden" disable-all="isVerifyPageDisabled">
+            <div class="EMIEHeaderTitle">Change Authority Board</div>
+        <div ng-repeat="singleApproval in approvals" ng-disabled="issuccessdivreadonly" class="row" style="margin-bottom:10px">
+                <div class="col-lg-4">
+                    <input type="text" readonly class="form-control" value="Approver - {{singleApproval.Key}}">
+                </div>
+
+            <div class="col-lg-4" ng-show="!ApproverDDL">
+                <select class="form-control" name="{{singleApproval.Key}}" id="{{singleApproval.Key}}" ng-disabled="singleApproval.Key=='EMIE Champion'" ng-model="SelectedValue" ng-options="single.UserName for single in singleApproval.Value" ng-change="changeevt(SelectedValue,$index)">
+                    <option value="">Select Name</option>
+                </select>
+                    <!--<span class="has-error" ng-show="(SandboxForm.ApprovalName.$dirty || submitted) && SandboxForm.ApprovalName.$error.required">Select service</span>-->
+                </div>
+            <div class="col-lg-4" ng-show="ApproverDDL">
+                    <select class="form-control" name="ApprovalNameEdited" ng-disabled="IsSuccessDivReadOnly" ng-model="singleApproval.Value[0]" ng-options="single as single.Approver.UserName for single in singleApproval.Value" required>
+                        <option value="">Select Name</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4">
+                    <input placeholder="Comments" class="form-control" type="text" ng-show="!ApproverCommentsShow" ng-disabled="IsSuccessDivReadOnly" ng-model="textArea[$index]" ng-change="textchanged(textArea,$index)" maxlength="300">
+                    <input placeholder="ApproverComments" name="ApproverComments" ng-show="ApproverCommentsShow" class="form-control" type="text" ng-disabled="IsSuccessDivReadOnly" value="{{singleApproval.Value[0].ApproverComments}}" maxlength="300">
+                </div>
+
+            </div>
+
+            <div class="row" style="margin-top:20px !important;">
+                <div class="col-lg-2">
+                    <button ng-disabled="IsSuccessDivReadOnly" ng-show="SendForApprovalButtonShow" type="button" class="btn btn-default ThemeBtn" ng-click="SendForApproval(SelectedValue)">SEND FOR APPROVAL</button>
+                </div>
+                <div class="col-lg-10">
+                    <div class="text-success" ng-show="status">{{status}}</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Failure Section-->
+        <div class="row" ng-hide="IsFailureDivHidden" style="margin-top:20px !important;" disable-all="isVerifyPageDisabled">
+            <div class="col-lg-2">
+                <span>Issue Description</span>
+            </div>
+            <div class="col-lg-6">
+                <textarea ng-disabled="IsSendFailureDisabled" ng-model="FailedComments" rows="6" cols="70" class="form-control" ng-required="true" placeholder=" Issue Description" maxlength="500"></textarea>
+            </div>
+            <div class="col-lg-4"></div>
+
+            <div class="col-lg-12" style="margin-top:20px !important;">
+            <button type="button" ng-disabled="FailedComments==null || IsSendFailureDisabled || isVerifyPageDisabled" class="btn btn-default bottom ThemeBtn" ng-click="SendFailureDetails(FailedComments)">SEND FAILURE DETAILS</button>
+                <button type="button" class="btn btn-default bottom ThemeBtn" ng-click="Rollback(FailedComments)">ROLLBACK</button>
+            </div>
+                    </div>
+
+    <canvas id="imgCanvas" ng-hide="true"></canvas>
+        <message-center></message-center>
+    </form>
+
+<script>
+
+    url();
+    $('[data-toggle="tooltip"]').tooltip();
+</script>
+
+

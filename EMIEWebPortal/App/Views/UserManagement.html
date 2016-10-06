@@ -1,0 +1,156 @@
+﻿
+<div class="row">
+    <div><span class="EMIEpage-title">USER MANAGEMENT</span></div>
+</div>
+
+<div disable-all="isUserPageDisabled" class="row">
+    <div class="row" style="margin-top:20px; margin-bottom:20px;">
+
+        <div class="col-lg-2">
+            <select class="form-control" ng-model="value" ng-selected="value" ng-change="selectedValueOfDDL(value)" ng-options="value for (key,value) in UserMngmntDDL">{{value}}</select>
+        </div>
+
+        <div class="col-lg-2">
+            <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"
+                    data-ng-options="var.BPU1 as var.BPU1 for var in ExportBPU | unique:'BPU1' | orderBy:'BPU1'">
+                <option value="">All BPUs</option>
+            </select>
+            
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-success" ng-click="ExportToExcel(GroupName)">EXPORT TO EXCEL</button>
+        </div>
+
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-default btn-primary" ng-hide="BtnActivateUser" ng-click="ActivateUser()">ACTIVATE</button>
+            <button type="button" class="btn btn-default btn-danger" ng-hide="BtnDeactivateUser" ng-click="DeactivateUser()">DEACTIVATE</button>
+        </div>
+
+        <div class="col-lg-2"><a id="AddUser" class="btn btn-default pull-right" href="#/CreateNewUser"></a></div>
+        <div class="col-lg-2 pull-right">
+            <div class="input-group">
+                <input type="text" name="serachUser" id="serachUser" ng-change="GetSearchedUserFromAutoComplete(SearchUserFromTextBox)" class="form-control" data-ng-model="SearchUserFromTextBox" placeholder="Search User" data-toggle="dropdown">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search" ></i>
+                </span>
+
+                <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" style="margin-right:14px; width:258px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                    <li ng-repeat="usr in UserListToShow" class="input-lg" ng-click="BindSearchedUserToGrid(usr)" style="margin:5px">{{usr.User.UserName | limitTo: 8}}{{usr.User.UserName.length > 30 ? '...' : ''}}{{ usr.User.UserRole.RoleName}} {{ usr.User.UserBPU.BPU1}}</li>
+                </ul>
+                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px;  width: 271px; " ng-model="NoResultText" ng-show="UserList.length==0 && SearchUserFromTextBox.length>1">No users matching "{{SearchUserFromTextBox}}" were found. </span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <dir-pagination-controls class="pull-right" max-size="10"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" id="EMIEexpandr">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3"><span id="EMIEsortinglink" ng-click="sortByName(UserList)">USER NAME</span><span class="glyphicon glyphicon-sort" ng-click="sortByName(UserList)"></span></div>
+                <div class="col-lg-3">USER ALIAS</div>
+                <div class="col-lg-2"><span id="EMIEsortinglink" ng-click="sortByRoleName(UserList)">USER ROLE</span><span class="glyphicon glyphicon-sort" ng-click="sortByRoleName(UserList)"></span></div>
+                <div class="col-lg-2">GROUP NAME</div>
+                <div class="col-lg-1">
+                  
+                </div>
+            </div>
+        </div>
+        <div id="UMpanel" class=" panel-collapse ">
+            <ul class="list-group">
+                <li class="list-group-item" dir-paginate="user in UserList |itemsPerPage:10">
+                    <div class="row">
+                        <div class="col-lg-1"><input type="checkbox" ng-show="UserCheckBoxShow" ng-model="selectedUser1" ng-change="getSelectedUser(user)" /></div>
+                        <div class="col-lg-3">{{ user.User.UserName }}</div>
+                        <div class="col-lg-3">{{ user.User.Email }}</div>
+                        <div class="col-lg-2">{{ user.User.UserRole.RoleName }}</div>
+                        <div class="col-lg-2">{{ user.User.UserBPU.BPU1 }}</div>
+                        <div class="col-lg-1">
+                            <button type="button" data-toggle="modal" class="EMIEsmall-btn pull-right" ng-click="EditUser(user)" data-target="#myModal"> EDIT </button>
+                            <!-- Modal or Pop for Add Application -->
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <form id="modalform" name="modalform">
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">EDIT USER</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-4  text-right"><span class="EMIEControllabel">USER NAME</span></div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" disabled value="{{ selectedUser.User.UserName }}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4  text-right"><span class="EMIEControllabel">ROLE</span></div>
+                                <div class="col-lg-6">
+                                    <select class="form-control" name="selectRole" data-ng-model="User.UserGetRole" ng-change="BindBPUForSelectedRole(User.UserGetRole)" ng-options="role.RoleName for role in roleList"></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4  text-right"><span class="EMIEControllabel">GROUP NAME</span></div>
+                                <div class="col-lg-6">
+                                    <select class="form-control" name="selectBPU" data-ng-model="User.UserBPU" ng-disabled="DDLDisableOnALLGroup" ng-options="bpu.BPU1 disable when bpu.AllBPUDiabled for bpu in bpuList">
+                                        <option value="" disabled selected>{{ShowSelectOption}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4  text-right"><span class="EMIEControllabel">COMMENTS</span></div>
+                                <div class="col-lg-6">
+                                    <textarea name="UserComments" id="TextAreaComments" data-ng-model="User.Comments" class="form-control" maxlength="100"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4  text-right"></div>
+                                <div class="col-lg-6">
+                                    <input type="checkbox" id="IsActiveCheckbox" name="ischeck" data-ng-model="User.IsActive">ACTIVE
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" ng-click="EditSelectedUser(User)">SAVE</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="CancelFields()">CANCEL</button>
+                            <!--<input type="reset" value="Cancel"  class="btn" />-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <dir-pagination-controls class="pull-right" max-size="10"
+                             direction-links="true"
+                             boundary-links="true">
+    </dir-pagination-controls>
+
+
+
+    <message-center></message-center>
+</div>
+
+<script>
+
+    url();
+   
+</script>

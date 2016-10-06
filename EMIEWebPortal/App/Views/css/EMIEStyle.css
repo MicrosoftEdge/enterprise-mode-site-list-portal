@@ -1,0 +1,1029 @@
+﻿body {
+    margin-bottom: 20px !important;
+    font-size:14px
+}
+
+.EMIEheader {
+    background-color: black;
+    min-height: 60px;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    padding-right: 21px;
+    position: relative;
+    top: -5px;
+}
+
+.EMIEtitle {
+    font-weight: bold;
+    font-size: /*1.188em*/ 19px;
+    color: #fff;
+}
+
+.EMIEsubtitle {
+    font-size: 0.813em/*13px*/;
+    position: relative;
+    top: -5px;
+    color: #fff;
+}
+
+a.EMIEnavlink:hover {
+    text-decoration: underline !important;
+}
+
+.panel-heading, .panel-heading a {
+    background-color: #737373 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+ul.list-group li {
+    background: #fff !important;
+}
+
+    ul.list-group li:nth-child(odd) {
+        background: #ECECEC !important;
+    }
+
+.Ccheckbox {
+    padding-left: 10px;
+    width: 90%;
+}
+
+.checkbox-inline {
+    width: 95px !important;
+}
+
+
+.EMIEhide-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.glyphicon-sound-stereo {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.mslogo {
+    width: 140px;
+    position: relative;
+    top: 1px;
+    left: -8px;
+}
+
+a#Login {
+    text-decoration: none;
+    color: white;
+}
+
+
+input[type=checkbox] {
+    zoom: 1.4 !important;
+    margin-right: 4px !important;
+    margin-top: 2px !important;
+    margin-bottom: 1px;
+}
+
+.btn-success {
+    color: #fff !important;
+    background-color: #008270 !important;
+    font-size:/* 1.688em*/27px;
+}
+
+.EMIEpage-title {
+    font-size: /*1.250em*/20px;
+    font-weight: bold;
+}
+
+.EMIEusericon {
+    width: 40px;
+}
+
+/*.dropdown-menu
+{
+   // position:absolute;
+    //left:67% !important;
+}*/
+
+.user-role {
+}
+
+.user-name {
+}
+
+.EMIEControllabel {
+    font-size:/*0.875em*/14px;
+    vertical-align: super;
+    position: relative;
+    top: 5px;
+    padding-left: 18px;
+}
+
+.EMIEsmall-btn {
+    border: 1px solid #028273;
+    padding: 2px 10px 2px 10px;
+    background-color: #028273;
+    color: #fff;
+}
+
+    .EMIEsmall-btn:hover {
+        background-color: #19504A;
+    }
+
+    .EMIEsmall-btn:disabled {
+        background-color: #d2d2d2;
+    }
+
+
+
+
+
+.row {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.EMIEadd {
+    margin-left: -20px;
+    color: white !important;
+}
+
+.EMIEbtn {
+    padding: 6px 27px !important;
+    min-height: 42px !important;
+}
+
+.EMIEchkbox {
+    margin: 10px !important;
+}
+
+.EMIEfooter {
+    background-color: #f2f2f2;
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+.EMIEexpndr {
+    margin: 0px !important;
+    padding: 0px;
+    border: 0px;
+    font-size: 20px;
+    font-stretch: condensed;
+    background-color: transparent;
+}
+
+
+input.ng-dirty.ng-invalid {
+    border: 1px solid red;
+    background-color: rgb(255, 244, 244);
+}
+
+.erroneous-field {
+    border: 1px solid red;
+    background-color: rgb(255, 244, 244);
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 20px;
+}
+/* IE 6 doesn't support max-height
+     * we use height instead, but this forces the menu to always be this tall
+     */
+* html .ui-autocomplete {
+    height: 100px;
+}
+
+.EMIEHeaderTitle {
+    padding: .9rem;
+    height: 40px;
+    color: #000 !important;
+    background-color: #f2f2f2 !important;
+    border: 1px solid #D4CBCB;
+    font-size: /*1.000em*/16px;
+    margin-bottom: 2.9rem !important;
+    margin-top: 2rem !important;
+}
+
+
+.btn-sm {
+    border-radius: 0px !important;
+    min-height: 22px !important;
+    font-size: 13px !important;
+}
+
+.EMIEPanelHeader {
+    padding: .9rem;
+    color: #000 !important;
+    background-color: #D2D2D2 !important;
+    font-size: /*1.000em*/16px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+
+
+.EMIELogininfo {
+    font-size:/* 1.063em*/17px;
+    text-align: justify;
+    padding: 20px;
+}
+
+.fontblack {
+    color: #000 !important;
+}
+
+.white-icon {
+    color: #fff;
+    font-size: 2rem;
+    margin: 5px;
+}
+
+.EMIEHeaderUserPanel {
+    color: white;
+}
+
+.EMIEuploadedfile {
+    max-width: 450px !important;
+    display: inline-block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding-right: 5px !important;
+    height: 19px;
+}
+
+.alert {
+    padding: 7px !important;
+    margin-bottom: 5px !important;
+    border: 1px solid transparent !important;
+    border-radius: 0px !important;
+}
+
+#EMIEusermenu {
+    display: none;
+}
+
+ul#EMIEusermenu li {
+    float: left;
+    list-style: none;
+}
+
+.EMIEusermenudisplay {
+    display: block !important;
+}
+
+
+.EMIEchampmenu-open {
+    position: relative;
+    right: -90px;
+    top: -4px;
+}
+
+.EMIEmyreqpanel {
+    border-radius: 0px !important;
+    margin-bottom: 10px;
+}
+
+.EMIEuserpaneltoggler {
+    cursor: pointer;
+    font-weight: bolder;
+    font-size:/*1.875em*/30px;
+    position: relative;
+    top: 2px;
+}
+
+.EMIEshiftright {
+    right: -94px !important;
+}
+
+
+
+
+#EMIEsortinglink {
+    color: #fff !important;
+}
+
+
+    #EMIEsortinglink:hover {
+        text-decoration: underline !important;
+    }
+
+.EMIEmyreqpanelbg {
+    background-color: rgba(199, 198, 198, 1) !important;
+    color: rgba(51, 51, 51, 1) !important;
+}
+
+    .EMIEmyreqpanelbg a {
+        background-color: transparent !important;
+        color: #00188F !important;
+        font-weight: bold;
+    }
+
+        .EMIEmyreqpanelbg a:hover {
+            text-decoration: underline !important;
+        }
+
+
+
+/*Status Panel*/
+ul#status-Child li {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding-top: 40px;
+    text-align: center;
+    margin-right: -4px;
+}
+
+ul#Progress-Child li {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding-top: 40px;
+    text-align: center;
+    margin-right: -4px;
+}
+
+ul#Progress-Child li {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding-top: 40px;
+    text-align: center;
+    margin-right: -4px;
+}
+
+ul#status-Child li a {
+    color: black;
+    text-decoration: none;
+    width: auto;
+    font-size: 9px/*0.61em*/;
+}
+
+ul#icons li {
+    display: inline-block;
+    width: 50px;
+    margin: 0 auto;
+}
+
+    ul#icons li#user-name {
+        width: 100px;
+    }
+
+ul#Req-Status li {
+    display: inline-block;
+    width: 124px;
+    height: 50px;
+    padding-top: 40px;
+    text-align: center;
+    margin-right: -5px;
+    font-size: /*0.61em*/9px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+
+select {
+    min-height: 42px !important;
+}
+
+ul#icons li {
+    display: inline-block;
+    width: 50px;
+    margin: 0 auto;
+}
+
+a:hover, a:focus {
+    text-decoration: none !important;
+}
+
+ul#icons li#user-name {
+    width: 100px;
+}
+
+.Staus-Selected {
+    color: purple;
+    font-weight: bold;
+}
+
+.EMIESubmit {
+    margin-left: 0px !important;
+}
+
+sup {
+    font-size: /*0.875em1*/14px;
+    color: red;
+}
+
+#status-Child {
+    margin-left: -40px;
+}
+
+
+.status ul#status-Child li#First-child {
+    background: url('../img/step_1_current.svg') no-repeat -94% 9px;
+    text-align: left;
+}
+
+.status ul#status-Child li#Middle-child-1 {
+    background: url('../img/pending_step_2.svg') no-repeat 50% 8px;
+}
+
+.status ul#status-Child li#Middle-child-2 {
+    background: url('../img/pending_step_2.svg') no-repeat 50% 8px;
+}
+
+.status ul#status-Child li#Middle-child-3 {
+    background: url('../img/pending_step_2.svg') no-repeat 50% 8px;
+}
+
+.status ul#status-Child li#Last-child {
+    background: url('../img/pending_step.svg') no-repeat 244% 8px;
+}
+
+
+select, textarea, input[type="text"], input[type="url"], .btn {
+    border-radius: 0px !important;
+    min-height: 42px !important;
+    font-size: 17px !important;
+}
+
+.ThemeBtn {
+    background-color: #028273 !important;
+    color: white !important;
+    border-color: #028273;
+}
+
+#AddRequest {
+    background: url('../img/AddRequest-icon-2.svg') no-repeat 0% -5px;
+    width: 192px;
+}
+
+#AddUser {
+    background: url('../img/AddUser-icon.svg') no-repeat 0% -5px;
+    width: 192px;
+}
+
+
+.tooltip > .tooltip-inner {
+    background-color: #505050 !important;
+}
+
+/*.tooltip > .tooltip-arrow {
+    border-left-color: #505050 !important;
+    
+ 
+}*/
+
+#Edit {
+    background: url('../img/icon_edit_on.png') no-repeat 0% -5px;
+    background-color: #028273;
+    width: 50px;
+}
+
+#Delete {
+    background: url('../img/icon_delete_on.png') no-repeat 0% -5px;
+    background-color: #028273;
+    width: 50px;
+}
+
+/*Selected Status bar*/
+.status ul#status-Child li#First-child.Completed {
+    background: url('../img/step_1_complete.svg') no-repeat -8% 9px;
+    text-align: left;
+}
+
+.status ul#status-Child li.Completed#Middle-child-1 {
+    background: url('../img/completed_step.svg') no-repeat 50% 8px;
+    text-align: center;
+}
+
+
+.status ul#status-Child li#Middle-child-2.Completed {
+    background: url('../img/completed_step.svg') no-repeat 50% 8px;
+    text-align: center;
+}
+
+.status ul#status-Child li#Middle-child-3.Completed {
+    background: url('../img/completed_step.svg') no-repeat 50% 8px;
+    text-align: left;
+}
+
+.status ul#status-Child li#Last-child.Current {
+    background: url('../img/last_step.svg') no-repeat 235% 8px;
+}
+
+.status ul#status-Child li#Last-child.Completed {
+    background: url('../img/last_step_completed.svg') no-repeat 238% 8px;
+    text-align: center;
+}
+
+.status ul#status-Child li#Middle-child-1.RolledBack {
+    background: url('../img/last_step_completed.svg') no-repeat 238% 8px;
+    text-align: center;
+}
+/*Status bar current*/
+
+.status ul#status-Child li#Middle-child-1.Current {
+    background: url('../img/current_stage.svg') no-repeat 50% 8px;
+}
+
+.status ul#status-Child li#Middle-child-2.Current {
+    background: url('../img/current_stage.svg') no-repeat 50% 8px;
+}
+
+.status ul#status-Child li#Middle-child-3.Current {
+    background: url('../img/current_stage.svg') no-repeat 50% 8px;
+}
+
+.status ul#status-Child li#Last-child.Current {
+    background: url('../img/last_step.svg') no-repeat 262% 8px;
+}
+
+
+
+ul#Req-Status a {
+    color: black;
+}
+
+/*All request page status panel pending*/
+ul#Req-Status li#DataEntry {
+    background: url('../img/First-complete-small.svg') no-repeat -176% 8px !important;
+}
+
+ul#Req-Status li#SandBoxTest {
+    background: url('../img/current-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+}
+
+ul#Req-Status li#RequestSubmit {
+    background: url('../img/incomplete-step_small.svg') no-repeat 50% 8px !important;
+    pointer-events: none;
+}
+
+ul#Req-Status li#PartiallyApproved {
+    background: url('../img/incomplete-step_small.svg') no-repeat 50% 8px !important;
+    pointer-events: none;
+}
+
+ul#Req-Status li#Approved {
+    background: url('../img/incomplete-step_small.svg') no-repeat 50% 8px !important;
+    pointer-events: none;
+}
+
+ul#Req-Status li#ProductionReady {
+    background: url('../img/incomplete-step_small.svg') no-repeat 50% 8px !important;
+    pointer-events: none;
+}
+
+ul#Req-Status li#SignedOff {
+    background: url('../img/last-incomplete-step_small.svg') no-repeat 290% 8px !important;
+    pointer-events: none;
+}
+
+    /*All request page status panel current*/
+    ul#Req-Status li#SandBoxTest.Initiated a,
+    ul#Req-Status li#PartiallyApproved.VerifiedOnTestMachine a,
+    ul#Req-Status li#PartiallyApproved.ApprovalPending a,
+    ul#Req-Status li#Approved.PartiallyApproved a,
+    ul#Req-Status li#ProductionReady.Approved a,
+    ul#Req-Status li#Rejected.Rejected a,
+    ul#Req-Status li#SignedOff.ProductionReady a,
+    ul#Req-Status li#ProductionChangesScheduled.ProductionChangesScheduled a,
+    ul#Req-Status li#Rollback.RolledBack a,
+    ul#Req-Status li#SignedOff.SignedOff a {
+        color: purple;
+    }
+
+/*Verifyed On test machine*/
+ul#Req-Status li#SandBoxTest.VerifiedOnTestMachine, ul#Req-Status li#RequestSubmit.VerifiedOnTestMachine {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#PartiallyApproved.VerifiedOnTestMachine {
+    background: url('../img/current-step_small.svg') no-repeat 635% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*Approval Pending*/
+ul#Req-Status li#SandBoxTest.ApprovalPending, ul#Req-Status li#RequestSubmit.ApprovalPending {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#PartiallyApproved.ApprovalPending {
+    background: url('../img/current-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*PArtially Approved*/
+ul#Req-Status li#SandBoxTest.PartiallyApproved, ul#Req-Status li#RequestSubmit.PartiallyApproved, ul#Req-Status li#PartiallyApproved.PartiallyApproved {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#Approved.PartiallyApproved {
+    background: url('../img/current-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*Approved*/
+ul#Req-Status li#SandBoxTest.Approved, ul#Req-Status li#RequestSubmit.Approved, ul#Req-Status li#PartiallyApproved.Approved, ul#Req-Status li#Approved.Approved {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#ProductionReady.Approved {
+    background: url('../img/current-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*Rejected */
+ul#Req-Status li#SandBoxTest.Rejected, ul#Req-Status li#RequestSubmit.Rejected {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#Rejected.Rejected {
+    background: url('../img/Last-complete-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*Production ready*/
+ul#Req-Status li#RequestSubmit.ProductionReady, ul#Req-Status li#PartiallyApproved.ProductionReady, ul#Req-Status li#SandBoxTest.ProductionReady, ul#Req-Status li#Approved.ProductionReady, ul#Req-Status li#ProductionReady.ProductionReady {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#SignedOff.ProductionReady {
+    background: url('../img/last-current-step_small.svg') no-repeat 290% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*Production Scheduled*/
+ul#Req-Status li#RequestSubmit.ProductionChangesScheduled, ul#Req-Status li#PartiallyApproved.ProductionChangesScheduled, ul#Req-Status li#SandBoxTest.ProductionChangesScheduled, ul#Req-Status li#Approved.ProductionChangesScheduled {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#ProductionChangesScheduled.ProductionChangesScheduled {
+    background: url('../img/current-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+/*Roll back after Sandbox verification*/
+ul#Req-Status li#SandBoxTest.RolledBack {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#Rollback.RolledBack {
+    background: url('../img/Last-complete-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+
+/*Signed off*/
+ul#Req-Status li#RequestSubmit.SignedOff, ul#Req-Status li#PartiallyApproved.SignedOff, ul#Req-Status li#SandBoxTest.SignedOff, ul#Req-Status li#Approved.SignedOff, ul#Req-Status li#ProductionReady.SignedOff {
+    background: url('../img/complete-step_small.svg') no-repeat 50% 8px !important;
+    color: black;
+    pointer-events: painted;
+}
+
+ul#Req-Status li#SignedOff.SignedOff {
+    background: url('../img/Last-complete-step_small.svg') no-repeat 50% 8px !important;
+    color: purple;
+    pointer-events: painted;
+}
+
+
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+
+/*CUSTOM CONTROLS*/
+
+.dropdownCD {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 35px;
+}
+
+
+    .dropdownCD dd,
+    .dropdownCD dt {
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid lightgrey;
+    }
+
+    .dropdownCD ul {
+        margin: -1px 0 0 0;
+    }
+
+    .dropdownCD dd {
+        position: relative;
+    }
+
+    .dropdownCD a,
+    .dropdownCD a:visited {
+        color: black;
+        text-decoration: none;
+        outline: none;
+        font-size: 12px;
+    }
+
+    .dropdownCD dt a {
+        /*background-color: #4F6877;*/
+        display: block !important;
+        padding: 12px 20px 5px 10px;
+        min-height: 25px;
+        line-height: 12px;
+        overflow: hidden;
+        border: 0;
+        width: 272px;
+        color: black;
+    }
+
+.dropdown.customDD dt a span,
+.multiSel span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 3px 2px 0;
+}
+
+.dropdownCD dd ul {
+    background-color: #fff;
+    border: 0;
+    color: black;
+    display: none;
+    left: 0px;
+    padding: 2px 15px 2px 5px;
+    position: absolute;
+    top: 2px;
+    width: 280px;
+    list-style: none;
+    height: 166px;
+    overflow: auto;
+}
+
+.dropdownCD span.value {
+    display: none;
+}
+
+.dropdownCD dd ul li a {
+    padding: 5px;
+    display: block;
+}
+
+    .dropdownCD dd ul li a:hover {
+        background-color: #fff;
+    }
+
+
+/*For Charts Table*/
+
+.table_report {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid lightgrey;
+}
+
+    .table_report td th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    /*.table_report tr:nth-child(even) {
+        background-color: #dddddd;
+    }*/
+
+    .table_report tr th {
+        background-color: #5B9AD4;
+        font-size: /*1.063em*/17px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        border: 1px solid lightgrey;
+        width: 37%;
+        padding-left: 0px;
+    }
+
+    .table_report td {
+        border: 1px solid lightgrey;
+        padding-left: 5px;
+        width: auto;
+    }
+
+    .table_report tr {
+        background-color: white;
+    }
+
+
+.glyphicon-info-sign {
+    cursor: pointer;
+}
+
+
+.panel-heading {
+    cursor: auto;
+}
+
+.glyphicon-sort {
+    cursor: pointer;
+    font-size:/*0.625em*/ 10px;
+    margin-left: 5px;
+    color: #000;
+}
+
+
+.glyphicon-chevron-down {
+    position: relative;
+    left: 5px;
+    top: 2px;
+}
+
+.glyphicon-chevron-up {
+    position: relative;
+    left: 5px;
+    top: 2px;
+}
+
+.glyphicon-pencil {
+    font-size: /*0.813em*/13px;
+    padding-left: 7px;
+}
+
+/*Custom Pop-up Header class*/
+.Modal-error {
+    background-color: #A80000;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.Modal-warning {
+    background-color: #FF8C00;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.Modal-info {
+    background-color: #00BCF2;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.Modal-success {
+    background-color: #00B294;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+li.input-lg {
+    height: auto !important;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+li.input-lg:hover {
+ background:#D2D2D2;
+}
+
+
+.dropdown-menu-left{
+    word-break:break-all !important;
+}
+
+
+@media screen and (max-width: 1024px) /*and (min-width: 769px)*/ {
+    #EMIEUserPanel{
+        position: relative;
+        right: -23px !important;
+        top: 0px;
+        font-size: 0.813em !important;
+    }
+
+    #EMIEusermenu {
+        right: -24px !important;
+        position: relative;
+        top: 5px;
+    }
+
+    .EMIEtitle{
+        font-size: /*1.063em*/19px;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    #EMIEUserPanel{
+        position: relative;
+        right: -23px !important;
+        top: 0px;
+        font-size: 0.813em !important;
+    }
+
+    #EMIEusermenu {
+        right: -24px !important;
+        position: relative;
+        top:-13px !important;
+    }
+
+    .EMIEtitle{
+        font-size: /*1.063em*/19px;
+    }
+
+
+}
+
+
+
+.dropbtn {
+    /*background-color: #4CAF50;*/
+    color: white;
+    /*padding: 16px;*/
+    font-size: /*0.875em*/16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 200px;
+    padding-top:10px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    font-size:0.875em
+    
+   
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightgray;
+    color:black;
+    /*border-radius:10px;*/
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    /*background-color: #3e8e41;*/
+}

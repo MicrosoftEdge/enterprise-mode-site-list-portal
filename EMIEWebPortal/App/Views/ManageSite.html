@@ -1,0 +1,122 @@
+﻿
+<div class="EMIEpage-title">ADD NEW SITE</div>
+
+<div class="row">
+    <form ng-model="AddNewSite" name="AddWebsite">
+        <div class="row" style='margin:20px 0px 20px 0px !important'>
+            <div>
+                <span class="EMIEControllabel">URL</span>
+            </div>
+            <div class="col-lg-6"><input type="text" data-ng-model="siteUrl" ng-change="CheckPathIncluded(siteUrl)" ng-disabled="IsEdit" class="form-control" /> </div>
+            <div class="col-lg-6"></div>
+        </div>
+
+
+        <div class="row" style='margin:20px 0px 20px 0px !important'>
+            <div>
+                <span class="EMIEControllabel">NOTES ABOUT URL</span>
+            </div>
+            <div class="col-lg-6"><textarea class="form-control" data-ng-model="siteNotes" rows="5"></textarea> </div>
+            <div class="col-lg-6"></div>
+        </div>
+
+        <div class="row" style='margin:20px 0px 20px 0px !important' ng-hide="IsEdit">
+            <div class="col-lg-6 checkbox"><label><input type="checkbox" data-ng-model="IsValidURL" checked="{{IsValidURL}}" /> VALIDATE URLS</label> </div>
+            <div class="col-lg-6"></div>
+        </div>
+
+        <div class="row" style='margin:20px 0px 20px 0px !important'>
+
+            <!--<div>    <span class="EMIEControllabel text-info" ng-show="isPathIncluded">URL</span>
+            </div>-->
+
+            <div class="col-lg-2">LAUNCH IN</div>
+            <div class="col-lg-3" style="margin-left:10px">OPEN IN</div>
+            <div class="col-lg-7" style="margin-left:-20px"> <span ng-show="isPathIncluded">URLS</span></div>
+        </div>
+
+
+        <div class="row" style="margin-left:0px;">
+
+
+            <div class="col-lg-2">
+                <select name="domain" class="form-control" data-ng-model="DocModeName" data-ng-options="var as var.DocModeName for var in DocModes"
+                        required ng-class="{'erroneous-field' : (AddWebsite.domain.$dirty || submitted) && AddWebsite.domain.$error.required}">
+                    <option value="">----SELECT----</option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <input type="radio" data-ng-model="OpenIn" name="OpenIn" value="IE11"  style="margin-left:10px;" />IE11
+                <input type="radio" data-ng-model="OpenIn" name="OpenIn" value="MSEdge" style="margin-left:10px;" />MSEDGE
+                <input type="radio" data-ng-model="OpenIn" name="OpenIn" value="None" style="margin-left:10px;" />NONE
+            </div>
+            <div class="col-lg-3 text-left text-success alert alert-success" ng-show="isPathIncluded">
+                <span data-ng-model="siteUrlwithoutPath" class="EMIEControllabel">{{siteUrlwithoutPath}}</span>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+
+        <div class="row" style="margin-left:0px;">
+
+
+            <div class="col-lg-2" ng-show="isPathIncluded">
+                <select name="subdomain" class="form-control" ng-required="isPathIncluded == true" ng-class="{'erroneous-field' : (AddWebsite.subdomain.$dirty || submitted) && AddWebsite.subdomain.$error.required}" data-ng-model="DocModeNameSubURL"
+                        data-ng-options="var as var.DocModeName for var in DocModes">
+                    <option value="">----SELECT----</option>
+                </select>
+            </div>
+            <div class="col-lg-3" ng-show="isPathIncluded">
+                <input type="radio" data-ng-model="OpenInForPath" name="OpenInForPath" value="IE11" style="margin-left:10px;" />IE11
+                <input type="radio" data-ng-model="OpenInForPath" name="OpenInForPath" value="MSEdge" style="margin-left:10px;" />MSEDGE
+                <input type="radio" data-ng-model="OpenInForPath" name="OpenInForPath" value="None" style="margin-left:10px;" />NONE
+            </div>
+
+            <div class="col-lg-3 text-left alert alert-success" ng-show="isPathIncluded">
+                <span data-ng-model="subURL" class="EMIEControllabel">{{siteUrlWithPath}}</span>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+
+
+        <div class="row" style="margin-left:0px;">
+
+            <div class="col-lg-6 text-left"><button type="button" ng-model="action" ng-click="addNewItem()" ng-disabled="disableSaveButton" class="btn btn-success">SAVE</button> <button type="button" ng-click="cancel()" class="btn btn-success">CANCEL</button></div>
+            <div class="col-lg-6"></div>
+        </div>      
+
+        <div class="modal fade " id="SitelistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog mrgTop15p GetKeyPopUp" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" ng-class="setcss(LISTCONTENT.Type)" style="padding-top:0px">
+                        <div class="row" id="pop-up-header">
+                            <h3 class="textNormal mrgTop0 text-center">{{LISTCONTENT.Title}}</h3>
+                        </div>
+                    </div>
+                    <div class="modal-body paddTop0">
+                        <div class="row">
+                            <div class="col-lg-12" style="text-align:center">
+                                <span class="EMIEControllabel" ng-bind-html="LISTMESSAGE"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-success EMIESubmit EMIEadd" data-ng-click="Confirm(LISTCONTENT.MethodCase,LISTCONTENT.Object)" data-dismiss="modal" title="{{'CONFIRM'}}"> {{'OK'}}</button>
+                                <button type="button" class="btn btn-success EMIESubmit EMIEadd" data-ng-click="CancelValidationFail(LISTCONTENT.MethodCase)" ng-hide="HideCancelModal" data-dismiss="modal" title="{{'CANCEL'}}">{{'CANCEL'}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <message-center></message-center>
+</div>
+<script>
+
+    url();
+</script>
+

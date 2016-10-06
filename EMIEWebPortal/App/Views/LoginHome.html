@@ -1,0 +1,57 @@
+﻿<script>
+    $(document).ready(function (e) {
+
+        $(".toggler").css("display", "none");        
+        $("#wrapper").addClass("toggled");
+        $(".status").css("display", "none");
+      
+    });
+</script>
+
+<div disable-all="isLoginHomeDisabled">
+    <div class="row" style="margin-top:50px !important;">
+
+        <!--Left Panel-->
+
+
+
+        <div class="col-lg-8 EMIELogininfo" style="border:1px solid #c3c0c0; height:363px;">
+            <h1>Sign in</h1>
+
+            <p> Welcome to the Enterprise Mode self-service portal. This portal is intended to help you manage your Enterprise Mode site list requests. </p>
+
+
+            <p>Enterprise Mode is a compatibility mode that lets websites render using a modified browser configuration, helping to avoid many of the common compatibility problems associated with web apps written and tested on older versions of Internet Explorer. Enterprise Mode also helps by redirecting any site that isn’t compatible with Microsoft Edge to the appropriate version of Internet Explorer.</p>
+
+            <p>Depending on your role, while you’re here you’ll be able to see the status of your site lists, approve site lists, and push the list into your production environment.</p>
+
+
+        </div>
+
+
+
+
+        <!--Left Panel-->
+        <!--Right Panel-->
+        <div class="col-lg-4 text-center">
+
+            <div class="row" style="border:1px solid #c3c0c0; position:relative;left:10px;top:-5px; height:363px; padding-top:170px;">
+
+                <button data-toggle="collapse" class="btn btn-default EMIEbtn" ng-click="Login()" style="margin-right:20px !important;">Sign In</button>
+
+                <button data-toggle="collapse" class="btn btn-default EMIEbtn" ng-click="Register()">Register</button>
+
+            </div>
+        </div>
+
+        <!--Right Panel-->
+    </div>
+    <message-center></message-center>
+</div>
+<div class="row EMIELogininfo">
+    <p>For more info about Enterprise Mode and site lists, see the <a class="btn-link" href="https://technet.microsoft.com/en-us/itpro/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11" target="_blank">Enterprise Mode TechNet articles</a>.</p>
+</div>
+<script>
+
+    url();
+</script>

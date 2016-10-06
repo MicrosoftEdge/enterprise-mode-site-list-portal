@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal", "EMIEWebPortal\EMIEWebPortal.csproj", "{50F6632D-FA9F-4A94-812F-26E5C63E05BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.Common", "EMIEWebPortal.Common\EMIEWebPortal.Common.csproj", "{40C8573F-C903-4369-BBCF-6DC10C1DE8D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.Models", "EMIEWebPortal.Models\EMIEWebPortal.Models.csproj", "{E2A994AE-00E9-4BDF-AE55-53A5D716C932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.MailerLib", "EMIEWebPortal.MailerLib\MailerLib\EMIEWebPortal.MailerLib.csproj", "{04476E66-5233-4EA9-8F1E-3162A49E98BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.XMLHelperLib", "EMIEWebPortal.XMLHelperLib\XMLHelperLib\EMIEWebPortal.XMLHelperLib.csproj", "{2FADDD16-FDEF-4013-A966-1591562EA34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.DataModel", "EMIEWebPortal.DataModel\EMIEWebPortal.DataModel.csproj", "{8117C653-BEA0-484D-89AE-29C1822E7E08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.Controllers", "EMIEWebPortal.Controllers\EMIEWebPortal.Controllers.csproj", "{1D5E7924-7B4F-4C90-A754-18F12EC15D5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMIEWebPortal.SchedulerService", "EMIEWebPortal.SchedulerService\EMIEWebPortal.SchedulerService\EMIEWebPortal.SchedulerService.csproj", "{0CA2956C-8262-4847-A26B-470562DF6593}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://msit-lob-compat:8080/tfs/defaultmsitlobappcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EMIEWebPortal\\EMIEWebPortal.csproj
+		SccProjectName1 = EMIEWebPortal
+		SccLocalPath1 = EMIEWebPortal
+		SccProjectUniqueName2 = EMIEWebPortal.Common\\EMIEWebPortal.Common.csproj
+		SccProjectName2 = EMIEWebPortal.Common
+		SccLocalPath2 = EMIEWebPortal.Common
+		SccProjectUniqueName3 = EMIEWebPortal.Models\\EMIEWebPortal.Models.csproj
+		SccProjectName3 = EMIEWebPortal.Models
+		SccLocalPath3 = EMIEWebPortal.Models
+		SccProjectUniqueName4 = EMIEWebPortal.MailerLib\\MailerLib\\EMIEWebPortal.MailerLib.csproj
+		SccProjectName4 = EMIEWebPortal.MailerLib/MailerLib
+		SccLocalPath4 = EMIEWebPortal.MailerLib\\MailerLib
+		SccProjectUniqueName5 = EMIEWebPortal.XMLHelperLib\\XMLHelperLib\\EMIEWebPortal.XMLHelperLib.csproj
+		SccProjectName5 = EMIEWebPortal.XMLHelperLib/XMLHelperLib
+		SccLocalPath5 = EMIEWebPortal.XMLHelperLib\\XMLHelperLib
+		SccProjectUniqueName6 = EMIEWebPortal.DataModel\\EMIEWebPortal.DataModel.csproj
+		SccProjectName6 = EMIEWebPortal.DataModel
+		SccLocalPath6 = EMIEWebPortal.DataModel
+		SccProjectUniqueName7 = EMIEWebPortal.Controllers\\EMIEWebPortal.Controllers.csproj
+		SccProjectName7 = EMIEWebPortal.Controllers
+		SccLocalPath7 = EMIEWebPortal.Controllers
+		SccProjectUniqueName8 = EMIEWebPortal.SchedulerService\\EMIEWebPortal.SchedulerService\\EMIEWebPortal.SchedulerService.csproj
+		SccProjectName8 = EMIEWebPortal.SchedulerService/EMIEWebPortal.SchedulerService
+		SccLocalPath8 = EMIEWebPortal.SchedulerService\\EMIEWebPortal.SchedulerService
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50F6632D-FA9F-4A94-812F-26E5C63E05BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F6632D-FA9F-4A94-812F-26E5C63E05BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F6632D-FA9F-4A94-812F-26E5C63E05BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F6632D-FA9F-4A94-812F-26E5C63E05BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C8573F-C903-4369-BBCF-6DC10C1DE8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C8573F-C903-4369-BBCF-6DC10C1DE8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C8573F-C903-4369-BBCF-6DC10C1DE8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C8573F-C903-4369-BBCF-6DC10C1DE8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2A994AE-00E9-4BDF-AE55-53A5D716C932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A994AE-00E9-4BDF-AE55-53A5D716C932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A994AE-00E9-4BDF-AE55-53A5D716C932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2A994AE-00E9-4BDF-AE55-53A5D716C932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04476E66-5233-4EA9-8F1E-3162A49E98BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04476E66-5233-4EA9-8F1E-3162A49E98BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04476E66-5233-4EA9-8F1E-3162A49E98BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04476E66-5233-4EA9-8F1E-3162A49E98BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FADDD16-FDEF-4013-A966-1591562EA34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FADDD16-FDEF-4013-A966-1591562EA34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FADDD16-FDEF-4013-A966-1591562EA34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FADDD16-FDEF-4013-A966-1591562EA34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8117C653-BEA0-484D-89AE-29C1822E7E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8117C653-BEA0-484D-89AE-29C1822E7E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8117C653-BEA0-484D-89AE-29C1822E7E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8117C653-BEA0-484D-89AE-29C1822E7E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D5E7924-7B4F-4C90-A754-18F12EC15D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5E7924-7B4F-4C90-A754-18F12EC15D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5E7924-7B4F-4C90-A754-18F12EC15D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5E7924-7B4F-4C90-A754-18F12EC15D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA2956C-8262-4847-A26B-470562DF6593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA2956C-8262-4847-A26B-470562DF6593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA2956C-8262-4847-A26B-470562DF6593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA2956C-8262-4847-A26B-470562DF6593}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
