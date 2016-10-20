@@ -131,7 +131,7 @@ namespace XMLHelperLib
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
 
                 throw;

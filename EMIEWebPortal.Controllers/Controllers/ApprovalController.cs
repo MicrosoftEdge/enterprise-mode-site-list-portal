@@ -279,7 +279,7 @@ namespace EMIEWebPortal.Controllers
             string Request = string.Empty;
             string description = string.Empty;
             int state = 0;
-            if (!ModelState.IsValid || ticketIds == null || loggedInUserId == null)
+            if (!ModelState.IsValid || ticketIds == null || loggedInUserId == 0)
             {
                 return null;
             }

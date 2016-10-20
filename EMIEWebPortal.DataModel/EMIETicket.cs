@@ -51,7 +51,6 @@ namespace EMIEWebPortal.DataModel
         public Nullable<bool> DomainOpenInEdge { get; set; }
         public Nullable<bool> SubDomainOpenInEdge { get; set; }
         public string RejectedReason { get; set; }
-    
         public virtual Application Application { get; set; }
         public virtual BPU BPU { get; set; }
         public virtual DocMode DocMode { get; set; }

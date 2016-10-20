@@ -289,7 +289,7 @@ namespace EMIEWebPortal.Controllers
                         #endregion
                         tc.Complete();
                     }
-                    catch (Exception ex)
+                    catch
                     {
 
                         System.Transactions.Transaction.Current.Rollback();
@@ -311,7 +311,7 @@ namespace EMIEWebPortal.Controllers
                 //return dbTicket.TicketId;
                 return Json(dbTicket, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -726,7 +726,7 @@ namespace EMIEWebPortal.Controllers
                 //return Success
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -1383,7 +1383,7 @@ namespace EMIEWebPortal.Controllers
                             break;
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     return Message = Constants.ErrorMessage;
                 }
@@ -1828,8 +1828,6 @@ namespace EMIEWebPortal.Controllers
             {
                 throw;
             }
-            return null;
-
         }
 
         /// <summary>
