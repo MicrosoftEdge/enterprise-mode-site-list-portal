@@ -1,7 +1,0 @@
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\bin\Debug\EMIEWebPortal.Models.dll
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\bin\Debug\EMIEWebPortal.Models.pdb
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\bin\Debug\EMIEWebPortal.Models.dll.CodeAnalysisLog.xml
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\bin\Debug\EMIEWebPortal.Models.dll.lastcodeanalysissucceeded
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\obj\Debug\EMIEWebPortal.Models.csprojResolveAssemblyReference.cache
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\obj\Debug\EMIEWebPortal.Models.dll
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.Models\obj\Debug\EMIEWebPortal.Models.pdb

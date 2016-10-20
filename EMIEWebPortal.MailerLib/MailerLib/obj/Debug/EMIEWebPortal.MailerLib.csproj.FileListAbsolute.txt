@@ -1,9 +1,0 @@
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\bin\Debug\EMIEWebPortal.MailerLib.dll
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\bin\Debug\EMIEWebPortal.MailerLib.pdb
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\bin\Debug\EMIEWebPortal.MailerLib.dll.CodeAnalysisLog.xml
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\bin\Debug\EMIEWebPortal.MailerLib.dll.lastcodeanalysissucceeded
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\bin\Debug\EMIEWebPortal.Models.dll
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\bin\Debug\EMIEWebPortal.Models.pdb
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\obj\Debug\EMIEWebPortal.MailerLib.csprojResolveAssemblyReference.cache
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\obj\Debug\EMIEWebPortal.MailerLib.dll
-D:\MPTProjects\MPTProject\EMIE_SSP\EMIEWebPortal.MailerLib\MailerLib\obj\Debug\EMIEWebPortal.MailerLib.pdb
