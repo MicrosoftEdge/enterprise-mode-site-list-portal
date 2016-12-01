@@ -131,7 +131,7 @@ namespace XMLHelperLib
                     }
                 }
             }
-            catch
+            catch (Exception)
             {
 
                 throw;
@@ -155,9 +155,20 @@ namespace XMLHelperLib
 
             //Check if URL consists of subdomain, and get the domain accordingly
             if (!uri.AbsolutePath.Trim().Equals(@"/"))
-                urlHost = uri.Host.Trim() + uri.AbsolutePath.Trim();
+            {
+                if (uri.IsDefaultPort == true)
+                    urlHost = uri.Host.Trim() + uri.AbsolutePath.Trim();
+                else
+                    urlHost = uri.Authority.Trim() + uri.AbsolutePath.Trim();
+
+            }
             else
-                urlHost = uri.Host.Trim();
+            {
+                if (uri.IsDefaultPort == true)
+                    urlHost = uri.Host.Trim();
+                else
+                    urlHost = uri.Authority.Trim();
+            }
 
             try
             {
@@ -192,18 +203,20 @@ namespace XMLHelperLib
                         isSubdomainPresent = false;
 
 
+
                     if (xDoc.Descendants(XName.Get("domain")) != null)
                     {
                         if (!isSubdomainPresent)
                         {
                             //If subdomain is null, check only domain in the V1 file.
-                            var UrlList = xDoc.Descendants(XName.Get("domain")).Where(o => o.FirstNode.ToString().Trim().ToLower().Equals(uri.Host.Trim()));
+                            var UrlList = xDoc.Descendants(XName.Get("domain")).Where(o => o.FirstNode.ToString().Trim().ToLower().Equals(urlHost.ToLower()));
                             if (UrlList.Count() > 0)
                                 result = true;
                         }
                         else
                         {
-                            var UrlList = xDoc.Descendants(XName.Get("domain")).Where(o => o.FirstNode.ToString().Trim().ToLower().Equals(uri.Host.Trim()));
+
+                            var UrlList = xDoc.Descendants(XName.Get("domain")).Where(o => o.FirstNode.ToString().Trim().ToLower().Equals(uri.Authority.Trim().ToLower()));
                             IEnumerable<XElement> subDomainlist = null;
 
                             if (UrlList.Count() > 0)
@@ -212,7 +225,7 @@ namespace XMLHelperLib
                                 foreach (var item in UrlList)
                                 {
                                     //Check subdomain in the domain found of V1 file.
-                                    subDomainlist = item.Descendants("path").Where(o => o.FirstNode.ToString().Trim().ToLower().Equals(uri.AbsolutePath.Trim()));
+                                    subDomainlist = item.Descendants("path").Where(o => o.FirstNode.ToString().Trim().ToLower().Equals(uri.AbsolutePath.Trim().ToLower()));
                                     if (subDomainlist.Count() > 0)
                                         result = true;
                                 }
@@ -317,14 +330,14 @@ namespace XMLHelperLib
                     if (findUrl.AbsolutePath.Equals("/"))
                     {
                         idList = (from ticket in DbEntity.EMIETickets.DefaultIfEmpty()
-                                  where (ticket.AppSiteLink.ToLower().Equals(findUrl.OriginalString) || ticket.AppSiteLink.ToLower().Equals(findUrl.Host) || ticket.AppSiteLink.ToLower().Equals(findUrl.AbsoluteUri))
+                                  where (ticket.AppSiteLink.ToLower().Equals(findUrl.OriginalString.ToLower()) || ticket.AppSiteLink.ToLower().Equals(findUrl.Host.ToLower()) || ticket.AppSiteLink.ToLower().Equals(findUrl.AbsoluteUri.ToLower()))
                                   select ticket.TicketId).ToList();
                     }
                     //Matching the URL with the entered Url, if the absolute path of the url is not null
                     else
                     {
                         idList = (from ticket in DbEntity.EMIETickets.DefaultIfEmpty()
-                                  where ticket.AppSiteLink.ToLower().Equals(findUrl.AbsoluteUri)
+                                  where ticket.AppSiteLink.ToLower().Equals(findUrl.AbsoluteUri.ToLower())
                                   select ticket.TicketId).ToList();
                     }
                     if (idList.Count != 0)
@@ -431,7 +444,7 @@ namespace XMLHelperLib
                 //Get access to UNC path
                 using (UNCAccessWithCredentials unc = new UNCAccessWithCredentials())
                 {
-                    if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password) || unc.LastError==1219)
+                    if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password) || unc.LastError == 1219)
                     {
                         if (operation == Operation.AddInSandbox || operation == Operation.SandboxRollback)
                         {
@@ -521,10 +534,21 @@ namespace XMLHelperLib
                 Uri uri = new Uri(ticket.AppSiteUrl);
                 string URL = null;
 
-                if (!uri.AbsolutePath.Trim().Equals(@"/"))
-                    URL = uri.Host.Trim() + uri.AbsolutePath.Trim();
+                if (uri.AbsolutePath.Trim().Equals(@"/"))
+                {
+                    if (uri.IsDefaultPort == true)
+                        URL = uri.Host.Trim();
+                    else
+                        URL = uri.Authority.Trim();
+                }
                 else
-                    URL = uri.Host.Trim();
+                {
+                    if (uri.IsDefaultPort == true)
+                        URL = uri.Host.Trim() + uri.AbsolutePath.Trim();
+                    else
+                        URL = uri.Authority.Trim() + uri.AbsolutePath.Trim();
+                }
+
                 string version = CheckVersion();
 
                 if (ticket.ChangeType.ChangeTypeId == (int)ChangeType.Add)
@@ -621,8 +645,12 @@ namespace XMLHelperLib
                 #region UrlDetail
                 //Get the domain and subdomain from the url
                 Uri uri = new Uri(ticketObj.AppSiteUrl);
-                string domain = uri.Host.Trim();
-                string subdomain = uri.AbsolutePath.Trim();
+                string domain = "";
+                if (uri.IsDefaultPort == true)
+                    domain = uri.Host.Trim().ToLower();
+                else
+                    domain = uri.Authority.Trim().ToLower();
+                string subdomain = uri.AbsolutePath.Trim().ToLower();
                 #endregion
 
                 #region PublicVariables
@@ -683,7 +711,8 @@ namespace XMLHelperLib
                     //Entering data for SubDomain
                     if (!String.IsNullOrEmpty(subdomain) && !subdomain.Equals(@"/"))
                     {
-                        emieticketArch.SubDomainDocModeId = subdomainDocmode;
+                        if (subdomainDocmode != 0)
+                            emieticketArch.SubDomainDocModeId = subdomainDocmode;
 
                         if (subDomainOpenIn == OpenIn.MSEdge.ToString())
                             emieticketArch.SubDomainOpenInEdge = true;
@@ -724,55 +753,64 @@ namespace XMLHelperLib
         /// <param name="searchSubDomainInDocMode">bool search for subdomain</param>
         private void GetV1DocModeArchive(string domain, string subdomain, ref int domainDocmode, ref int subdomainDocmode, ref string domainOpenIn, ref string subDomainOpenIn, bool searchDomainInDocmode, bool searchSubDomainInDocMode)
         {
-            //Get the docMode tag node children for matching with domain and subdomain
-            XmlNodeList docModeNodes = rootNode.SelectNodes("docMode//domain");
-            foreach (XmlNode docModeDomainNode in docModeNodes)
+            try
             {
-                string[] words = docModeDomainNode.InnerText.Trim().Split('/');
-                if (words[0].Trim().ToLower().Equals(domain))
+                //Get the docMode tag node children for matching with domain and subdomain
+                XmlNodeList docModeNodes = rootNode.SelectNodes("docMode//domain");
+                foreach (XmlNode docModeDomainNode in docModeNodes)
                 {
-                    //if the information was not found in emie section, will check in the docMode section
-                    if (searchDomainInDocmode)
+                    string[] words = docModeDomainNode.InnerText.Trim().Split('/');
+                    if (words[0].Trim().ToLower().Equals(domain))
                     {
-
-                        string docModeInteger = docModeDomainNode.Attributes["docMode"].Value;
-
-                        if (docModeDomainNode.Attributes["doNotTransition"] != null)
-                            domainOpenIn = OpenIn.MSEdge.ToString();
-
-                        //Converting string to integer docMode 
-                        domainDocmode = ConvertValueToDocMode(docModeInteger);
-
-
-                    }
-
-                    //If subdomain is not found in emie section, will check in docMode section.
-                    if (searchSubDomainInDocMode)
-                    {
-                        XmlNodeList docModeChildren = docModeDomainNode.ChildNodes;
-                        if (docModeChildren.Count > 0 && subdomain != "/")
+                        //if the information was not found in emie section, will check in the docMode section
+                        if (searchDomainInDocmode)
                         {
-                            foreach (XmlNode docModeChild in docModeChildren)
+                            if (docModeDomainNode.Attributes["docMode"] != null)
                             {
-                                if (docModeChild.NodeType == XmlNodeType.Element && docModeChild.InnerText == subdomain)
+                                string docModeInteger = docModeDomainNode.Attributes["docMode"].Value;
+                                //Converting string to integer docMode 
+                                domainDocmode = ConvertValueToDocMode(docModeInteger);
+                            }
+
+                            if (docModeDomainNode.Attributes["doNotTransition"] != null)
+                                domainOpenIn = OpenIn.MSEdge.ToString();
+
+
+                        }
+
+                        //If subdomain is not found in emie section, will check in docMode section.
+                        if (searchSubDomainInDocMode)
+                        {
+                            XmlNodeList docModeChildren = docModeDomainNode.ChildNodes;
+                            if (docModeChildren.Count > 0 && subdomain != "/")
+                            {
+                                foreach (XmlNode docModeChild in docModeChildren)
                                 {
-                                    //Getting the tag details of subdomain
-                                    string subDomaindocModeInteger = docModeChild.Attributes["docMode"].Value;
+                                    if (docModeChild.NodeType == XmlNodeType.Element && docModeChild.InnerText.ToLower() == subdomain)
+                                    {
+                                        //Getting the tag details of subdomain
+                                        string subDomaindocModeInteger = docModeChild.Attributes["docMode"].Value;
 
-                                    if (docModeChild.Attributes["doNotTransition"] != null)
-                                        subDomainOpenIn = OpenIn.MSEdge.ToString();
+                                        if (docModeChild.Attributes["doNotTransition"] != null)
+                                            subDomainOpenIn = OpenIn.MSEdge.ToString();
 
-                                    subdomainDocmode = ConvertValueToDocMode(subDomaindocModeInteger);
+                                        subdomainDocmode = ConvertValueToDocMode(subDomaindocModeInteger);
 
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            subdomainDocmode = (int)CompatModes.Default;
+                            else
+                            {
+                                subdomainDocmode = (int)CompatModes.Default;
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -833,7 +871,7 @@ namespace XMLHelperLib
                     {
                         foreach (XmlNode emieChild in emieChildren)
                         {
-                            if (emieChild.NodeType == XmlNodeType.Element && emieChild.InnerText == subdomain)
+                            if (emieChild.NodeType == XmlNodeType.Element && emieChild.InnerText.ToLower() == subdomain)
                             {
                                 //Get the 'exclude' attribute details
                                 if (emieChild.Attributes["exclude"].Value == "false")
@@ -894,7 +932,7 @@ namespace XMLHelperLib
                 if (siteNode.NodeType == XmlNodeType.Element && siteNode.Attributes["url"] != null)
                 {
                     //If 'url'-attribute matches with the domain, get the tag details and save in EMIETicketsArch table
-                    if (siteNode.Attributes["url"].Value == domain)
+                    if (siteNode.Attributes["url"].Value.ToLower() == domain)
                     {
                         string documentMode = siteNode["compat-mode"].InnerText;
 
@@ -906,7 +944,7 @@ namespace XMLHelperLib
                     //If subdomain is also present,get the tag details and save in EMIETicketsArch table
                     if (!String.IsNullOrEmpty(subdomain) && !subdomain.Equals(@"/"))
                     {
-                        if (siteNode.Attributes["url"].Value == domain + subdomain)
+                        if (siteNode.Attributes["url"].Value.ToLower() == domain + subdomain)
                         {
                             string documentMode = siteNode["compat-mode"].InnerText;
 
@@ -1083,9 +1121,19 @@ namespace XMLHelperLib
             {
                 Uri uri = new Uri(ticket.AppSiteUrl);
                 if (uri.AbsolutePath.Trim().Equals(@"/"))
-                    URL = uri.Host.Trim();
+                {
+                    if (uri.IsDefaultPort == true)
+                        URL = uri.Host.Trim();
+                    else
+                        URL = uri.Authority.Trim();
+                }
                 else
-                    URL = uri.Host.Trim() + uri.AbsolutePath.Trim();
+                {
+                    if (uri.IsDefaultPort == true)
+                        URL = uri.Host.Trim() + uri.AbsolutePath.Trim();
+                    else
+                        URL = uri.Authority.Trim() + uri.AbsolutePath.Trim();
+                }
 
 
                 //Particular action would be operated on site to Sandbox or Production XML, depending on the flow of the ticket
@@ -1215,7 +1263,7 @@ namespace XMLHelperLib
 
                 //Adding logic for the comments of the domain tag.
                 newComment = xmlDoc.CreateComment(Constants.Name + ticket.Application.ApplicationName +
-                    Constants.Spacing+Constants.Owner + ticket.RequestedBy.UserName +
+                    Constants.Spacing + Constants.Owner + ticket.RequestedBy.UserName +
                     Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
                     Constants.Spacing + Constants.TicketId + ticket.TicketId +
                     Constants.Spacing + Constants.EditedDate + DateTime.Now
@@ -1291,22 +1339,37 @@ namespace XMLHelperLib
 
                             #region CreateDomainComment
                             var previousComment = node.PreviousSibling;
+                            string previousTickets = "";
+                            if (previousComment.NodeType == XmlNodeType.Comment)
+                            {
+                                previousTickets = GetPreviousTickets(previousComment);
+                                //Adding logic for the comments.
+                                newComment = xmlDoc.CreateComment(
+                                    Constants.Name + ticket.Application.ApplicationName +
+                                    Constants.Spacing + Constants.LastEditedBy + ticket.RequestedBy.UserName +
+                                    Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
+                                    Constants.Spacing + Constants.TicketId + ticket.TicketId +
+                                    Constants.Spacing + Constants.PreviousTicketId + previousTickets +
+                                    Constants.Spacing + Constants.EditedDate + DateTime.Now
+                                    //+"\n\t\tLocation : " + Location 
 
-                            string previousTickets = GetPreviousTickets(previousComment);
+                            );
 
-                            //Adding logic for the comments.
-                            newComment = xmlDoc.CreateComment(
-                                Constants.Name + ticket.Application.ApplicationName +
-                                Constants.Spacing + Constants.LastEditedBy + ticket.RequestedBy.UserName +
-                                Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
-                                Constants.Spacing + Constants.TicketId + ticket.TicketId +
-                                Constants.Spacing + Constants.PreviousTicketId + previousTickets +
-                                Constants.Spacing + Constants.EditedDate + DateTime.Now
-                                //+"\n\t\tLocation : " + Location 
+                                rootNode.ReplaceChild(newComment, previousComment);
+                            }
+                            else
+                            {
+                                //Adding logic for the comments.
+                                newComment = xmlDoc.CreateComment(
+                                    Constants.Name + ticket.Application.ApplicationName +
+                                    Constants.Spacing + Constants.LastEditedBy + ticket.RequestedBy.UserName +
+                                    Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
+                                    Constants.Spacing + Constants.TicketId + ticket.TicketId +
+                                    Constants.Spacing + Constants.EditedDate + DateTime.Now
+                                    );
+                                rootNode.InsertAfter(newComment, node.PreviousSibling);
+                            }
                             #endregion
-                        );
-
-                            rootNode.ReplaceChild(newComment, previousComment);
                         }
                     }
 
@@ -1317,7 +1380,7 @@ namespace XMLHelperLib
                         if (!ticket.SubDomainUrl.Equals("/"))
                         {
                             //Match the whole url with the 'url' attribute in xml
-                            if (node.Attributes["url"].Value.ToLower().Equals(URL))
+                            if (node.Attributes["url"].Value.ToLower().Equals(URL.ToLower()))
                             {
                                 XmlNodeList childNodes = node.ChildNodes;
                                 foreach (XmlNode child in childNodes)
@@ -1339,21 +1402,36 @@ namespace XMLHelperLib
 
                                 #region CreateSubDomainComment
                                 var previousSubDomainComment = node.PreviousSibling;
-                                string previousTickets = GetPreviousTickets(previousSubDomainComment);
+                                string previousTickets = "";
+                                if (previousSubDomainComment.NodeType == XmlNodeType.Comment)
+                                {
+                                    previousTickets = GetPreviousTickets(previousSubDomainComment);
+                                    //Adding logic for the comments.
+                                    XmlComment newSubDomainComment = xmlDoc.CreateComment(
+                                        Constants.Name + ticket.Application.ApplicationName +
+                                        Constants.Spacing + Constants.LastEditedBy + ticket.RequestedBy.UserName +
+                                        Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
+                                        Constants.Spacing + Constants.TicketId + ticket.TicketId +
+                                        Constants.Spacing + Constants.PreviousTicketId + previousTickets +
+                                        Constants.Spacing + Constants.EditedDate + DateTime.Now
+                                        //+"\n\t\tLocation : " + Location                                
+                                );
+                                    rootNode.ReplaceChild(newSubDomainComment, previousSubDomainComment);
+                                }
+                                else
+                                {
+                                    //Adding logic for the comments.
+                                    XmlComment newSubDomainComment = xmlDoc.CreateComment(
+                                        Constants.Name + ticket.Application.ApplicationName +
+                                        Constants.Spacing + Constants.LastEditedBy + ticket.RequestedBy.UserName +
+                                        Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
+                                        Constants.Spacing + Constants.TicketId + ticket.TicketId +
+                                        Constants.Spacing + Constants.EditedDate + DateTime.Now
 
-                                //Adding logic for the comments.
-                                XmlComment newSubDomainComment = xmlDoc.CreateComment(
-                                    Constants.Name + ticket.Application.ApplicationName +
-                                    Constants.Spacing + Constants.LastEditedBy + ticket.RequestedBy.UserName +
-                                    Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
-                                    Constants.Spacing + Constants.TicketId+ ticket.TicketId +
-                                    Constants.Spacing + Constants.PreviousTicketId + previousTickets +
-                                    Constants.Spacing + Constants.EditedDate + DateTime.Now
-                                    //+"\n\t\tLocation : " + Location 
+                                );
+                                    rootNode.InsertAfter(newSubDomainComment, node.PreviousSibling);
+                                }
                                 #endregion
-                            );
-
-                                rootNode.ReplaceChild(newSubDomainComment, previousSubDomainComment);
                             }
                         }
 
@@ -1375,13 +1453,15 @@ namespace XMLHelperLib
             foreach (XmlNode node in siteNode)
             {
                 //Match the 'url'-attribute with entered Url
-                if (node.Attributes["url"].Value.ToLower().Equals(URL))
+                if (node.Attributes["url"].Value.ToLower().Equals(URL.ToLower()))
                 {
                     var previousComment = node.PreviousSibling;
 
-                    //Remove the node as well as the comment
+                    //Remove the node as well as the comment, if present
+                    if (previousComment.NodeType == XmlNodeType.Comment)
+                        rootNode.RemoveChild(previousComment);
                     rootNode.RemoveChild(node);
-                    rootNode.RemoveChild(previousComment);
+
                 }
             }
         }
@@ -1426,7 +1506,7 @@ namespace XMLHelperLib
             //Get the request numbers from the previous comments
             if (comment.Contains(Constants.Spacing + Constants.PreviousTicketId))
             {
-                string latestTicket = GetBetween(comment, Constants.TicketId,Constants.Spacing+ Constants.PreviousTicketId);
+                string latestTicket = GetBetween(comment, Constants.TicketId, Constants.Spacing + Constants.PreviousTicketId);
                 string previousList = GetBetween(comment, Constants.Spacing + Constants.PreviousTicketId, Constants.Spacing + Constants.EditedDate);
                 ticketNumbers = latestTicket + "," + previousList;
             }
@@ -1546,8 +1626,15 @@ namespace XMLHelperLib
                 }
 
                 Uri uri = new Uri(ticket.AppSiteUrl);
+                string _domain = "";
 
-                string domain = uri.Host.Trim().ToLower();
+
+                if (uri.IsDefaultPort == true)
+                    _domain = uri.Host.Trim();
+                else
+                    _domain = uri.Authority.Trim();
+
+                string domain = _domain.ToLower();
                 string subdomain = uri.AbsolutePath.Trim().ToLower();
 
                 XmlElement domainElement = null;
@@ -1557,7 +1644,7 @@ namespace XMLHelperLib
 
                 //Create comments for Emie section entry
                 XmlComment addEmieNewComment = xmlDoc.CreateComment(Constants.Name + ticket.Application.ApplicationName +
-                                              Constants.Spacing+Constants.Owner + ticket.RequestedBy.UserName +
+                                              Constants.Spacing + Constants.Owner + ticket.RequestedBy.UserName +
                                               Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
                                               Constants.Spacing + Constants.TicketId + ticket.TicketId +
                                               Constants.Spacing + Constants.EditedDate + DateTime.Now
@@ -2115,8 +2202,15 @@ namespace XMLHelperLib
             try
             {
                 Uri uri = new Uri(ticket.AppSiteUrl);
-                string domain = uri.Host.Trim();
-                string subdomain = uri.AbsolutePath.Trim();
+
+                string _domain = "";
+                if (uri.IsDefaultPort == true)
+                    _domain = uri.Host.Trim();
+                else
+                    _domain = uri.Authority.Trim();
+
+                string domain = _domain.ToLower();
+                string subdomain = uri.AbsolutePath.Trim().ToLower();
 
 
                 XmlElement emieElement = null;
@@ -2396,7 +2490,12 @@ namespace XMLHelperLib
                 if (ticket == null)
                     return;
                 Uri uri = new Uri(ticket.AppSiteUrl);
-                string domain = uri.Host.Trim().ToLower();
+                string _domain = "";
+                if (uri.IsDefaultPort == true)
+                    _domain = uri.Host.Trim();
+                else
+                    _domain = uri.Authority.Trim();
+                string domain = _domain.ToLower();
                 string subdomain = uri.AbsolutePath.Trim().ToLower();
 
                 XmlNode emieNode = rootNode.SelectSingleNode("emie");
@@ -2421,12 +2520,14 @@ namespace XMLHelperLib
                             //domainElement = (XmlElement)node;
                             if (node.ParentNode.Name == "emie")
                             {
-                                emieNode.RemoveChild(node.PreviousSibling);
+                                if (node.PreviousSibling.NodeType == XmlNodeType.Comment)
+                                    emieNode.RemoveChild(node.PreviousSibling);
                                 emieNode.RemoveChild(node);
                             }
-                            if (node.ParentNode.Name == "docMode")
+                            else if (node.ParentNode.Name == "docMode")
                             {
-                                docModeNode.RemoveChild(node.PreviousSibling);
+                                if (node.PreviousSibling.NodeType == XmlNodeType.Comment)
+                                    docModeNode.RemoveChild(node.PreviousSibling);
                                 docModeNode.RemoveChild(node);
                             }
                         }
@@ -2448,7 +2549,7 @@ namespace XMLHelperLib
                             {
                                 foreach (XmlNode child in children)
                                 {
-                                    if (child.InnerText == subdomain.Trim())
+                                    if (child.InnerText.ToLower() == subdomain.Trim())
                                     {
                                         if (node.PreviousSibling.NodeType == XmlNodeType.Comment)
                                         {
@@ -2549,7 +2650,7 @@ namespace XMLHelperLib
                 {
                     xmlDoc.InsertAfter(eventLog, firstChild);
                 }
-                    //If no xml intro is present, directly match the first child name
+                //If no xml intro is present, directly match the first child name
                 else if (firstChild.Name == "site-list" || firstChild.Name == "rules")
                 {
                     xmlDoc.InsertBefore(eventLog, firstChild);
@@ -2627,386 +2728,6 @@ namespace XMLHelperLib
         #endregion
 
 
-        //#region EnterpriseApp
-
-        ///// <summary>
-        ///// this function is for EMIE Tool it will update the informations of the existing urls into the xml file
-        ///// </summary>
-        ///// <param name="info">contains all the data need to be updated</param>
-        //#region UpdateXMLData
-        //public void UpdateXMLData(ManageSitesModel NewInfo, ManageSitesModel OldInfo)
-        //{
-        //    try
-        //    {
-        //        rwLock.EnterWriteLock();
-        //        DataSet ds = new DataSet();
-        //        string Internal = System.Web.Hosting.HostingEnvironment.MapPath("~/App/XML/InternalURLs.xml");
-        //        ds.ReadXml(Internal);
-
-        //        if (NewInfo.NotesAboutURL == null)
-        //            NewInfo.NotesAboutURL = "";
-        //        //updating the information when the URL has a subdomain and we need to modify their parentId as well
-        //        if (NewInfo.FullURL.IndexOf('/') != -1)
-        //        {
-        //            for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
-        //            {
-        //                //Modifying the subdomain url informations
-        //                if (ds.Tables[2].Rows[i]["FullURL"].ToString().Equals(OldInfo.FullURL))
-        //                {
-        //                    ds.Tables[2].Rows[i]["FullURL"] = NewInfo.FullURL;
-        //                    ds.Tables[2].Rows[i]["LastModifiedBy"] = NewInfo.LastModifiedBy;
-        //                    ds.Tables[2].Rows[i]["Notes"] = NewInfo.NotesAboutURL;
-        //                    ds.Tables[2].Rows[i]["docMode"] = NewInfo.SubStringDocMode;
-        //                    ds.Tables[2].Rows[i]["OpenInIE"] = NewInfo.OpenInForSubdomain;
-        //                    for (int k = 0; k < ds.Tables[2].Rows.Count; k++)
-        //                    {
-        //                        //Modifying the parent information as well
-        //                        if (ds.Tables[2].Rows[i]["parentId"].ToString().Equals(ds.Tables[2].Rows[k]["FullURL"].ToString()))
-        //                        {
-        //                            ds.Tables[2].Rows[k]["LastModifiedBy"] = NewInfo.LastModifiedBy;
-        //                            ds.Tables[2].Rows[k]["FullURL"] = NewInfo.DomainURL;
-        //                            ds.Tables[2].Rows[k]["Notes"] = NewInfo.NotesAboutURL;
-        //                            ds.Tables[2].Rows[k]["docMode"] = NewInfo.DomainDocMode;
-        //                            ds.Tables[2].Rows[k]["OpenInIE"] = NewInfo.OpenIn;
-        //                            break;
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            //if the url has no subdomain part means we don't have to modify the parent information so only modifying the domain info
-        //            for (int i = 0; i < ds.Tables[2].Rows.Count; i++)
-        //            {
-        //                if (ds.Tables[2].Rows[i]["FullURL"].ToString().Equals(OldInfo.FullURL))
-        //                {
-        //                    ds.Tables[2].Rows[i]["LastModifiedBy"] = NewInfo.LastModifiedBy;
-        //                    ds.Tables[2].Rows[i]["FullURL"] = NewInfo.DomainURL;
-        //                    ds.Tables[2].Rows[i]["Notes"] = NewInfo.NotesAboutURL;
-        //                    ds.Tables[2].Rows[i]["docMode"] = NewInfo.DomainDocMode;
-        //                    ds.Tables[2].Rows[i]["OpenInIE"] = NewInfo.OpenIn;
-        //                    break;
-        //                }
-        //            }
-        //        }
-        //        ds.Tables[0].Rows[0]["version"] = (Convert.ToInt32(ds.Tables[0].Rows[0]["version"].ToString()) + 1).ToString();
-        //        ds.WriteXml(Internal);
-        //        rwLock.ExitWriteLock();
-        //    }
-        //    catch (Exception)
-        //    {
-        //    }
-        //}
-        //#endregion
-        //public bool InsertXMLData(ManageSitesModel info)
-        //{
-        //    rwLock.EnterWriteLock();
-        //    try
-        //    {
-
-        //        string Internal = System.Web.Hosting.HostingEnvironment.MapPath("~/App/XML/InternalURLs.xml");
-        //        XmlDocument xmlDoc = new XmlDocument();
-        //        DataSet ds = new DataSet();
-
-        //        //Spliting the URL into two parts the domain url part will be parentId for the subdomain
-        //        string[] a = info.FullURL.Split(new[] { '/' }, 2); string parent = null;
-        //        if (a.Length > 1)
-        //        {
-        //            info.URLSubstring = "/" + a[1];
-        //            parent = a[0];
-        //        }
-        //        else
-        //            parent = null;
-        //        info.DomainURL = a[0];
-
-        //        if (info.NotesAboutURL == null)
-        //            info.NotesAboutURL = "";
-
-        //        //Creating the xml structure to save the information if not present already
-        //        //if the file has no any info all the data is deleted by mistake then this will throw an exception which is already handled and will create the required structure
-        //        using (XmlReader reader = XmlReader.Create(Internal))
-        //        {
-        //            try
-        //            {
-        //                if (reader.Read() != true)
-        //                    CreateStructure(Internal);
-        //            }
-        //            catch (XmlException)
-        //            {
-        //                reader.Close();
-        //                CreateStructure(Internal);
-        //            }
-        //        }
-
-        //        //loading the information file
-        //        XDocument xdocemie = XDocument.Load(Internal);
-
-        //        //loading tall the domain node informations
-        //        var list = xdocemie.Descendants("domain").ToList();
-
-        //        //if the domain URL info is already present then remove that in order to avoid the repestation and add the new info
-        //        foreach (var domain in list)
-        //        {
-        //            if (domain.Attribute("FullURL") != null)
-        //                if (domain.Attribute("FullURL").Value.Equals(info.DomainURL))
-        //                {
-        //                    domain.Remove();
-        //                }
-        //        }
-
-        //        //adding the domain URL informations 
-        //        xdocemie.Root.Element("emie").AddFirst(new XElement("domain", new XAttribute("LastModifiedBy", info.LastModifiedBy)
-        //            , new XAttribute("Notes", info.NotesAboutURL), new XAttribute("FullURL", info.DomainURL)
-        //            , new XAttribute("docMode", info.DomainDocMode), new XAttribute("OpenInIE", info.OpenIn), new XAttribute("parentId", "null")));
-
-        //        //adding the subdomain URL information
-        //        if (parent != null)
-        //        {
-        //            xdocemie.Root.Element("emie").AddFirst(new XElement("domain", new XAttribute("LastModifiedBy", info.LastModifiedBy)
-        //          , new XAttribute("Notes", info.NotesAboutURL), new XAttribute("FullURL", info.FullURL)
-        //          , new XAttribute("docMode", info.SubStringDocMode), new XAttribute("OpenInIE", info.OpenInForSubdomain), new XAttribute("parentId", parent)));
-        //        }
-        //        xdocemie.Save(Internal);
-
-        //        //as the websites are added the older information is now changed to increasing the version of the file by one
-        //        ds.ReadXml(Internal);
-        //        ds.Tables[0].Rows[0]["version"] = (Convert.ToInt32(ds.Tables[0].Rows[0]["version"].ToString()) + 1).ToString();
-        //        ds.WriteXml(Internal);
-
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        rwLock.ExitWriteLock();
-        //    }
-        //    return true;
-        //}
-
-        ///// <summary>
-        ///// this method create the basic static structure of the xml file
-        ///// </summary>
-        ///// <param name="Internal">its the xml path</param>
-        //private void CreateStructure(string Internal)
-        //{
-        //    rwLock.EnterWriteLock();
-        //    //Creating the declaration into the xml
-        //    XmlDeclaration dec = xmlDoc.CreateXmlDeclaration("1.0", null, null);
-        //    xmlDoc.AppendChild(dec);
-        //    //creating the root element
-        //    XmlElement RuleElement = xmlDoc.CreateElement("rules");
-        //    RuleElement.SetAttribute("version", "0");
-        //    //Creating the required elements static through out the code
-        //    XmlElement EMIEElement = xmlDoc.CreateElement("emie");
-        //    XmlElement EMIEDomainElement = xmlDoc.CreateElement("domain");
-        //    RuleElement.AppendChild(EMIEElement);
-        //    xmlDoc.AppendChild(RuleElement);
-        //    xmlDoc.Save(Internal);
-        //    rwLock.ExitWriteLock();
-        //}
-
-        ///// <summary>
-        ///// This function returns all the URL related information to be sent to UI to display
-        ///// the data on the page load
-        ///// </summary>
-        ///// <returns>URL's info in Json format</returns>
-        //public JsonResult GetSiteInfo()
-        //{
-        //    string Internal = System.Web.Hosting.HostingEnvironment.MapPath("~/App/XML/InternalURLs.xml");
-        //    List<ManageSitesModel> list = new List<ManageSitesModel>(); //int i = 0;
-        //    try
-        //    {
-        //        rwLock.EnterReadLock();
-        //        //load the xml in XDocument object
-        //        XDocument doc = XDocument.Load(Internal);
-        //        //selecting the related information from the XML file 
-        //        var excludeAttribute = doc.Descendants("domain").Attributes("OpenInIE").ToList();
-        //        var LastModifiedBy = doc.Descendants("emie").Elements("domain").Attributes("LastModifiedBy").ToList();
-        //        var Notes = doc.Descendants("emie").Elements("domain").Attributes("Notes").ToList();
-        //        var docModeAttribute = doc.Descendants("domain").Attributes("docMode").ToList();
-        //        var parentIdAttribute = doc.Descendants("domain").Attributes("parentId").ToList();
-        //        var FullURL = doc.Descendants("emie").Elements("domain").Attributes("FullURL").ToList();
-        //        string version = doc.Root.Attribute("version").Value;
-        //        //Inserting the data into ManageSitesModel object and adding into the list
-        //        for (int k = 0; k < excludeAttribute.Count; k++)
-        //        {
-        //            ManageSitesModel site = new ManageSitesModel();
-        //            //if the exclude is true means openInIE is false
-        //            site.OpenIn = (excludeAttribute[k].Value);
-        //            site.LastModifiedBy = LastModifiedBy[k].Value;
-        //            site.NotesAboutURL = Notes[k].Value;
-        //            site.DomainDocMode = docModeAttribute[k].Value;
-        //            site.FullURL = FullURL[k].Value;
-        //            site.EmieVersion = version;
-        //            site.ParentId = parentIdAttribute[k].Value == "null" ? null : parentIdAttribute[k].Value;
-        //            list.Add(site);
-        //        }
-
-        //    }
-        //    catch (Exception)
-        //    {
-        //    }
-        //    finally
-        //    {
-        //        rwLock.ExitReadLock();
-        //    }
-        //    JsonResult json = new JsonResult(); json.MaxJsonLength = int.MaxValue; json.Data = list;
-        //    return json;
-        //}
-
-        ///// <summary>
-        ///// This function clears all the domain node in the internalUrls.xml file 
-        ///// giving no site info available to be displayed on the UI
-        ///// </summary>
-        //public void ClearLists()
-        //{
-        //    rwLock.EnterWriteLock();
-        //    string Internal = System.Web.Hosting.HostingEnvironment.MapPath("~/App/XML/InternalURLs.xml");
-        //    XDocument xdocemie = XDocument.Load(Internal);
-        //    xdocemie.Descendants("domain").ToList().Remove();
-        //    xdocemie.Save(Internal);
-        //    DataSet ds = new DataSet();
-        //    ds.ReadXml(Internal);
-        //    ds.Tables[0].Rows[0]["version"] = "0";
-        //    ds.WriteXml(Internal);
-        //    rwLock.ExitWriteLock();
-        //}
-
-
-
-        ///// <summary>
-        ///// This function will fetch the whole docMode name from the docmodeid
-        ///// </summary>
-        ///// <param name="docmodeId">it is only name id of the docmode</param>
-        ///// <returns>returns the whole name of the docmode</returns>
-        //public string GetDocMode(string docmodeId)
-        //{
-        //    switch (docmodeId)
-        //    {
-        //        case "edge":
-        //            return "IE11 Document Mode";
-
-        //        case "11":
-        //            return "IE11 Document Mode";
-
-        //        case "10":
-        //            return "IE10 Document Mode";
-
-        //        case "9":
-        //            return "IE9 Document Mode";
-
-        //        case "8":
-        //            return "IE8 Document Mode";
-
-        //        case "7":
-        //            return "IE7 Document Mode";
-
-        //        case "5":
-        //            return "IE5 Document Mode";
-
-        //        default: return "Default Mode";
-
-        //    }
-        //}
-
-        ///// <summary>
-        ///// This function will add bulk websites from the file the file is already parsed and the 
-        ///// informations of the websites to be added will be received in the manageSites model array
-        ///// </summary>
-        ///// <param name="info"></param>
-        //public void BulkAddFromFile(ManageSitesModel[] info)
-        //{
-        //    rwLock.EnterWriteLock();
-        //    try
-        //    {
-
-        //        //File path string
-        //        string Internal = System.Web.Hosting.HostingEnvironment.MapPath("~/App/XML/InternalURLs.xml");
-
-        //        //Loading the xml file into the xdocument object
-        //        XDocument xdocemie = XDocument.Load(Internal);
-
-        //        //get the list of all the domain info added into the xml file
-        //        var list = xdocemie.Descendants("domain").ToList();
-        //        var distinctList = info.Select(o => o.FullURL).ToArray();
-        //        //Remove all the websites which are already present as they need to be updated by the bulk file uploaded information
-        //        foreach (var domain in list)
-        //        {
-        //            for (int i = 0; i < distinctList.Length; i++)
-        //            {
-        //                if (domain.Attribute("FullURL") != null)
-        //                    if (domain.Attribute("FullURL").Value.Equals(distinctList[i]))
-        //                    {
-        //                        domain.Remove();
-        //                        i++;
-        //                    }
-        //            }
-        //        }
-
-
-        //        //Adding the nodes to the xml for the bulk upload file
-        //        foreach (var information in info)
-        //        {
-
-        //            xdocemie.Root.Element("emie").AddFirst(new XElement("domain", new XAttribute("LastModifiedBy", information.LastModifiedBy)
-        //                   , new XAttribute("Notes", "Bulk Added On " + DateTime.Now.ToString("dd/MM/yyyy") + ""), new XAttribute("FullURL", information.FullURL)
-        //                   , new XAttribute("docMode", information.DomainDocMode), new XAttribute("OpenInIE", (information.OpenIn == "true" || information.OpenIn == "True" || information.OpenIn == "IE11") ? "IE11" : "None"), new XAttribute("parentId", information.ParentId == null ? "null" : information.ParentId)));
-
-        //        }
-        //        xdocemie.Save(Internal);
-
-        //        //Incereasing hte version of the emie website list by 1
-        //        DataSet ds = new DataSet();
-        //        ds.ReadXml(Internal);
-        //        ds.Tables[0].Rows[0]["version"] = (Convert.ToInt32(ds.Tables[0].Rows[0]["version"].ToString()) + 1).ToString();
-        //        ds.WriteXml(Internal);
-
-        //    }
-        //    catch (Exception e) { throw e; }
-        //    finally
-        //    {
-        //        rwLock.ExitWriteLock();
-        //    }
-        //}
-
-        ///// <summary>
-        ///// this function finds the matching url and delete from the record
-        ///// </summary>
-        ///// <param name="SiteInfo">contains all the info of the website to be deleted</param>
-        //public void DeleteSite(ManageSitesModel SiteInfo)
-        //{
-        //    try
-        //    {
-        //        rwLock.EnterWriteLock();
-        //        //File path string
-        //        string Internal = System.Web.Hosting.HostingEnvironment.MapPath("~/App/XML/InternalURLs.xml");
-
-        //        //Loading the xml file into the xdocument object
-        //        XDocument xdocemie = XDocument.Load(Internal);
-
-        //        //get the list of all the domain info added into the xml file
-        //        var list = xdocemie.Descendants("domain").ToList();
-        //        //Remove  the websites which is matching with the info in the siteInfo object
-        //        foreach (var domain in list)
-        //        {
-        //            if (domain.Attribute("FullURL") != null)
-        //                if (domain.Attribute("FullURL").Value.Contains(SiteInfo.FullURL))
-        //                {
-        //                    domain.Remove();
-        //                    xdocemie.Save(Internal);
-        //                }
-        //        }
-        //        rwLock.ExitWriteLock();
-        //    }
-        //    catch (Exception) { }
-        //}
-
-        //#endregion
-
         /// <summary>
         /// this function will get the production sites xml and retuns all the xml in string format
         /// </summary>
@@ -3015,12 +2736,12 @@ namespace XMLHelperLib
         public string getProductionSites(Configuration config)
         {
             GetProductionConfigSettings(config);
-            string lines="";
+            string lines = "";
             using (UNCAccessWithCredentials unc = new UNCAccessWithCredentials())
             {
                 if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password) || unc.LastError == 1219)
                 {
-                   lines = System.IO.File.ReadAllText(V2ProdFile);
+                    lines = System.IO.File.ReadAllText(V2ProdFile);
                 }
             }
             return lines;

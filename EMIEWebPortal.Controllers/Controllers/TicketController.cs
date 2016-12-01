@@ -92,6 +92,7 @@ namespace EMIEWebPortal.Controllers
                     return null;
             }
 
+            bool transactionSuccess = false;
             var objectContext = ((IObjectContextAdapter)DbEntity).ObjectContext;
             var option = new System.Transactions.TransactionOptions();
             option.IsolationLevel = System.Transactions.IsolationLevel.Serializable;
@@ -246,59 +247,51 @@ namespace EMIEWebPortal.Controllers
                         xmlObject.OperationOnXML(ticket, Operation.AddInSandbox);
 
                         #endregion
-
-                        #region Send mail
-                        //Send mail 
-                        //string sPath = string.Empty;
-
-
-                        #endregion Send mail
-
-
-                        #region Logger
-                        objectContext.Connection.Open();
-                        //This logic has to be checked while raising the ticket
-                        string UserName = DbEntity.Users.Where(o => o.UserId == ticket.RequestedBy.UserId).Select(o => o.UserName).FirstOrDefault().ToString();
-
-                        string description = string.Format(Constants.TicketStatus, dbTicket.TicketId, "raised", UserName);
-
-                        //Check if ticket inserted or Updated
-                        string operation = null;
-                        if (action == Operation.Insert)
-                            operation = Constants.Add;
-                        else
-                            operation = Constants.Update;
-
-                        //Create Logger object 
-                        Loggers loggers = new Loggers
-                        {
-                            ActionMethod = Constants.ChangeRequestMethod,
-                            Description = description,
-                            Operation = operation,
-                            UserID = ticket.RequestedBy.UserId
-                        };
-
-                        logger = LoggerObj.LoggerMethod(loggers);
-                        DbEntity.Loggers.Add(logger);
-
-                        //Save database changes
-
-                        DbEntity.SaveChanges();
-                        objectContext.Connection.Close();
-
-                        #endregion
+                    
                         tc.Complete();
+                        transactionSuccess = true;
                     }
-                    catch
+                    catch (Exception)
                     {
-
+                        transactionSuccess = false;
                         System.Transactions.Transaction.Current.Rollback();
+                        
                         throw;
                     }
                     finally
                     {
-                        objectContext.Connection.Close();
                         tc.Dispose();
+
+                        if (transactionSuccess)
+                        {
+                            //This logic has to be checked while raising the ticket
+                            string UserName = DbEntity.Users.Where(o => o.UserId == ticket.RequestedBy.UserId).Select(o => o.UserName).FirstOrDefault().ToString();
+
+                            string description = string.Format(Constants.TicketStatus, dbTicket.TicketId, "raised", UserName);
+
+                            //Check if ticket inserted or Updated
+                            string operation = null;
+                            if (action == Operation.Insert)
+                                operation = Constants.Add;
+                            else
+                                operation = Constants.Update;
+
+                            //Create Logger object 
+                            Loggers loggers = new Loggers
+                            {
+                                ActionMethod = Constants.ChangeRequestMethod,
+                                Description = description,
+                                Operation = operation,
+                                UserID = ticket.RequestedBy.UserId
+                            };
+
+                            logger = LoggerObj.LoggerMethod(loggers);
+                            DbEntity.Loggers.Add(logger);
+
+                            //Save database changes
+
+                            DbEntity.SaveChanges(); 
+                        }
                     }
 
                 }
@@ -311,7 +304,7 @@ namespace EMIEWebPortal.Controllers
                 //return dbTicket.TicketId;
                 return Json(dbTicket, JsonRequestBehavior.AllowGet);
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
@@ -726,7 +719,7 @@ namespace EMIEWebPortal.Controllers
                 //return Success
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
                 throw;
             }
@@ -1383,7 +1376,7 @@ namespace EMIEWebPortal.Controllers
                             break;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     return Message = Constants.ErrorMessage;
                 }
@@ -1828,6 +1821,8 @@ namespace EMIEWebPortal.Controllers
             {
                 throw;
             }
+            return null;
+
         }
 
         /// <summary>
