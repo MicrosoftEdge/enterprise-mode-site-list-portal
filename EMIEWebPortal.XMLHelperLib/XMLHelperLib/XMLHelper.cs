@@ -66,7 +66,7 @@ namespace XMLHelperLib
                 {
                     using (UNCAccessWithCredentials unc = new UNCAccessWithCredentials())
                     {
-                        if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password))
+                        if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password) || unc.LastError == 1219)
                         {
                             CheckFile(V2Sandboxfile);
                             return CheckUrlForSandbox(findUrl);
