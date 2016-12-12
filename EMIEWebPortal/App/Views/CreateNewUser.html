@@ -18,7 +18,7 @@
                         <li ng-repeat="user in searcheduserlist" class="input-lg" ng-click="searchedUserFromDDL(user)" style="margin:5px">{{user.DisplayName}}</li>
                     </ul>
                     <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
-                    <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show=" NewUserEmail.length>1&& IsSearching  ">Searching user.... </span>
+                    <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show="NewUserEmail.length>1&& IsSearching">Searching user.... </span>
                 </div>
             </div>
             <div class="form-row">

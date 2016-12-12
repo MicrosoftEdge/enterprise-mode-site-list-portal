@@ -8,7 +8,7 @@
 <div class="form-row">
     <message-center></message-center>
     <div class="form-column">
-        <div><span class="EMIEControllabel">FROM DATE</span></div>
+        <div><span class="EMIEControllabel">From date</span></div>
         <p class="input-group">
             <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePickFrom" is-open="popupStartDate.opened" ng-click="openStartDate()" ng-change="FilterSelected()" datepicker-options="dateOptions" close-text="Close" />
             <span class="input-group-btn">
@@ -17,7 +17,7 @@
         </p>
     </div>
     <div class="form-column">
-        <div><span class="EMIEControllabel">TO DATE</span></div>
+        <div><span class="EMIEControllabel">To date</span></div>
         <p class="input-group">
             <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePickTo" is-open="popupEndDate.opened" datepicker-options="dateOptions" close-text="Close" ng-change="FilterSelected()" ng-click="openEndDate()" />
             <span class="input-group-btn">
