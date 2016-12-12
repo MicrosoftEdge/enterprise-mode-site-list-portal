@@ -9,7 +9,8 @@
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
 
-
+        $scope.StatusText = Constants.TicketStatusText;
+        $scope.PageMapping = Constants.StatusPageMapping;
         $scope.NoDataAvailable = Constants.DataNotAvailable;
         $scope.RetrievalProgress = Constants.TicketRetrievalProgress;
         $scope.DisplayWaitMessage = true;
@@ -53,8 +54,8 @@
                 if ($sessionStorage.SelectedTabValue != "") {
                     var value = $sessionStorage.SelectedTabValue;
                     $scope.value = value;
-                    if ($scope.value != 'ALL REQUESTS')
-                        $scope.DisplayValueHeader = 'REQUESTS ' + value;
+                    if ($scope.value != 'All Requests')
+                        $scope.DisplayValueHeader = 'Requests ' + value;
                     else
                         $scope.DisplayValueHeader = value;
                     //Setting the drop down value the  and displaying the data accordingly
@@ -63,8 +64,8 @@
                 else {
                     changeonselectionvalue($sessionStorage.LastSelectedValue);
                     $scope.value = $sessionStorage.LastSelectedValue;
-                    if ($scope.value != 'ALL REQUESTS')
-                        $scope.DisplayValueHeader = 'REQUESTS ' + $scope.value;
+                    if ($scope.value != 'All Requests')
+                        $scope.DisplayValueHeader = 'Requests ' + $scope.value;
                     else
                         $scope.DisplayValueHeader = $scope.value;
                 }

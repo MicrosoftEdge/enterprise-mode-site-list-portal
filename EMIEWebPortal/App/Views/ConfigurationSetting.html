@@ -1,729 +1,570 @@
 ﻿<div disable-all="isConfigPageDisabled">
-
-    <div class="row">
-        <div class="col-lg-6"><span class="EMIEpage-title" ng-hide="IsNewRequest">CONFIGURATION SETTING</span></div>
+    <div class="emie-breadcrumb">
+        <div>Home</div>
+        <div class="current">Configuration Settings</div>
     </div>
-    <br /><br />
-    <form name="form">
+    <div>
+        <span class="EMIEpage-title EMIEspacer" ng-hide="IsNewRequest">Configuration Settings</span>
+    </div>
+    <form name="form" class="form-column">
+        <div>
+            <span class="EMIEHeaderTitle">Group and role configuration</span>
+        </div>
+        <div class="form-row">
+            <div><span class="EMIEControllabel">Group name</span></div>
+            <div>
+                <select class="form-control" name="BPUName" data-ng-model="GroupName" data-ng-options="var as var.BPU1 for var in groupNameList" ng-change="GetGroupHead()">
+                    <option value="">-- Select --</option>
+                </select>
+            </div>
+            <div class="newreq-appbuttons">
+                <button type="button" data-toggle="modal" data-target="#myModal" ng-click="OpenGroupDetail()">Group details</button>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="EMIEpage-title">Group details</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" data-toggle="tab" onclick="return false" id="AddGroup">Add group</a></li>
+                                <li><a href="#tab2" data-toggle="tab" onclick="return false" id="EditGroup">Edit group</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <div class="form-row">
+                                        <div><span class="EMIEControllabel">New group name</span></div>
+                                        <div>
+                                            <input name="txtAddGroup" class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" ng-model="NewGroupName"
+                                                   placeholder="Enter group name" ng-required="(tab.activeTab == 'AddGroup'|| tab.activeTab == undefined) && submitted==false"
+                                                   ng-class="{'erroneous-field' : Addsubmitted && form.txtAddGroup.$error.required}">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div><span class="EMIEControllabel">Group head email</span></div>
+                                        <div>
+                                            <input type="text" name="txtUserEmail" id="txtUserEmail" ng-change="GetUserEmailText(NewUserEmail)" ng-minlength="3"
+                                                   class="form-control" data-ng-model="NewUserEmail" ng-required="(tab.activeTab == 'AddGroup'|| tab.activeTab == undefined) && submitted==false" data-toggle="dropdown" placeholder="Enter email"
+                                                   ng-class="{'erroneous-field' : Addsubmitted && form.txtUserEmail.$error.required}">
+                                            <span class="error" ng-show="(form.txtUserEmail.$dirty || Addsubmitted) && form.txtUserEmail.$error.minlength">Too short!</span>
+                                            <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="searcheduserlist.length>=1" style="width:425px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                                                <li ng-repeat="user in searcheduserlist" class="input-lg" ng-click="searchedUserFromDDL(user)" style="margin:5px">{{user.DisplayName}}</li>
+                                            </ul>
+                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
+                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show=" NewUserEmail.length>1&& IsSearching  ">Searching user.... </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div><span class="EMIEControllabel">Group head name</span></div>
+                                        <div>
+                                            <input type="text" name="txtUserName" id="txtUserName" class="form-control" data-ng-model="NewUserName" disabled placeholder="User name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <input type="checkbox" ng-model="IsActive" />Active
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab2">
+                                    <div class="form-row">
+                                        <div><span class="EMIEControllabel">Group name</span></div>
+                                        <div>
+                                            <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="GetGroupHead()"
+                                                    data-ng-options="var as var.BPU1 for var in groupNameList" ng-required="tab.activeTab == 'EditGroup'  && submitted==false"
+                                                    ng-class="{'erroneous-field' : Editsubmitted && form.BPUName.$error.required}">
+                                                <option value="">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div><span class="EMIEControllabel">New group name</span></div>
+                                        <div>
+                                            <input name="txtEditGroup" class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" ng-model="EditNewGroupName"
+                                                   placeholder="Enter group name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row" ng-hide="IsGroupHead">
+                                        <div><span class="EMIEControllabel">Group head email</span></div>
+                                        <div>
+                                            <input type="text" name="txtEditUserEmail" id="txtEditUserEmail" ng-change="GetUserEmailText(NewUserEmail)" ng-minlength="3"
+                                                   class="form-control" data-ng-model="EditNewUserEmail" data-toggle="dropdown" disabled>
+                                            <span class="error" ng-show="(form.txtEditUserEmail.$dirty || Editsubmitted) && form.txtEditUserEmail.$error.minlength">Too short!</span>
+                                            <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="searcheduserlist.length>=1" style="width:425px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                                                <li ng-repeat="user in searcheduserlist" class="input-lg" ng-click="searchedUserFromDDL(user)" style="margin:5px">{{user.DisplayName}}</li>
+                                            </ul>
+                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
+                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show="NewUserEmail.length > 1 && IsSearching">Searching user.... </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row" ng-hide="IsGroupHead">
+                                        <div><span class="EMIEControllabel">Group head name</span></div>
+                                        <div>
+                                            <input type="text" name="txtEditUserName" id="txtEditUserName" class="form-control" data-ng-model="EditNewUserName" disabled placeholder="User name">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <input type="checkbox" ng-model="EditIsActive" />Active
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="highlight" ng-click="SaveNewGroupName()">Save</button>
+                        <button type="button" data-dismiss="modal" ng-click="CancelFields()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div><span class="EMIEControllabel">Required approvals</span></div>
+            <div ng-repeat="role in RoleList">
+                <input type="checkbox" ng-model="role.MandatoryApproval" ng-disabled="true">{{role.RoleName}}
+                <a href="" data-toggle="modal" ng-click="SetRoleName(role.RoleName,role.MandatoryApproval)" data-target="#ERModal" ng-hide="role.RoleId == 4"><span class="glyphicon glyphicon-pencil" alt="Edit"></span></a>
+            </div>
+        </div>
+        <div id="ERModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="EMIEpage-title">Edit role name</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div><span class="EMIEControllabel">Role name</span></div>
+                            <div>
+                                <input type="text" class="form-control" data-ng-model="RoleName" disabled>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div><span class="EMIEControllabel">New role name</span></div>
+                            <div>
+                                <input type="text" class="form-control" data-ng-model="NewRoleName" ng-change="CheckNewRoleNameField()">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <input type="checkbox" ng-model="IsMandatory" />Mandatory
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="SandboxOkButton" type="button" class="highlight" ng-disabled="IsNewRoleNameEmpty" ng-click="EditRoleName(IsMandatory)" data-dismiss="modal">Save</button>
+                        <button type="button" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span class="EMIEHeaderTitle">Environment configuration</span>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Pre-production XML location</span></div>
+                <div>
+                    <input type="text" placeholder="eg. \\server\folder\filename.xml" name="txtSandbaxEnvironment" id="txtSandbaxEnvironment" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="SandboxEnvironment" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
+                    <span class="error" ng-show="(form.txtSandbaxEnvironment.$dirty || submitted) && form.txtSandbaxEnvironment.$error.required">Required!</span>
+                </div>
+                <div class="newreq-appbuttons">
+                    <button type="button" title="Pre-production credentials" data-toggle="modal" ng-click="SandboxCredentials()" data-target="#SBModal">Credentials</button>
+                </div>
+            </div>
+            <div id="SBModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="EMIEpage-title">Pre-production credentials</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Domain</span></div>
+                                <div>
+                                    <input type="text" name="txtSBUserDomain" id="txtSBUserDomain" class="form-control" data-ng-model="SBUserDomain" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">User name</span></div>
+                                <div>
+                                    <input type="text" name="txtSBUserName" id="txtSBUserName" class="form-control" data-ng-model="SBUserName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Password</span></div>
+                                <div>
+                                    <input type="password" name="txtSBPassword" id="txtSBPassword" class="form-control" data-ng-model="SBPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="SandboxOkButton" type="button" class="highlight" ng-click="OkSandboxCredentials()">OK</button>
+                            <button type="button" data-dismiss="modal" ng-click="CancelSandboxCredential()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Production XML location</span></div>
+                <div>
+                    <input type="text" placeholder="eg. \\server\folder\filename.xml" name="txtProductionEnvironment" id="txtProductionEnvironment" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="ProductionEnvironment" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
+                    <span class="error" ng-show="(form.txtProductionEnvironment.$dirty || submitted) && form.txtProductionEnvironment.$error.required">Required!</span>
+                </div>
+                <div class="newreq-appbuttons">
+                    <button type="button" title="Production credentials" data-toggle="modal" ng-click="ProductionCredentials()" data-target="#PDModal">Credentials</button>
+                </div>
+            </div>
+            <div id="PDModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="EMIEpage-title">Production credentials</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Domain</span></div>
+                                <div >
+                                    <input type="text" name="txtPDUserDomain" id="txtPDUserDomain" class="form-control" data-ng-model="PDUserDomain" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">User name</span></div>
+                                <div>
+                                    <input type="text" name="txtPDUserName" id="txtPDUserName" class="form-control" data-ng-model="PDUserName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Password</span></div>
+                                <div>
+                                    <input type="password" name="txtPDPassword" id="txtPDPassword" class="form-control" data-ng-model="PDPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="highlight" ng-click="OkProductionCredentials()">OK</button>
+                            <button type="button" data-dismiss="modal" ng-click="CancelProductionCredential()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Attachment location</span></div>
+                <div>
+                    <input type="text" placeholder="eg. \\server\folder\folder" name="txtAttachmentLocation" id="txtAttachmentLocation" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="AttachmentLocation" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
+                    <span class="error" ng-show="(form.txtAttachmentLocation.$dirty || submitted) && form.txtAttachmentLocation.$error.required">Required!</span>
+                </div>
+                <div class="newreq-appbuttons">
+                    <button type="button" title="Attachment credentials" data-toggle="modal" ng-click="ProductionCredentials()" data-target="#ALModal">Credentials</button>
+                </div>
+            </div>
+            <div id="ALModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="EMIEpage-title">Attachment credentials</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Domain</span></div>
+                                <div>
+                                    <input type="text" name="txtALUserDomain" id="txtALUserDomain" class="form-control" data-ng-model="ALUserDomain" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">User name</span></div>
+                                <div>
+                                    <input type="text" name="txtALUserName" id="txtALUserName" class="form-control" data-ng-model="ALUserName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Password</span></div>
+                                <div>
+                                    <input type="password" name="txtALPassword" id="txtALPassword" class="form-control" data-ng-model="ALPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="highlight" ng-click="OkAttachmentCredentials()">OK</button>
+                            <button type="button" data-dismiss="modal" ng-click="CancelAttachmentCredentials()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Configuration script location</span></div>
+                <div>
+                    <input type="text" placeholder="eg. \\server\folder\folder" name="txtConfigLocation" id="txtConfigLocation" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="ConfigurationLocation" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
+                    <span class="error" ng-show="(form.txtConfigLocation.$dirty || submitted) && form.txtConfigLocation.$error.required">Required!</span>
+                </div>
+                <div class="newreq-appbuttons">
+                    <button type="button" title="Configuration script credentials" data-toggle="modal" ng-click="ProductionCredentials()" data-target="#CSLModal">Credentials</button>
+                </div>
+            </div>
+            <div id="CSLModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="EMIEpage-title">Configuration script credentials</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Domain</span></div>
+                                <div>
+                                    <input type="text" name="txtCSLUserDomain" id="txtCSLUserDomain" class="form-control" data-ng-model="CSLUserDomain" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">User name</span></div>
+                                <div>
+                                    <input type="text" name="txtCSLUserName" id="txCSLUserName" class="form-control" data-ng-model="CSLUserName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Password</span></div>
+                                <div>
+                                    <input type="password" name="txtCSLPassword" id="txtCSLPassword" class="form-control" data-ng-model="CSLPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="highlight" ng-click="OkConfigurationCredentials()">OK</button>
+                            <button type="button" data-dismiss="modal" ng-click="CancelConfigurationCredentials()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Site domain for e-mail notification</span></div>
+                <div>
+                    <input type="text" placeholder="eg. http://site@domain.com" name="txtSiteURL" id="txtSiteURL" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="SiteURL">
+                    <span class="error" ng-show="(form.txtSiteURL.$dirty || submitted) && form.txtSiteURL.$error.required">Required!</span>
+                </div>
+                <div class="newreq-appbuttons">
+                    <button type="button" title="Email account credentials" data-toggle="modal" ng-click="EmailAccountCredentials()" data-target="#EmailModal">Credentials</button>
+                </div>
+            </div>
+            <div id="EmailModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="EMIEpage-title">Email account credentials</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">User email</span></div>
+                                <div>
+                                    <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,7}$" placeholder="user@example.com" class="form-control" name="txtEmailUserName" ng-model="EmailUserName" maxlength="200" />
+                                    <div role="alert">
+                                        <span class="error" ng-show="form.txtEmailUserName.$error.email">
+                                            Not valid email!
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div><span class="EMIEControllabel">Password</span></div>
+                                <div>
+                                    <input type="password" name="txtEmailPassword" placeholder="Password" id="txtEmailPassword" class="form-control" data-ng-model="EmailPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="highlight" ng-click="SubmitEmailCredentials()">OK</button>
+                            <button type="button" data-dismiss="modal" ng-click="CancelEmailCredentials()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//===========================================================================================================================================================================
+        //                                                        NEEDED IN FUTURE
+        //===========================================================================================================================================================================-->
+            <!--<div class="row">
+            <div><span class="EMIEControllabel">SANDBOX ENVIOURMENT</span><sup>*</sup></div>
+
+            <div class="col-lg-7">
+                <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
+            </div>
+
+            <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " ng-click="">...</button></div>
+        </div>
+
+        <div class="row">
+            <div><span class="EMIEControllabel">SANDBOX ENV. CRENDENTIALS</span><sup>*</sup></div>
+
+            <div class="col-lg-7">
+                <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
+            </div>
+
+            <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " data-toggle="modal" data-target="#myModal1" ng-click="">...</button></div>
+        </div>-->
+            <!-- Model Popup 2 -->
+            <!--<div id="myModal1" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row>">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div><span class="EMIEControllabel">SELECT GROUPS</span></div>
+                                <div class="=col-lg-9">
+                                    <select class="form-control" name="BPUName" data-ng-model="GroupName"
+                                            data-ng-options="var.BPU as var.BPU for var in AppName | unique:'BPU' | orderBy:'BPU'"
+                                            data-ng-change="PopulateApplicationName()" required
+                                            ng-class="{'erroneous-field' : (form.BPUName.$dirty || submitted) && form.BPUName.$error.required}">
+                                        <option value="">--Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <div class="row">
+                                <div><span class="EMIEControllabel">SELECT APPS</span></div>
+                                <div class="col-lg-9">
+                                    <select name="Application" class="form-control" data-ng-model="Application" data-ng-disabled="DisabledApplicationName"
+                                            data-ng-options="var as var.ApplicationName for var in SelectedApplications"
+                                            data-ng-change="PopulateGroupName()" required
+                                            ng-class="{'erroneous-field' : (form.Application.$dirty || submitted) && form.Application.$error.required}">
+                                        <option value="">-- Select --</option>
+                                    </select>&nbsp;
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio">ONE TIME</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio">WEEKLY</label>
+                            </div>
+                            <div class="radio disabled">
+                                <label><input type="radio" name="optradio" >MONTHLY</label>
+                            </div>
+                        </div>
+
+                        <!-- Modal 2 right side -->
+            <!--<div class="col-lg-8" >
         <div class="row">
 
-            <!-- Left panel -->
+            <div class="col-lg-6">
+                STARTING
+                <div class="col-lg-3" ng-hide="prodDatePicker">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                            ng-model="datePick" is-open="opened" min="minDate" max="'2025-06-22'"
+                            datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
+                            ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+                TO-->
+            <!--<div class="col-lg-3" ng-hide="prodDatePicker">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                    ng-model="datePick2" is-open="opened" min="minDate" max="'2025-06-22'"
+                    datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
+                    ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
+        </div>-->
+            <!--</div>
+        </div>-->
+            <!--     <div>RECURE EVERY:<input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="width:25px"> WEEKS ON :</div>
+                                <div >
+                                    <label class="checkbox-inline"><input type="checkbox" value="">SUNDAY</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">MONDAY</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">TUESDAY</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">WEDNESDAY</label>
+                                </div>
+
+                                <div>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">THURSDAY</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">FRIDAY</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">SATERDAY</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">SAVE</button></div>
+                            <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">CANCEL</button></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>-->
+            <!-- Model popup 3 -->
+            <!--<div id="myModal2" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>-->
+            <!-- Right Panel -->
+            <!--<div class="col-lg-6">-->
+            <div>
+                <span class="EMIEHeaderTitle">Freeze production changes</span>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Freeze start date</span></div>
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                            ng-model="FreezeProductionChangeStartDate" is-open="popupStartDate.opened" ng-click="openStartDate()"
+                            ng-change="ChangeDateForEnd()" datepicker-options="dateOptions" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div><span class="EMIEControllabel">Freeze end date</span></div>
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                            ng-model="FreezeProductionChangeEndDate" is-open="popupEndDate.opened" ng-click="openEndDate()"
+                            datepicker-options="dateOptions" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+            <!--//===========================================================================================================================================================================
+        //                                                        NEEDED IN FUTURE
+        //===========================================================================================================================================================================-->
+            <!--<div class="row">
+            <div><span class="EMIEControllabel">FREEZE PRODUCTION CHANGE</span></div>
             <div class="col-lg-9">
-
-                <div class="row" style="padding:10px;border:solid 1px lightgrey">
-
-                    <legend>GROUP AND ROLE CONFIGURATION</legend>
-                    <div class="row">
-                        <div><span class="EMIEControllabel">GROUP NAME</span><sup>*</sup></div>
-                        <div class="col-lg-7">
-
-                            <select class="form-control" name="BPUName" data-ng-model="GroupName" data-ng-options="var as var.BPU1 for var in groupNameList" ng-change="GetGroupHead()">
-                                <option value="">--Select--</option>
-                            </select>
-
-                        </div>
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd" data-toggle="modal" data-target="#myModal" ng-click="OpenGroupDetail()">GROUP DETAILS</button></div>
-                        <!--<div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd" data-toggle="modal" data-target="#EditModal">EDIT GROUP</button></div>-->
-                        <!-- Modal for pop-up -->
-                        <div id="myModal" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <!-- Modal Content -->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">GROUP DETAILS</h4>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <div class="tabbable">
-                                            <!-- Only required for left/right tabs -->
-                                            <ul class="nav nav-tabs">
-                                                <li class="active"><a href="#tab1" data-toggle="tab" onclick="return false" id="AddGroup">ADD GROUP</a></li>
-                                                <li><a href="#tab2" data-toggle="tab" onclick="return false" id="EditGroup">EDIT GROUP</a></li>
-                                            </ul>
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="tab1">
-                                                    <div class="row">
-
-                                                        <div><span class="EMIEControllabel">NEW GROUP NAME</span></div>
-                                                        <div class="col-lg-9">
-                                                            <input name="txtAddGroup" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="text-transform: uppercase" type="text" ng-model="NewGroupName"
-                                                                   placeholder="Enter Group Name" ng-required="(tab.activeTab == 'AddGroup'|| tab.activeTab == undefined) && submitted==false"
-                                                                   ng-class="{'erroneous-field' : Addsubmitted && form.txtAddGroup.$error.required}">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div><span class="EMIEControllabel">GROUP HEAD EMAIL</span><sup>*</sup></div>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" name="txtUserEmail" id="txtUserEmail" ng-change="GetUserEmailText(NewUserEmail)" ng-minlength="3"
-                                                                   class="form-control" data-ng-model="NewUserEmail" ng-required="(tab.activeTab == 'AddGroup'|| tab.activeTab == undefined) && submitted==false" data-toggle="dropdown" placeholder="Enter User Name or Email"
-                                                                   ng-class="{'erroneous-field' : Addsubmitted && form.txtUserEmail.$error.required}">
-                                                            <span class="error" ng-show="(form.txtUserEmail.$dirty || Addsubmitted) && form.txtUserEmail.$error.minlength">Too short!</span>
-
-                                                            <!--<button type="button" class="btn btn-default btn-success glyphicon glyphicon-search" ><span class="caret"></span></button>-->
-                                                            <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="searcheduserlist.length>=1" style="width:425px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
-                                                                <li ng-repeat="user in searcheduserlist" class="input-lg" ng-click="searchedUserFromDDL(user)" style="margin:5px">{{user.DisplayName}}</li>
-                                                            </ul>
-                                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
-                                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show=" NewUserEmail.length>1&& IsSearching  ">Searching user.... </span>
-
-                                                        </div>
-
-                                                        <div class="col-lg-2">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div><span class="EMIEControllabel">GROUP HEAD NAME</span></div>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" name="txtUserName" id="txtUserName" class="form-control" data-ng-model="NewUserName" disabled placeholder="User Name">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-9 checkbox">
-                                                            <label><input type="checkbox" ng-model="IsActive" />ACTIVE</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane" id="tab2">
-
-                                                    <div class="row">
-                                                        <div><span class="EMIEControllabel">GROUP NAME</span><sup>*</sup></div>
-                                                        <div class="col-lg-7">
-                                                            <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="GetGroupHead()"
-                                                                    data-ng-options="var as var.BPU1 for var in groupNameList" ng-required="tab.activeTab == 'EditGroup'  && submitted==false"
-                                                                    ng-class="{'erroneous-field' : Editsubmitted && form.BPUName.$error.required}">
-                                                                <option value="">--Select--</option>
-                                                            </select>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-
-                                                        <div><span class="EMIEControllabel">NEW GROUP NAME</span></div>
-                                                        <div class="col-lg-9">
-                                                            <input name="txtEditGroup" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="text-transform: uppercase" type="text" ng-model="EditNewGroupName"
-                                                                   placeholder="Enter Group Name">
-                                                            <!--ng-required="tab.activeTab == 'EditGroup'"
-                                                            ng-class="{'erroneous-field' : Editsubmitted && form.txtEditGroup.$error.required}"-->
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row" ng-hide="IsGroupHead">
-                                                        <div><span class="EMIEControllabel">GROUP HEAD EMAIL</span><sup>*</sup></div>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" name="txtEditUserEmail" id="txtEditUserEmail" ng-change="GetUserEmailText(NewUserEmail)" ng-minlength="3"
-                                                                   class="form-control" data-ng-model="EditNewUserEmail" data-toggle="dropdown" disabled>
-                                                            <span class="error" ng-show="(form.txtEditUserEmail.$dirty || Editsubmitted) && form.txtEditUserEmail.$error.minlength">Too short!</span>
-
-                                                            <!--<button type="button" class="btn btn-default btn-success glyphicon glyphicon-search" ><span class="caret"></span></button>-->
-                                                            <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="searcheduserlist.length>=1" style="width:425px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
-                                                                <li ng-repeat="user in searcheduserlist" class="input-lg" ng-click="searchedUserFromDDL(user)" style="margin:5px">{{user.DisplayName}}</li>
-                                                            </ul>
-                                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
-                                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show=" NewUserEmail.length>1&& IsSearching  ">Searching user.... </span>
-
-                                                        </div>
-
-                                                        <div class="col-lg-2">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row" ng-hide="IsGroupHead">
-                                                        <div><span class="EMIEControllabel">GROUP HEAD NAME</span></div>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" name="txtEditUserName" id="txtEditUserName" class="form-control" data-ng-model="EditNewUserName" disabled placeholder="User Name">
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-9 checkbox">
-                                                            <label><input type="checkbox" ng-model="EditIsActive" />GROUP ACTIVE</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="row" style="margin-top:10px;">
-                                            <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" ng-click="SaveNewGroupName()">SAVE</button></div>
-                                            <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal" ng-click="CancelFields()">CANCEL</button></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div><span class="EMIEControllabel">REQUIRED APPROVALS</span></div>
-
-                        <div class="col-lg-7">
-                            <div style="border:1px solid lightgrey;padding-left:10PX">
-                                <div class="checkbox" ng-repeat="role in RoleList">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" ng-model="role.MandatoryApproval" ng-disabled="true"> {{role.RoleName}}
-                                        </label>
-                                        <a href="" data-toggle="modal" ng-click="SetRoleName(role.RoleName,role.MandatoryApproval)" data-target="#ERModal" ng-hide="role.RoleId == 4"><span class="glyphicon glyphicon-pencil" alt="Edit"></span></a>
-                                    </div>
-                                </div>
-                                <!--This code is commented for now but might be needed in future-->
-                                <!--<!--<div class="col-lg-8" style="padding-right: 36px;"><button class="EMIEbtn ThemeBtn" ng-click="updateMandatoryRoles(RoleList)">SAVE</button></div>-->
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="ERModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">EDIT ROLE NAME</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div><span class="EMIEControllabel">ROLE NAME</span></div>
-                                        <div class="col-lg-6">
-                                            <input type="text" class="form-control" data-ng-model="RoleName" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div><span class="EMIEControllabel">NEW ROLE NAME</span></div>
-                                        <div class="col-lg-6">
-                                            <input type="text" class="form-control" data-ng-model="NewRoleName" ng-change="CheckNewRoleNameField()">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4"><input type="checkbox" ng-model="IsMandatory" />IsMandatory</div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button id="SandboxOkButton" type="button" class="btn btn-success ThemeBtn" ng-disabled="IsNewRoleNameEmpty" ng-click="EditRoleName(IsMandatory)" data-dismiss="modal">SAVE</button>
-                                    <button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">CANCEL</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div class="row">
-
-                        <div><span class="EMIEControllabel">REQUIRED APPROVALS</span></div>
-
-                        <div class="col-lg-9">
-                            <div style="width:84% !important">
-                                <div class="Ccheckbox" style="border:1px solid">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> APPLICATION MANAGER
-                                        </label>
-                                    </div>
-
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> GROUP/DIVISION MANAGER
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> SITE LIST ADMINISTRATOR
-                                        </label>
-                                    </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" ng-model="role.isChecked" ng-disabled="role.RoleId == 4" ng-checked="role.RoleId == 4"> {{role.RoleName}}
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-8" style="padding-right: 36px;"><button class="EMIEbtn ThemeBtn" ng-click="selectMandatoryRoles()">SAVE</button></div>
-                                </div>
-                            </div>
-
-                    </div>-->
-
-                </div>
-
-                <div class="row" style="padding:10px;border:solid 1px lightgrey ">
-
-                    <legend>ENVIRONMENT CONFIGURATION</legend>
-
-                    <div class="row">
-                        <div><span class="EMIEControllabel">PRE-PRODUCTION</span><sup>*</sup></div>
-                        <div class="col-lg-9">
-                            <input type="text" placeholder="eg. \\server\folder\filename.xml" name="txtSandbaxEnvironment" id="txtSandbaxEnvironment" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="SandboxEnvironment" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
-                            <span class="error" ng-show="(form.txtSandbaxEnvironment.$dirty || submitted) && form.txtSandbaxEnvironment.$error.required">Required!</span>
-                        </div>
-
-                        <div class="col-lg-1">
-                            <!--<button type="button" data-toggle="modal" class="btn btn-success EMIEadd glyphicon" ng-click="SandboxCredentials()" data-target="#SBModal">...</button>-->
-
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd glyphicon glyphicon-user " title="PRE-PRODUCTION CREDENTIALS" data-toggle="modal" ng-click="SandboxCredentials()" data-target="#SBModal"></button></div>
-                            <!-- Modal or Pop-up for Add Application -->
-                            <div id="SBModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">PRE-PRODUCTION CREDENTIALS</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">DOMAIN</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtSBUserDomain" id="txtSBUserDomain" class="form-control" data-ng-model="SBUserDomain" required>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">USER NAME</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtSBUserName" id="txtSBUserName" class="form-control" data-ng-model="SBUserName" required>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">PASSWORD</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="password" name="txtSBPassword" id="txtSBPassword" class="form-control" data-ng-model="SBPassword" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button id="SandboxOkButton" type="button" class="btn btn-success ThemeBtn" ng-click="OkSandboxCredentials()">OK</button>
-                                            <button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal" ng-click="CancelSandboxCredential()">CANCEL</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <br />
-                        <div><span class="EMIEControllabel">PRODUCTION</span><sup>*</sup></div>
-                        <div class="col-lg-9">
-                            <input type="text" placeholder="eg. \\server\folder\filename.xml" name="txtProductionEnvironment" id="txtProductionEnvironment" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="ProductionEnvironment" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
-                            <span class="error" ng-show="(form.txtProductionEnvironment.$dirty || submitted) && form.txtProductionEnvironment.$error.required">Required!</span>
-                        </div>
-                        <div class="col-lg-1">
-                            <!--<button type="button" data-toggle="modal" class="btn btn-success EMIEadd glyphicon" ng-click="ProductionCredentials()" data-target="#PDModal">...</button>-->
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd glyphicon glyphicon-user" title="PRODUCTION CREDENTIALS" data-toggle="modal" ng-click="ProductionCredentials()" data-target="#PDModal"></button></div>
-                            <!-- Modal or Pop-up for Add Application -->
-                            <div id="PDModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">PRODUCTION CREDENTIALS</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">DOMAIN</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtPDUserDomain" id="txtPDUserDomain" class="form-control" data-ng-model="PDUserDomain" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">USER NAME</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtPDUserName" id="txtPDUserName" class="form-control" data-ng-model="PDUserName" required>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">PASSWORD</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="password" name="txtPDPassword" id="txtPDPassword" class="form-control" data-ng-model="PDPassword" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success ThemeBtn" ng-click="OkProductionCredentials()">OK</button>
-                                            <button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal" ng-click="CancelProductionCredential()">CANCEL</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <br />
-                        <div><span class="EMIEControllabel">ATTACHMENT LOCATION</span><sup>*</sup></div>
-                        <div class="col-lg-9">
-                            <input type="text" placeholder="eg. \\server\folder\folder" name="txtAttachmentLocation" id="txtAttachmentLocation" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="AttachmentLocation" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
-                            <span class="error" ng-show="(form.txtAttachmentLocation.$dirty || submitted) && form.txtAttachmentLocation.$error.required">Required!</span>
-                        </div>
-                        <div class="col-lg-1">
-                            <!--<button type="button" data-toggle="modal" class="btn btn-success EMIEadd glyphicon" ng-click="ProductionCredentials()" data-target="#PDModal">...</button>-->
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd glyphicon glyphicon-user" title="ATTACHMENT LOCATION CREDENTIALS" data-toggle="modal" ng-click="ProductionCredentials()" data-target="#ALModal"></button></div>
-                            <!-- Modal or Pop-up for Add Application -->
-                            <div id="ALModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">ATTACHMENT LOCATION CREDENTIALS</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">DOMAIN</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtALUserDomain" id="txtALUserDomain" class="form-control" data-ng-model="ALUserDomain" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">USER NAME</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtALUserName" id="txtALUserName" class="form-control" data-ng-model="ALUserName" required>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">PASSWORD</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="password" name="txtALPassword" id="txtALPassword" class="form-control" data-ng-model="ALPassword" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success ThemeBtn" ng-click="OkAttachmentCredentials()">OK</button>
-                                            <button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal" ng-click="CancelAttachmentCredentials()">CANCEL</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <br />
-                        <div><span class="EMIEControllabel">CONFIGURATION SCRIPT LOCATION</span><sup>*</sup></div>
-                        <div class="col-lg-9">
-                            <input type="text" placeholder="eg. \\server\folder\folder" name="txtConfigLocation" id="txtConfigLocation" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="ConfigurationLocation" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
-                            <span class="error" ng-show="(form.txtConfigLocation.$dirty || submitted) && form.txtConfigLocation.$error.required">Required!</span>
-                        </div>
-                        <div class="col-lg-1">
-                            <!--<button type="button" data-toggle="modal" class="btn btn-success EMIEadd glyphicon" ng-click="ProductionCredentials()" data-target="#PDModal">...</button>-->
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd glyphicon glyphicon-user" title="SETTINGS LOCATION CREDENTIALS" data-toggle="modal" ng-click="ProductionCredentials()" data-target="#CSLModal"></button></div>
-                            <!-- Modal or Pop-up for Add Application -->
-                            <div id="CSLModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">SETTINGS LOCATION CREDENTIALS</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">DOMAIN</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtCSLUserDomain" id="txtCSLUserDomain" class="form-control" data-ng-model="CSLUserDomain" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">USER NAME</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="text" name="txtCSLUserName" id="txCSLUserName" class="form-control" data-ng-model="CSLUserName" required>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">PASSWORD</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="password" name="txtCSLPassword" id="txtCSLPassword" class="form-control" data-ng-model="CSLPassword" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success ThemeBtn" ng-click="OkConfigurationCredentials()">OK</button>
-                                            <button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal" ng-click="CancelConfigurationCredentials()">CANCEL</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <br />
-                        <div><span class="EMIEControllabel">SITE DOMAIN FOR EMAIL NOTIFICATION</span><sup>*</sup></div>
-                        <div class="col-lg-9">
-                        <input type="text" placeholder="eg. http://site@domain.com" name="txtSiteURL" id="txtSiteURL" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="SiteURL">
-                            <span class="error" ng-show="(form.txtSiteURL.$dirty || submitted) && form.txtSiteURL.$error.required">Required!</span>
-                        </div>
-                        <div class="col-lg-1">
-                            <!--<button type="button" data-toggle="modal" class="btn btn-success EMIEadd glyphicon" ng-click="ProductionCredentials()" data-target="#PDModal">...</button>-->
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd glyphicon glyphicon-user" title="EMAIL ACCOUNT CREDENTIALS" data-toggle="modal" ng-click="EmailAccountCredentials()" data-target="#EmailModal"></button></div>
-                            <!-- Modal or Pop-up for Add Application -->
-                            <div id="EmailModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">EMAIL ACCOUNT CREDENTIALS</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">USER EMAIL</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,7}$" placeholder="User@example.com" class="form-control" name="txtEmailUserName" ng-model="EmailUserName" maxlength="200" />
-                                                    <div role="alert">
-                                                        <span class="error" ng-show="form.txtEmailUserName.$error.email">
-                                                            Not valid email!
-                                                        </span>
-                                                    </div>
-                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div><span class="EMIEControllabel">PASSWORD</span></div>
-                                                <div class="col-lg-9">
-                                                    <input type="password" name="txtEmailPassword" placeholder="Password" id="txtEmailPassword" class="form-control" data-ng-model="EmailPassword" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success ThemeBtn" ng-click="SubmitEmailCredentials()">OK</button>
-                                            <button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal" ng-click="CancelEmailCredentials()">CANCEL</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--//===========================================================================================================================================================================
-                    //                                                        NEEDED IN FUTURE
-                    //===========================================================================================================================================================================-->
-                    <!--<div class="row">
-                        <div><span class="EMIEControllabel">SANDBOX ENVIOURMENT</span><sup>*</sup></div>
-
-                        <div class="col-lg-7">
-                            <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
-                        </div>
-
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " ng-click="">...</button></div>
-                    </div>
-
-                    <div class="row">
-                        <div><span class="EMIEControllabel">SANDBOX ENV. CRENDENTIALS</span><sup>*</sup></div>
-
-                        <div class="col-lg-7">
-                            <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
-                        </div>
-
-                        <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " data-toggle="modal" data-target="#myModal1" ng-click="">...</button></div>
-                    </div>-->
-                    <!-- Model Popup 2 -->
-                    <!--<div id="myModal1" class="modal fade" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                            </div>
-
-                            <div class="modal-body">
-
-                                <div class="row>">
-                                    <div class="col-lg-6">
-                                        <div class="row">
-                                            <div><span class="EMIEControllabel">SELECT GROUPS</span></div>
-                                            <div class="=col-lg-9">
-                                                <select class="form-control" name="BPUName" data-ng-model="GroupName"
-                                                        data-ng-options="var.BPU as var.BPU for var in AppName | unique:'BPU' | orderBy:'BPU'"
-                                                        data-ng-change="PopulateApplicationName()" required
-                                                        ng-class="{'erroneous-field' : (form.BPUName.$dirty || submitted) && form.BPUName.$error.required}">
-                                                    <option value="">--Select--</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-
-                                        <div class="row">
-                                            <div><span class="EMIEControllabel">SELECT APPS</span></div>
-                                            <div class="col-lg-9">
-                                                <select name="Application" class="form-control" data-ng-model="Application" data-ng-disabled="DisabledApplicationName"
-                                                        data-ng-options="var as var.ApplicationName for var in SelectedApplications"
-                                                        data-ng-change="PopulateGroupName()" required
-                                                        ng-class="{'erroneous-field' : (form.Application.$dirty || submitted) && form.Application.$error.required}">
-                                                    <option value="">-- Select --</option>
-                                                </select>&nbsp;
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio">ONE TIME</label>
-                                        </div>
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio">WEEKLY</label>
-                                        </div>
-                                        <div class="radio disabled">
-                                            <label><input type="radio" name="optradio" >MONTHLY</label>
-                                        </div>
-                                    </div>
-
-                                    <!-- Modal 2 right side -->
-                    <!--<div class="col-lg-8" >
-                    <div class="row">
-
-                        <div class="col-lg-6">
-                            STARTING
-                            <div class="col-lg-3" ng-hide="prodDatePicker">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                                       ng-model="datePick" is-open="opened" min="minDate" max="'2025-06-22'"
-                                       datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
-                                       ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-lg-6">
-                            TO-->
-                    <!--<div class="col-lg-3" ng-hide="prodDatePicker">
-                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                               ng-model="datePick2" is-open="opened" min="minDate" max="'2025-06-22'"
-                               datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
-                               ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
-                    </div>-->
-                    <!--</div>
-                    </div>-->
-                    <!--     <div>RECURE EVERY:<input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="width:25px"> WEEKS ON :</div>
-                                            <div >
-                                                <label class="checkbox-inline"><input type="checkbox" value="">SUNDAY</label>
-                                                <label class="checkbox-inline"><input type="checkbox" value="">MONDAY</label>
-                                                <label class="checkbox-inline"><input type="checkbox" value="">TUESDAY</label>
-                                                <label class="checkbox-inline"><input type="checkbox" value="">WEDNESDAY</label>
-                                            </div>
-
-                                            <div>
-                                                <label class="checkbox-inline"><input type="checkbox" value="">THURSDAY</label>
-                                                <label class="checkbox-inline"><input type="checkbox" value="">FRIDAY</label>
-                                                <label class="checkbox-inline"><input type="checkbox" value="">SATERDAY</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">SAVE</button></div>
-                                        <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">CANCEL</button></div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>-->
-                    <!-- Model popup 3 -->
-                    <!--<div id="myModal2" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>-->
-                    <!-- Right Panel -->
-                    <!--<div class="col-lg-6">-->
-                    <br />
-                    <div class="row">
-
-                    <div><span class="EMIEControllabel">FREEZE PRODUCTION CHANGE</span></div>
-                        <br />
-                        <div class="col-lg-3">
-                        <div><span class="EMIEControllabel" style="padding-left:3px">FREEZE START DATE</span></div>
-                            <p class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                                       ng-model="FreezeProductionChangeStartDate" is-open="popupStartDate.opened" ng-click="openStartDate()"
-                                       ng-change="ChangeDateForEnd()" datepicker-options="dateOptions" close-text="Close" />
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>                          
-
-                        </div>
-
-                        <div class="col-lg-3">
-                        <div><span class="EMIEControllabel" style="padding-left:3px">FREEZE END DATE</span></div>
-                            <p class="input-group">
-                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                                       ng-model="FreezeProductionChangeEndDate" is-open="popupEndDate.opened" ng-click="openEndDate()"
-                                      datepicker-options="dateOptions" close-text="Close" />
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>    
-                            
-                        </div>
-                    </div>
-
-                    <!--//===========================================================================================================================================================================
-                    //                                                        NEEDED IN FUTURE
-                    //===========================================================================================================================================================================-->
-                    <!--<div class="row">
-                        <div><span class="EMIEControllabel">FREEZE PRODUCTION CHANGE</span></div>
-                        <div class="col-lg-9">
-                            <textarea name="FreezProductionChange" class="form-control" rows="1"></textarea>&nbsp;
-                        </div>
-                    </div>
-
-                    <div class="row" style="margin-right: 60px;">
-                        <div class="col-lg-5"></div>
-                        <div class="col-lg-3">
-                            <button type="button" class="btn btn-success ThemeBtn" ng-click="">EDIT FREEZE SCHEDULE</button>
-                        </div>
-
-                    </div>-->
-                    <!--</div>-->
-
-
-
-
-
-                    <div class="row" style="margin-right: 40px;">
-                        <br />
-                        <div class="col-lg-11" style="padding-right: 43px;"><button class="btn EMIEbtn ThemeBtn pull-right" ng-click="Save()">SAVE</button></div>
-                        <div class="col-lg-1"></div>
-
-                    </div>
-                </div>
+                <textarea name="FreezProductionChange" class="form-control" rows="1"></textarea>&nbsp;
+            </div>
+        </div>
+
+        <div class="row" style="margin-right: 60px;">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-3">
+                <button type="button" class="btn btn-success ThemeBtn" ng-click="">EDIT FREEZE SCHEDULE</button>
+            </div>
+
+        </div>-->
+            <!--</div>-->
+            <div>
+                <button class="highlight" ng-click="Save()">Save</button>
             </div>
         </div>
         <message-center></message-center>

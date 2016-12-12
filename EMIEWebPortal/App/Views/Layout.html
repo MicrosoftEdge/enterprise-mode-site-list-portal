@@ -1,298 +1,188 @@
-﻿<div class="row navbar-fixed-top" style="margin:0px !important">
+﻿<div class="EMIEheader-container">
     <div class="EMIEheader" ng-controller="LoginController">
-        <!--<div style="color:#3F51B5">{{Message}}</div>-->
-        <div class="col-lg-5 col-md-3 col-sm-3">
+        <div class="page-margins">
+            <!--<div style="color:#3F51B5">{{Message}}</div>-->
             <img src="../App/Views/img/microsoft-logo.png" class="mslogo" />
-        </div>
-
-        <div class="col-lg-2 col-md-3 col-sm-3 text-center">
-            <span class="EMIEtitle">ENTERPRISE MODE</span>
-            <br />
-            <span class="EMIEsubtitle">SELF-SERVICE PORTAL</span>
-        </div>
-
-        <div class="col-lg-5 col-md-6 col-sm-6">
-            <div class="row">
-                <div class="col-lg-11 col-md-11 col-sm-11 text-right" id="EMIEUserPanel" style="font-size: 0.875em;position: relative;right: -20px; top:0px;">
-                    <span class="EMIEHeaderUserPanel user-role">{{User.UserRole.RoleName}}</span><br />
-
-                    <span class="EMIEHeaderUserPanel user-name"> {{User.UserName}}</span>
-                </div>
-                <div class="" id="EMIEusermenu" style="right: -84px; position: relative;top:5px">
+            <div class="EMIEusermenu user-account">
+                <a href="javascript:;">
                     <div>
-                        <a href="#/User" class="EMIEusrconfig hidden"><span class="glyphicon glyphicon-user white-icon " data-toggle="tooltip" data-placement="bottom" title="USER MANAGEMENT"><span style='font-size:11px;position:relative;top:-7px;' class="glyphicon glyphicon-cog"></span></span></a>
-                        <div class="dropdown">
-                            <a class="dropbtn " style="color:black"><span class="glyphicon glyphicon-edit white-icon"> </span></a>
-                            <div class="dropdown-content">
-                                <a href="#/SiteLists" class="EMIEentapp hidden">SITE LIST MANAGER TOOL</a>
-                                <a href="" ng-click="ShowProductionSites()">VIEW SITE LIST</a>
-                            </div>
-                        </div>
-                        <span class="glyphicon glyphicon-stats white-icon EMIEstats hidden" style="cursor:pointer" ng-click="ShowReport()" data-toggle="tooltip" data-placement="bottom" title="REPORTS"></span>
-                        <!--<a href="#/Reports" class="glyphicon glyphicon-stats white-icon EMIEstats hidden" style="cursor:pointer" data-toggle="tooltip" title="REPORTS"></a>-->
-                        
-                        <!--<a href="#/SiteLists" class="EMIEentapp hidden" style="color:black" ><span class="glyphicon glyphicon-edit white-icon" data-toggle="tooltip" data-placement="bottom" title="SITE LIST MANAGER TOOL"> </span></a>-->
-                        <!--<span class="glyphicon glyphicon-bell white-icon hidden" data-toggle="tooltip" data-placement="bottom" title="SITELIST MANAGER TOOL"></span>-->
-                        <a href="#/Configuration"><span class="glyphicon glyphicon-cog white-icon EMIEsetting hidden" data-toggle="tooltip" data-placement="bottom" title="SETTINGS"></span></a>
-                        <a href="#/Logout"><span class="glyphicon glyphicon-log-out white-icon" data-toggle="tooltip" data-placement="bottom" title="SIGN OUT"></span></a>
+                        <span>{{User.UserRole.RoleName}}</span>
+                        <span>{{User.UserName}}</span>
                     </div>
-                </div>
-                <div class="col-lg-1 col-md-1 col-sm-1">
-                    <span class="glyphicon glyphicon-menu-hamburger white-icon EMIEuserpaneltoggler hidden"></span>
-                </div>
+                </a>
+                <ul class="dropdown">
+                    <li>
+                        <a href="#/Logout">Logout</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
+    <div class="EMIEsubheader">
+        <div class="page-margins">
+            <h4 class="EMIEtitle">
+                <a href="#/SignInSuccess">Enterprise Mode: Self Service Portal</a>
+            </h4>
+            <ul class="navlinks EMIEusermenu">
+                <li>
+                    <a class="usermgmt EMIEusrconfig hidden" href="#/User" data-toggle="tooltip" data-placement="bottom" title="User management"></a>
+                </li>
+                <li>
+                    <a class="production" href="#/ProductionSites" data-toggle="tooltip" data-placement="bottom" title="Production sites list"></a>
+                </li>
+                <li>
+                    <a class="reports EMIEstats hidden" href="#/Chart" data-toggle="tooltip" data-placement="bottom" title="Reports"></a>
+                </li>
+                <li>
+                    <a class="tool EMIEentapp hidden" href="#/SiteLists" data-toggle="tooltip" data-placement="bottom" title="Site list manager tool"></a>
+                </li>
+                <li>
+                    <a class="settings EMIEsetting hidden" href="#/Configuration" data-toggle="tooltip" data-placement="bottom" title="Settings"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 <div growl></div>
 <div id="wrapper" class="toggled">
     <!-- Sidebar -->
     <div id="sidebar-wrapper" ng-controller="LayoutController">
-
-
-        <span class="total-count">{{MyRequestToShow}}</span>
-        <br />
-        <span class="total-count-txt">{{CountText}}</span>
-
-
-        <ul class="sidebar-nav" style="margin-top:70px !important;">
-
-            <li class="newcr-tab">
-                <a href="#/NewCR" style="margin-right:10px; margin-top:-5px; color:#fff;"><span>NEW REQUEST</span></a>
-            </li>
-
-        </ul>
-
-
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top:130px;">
+        <div class="count">
+            <div class="total-count">{{MyRequestToShow}}</div>
+            <div class="total-count-txt">{{CountText}}</div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
-                <div class="newcr-tab" role="tab" id="headingOne" style="margin-left:22px;">
+                <div class="newcr-tab" role="tab" id="headingOne">
                     <div class="panel-title">
-                        <button ng-click="GetCount()" class="newcr-btn collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            MY REQUESTS  <!--{{TicketCounts[0].MyRequest}} <div ></div>-->  <span id="MyRequest" class="glyphicon glyphicon-chevron-up"></span>
+                        <button ng-click="GetCount()" class="newcr-btn" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span>My requests</span>
+                            <!--{{TicketCounts[0].MyRequest}} <div ></div>-->
+                            <span id="MyRequest" class="glyphicon glyphicon-chevron-up"></span>
                         </button>
                     </div>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-
                         <ul class="sidebar-nav">
-
                             <li class="req-tab in-progress">
                                 <a href="" ng-click="InProgress()">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[0].RequestInitiated}}
-                                    </span><br />
-                                    <span class="req-type">IN PROGRESS</span>
+                                    </div>
+                                    <div class="req-type">In progress</div>
                                 </a>
                             </li>
-
                             <li class="req-tab closed">
-
                                 <a href="" ng-click="Closed()">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[0].SignedOff}}
-                                    </span><br />
-                                    <span class="req-type">CLOSED</span>
+                                    </div>
+                                    <div class="req-type">Closed</div>
                                 </a>
                             </li>
-
                             <li class="req-tab rejected">
-
                                 <a href="" ng-click="Rejected()">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[0].RequestRejected}}
-                                    </span><br />
-                                    <span class="req-type">REJECTED</span>
+                                    </div>
+                                    <div class="req-type">Rejected</div>
                                 </a>
                             </li>
-
                             <li class="req-tab rollbacks">
                                 <a href="" ng-click="Rollback()">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[0].RequestRollback}}
-                                    </span><br />
-                                    <span class="req-type">ROLLED BACK</span>
+                                    </div>
+                                    <div class="req-type">Rolled back</div>
                                 </a>
                             </li>
-
                             <li class="req-tab pending hidden">
                                 <a href="" ng-click="Pending()">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[0].PendingApproval}}
-                                    </span><br />
-                                    <span class="req-type">APPROVALS PENDING</span>
+                                    </div>
+                                    <div class="req-type">Approvals pending</div>
                                 </a>
                             </li>
-
                         </ul>
-
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
-                <div class="newcr-tab" role="tab" id="headingTwo" style="margin-left:22px;">
+                <div class="newcr-tab" role="tab" id="headingTwo">
                     <div class="panel-title">
                         <button class="newcr-btn collapsed" ng-click="GetAllCount()" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            ALL REQUESTS <!--{{TicketCounts[1].MyRequest}}<div></div>--> <span id="AllRequest" class="glyphicon glyphicon-chevron-down"></span>
+                            <span>All requests</span>
+                            <!--{{TicketCounts[1].MyRequest}}<div></div>-->
+                            <span id="AllRequest" class="glyphicon glyphicon-chevron-down"></span>
                         </button>
                     </div>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
                         <ul class="sidebar-nav">
-
                             <li class="req-tab in-progress">
                                 <a href="" ng-click="InProgress('true')">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[1].RequestInitiated}}
-                                    </span><br />
-                                    <span class="req-type">IN PROGRESS</span>
+                                    </div>
+                                    <div class="req-type">In progress</div>
                                 </a>
                             </li>
-
                             <li class="req-tab closed">
-
                                 <a href="" ng-click="Closed('true')">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[1].SignedOff}}
-                                    </span><br />
-                                    <span class="req-type">CLOSED</span>
+                                    </div>
+                                    <div class="req-type">Closed</div>
                                 </a>
                             </li>
-
                             <li class="req-tab rejected">
-
                                 <a href="" ng-click="Rejected('true')">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[1].RequestRejected}}
-                                    </span><br />
-                                    <span class="req-type">REJECTED</span>
+                                    </div>
+                                    <div class="req-type">Rejected</div>
                                 </a>
                             </li>
-
                             <li class="req-tab rollbacks">
                                 <a href="" ng-click="Rollback('true')">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[1].RequestRollback}}
-                                    </span><br />
-                                    <span class="req-type">ROLLED BACK</span>
+                                    </div>
+                                    <div class="req-type">Rolled back</div>
                                 </a>
                             </li>
-
                             <li class="req-tab pending hidden">
                                 <a href="" ng-click="Pending('true')">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[1].PendingApproval}}
-                                    </span><br />
-                                    <span class="req-type">APPROVALS PENDING</span>
+                                    </div>
+                                    <div class="req-type">Approvals pending</div>
                                 </a>
                             </li>
-
                             <li class="req-tab req-all hidden">
                                 <a href="" ng-click="AllRequestsForEMIEChampion('true')">
-                                    <span class="counts">
+                                    <div class="counts">
                                         {{TicketCounts[1].MyRequest}}
-                                    </span><br />
-                                    <span class="req-type">ALL REQUESTS</span>
+                                    </div>
+                                    <div class="req-type">All requests</div>
                                 </a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
-    </div>
-
-
-
-
-
-
-
-    <div>
-        <div><a href="#menu-toggle" class="toggler" id="menu-toggle"><span class="glyphicon glyphicon-option-vertical fontblack"></span></a></div>
-
-
-
-
-        <!-- Status Panel -->
-
-        <div class="container status">
-            <ul id="status-Child">
-                <li id="First-child" class="First-child"><a href="#/RequestPage" ng-right-click="">SUBMIT REQUEST</a></li>
-                <li id="Middle-child-1" class="Middle-child"><a href="#/SandboxPage" ng-right-click="">PRE-PRODUCTION VALIDATION</a></li>
-                <li id="Middle-child-2" class="Middle-child"><a href="#/ApproversPage" ng-right-click="">APPROVALS</a></li>
-                <li id="Middle-child-3" class="Middle-child"><a href="#/ProductionChangePage" ng-right-click="">PRODUCTION DEPLOYMENT</a></li>
-                <li id="Last-child" class="Last-child"><a href="#/SignOffPage" ng-right-click="">PRODUCTION VALIDATION</a></li>
-
-            </ul>
-            <hr />
+        <div class="new-req">
+            <a href="#/NewCR">Add new request</a>
         </div>
-
-        <div class="container" ng-view></div>
     </div>
-
+    <div class="content">
+        <div ng-view></div>
+    </div>
 </div>
 <script>
-
-
-
-    $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-
-        $("#wrapper").toggleClass("toggled");
-        $(".toggler").toggleClass("toggled");
-
-        var wrapperClass = $("#wrapper").hasClass('toggled');
-        var togglerClass = $(".toggler").hasClass('toggled');
-
-        //Set status of sidepanel
-        if (wrapperClass && !togglerClass) {
-            localStorage.setItem('togglerlastStatus', 'collapsed');
-        }
-        if (!wrapperClass && togglerClass) {
-            localStorage.setItem('togglerlastStatus', 'expanded');
-        }
-    });
-
-
-
-
-
-    $(".EMIEuserpaneltoggler").click(function (e) {
-        if ($('#EMIEUserPanel').hasClass("EMIEnochampmenu")) {
-            $("#EMIEusermenu").toggleClass('EMIEusermenudisplay');
-
-            $("#EMIEUserPanel").toggleClass('EMIEshiftright');
-
-            $("#EMIEUserPanel").toggleClass("col-lg-8 col-md-8 col-sm-8");
-            $("#EMIEusermenu").toggleClass("col-lg-3 col-md-3 col-sm-3");
-        }
-        else if ($('#EMIEUserPanel').hasClass("EMIEGroupHead")) {
-            $("#EMIEusermenu").toggleClass('EMIEusermenudisplay');
-
-            $("#EMIEUserPanel").toggleClass('EMIEshiftright');
-
-            $("#EMIEUserPanel").toggleClass("col-lg-8 col-md-8 col-sm-8");
-            $("#EMIEusermenu").toggleClass("col-lg-3 col-md-3 col-sm-3");
-            $("#EMIEusermenu").css("right","-68px")
-        }
-        else {
-            $("#EMIEusermenu").toggleClass("col-lg-5 col-md-5 col-sm-5");
-            $("#EMIEusermenu").toggleClass('EMIEusermenudisplay');
-            $("#EMIEUserPanel").toggleClass('EMIEshiftright');
-            $("#EMIEUserPanel").toggleClass('col-lg-6 col-md-6 col-sm-6');
-
-
-        }
-
-    });
-
-    
+    $('[data-toggle="tooltip"]').tooltip();
 </script>

@@ -8,13 +8,11 @@ EMIEModule.controller('LogoutController', function ($scope, $rootScope, SharedPr
                 $sessionStorage.User = null;
                 $sessionStorage.TicketIdToShow = null;
                 $(".tooltip").toggleClass("in");
-                $(".EMIEuserpaneltoggler").addClass('hidden');
-                $("#EMIEusermenu").addClass('hidden');
+                $(".EMIEusermenu").addClass('hidden');
                 $(".EMIEsetting").addClass("hidden");
                 $(".EMIEstats").addClass("hidden");
                 $(".EMIEusrconfig").addClass("hidden");
                 $(".EMIEentapp").addClass("hidden");
-               // $("#EMIEUserPanel").removeClass();
                 $location.path("/Login");
 });
 

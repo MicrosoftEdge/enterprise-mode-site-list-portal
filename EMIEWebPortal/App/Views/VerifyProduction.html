@@ -1,146 +1,142 @@
-﻿<div class="EMIEpage-title">PRODUCTION CHANGE VERIFICATION <span class="EMIEpage-title pull-right" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div>
-
-<div>
-
-
-    <form name="SandboxForm">
-
-        <div class="EMIEHeaderTitle">Test Result With Production Environment</div>
-
-        <div style="margin-top:2.9rem" disable-all="isVerifyPageDisabled">
-            <div class="col-lg-4">
-                <label class="radio-inline EMIEControllabel"><input ng-disabled="IsSuccessDivReadOnly" id="RadSuccessful" type="radio" ng-checked="RadSuccessChecked" ng-click="RadSuccessClicked($event)" ng-model="Successchecked" value="true">Successful</label>
-                <label class="radio-inline EMIEControllabel" style="margin-left:70px;"><input ng-disabled="IsSuccessDivReadOnly" id="RadFailed" type="radio" ng-click="RadFailedClicked($event)" ng-model="Failedchecked" value="true" ng-checked="RadFailedChecked">Failed</label>
-
-            </div>
-
-            <div class="col-lg-8 form-horizontal" disable-all="isVerifyPageDisabled || IsDisableAfterSentCommnets">
-                <div class="col-lg-3 EMIEControllabel text-right">Attachments</div>
-                <div class="col-lg-4"> 
-                    <input type="file" id="file" class="form-control" name="file" style="height:40px !important;display:none" accept=".txt,.png,.jpg,.jpeg" multiple onchange="angular.element(this).scope().getFileDetails(this)" /> 
-                    <button class="btn btn-default btn-sm btn-info" style="width:200px" formnovalidate onclick="document.getElementById('file').click();" data-toggle="tooltip" data-placement="top" title="Only .jpeg, .png, .jpg and .txt files allowed.">BROWSE...</button> 
-                </div>
-                <div class="col-lg-5"><button class="btn btn-default btn-sm ThemeBtn" type="button" ng-disabled="DisableUploadButton" ng-click="uploadFiles()">UPLOAD</button></div>
+﻿<div class="emie-breadcrumb">
+    <div>Home</div>
+    <div>All Requests</div>
+    <div class="current">Request ID #{{TicketId}}</div>
+</div>
+<div class="EMIEpage-title">Production change verification</div>
+<!-- Status Panel -->
+<div class="status">
+    <ul id="status-child">
+        <li id="First-child" class="First-child">
+            <a href="#/RequestPage">
+                <span class="circle"></span>
+                <span class="text">Submit request</span>
+            </a>
+        </li>
+        <li id="Middle-child-1" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/SandboxPage">
+                <span class="circle"></span>
+                <span class="text">Pre-production validation</span>
+            </a>
+        </li>
+        <li id="Middle-child-2" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/ApproversPage">
+                <span class="circle"></span>
+                <span class="text">Approvals</span>
+            </a>
+        </li>
+        <li id="Middle-child-3" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/ProductionChangePage">
+                <span class="circle"></span>
+                <span class="text">Production deployment</span>
+            </a>
+        </li>
+        <li id="Last-child" class="Last-child">
+            <span class="line"></span>
+            <a href="#/SignOffPage">
+                <span class="circle"></span>
+                <span class="text">Production validation</span>
+            </a>
+        </li>
+    </ul>
+    <hr />
+</div>
+<form name="SandboxForm">
+    <div class="EMIEHeaderTitle">Test result with production environment</div>
+    <div class="form-column">
+        <div class="form-row" disable-all="isVerifyPageDisabled">
+            <label class="EMIEControllabel"><input ng-disabled="IsSuccessDivReadOnly" id="RadSuccessful" type="radio" ng-click="RadSuccessClicked($event)" ng-model="Successchecked" ng-checked="RadSuccessChecked" value="Checked">Successful</label>
+            <label class="EMIEControllabel"><input ng-disabled="IsSuccessDivReadOnly" id="RadFailed" type="radio" ng-click="RadFailedClicked($event)" ng-model="Failedchecked" ng-checked="RadFailedChecked" value="Checked">Failed</label>
+        </div>
+        <div class="form-row" disable-all="isVerifyPageDisabled ||isDisableAfterComments">
+            <div class="EMIEControllabel">Attachments</div>
+            <div>
+                <input type="file" id="file" class="form-control" name="file" style="height:40px !important;display:none" accept=".txt,.png,.jpg,.jpeg" multiple onchange="angular.element(this).scope().getFileDetails(this)" />
+                <button formnovalidate onclick="document.getElementById('file').click();" data-toggle="tooltip" data-placement="top" title="Only .jpeg, .png, .jpg and .txt files allowed.">Browse</button>
+                <button type="button" ng-click="uploadFiles()" ng-disabled="DisableUploadButton">Upload</button>
             </div>
         </div>
-
-        <div class="row" ng-hide="IsSelectedFIlesDivHidden" ng-show="filesSelected.length>=1">
-            <div class="col-lg-6"></div>
-            <div class="col-lg-6">
-                <div class="text-info" style="padding:10px;">
-                    {{SelectedFilesMessage}}
-                </div>
-                <div class="alert alert-danger" style="margin-left:10px;" ng-repeat="SelectedFile in filesSelected">
-                    <span>
-                        <button class="close" ng-disabled="IsSelectedFileDeleteDisable" data-dismiss="alert" ng-click="DeleteSelectedFile(SelectedFile)" aria-label="close">&times;</button>
-                        <span class="EMIEuploadedfile">{{SelectedFile.name}}</span>
-
+    </div>
+    <div class="form-column">
+        <div class="form-row" ng-hide="IsSelectedFIlesDivHidden" ng-show="filesSelected.length>=1">
+            <div>{{SelectedFilesMessage}}</div>
+            <div class="alert alert-danger" ng-repeat="SelectedFile in filesSelected">
+                <span>
+                    <span class="EMIEuploadedfile">{{SelectedFile.name}}</span>
+                    <button class="close" ng-disabled="IsSelectedFileDeleteDisable" data-dismiss="alert" ng-click="DeleteSelectedFile(SelectedFile)" aria-label="close">&times;</button>
+                </span>
+            </div>
+        </div>
+        <div class="form-row" ng-hide="IsDownloadedDivHidded" ng-show="UploadedFiles.array.length>=1">
+            <div>File(s) uploaded:</div>
+            <div ng-show="Messages">{{Messages}}</div>
+            <div ng-repeat="SingleFile in UploadedFiles.array">
+                <div class="alert alert-success">
+                    <span class="EMIEuploadedfile">
+                        <a style="cursor: pointer;" ng-click="DownloadSelectedAttchment(DownloadPathOfUploadedFiles,SingleFile)">{{SingleFile}}</a>
                     </span>
+                    <button class="close" ng-disabled="IsClosedDisable" data-dismiss="alert" ng-click="Delete(SingleFile)" aria-label="close">&times;</button>
                 </div>
             </div>
         </div>
-
-        <div class="row" >
-            <div class="col-lg-6"></div>
-            <div class="col-lg-6">
-                <div ng-hide="IsDownloadedDivHidded" ng-show="UploadedFiles.array.length>=1" style="margin-top:20px !important;padding:10px;" class="col-lg-4 text-success">File(s) uploaded:</div><div class="text-success col-lg-8" style="margin-top:20px !important" ng-show="Messages">{{Messages}}</div>
-                <div class="row"></div>
-                <div ng-repeat="SingleFile in UploadedFiles.array" style="margin-left:10px;">
-                    <div class="alert alert-success">
-                        <button class="close" ng-disabled="IsClosedDisable" data-dismiss="alert" ng-click="Delete(SingleFile)">&times;</button>
-                        <span class="EMIEuploadedfile">
-                            <a style="cursor: pointer;" ng-click="DownloadSelectedAttchment(DownloadPathOfUploadedFiles,SingleFile)">{{SingleFile}}</a>
+    </div>
+    <!--Success Div-->
+    <div ng-show="!IsSuccessDivHidden || !isProdSupportHidden" class="form-row" disable-all="isVerifyPageDisabled">
+        <div class="form-column" ng-hide="IsSuccessDivHidden">
+            <div>
+                <span class="EMIEControllabel">Change description</span>
+            </div>
+            <div>
+                <textarea ng-model="Comments" rows="6" cols="70" class="form-control" placeholder="Change description" required maxlength="500"></textarea>
+            </div>
+        </div>
+        <div class="form-column" ng-hide="isProdSupportHidden">
+            <div>
+                <span class="EMIEControllabel">Production support contact</span>
+            </div>
+            <div>
+                <div class="form-spacer">
+                    <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,7}$" placeholder="me@example.com" class="form-control" name="contactEmail" ng-model="ProdContactEmail" maxlength="200" />
+                    <div role="alert">
+                        <span class="error" ng-show="SandboxForm.contactEmail.$error.email">
+                            Not a valid email!
                         </span>
                     </div>
                 </div>
             </div>
         </div>
-  <br />
-  <br />
-<!--Success Div-->
-        <div class="row" ng-hide="IsSuccessDivHidden" disable-all="isVerifyPageDisabled">
-            <div class="col-lg-2">
-                <span>Change Description</span>
-            </div>
-            <div class="col-lg-6">
-                <textarea ng-model="Comments" rows="6" cols="70" class="form-control"  placeholder="Change Description" required maxlength="500"></textarea>
-            </div>
-
-            <!--Success Section-->
-            <div class="col-lg-2" ng-hide="IsSuccessDivHidden">
-            </div>
-        </div>
-        <br />
-        <br />
-        <div class="row" ng-hide="isProdSupportHidden" disable-all="isVerifyPageDisabled">
-            <div class="col-lg-2">
-                <span>Production Support Contact</span>
-            </div>
-            <div class="col-lg-6">
-                <input type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,7}$" placeholder="me@example.com" class="form-control" name="contactEmail" ng-model="ProdContactEmail" maxlength="200" />
-                <div role="alert">
-                    <span class="error" ng-show="SandboxForm.contactEmail.$error.email">
-                        Not valid email!
-                    </span>
+    </div>
+    <div ng-hide="IsFailureDivDescHidden" disable-all="isVerifyPageDisabled">
+        <div class="form-row">
+            <div class="form-column">
+                <div>
+                    <span>Issue Description</span>
                 </div>
-             </div>
-        </div>
-        <div class="row" disable-all="isVerifyPageDisabled">
-            <div class="col-lg-2">
-
-            </div>
-            <div class="col-lg-6">
-
+                <div>
+                    <textarea ng-disabled="IsSendFailureDisabled" ng-model="Comments" rows="6" cols="70" class="form-control" required placeholder="Issue Description" maxlength="500"></textarea>
+                </div>
             </div>
         </div>
-<!--Success Div-->
-<!--Failure Div-->
-        <div class="row" ng-hide="IsFailureDivDescHidden" disable-all="isVerifyPageDisabled">
-            <div class="col-lg-2">
-                <span>Issue Description</span>
-            </div>
-            <div class="col-lg-6">
-                <textarea ng-disabled="IsSendFailureDisabled" ng-model="Comments" rows="6" cols="70" class="form-control" required  placeholder="Issue Description" maxlength="500"></textarea>
-            </div>
-            <div class="col-lg-2">
-            </div>
+    </div>
+    <div ng-hide="IsFailureDivisionButtonHidden" disable-all="isVerifyPageDisabled">
+        <button type="button" ng-disabled="Comments==null || IsSendFailureDisabled" class="highlight" ng-click="SendFailureDetails(Comments)">Send failure details</button>
+        <button type="button" ng-click="RollBackProduction(Comments)">Rollback</button>
+    </div>
+    <div ng-hide="IsSuccessDivisionButtonHidden" disable-all="isVerifyPageDisabled">
+        <div class="form-row">
+            <button type="button" class="highlight" ng-click="SignOff()">Sign off</button>
+            <span ng-hide="IsSuccessDivisionButtonHidden">
+                <button type="button" ng-click="ContactSupportTeam(ProdContactEmail,Comments)" ng-disabled="ProdContactEmail==null || Comments==null">Contact support team</button>
+            </span>
         </div>
-
-
-<!--Failure Div-->
-<!--Failure Section-->
-        <div class="row" style="margin-top:10px !important;" ng-hide="IsFailureDivisionButtonHidden" disable-all="isVerifyPageDisabled">
-            <div class="col-lg-8 text-right">
-                <button type="button" ng-disabled="Comments==null || IsSendFailureDisabled" class="btn btn-default bottom ThemeBtn" ng-click="SendFailureDetails(Comments)">SEND FAILURE DETAILS</button>
-                <button type="button" class="btn btn-default bottom ThemeBtn" ng-click="RollBackProduction(Comments)">ROLLBACK</button>
-            </div>
-            <div class="col-lg-4"></div>
-        </div>
-
-
-        <div class="row" style="margin-top:10px !important;" ng-hide="IsSuccessDivisionButtonHidden" disable-all="isVerifyPageDisabled">
-            <div class=" col-lg-8 text-right">
-                <button type="button" class="btn btn-success " ng-click="ContactSupportTeam(ProdContactEmail,Comments)"  ng-disabled="ProdContactEmail==null || Comments==null">CONTACT SUPPORT TEAM</button>
-            </div>
-            <div class=" col-lg-4 text-right" style="margin-top:20px !important;">
-
-            </div>
-        </div>
-        <div class="row" style="margin-top:20px !important;" ng-hide="IsSuccessDivisionButtonHidden" disable-all="isVerifyPageDisabled">
-            <div class=" col-lg-8 text-right" style="margin-top:20px !important;"></div>
-            <div class=" col-lg-3 text-right" style="margin-top:20px !important;">
-                <button type="button" class="btn btn-default ThemeBtn" ng-click="SignOff()">SIGN OFF</button>
-            </div>
-            <div class="col-lg-1"></div>
-        </div>
-        <canvas id="imgCanvas" ng-hide="true"></canvas>
-        <message-center></message-center>
+    </div>
+    <canvas id="imgCanvas" ng-hide="true"></canvas>
+    <message-center></message-center>
 </form>
-</div>
-
-
 <script>
-
     url();
     $('[data-toggle="tooltip"]').tooltip();
 </script>

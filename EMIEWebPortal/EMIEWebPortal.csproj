@@ -25,6 +25,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -318,6 +319,7 @@
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="App\Views\css\winjs-symbols.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

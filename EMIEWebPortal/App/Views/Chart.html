@@ -1,186 +1,188 @@
-﻿
-<div class="row"><span class="EMIEpage-title"> ENTERPRISE MODE REPORT</span></div>
-<div class="row">
-    <div class="row">
-        <message-center></message-center>
-        
-        <br />
-        <div class="col-lg-3">
-            <div><span class="EMIEControllabel" style="padding-left:3px">FROM DATE</span></div>
-            <p class="input-group">
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePickFrom" is-open="popupStartDate.opened" ng-click="openStartDate()" ng-change="FilterSelected()" datepicker-options="dateOptions" close-text="Close" />
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-            </p>
-        </div>
-
-        <div class="col-lg-3">
-            <div><span class="EMIEControllabel" style="padding-left:3px">TO DATE</span></div>
-            <p class="input-group">
-                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePickTo" is-open="popupEndDate.opened" datepicker-options="dateOptions" close-text="Close" ng-change="FilterSelected()" ng-click="openEndDate()" />
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-            </p>
-        </div>
-        <div class="col-lg-3">
-            <div><span class="EMIEControllabel" style="padding-left:3px">SELECT GROUP</span></div>
-            <dl class="dropdownCD ">
-                <dt>
-                    <a>
-                        <span class="hida">SELECT</span>
-                        <p class="multiSel"></p>
-                    </a>
-                </dt>
-
-                <dd>
-                    <div class="mutliSelect">
-                        <ul>
-                            <li>
-                                <input type="checkbox" id="SelectAll" value="SelectAll" ng-click="CheckedAllBPUid(BPU)" ng-model="SelectAll" checked="checked">SELECT ALL
-                            </li>
-
-                            <li ng-repeat="BPUdetails in BPU">
+﻿<div class="emie-breadcrumb">
+    <div>Home</div>
+    <div class="current">Enterprise Mode Report</div>
+</div>
+<div>
+    <span class="EMIEpage-title EMIEspacer">Enterprise Mode Report</span>
+</div>
+<div class="form-row">
+    <message-center></message-center>
+    <div class="form-column">
+        <div><span class="EMIEControllabel">FROM DATE</span></div>
+        <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePickFrom" is-open="popupStartDate.opened" ng-click="openStartDate()" ng-change="FilterSelected()" datepicker-options="dateOptions" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+    </div>
+    <div class="form-column">
+        <div><span class="EMIEControllabel">TO DATE</span></div>
+        <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePickTo" is-open="popupEndDate.opened" datepicker-options="dateOptions" close-text="Close" ng-change="FilterSelected()" ng-click="openEndDate()" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </p>
+    </div>
+    <div class="form-column">
+        <div><span class="EMIEControllabel">Select group</span></div>
+        <dl class="dropdownCD">
+            <dt>
+                <a>
+                    <span class="hida">-- Select --</span>
+                </a>
+            </dt>
+            <dd>
+                <div class="mutliSelect">
+                    <ul>
+                        <li>
+                            <label for="SelectAll">
+                                <input type="checkbox" id="SelectAll" value="SelectAll" ng-click="CheckedAllBPUid(BPU)" ng-model="SelectAll" checked="checked">Select all
+                            </label>
+                        </li>
+                        <li ng-repeat="BPUdetails in BPU">
+                            <label for="{{BPUdetails.BPUId}}">
                                 <input type="checkbox" class="GroupName" value="{{BPUdetails.BPUId}}" id="{{BPUdetails.BPUId}}" ng-click="CheckedBPUid(BPUdetails.BPUId)">{{BPUdetails.BPUFullname}}
-                            </li>
-                        </ul>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <button type="button" class="highlight" data-dismiss="modal" ng-disabled="IsFilterbuttonDisabled" ng-click="Filter()">Apply</button>
+        <button type="button" data-dismiss="modal" ng-disabled="IsFilterbuttonDisabled" ng-click="Clear()">Clear</button>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-column">
+        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available.</div>
+        <canvas id="pieChart" ng-show="DisplayChart" width="340" height="340"></canvas>
+    </div>
+    <div class="form-column">
+        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available.</div>
+        <canvas id="ChangeTypeChangeChart" ng-show="DisplayChart" width="340" height="340"></canvas>
+    </div>
+    <div class="form-column">
+        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available.</div>
+        <canvas id="canvas" ng-show="DisplayChart" width="340" height="340"></canvas>
+    </div>
+    <div class="form-column">
+        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available.</div>
+        <canvas id="ReasonForChangeChart" ng-show="DisplayChart" width="340" height="340"></canvas>
+    </div>
+</div>
+<div>
+    <div>
+        <span class="EMIEpage-title EMIEspacer" ng-show="DisplayChartForApplication">Signed off application list</span>
+    </div>
+    <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessageForSignedOffApplication">No data available.</div>
+    <div>
+        <span class="EMIEHeaderTitle" ng-show="DisplayChartForApplication">Added to site list</span>
+    </div>
+    <div class="panel-group EMIEspacer" ng-show="DisplayChartForApplication">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-3">Added sites</div>
+                    <div class="col-lg-3 clickable" ng-click="orderByField1='ApplicationName'; reverseSort1 = !reverseSort1">
+                        <span class="name">Application name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
                     </div>
-
-                </dd>
-
-            </dl>
+                    <div class="col-lg-3 clickable" ng-click="orderByField1='GroupName'; reverseSort1 = !reverseSort1">
+                        <span class="name">Group name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="ticketdetails in tickets | filter:{ ChangeType: 'Add to EMIE'}|orderBy:orderByField1:reverseSort1">
+                        <div class="row">
+                            <div class="col-lg-3">{{ ticketdetails.AppSiteLink }}</div>
+                            <div class="col-lg-3">{{ ticketdetails.ApplicationName }}</div>
+                            <div class="col-lg-3">{{ ticketdetails.GroupName }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <div class="col-lg-3">
-            <button style="margin-top:28px" type="button" class="btn btn-default EMIEbtn ThemeBtn" data-dismiss="modal" ng-disabled="IsFilterbuttonDisabled" ng-click="Filter()">APPLY</button>
-            <button style="margin-top:28px" type="button" class="btn btn-default EMIEbtn ThemeBtn" data-dismiss="modal" ng-disabled="IsFilterbuttonDisabled" ng-click="Clear()">CLEAR</button>
+    </div>
+    <div>
+        <span class="EMIEHeaderTitle" ng-show="DisplayChartForApplication">Deleted from site list</span>
+    </div>
+    <div class="panel-group EMIEspacer" ng-show="DisplayChartForApplication">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-3">Deleted sites</div>
+                    <div class="col-lg-3 clickable" ng-click="orderByField2='ApplicationName'; reverseSort2 = !reverseSort2">
+                        <span class="name">Application name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </div>
+                    <div class="col-lg-3 clickable" ng-click="orderByField2='GroupName'; reverseSort2 = !reverseSort2">
+                        <span class="name">Group name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="ticketdetails in tickets | filter:{ ChangeType: 'Delete from EMIE'}|orderBy:orderByField2:reverseSort2">
+                        <div class="row">
+                            <div class="col-lg-3">{{ ticketdetails.AppSiteLink }}</div>
+                            <div class="col-lg-3">{{ ticketdetails.ApplicationName }}</div>
+                            <div class="col-lg-3">{{ ticketdetails.GroupName }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-
     </div>
-</div>
-<br />
-
-<div class="row" style="border: 1px solid lightgrey;background-color:#EBEBEB">
-    <div class="col-md-6" style="padding:17px 0px 0px 25px;">
-        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available ...</div>
-        <canvas id="pieChart" ng-show="DisplayChart" width=550 height=550></canvas>
+    <div>
+        <span class="EMIEHeaderTitle" ng-show="DisplayChartForApplication">Updated from site list</span>
     </div>
-
-    <div class="col-md-6" style="padding-top:17px">
-        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available ...</div>
-        <canvas id="ChangeTypeChangeChart" ng-show="DisplayChart" width=470 height=470></canvas>
-    </div>
-</div>
-
-<div class="row" style="border: 1px solid lightgrey;padding:17px !important;background-color:#EBEBEB">
-    <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available ...</div>
-    <canvas id="canvas" ng-show="DisplayChart"></canvas>
-</div>
-
-<div class="row" style="border: 1px solid lightgrey;padding:17px;background-color:#EBEBEB">
-    <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available ...</div>
-    <canvas id="ReasonForChangeChart" ng-show="DisplayChart"></canvas>
-</div>
-
-<div class="row" style="border: 1px solid lightgrey;padding:17px;background-color:#EBEBEB">
-    <div class="row" style="text-align:center">
-        <span class="EMIEtitle" ng-show="DisplayChartForApplication" style="color:black !important;font-size:20px;padding-bottom:17px">SIGNED OFF APPLICATION LIST</span>
-    </div>
-    <br />
-    <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessageForSignedOffApplication">No data available ...</div>
-    <div class="row" style="text-align:center">
-        <span class="EMIEtitle" ng-show="DisplayChartForApplication" style="color:black !important;font-size:20px;padding-bottom:17px">ADDED TO EMIE LIST</span>
-    </div>
-    <div class="row" ng-show="DisplayChartForApplication">
-        <div class="col-lg-12">
-            <table class="table_report">
-                <tr>
-                    <th>SITES ADDED TO EMIE SITE LIST</th>
-                    <th><span id="EMIEsortinglink" ng-click="orderByField1='ApplicationName'; reverseSort1 = !reverseSort1">APPLICATION NAME</span> <span class="glyphicon glyphicon-sort text-right" ng-click="orderByField1='ApplicationName'; reverseSort1 = !reverseSort1"></span></th>
-                    <th><span id="EMIEsortinglink" ng-click="orderByField1='GroupName'; reverseSort1 = !reverseSort1">GROUP NAME </span><span class="glyphicon glyphicon-sort text-right" ng-click="orderByField1='GroupName'; reverseSort1 = !reverseSort1"></span></th>
-                </tr>
-                <tr ng-repeat="ticketdetails in tickets | filter:{ ChangeType: 'Add to EMIE'}|orderBy:orderByField1:reverseSort1">
-                    <td style="width:100px">{{ ticketdetails.AppSiteLink }}</td>
-                    <td>{{ ticketdetails.ApplicationName }}</td>
-                    <td style="width:100px">{{ ticketdetails.GroupName }}</td>
-                </tr>
-            </table>
-        </div>     
-    </div>
-
-    <br />
-    <div class="row" style="text-align:center">
-        <span class="EMIEtitle" ng-show="DisplayChartForApplication" style="color:black !important;font-size:20px;padding-bottom:17px">DELETED FROM EMIE LIST</span>
-    </div>
-    <div class="row" ng-show="DisplayChartForApplication">
-        <div class="col-lg-12">
-            <table class="table_report">
-                <tr>
-                    <th>SITES ADDED TO EMIE SITE LIST</th>
-                    <th><span id="EMIEsortinglink" ng-click="orderByField2='ApplicationName'; reverseSort2 = !reverseSort2">APPLICATION NAME </span><span class="glyphicon glyphicon-sort text-right" ng-click="orderByField2='ApplicationName'; reverseSort2 = !reverseSort2"></span></th>
-                    <th><span id="EMIEsortinglink" ng-click="orderByField2='GroupName'; reverseSort2 = !reverseSort2">GROUP NAME</span> <span class="glyphicon glyphicon-sort text-right" ng-click="orderByField2='GroupName'; reverseSort2 = !reverseSort2"></span></th>
-                </tr>
-                <tr ng-repeat="ticketdetails in tickets | filter:{ ChangeType: 'Delete from EMIE'}|orderBy:orderByField2:reverseSort2">
-                    <td style="width:100px">{{ ticketdetails.AppSiteLink }}</td>
-                    <td>{{ ticketdetails.ApplicationName }}</td>
-                    <td style="width:100px">{{ ticketdetails.GroupName }}</td>
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-    <br />
-    <div class="row" style="text-align:center">
-        <span class="EMIEtitle" ng-show="DisplayChartForApplication" style="color:black !important;font-size:20px;padding-bottom:17px">UPDATED FROM EMIE LIST</span>
-    </div>
-    <div class="row" ng-show="DisplayChartForApplication">
-        <div class="col-lg-12" >
-            <table class="table_report">
-                <tr>
-                    <th>SITES ADDED TO EMIE SITE LIST</th>
-                    <th><span id="EMIEsortinglink" ng-click="orderByField3='ApplicationName'; reverseSort3= !reverseSort3" class="emie">APPLICATION NAME</span> <span class="glyphicon glyphicon-sort text-right" ng-click="orderByField3='ApplicationName'; reverseSort3= !reverseSort3"></span></th>
-                    <th><span id="EMIEsortinglink" ng-click="orderByField3='GroupName'; reverseSort3 = !reverseSort3">GROUP NAME</span> <span class="glyphicon glyphicon-sort text-right" ng-click="orderByField3='GroupName'; reverseSort3 = !reverseSort3"></span></th>
-                </tr>
-                <tr ng-repeat="ticketdetails in tickets | filter:{ ChangeType: 'Update to EMIE'}|orderBy:orderByField3:reverseSort3">
-                    <td style="width:100px">{{ ticketdetails.AppSiteLink }}</td>
-                    <td>{{ ticketdetails.ApplicationName }}</td>
-                    <td style="width:100px">{{ ticketdetails.GroupName }}</td>
-                </tr>
-            </table>
+    <div class="panel-group" ng-show="DisplayChartForApplication">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-3">Updated sites</div>
+                    <div class="col-lg-3 clickable" ng-click="orderByField3='ApplicationName'; reverseSort3= !reverseSort3">
+                        <span class="name">Application name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </div>
+                    <div class="col-lg-3 clickable" ng-click="orderByField3='GroupName'; reverseSort3 = !reverseSort3">
+                        <span class="name">Group name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-collapse">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="ticketdetails in tickets | filter:{ ChangeType: 'Update to EMIE'}|orderBy:orderByField3:reverseSort3">
+                        <div class="row">
+                            <div class="col-lg-3">{{ ticketdetails.AppSiteLink }}</div>
+                            <div class="col-lg-3">{{ ticketdetails.ApplicationName }}</div>
+                            <div class="col-lg-3">{{ ticketdetails.GroupName }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
-
-<!--//will be needed later-->
-<!--<div class="row" style="border: 1px solid lightgrey;">
-    <canvas id="LineChart" style="width: 800px; height: 500px; text-align:center"></canvas>
-</div>
-<div class="row" style="border: 1px solid lightgrey;">
-    <canvas id="TrendlineData" style="width: 800px; height: 500px; text-align:center"></canvas>
-</div>-->
 <script>
     url();
-
-
     $(document).ready(function () {
-
         if ($('#SelectAll').is(':checked')) {
-
-            //$('.GroupName').prop('disabled', true);
             $('.GroupName').prop('checked', true);
         }
-
     });
-
-
-
-
     $(".dropdownCD dt a").on('click', function () {
         $(".dropdownCD dd ul").slideToggle('fast');
     });
-
     $(".dropdownCD dd ul li a").on('click', function () {
         $(".dropdownCD dd ul").hide();
     });
@@ -195,39 +197,13 @@
     });
 
     $('.mutliSelect ul li input[type="checkbox"]').on('click', function () {
-
         var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
-
-          title = $(this).val() + ",";
-
+        title = $(this).val() + ",";
         if ($('#SelectAll').is(':checked')) {
-            //$('.GroupName').prop('disabled', true);
             $('.GroupName').prop('checked', true);
         }
         else {
-            //$('.GroupName').prop('disabled', false);
             $('.GroupName').prop('checked', false);
         }
-
-
-        //if ($(this).is(':checked')) {
-
-        //    var html = '<span title="' + title + '">' + title + '</span>';
-        //    $('.multiSel').append(html);
-        //    $(".hida").hide();
-        //} else {
-        //    $('span[title="' + title + '"]').remove();
-        //    var ret = $(".hida");
-        //    $('.dropdownCD dt a').append(ret);
-
-        //}
     });
-
-
-
-
 </script>
-
-
-
-

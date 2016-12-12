@@ -227,25 +227,23 @@
                         inGraphDataShow: true,
                         responsive: false,
                         legend: true,
-                        legendBlockSize: 10,
+                        legendBlockSize: 14,
                         showSingleLegend: true,
-                        legendFontSize: 15,
+                        legendBorders: false,
+                        legendFontSize: 14,
                         legendFontFamily: "'Segoe UI'",
-                        legendPosX: -2,
-                        legendPosY: 4,
                         legendFontColor: "black",
-                        legendXPadding: -10,
                         inGraphDataRadiusPosition: 2,
                         //inGraphDataTmpl: "<%=v1+'  '+v2%>",
                         inGraphDataTmpl: "<%=v2%>",
                         inGraphDataFontColor: "White",
                         inGraphDataFontSize: 14,
-                        inGraphDataFontStyle: "bold",
-                        graphTitle: "ALL REQUEST BY STATUS",
+                        inGraphDataFontStyle: "normal",
+                        graphTitle: "All requests by status",
                         graphTitleFontFamily: "'Segoe UI'",
-                        graphTitleFontSize: 20,
-                        graphTitleFontStyle: "bold",
-                        graphTitleFontColor: "Black",
+                        graphTitleFontSize: 24,
+                        graphTitleFontStyle: "lighter",
+                        graphTitleFontColor: "Black"
                     }
                     var pieCtx = document.getElementById('pieChart').getContext('2d');
                     new Chart(pieCtx).Doughnut(pieData, newopts);
@@ -274,7 +272,6 @@
                         labels.push(countBpu.BPUs[i]);
                     }
                     //labels: ["2014", "2013", "2012", "2011", "2010"],
-                    //["ECIT","FIPIT"]
 
                     //Colours will be set based on different ticketstaus
                     for (var i = 0; i < countBpu.chartData.length; i++) {
@@ -321,7 +318,6 @@
                         if (Data.length != 0)
                             datasets.push({
                                 fillColor: colour,
-                                strokeColor: "black",
                                 pointColor: "rgba(220,220,220,1)",
                                 data: Data,
                                 title: countBpu.chartData[i].Status,
@@ -337,40 +333,35 @@
                     //Configuration For Bar chart
                     var newoptcon = {
                         inGraphDataShow: true,
-                        inGraphDataFontStyle: "bold",
+                        inGraphDataFontStyle: "normal",
                         legend: true,
-                        legendBlockSize: 20,
+                        legendBlockSize: 14,
                         showSingleLegend: true,
-                        legendFontSize: 18,
+                        legendBorders: false,
+                        legendFontColor: "black",
+                        legendFontSize: 14,
                         legendFontFamily: "'Segoe UI'",
-                        legendPosX: 2,
-                        legendPosY: 0,
                         animationStartWithDataset: 1,
                         animationStartWithData: 1,
-
                         inGraphDataTmpl: "<%=v3%>",
                         responsive: true,
                         barValueSpacing: 2,
                         inGraphDataFontColor: "White",
-                        inGraphDataFontSize: 15,
+                        inGraphDataFontSize: 14,
                         inGraphDataAlign: "center",
                         inGraphDataXPosition: 2,
                         inGraphDataYPosition: 3,
                         barValueSpacing: 5,
                         fullWidthGraph: true,
-                        //inGraphDataYPosition: [3, 3,3,3,3,3,3,3,3,3,3,3],
-                        //inGraphDataVAlign: ["top", "bottom"],
-                        //inGraphDataPaddingY: [-3, 3],
                         scaleFontColor: "black",
-                        scaleFontSize: 15,
+                        scaleFontSize: 14,
                         yAxisMinimumInterval: 5,
-                        graphTitle: "GROUP WISE REQUEST STATUS",
+                        graphTitle: "Request status by group",
                         graphTitleFontFamily: "'Segoe UI'",
-                        graphTitleFontSize: 20,
-                        graphTitleFontStyle: "bold",
+                        graphTitleFontSize: 24,
+                        graphTitleFontStyle: "lighter",
                         graphTitleFontColor: "Black",
-                        barValueSpacing: 2,
-                        //  graphMax: 60,
+                        barValueSpacing: 2
                     }
                     var ctx = document.getElementById("canvas").getContext("2d");
                     var barChart = new Chart(ctx).StackedBar(barChartData, newoptcon);
@@ -488,7 +479,7 @@
                     //this function will set configurations setting for chart
                     var newopts = {
                         inGraphDataShow: true,
-                        inGraphDataFontSize: 15,
+                        inGraphDataFontSize: 14,
                         inGraphDataFontColor: "black",
                         roundNumber: -2,
                         graphMin: 0,
@@ -497,13 +488,12 @@
                         graphMax: 25,
                         responsive: true,
                         scaleFontColor: "black",
-                        //  datasetFill: false,
                         scaleFontSize: 15,
-                        graphTitle: "REASON FOR CHANGE",
+                        graphTitle: "Reasons for change",
                         graphTitleFontFamily: "'Segoe UI'",
-                        graphTitleFontSize: 20,
-                        graphTitleFontStyle: "bold",
-                        graphTitleFontColor: "Black",
+                        graphTitleFontSize: 24,
+                        graphTitleFontStyle: "lighter",
+                        graphTitleFontColor: "Black"
                     }
                     var pieCtx = document.getElementById('ReasonForChangeChart').getContext('2d');
                     new Chart(pieCtx).Line(ChartData, newopts);
@@ -551,35 +541,27 @@
                         responsive: false,
                         legend: true,
                         showSingleLegend: true,
-                        legendBlockSize: 10,
-                        legendFontSize: 15,
+                        legendBlockSize: 14,
+                        legendBorders: false,
+                        legendFontSize: 14,
                         legendFontFamily: "'Segoe UI'",
-                        legendPosX: -2,
-                        legendPosY: 4,
-                        legendXPadding: -10,
                         legendFontColor: "black",
                         inGraphDataRadiusPosition: 2,
                         inGraphDataAlign: "center",
                         inGraphDataTmpl: "<%=v2%>",
                         inGraphDataFontColor: "White",
                         inGraphDataFontSize: 14,
-                        inGraphDataFontStyle: "bold",
-                        graphTitle: "ALL REQUEST BY CHANGE TYPE",
+                        inGraphDataFontStyle: "normal",
+                        graphTitle: "All requests by change type",
                         graphTitleFontFamily: "'Segoe UI'",
-                        graphTitleFontSize: 20,
-                        graphTitleFontStyle: "bold",
-                        graphTitleFontColor: "Black",
+                        graphTitleFontSize: 24,
+                        graphTitleFontStyle: "lighter",
+                        graphTitleFontColor: "Black"
                     }
                     var pieCtx = document.getElementById('ChangeTypeChangeChart').getContext('2d');
                     new Chart(pieCtx).Doughnut(data, newopts);
                 }
             });
-
         }
-
-
-      
-       
-        
     }
 });

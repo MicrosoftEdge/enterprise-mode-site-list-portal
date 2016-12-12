@@ -1,25 +1,10 @@
-﻿
-<div class="modal-content">
-    <div class="modal-header Modal-warning" style="padding-top:0px">
-        <div class="row">
-            <h3 class="textNormal mrgTop0 text-center">{{modalOptions.headerText}}</h3>
-        </div>
-    </div>
-    <div class="modal-body paddTop0">
-        <div class="row">
-            <div class="col-lg-12" style="text-align:left">
-                <span class="EMIEControllabel" style="font-size:16px !important;padding-left:0px !important">{{modalOptions.bodyText}}</span>
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <div class="row">
-            <div class="col-lg-6">
-            </div>
-            <div class="col-lg-6">                
-                <button type="button" class="btn btn-success EMIESubmit EMIEadd" data-ng-click="modalOptions.ok(modalOptions.actionButtonText);">{{modalOptions.actionButtonText}}</button>
-                <button type="button" class="btn btn-success EMIESubmit EMIEadd" data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
-            </div>
-        </div>
-    </div>
+﻿<div class="modal-header">
+    <span class="EMIEpage-title">{{modalOptions.headerText}}</span>
+</div>
+<div class="modal-body">
+    <span>{{modalOptions.bodyText}}</span>
+</div>
+<div class="modal-footer">
+    <button type="button" class="highlight" data-ng-click="modalOptions.ok(modalOptions.actionButtonText);">{{modalOptions.actionButtonText}}</button>
+    <button type="button" data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
 </div>

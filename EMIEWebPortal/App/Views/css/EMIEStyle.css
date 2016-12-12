@@ -1,25 +1,883 @@
-﻿body {
-    margin-bottom: 20px !important;
-    font-size:14px
+﻿/**
+***********************
+***********************
+***********************
+   Changed by Josh
+***********************
+***********************
+***********************
+**/
+
+@font-face {
+    font-family: Microsoft Symbols;
+    src: url('winjs-symbols.ttf');
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 1280px;
+}
+
+body > div:first-child {
+    height: 100%;
+}
+
+.page-margins {
+    margin: 0 70px;
+}
+
+.EMIEheader-container {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    min-width: 1280px;
 }
 
 .EMIEheader {
-    background-color: black;
-    min-height: 60px;
-    padding-top: 10px;
-    padding-left: 0px;
-    padding-bottom: 10px;
-    padding-right: 21px;
-    position: relative;
-    top: -5px;
+    background-color: #fff;
 }
 
-.EMIEtitle {
-    font-weight: bold;
-    font-size: /*1.188em*/ 19px;
+.EMIEheader .page-margins {
+    height: 50px;
+}
+
+.EMIEheader .user-account {
+    float: right;
+    position: relative;
+}
+
+.EMIEheader .user-account:hover {
+    background-color: #f2f2f2;
+}
+
+.EMIEheader .user-account > a {
+    display: block;
+    text-decoration: none;
+    padding: 6px 15px;
+    height: 50px;
+    cursor: default;
+}
+
+.EMIEheader .user-account > a::before {
+    font-family: 'Microsoft Symbols';
+    content: "\e13d";
+    font-size: 24px;
+    color: #000;
+    position: relative;
+    top: -4px;
+}
+
+.EMIEheader .user-account > a div {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.EMIEheader .user-account > a div span {
+    font-size: 12px;
+    color: #000;
+    display: block;
+    width: 151px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.EMIEheader .user-account ul.dropdown {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+    right: 0;
+}
+
+.EMIEheader .user-account:hover ul.dropdown {
+    display: block;
+}
+
+.EMIEheader .user-account ul.dropdown li {
+    background-color: #f2f2f2;
+}
+
+.EMIEheader .user-account ul.dropdown li a {
+    display: block;
+    color: #000;
+    padding: 10px 40px;
+    font-size: 14px;
+}
+
+.mslogo {
+    height: 23px;
+    margin-top: 12px;
+}
+
+.EMIEsubheader {
+    background-color: #0078d7;
     color: #fff;
 }
 
+.EMIEsubheader .page-margins {
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+}
+
+.EMIEsubheader .EMIEtitle {
+    display: inline-block;
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+.EMIEsubheader .EMIEtitle a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.EMIEsubheader .navlinks {
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
+.EMIEsubheader .navlinks li {
+    margin: 0 -2px;
+    display: inline-block;
+}
+
+.EMIEsubheader .navlinks li:hover {
+    background-color: #006cc1;
+    transition: background-color ease-out .5s;
+}
+
+.EMIEsubheader .navlinks li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0 15px;
+    height: 70px;
+}
+
+.EMIEsubheader .navlinks li a::before {
+    font-family: 'Microsoft Symbols';
+}
+
+.EMIEsubheader .navlinks li a.usermgmt::before {
+    content: "\e187";
+}
+
+.EMIEsubheader .navlinks li a.reports::before {
+    content: "\e133";
+}
+
+.EMIEsubheader .navlinks li a.tool::before {
+    content: "\e104";
+}
+
+.EMIEsubheader .navlinks li a.production::before {
+    content: "\e15e";
+}
+
+.EMIEsubheader .navlinks li a.settings::before {
+    content: "\e115";
+}
+
+.EMIELogininfo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.EMIELogininfo .message,
+.EMIELogininfo .login {
+    display: inline-block;
+    padding: 40px 50px;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    width: 40%;
+}
+
+.EMIELogininfo .message {
+    background-color: #f2f2f2;
+}
+
+.EMIELogininfo .login {
+    vertical-align: top;
+}
+
+.EMIELogininfo .login h1 {
+    margin: 0 0 20px 0;
+    font-size: 36px;
+    font-weight: 200;
+}
+
+.EMIELogininfo .login .EMIEbtn,
+.EMIELogininfo .login .EMIEbtn:hover {
+    padding: 7px 25px;
+    background-color: #0078d7;
+    border-width: 0;
+    margin-bottom: 20px;
+    border-radius: 0;
+    color: #fff;
+}
+
+.EMIELogininfo .login a.register {
+    font-weight: 600;
+}
+
+.EMIEpage-title {
+    font-size: 36px;
+    font-weight: 200;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.EMIEsearch {
+    margin-bottom: 45px;
+    margin-right: -41px;
+}
+
+.form-column-liquid .EMIEsearch {
+    margin-bottom: 0;
+}
+
+.EMIEsearch.input-group input,
+.EMIEsearch.input-group input:focus {
+    width: 340px;
+    transition: none;
+    border: 1px solid #a9a9a9;
+    border-radius: 0;
+    font-size: 16px;
+    color: #000;
+    height: 36px;
+    box-shadow: none;
+}
+
+.EMIEsearch.input-group {
+    display: block;
+}
+
+.EMIEsearch .input-group-addon {
+    display: inline-block;
+    background: transparent;
+    position: relative;
+    left: -37px;
+    top: 3px;
+    border: 0;
+    z-index: 9;
+    cursor: text;
+    font-size: 16px;
+}
+
+ul#status-child {
+    padding: 0;
+    margin: 0;
+}
+
+ul#status-child li {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+}
+
+ul#status-child li span {
+    display: block;
+}
+
+ul#status-child li span.circle {
+    border: 1px solid #b3b3b3;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+    background-color: #fff;
+}
+
+ul#status-child li.Current span.circle {
+    border: 1px solid #4c9d4c;
+}
+
+ul#status-child li.Completed span.circle {
+    border: 1px solid #4c9d4c;
+    background-color: #4c9d4c;
+}
+
+ul#status-child li.Current span.circle::before,
+ul#status-child li.Completed span.circle::before {
+    display: block;
+    font-family: 'Microsoft Symbols';
+    content: "\e10b";
+    font-weight: 200;
+    font-size: 12px;
+    margin-top: 3px;
+    margin-left: -1px;
+}
+
+ul#status-child li.Current span.circle::before {
+    color: #000;
+}
+
+ul#status-child li.Completed span.circle::before {
+    color: #fff;
+}
+
+ul#status-child li span.line {
+    width: 135px;
+    height: 1px;
+    background-color: #b3b3b3;
+    position: absolute;
+    top: 37px;
+    left: -70px;
+    z-index: 9;
+}
+
+ul#status-child li.Current span.line,
+ul#status-child li.Completed span.line {
+    background-color: #4c9d4c;
+}
+
+ul#status-child li.RolledBack span.line {
+    border-color: orange;
+}
+
+ul#status-child li span.text {
+    font-size: 11px;
+    color: hsla(0, 0%, 0%, 0.4);
+    text-transform: uppercase;
+    margin: 5px auto 0 auto;
+    width: 100px;
+    line-height: 12px;
+    padding-bottom: 25px;
+}
+
+ul#status-child li.Status-Selected span.text {
+    color: #000;
+    font-weight: 600;
+}
+
+ul#status-child li a {
+    display: block;
+    color: black;
+    padding-top: 25px;
+}
+
+.status hr {
+    margin: 5px 0 30px 0;
+    border-color: hsla(0, 0%, 0%, 0.2);
+}
+
+.form-column,
+.form-column-liquid {
+    display: inline-block;
+    padding-right: 30px;
+    vertical-align: top;
+}
+
+.form-column {
+    width: 370px;
+}
+
+.form-row {
+    margin-bottom: 30px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 340px;
+    border-radius: 0;
+    border: 1px solid #a9a9a9;
+    font-size: 16px;
+    color: #808080;
+    padding: 4px 12px;
+}
+
+.form-row input,
+.form-row select {
+    height: 36px;
+}
+
+.form-row input[type=checkbox],
+.form-row input[type=radio] {
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    color: #000;
+}
+
+.form-dropdown {
+    position: relative;
+}
+
+.dropdownCD {
+    position: relative;
+    z-index: 100;
+    margin: 0;
+}
+
+.dropdownCD dt {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #a9a9a9;
+}
+
+.dropdownCD dd {
+    position: relative;
+}
+
+.dropdownCD a,
+.dropdownCD a:visited {
+    font-size: 16px;
+    color: #808080;
+    text-decoration: none;
+    outline: none;
+    padding: 4px 12px;
+    -ms-user-select: none;
+}
+
+.dropdownCD a::after {
+    font-family: 'Microsoft Symbols';
+    content: "\e019";
+    color: #000;
+    position: absolute;
+    right: 13px;
+    top: 7px;
+}
+
+.dropdownCD dt a {
+    display: block;
+    overflow: hidden;
+    border: 0;
+    width: 340px;
+    height: 36px;
+    font-weight: normal;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.dropdownCD dd ul {
+    background-color: #fff;
+    color: #000;
+    display: none;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 340px;
+    list-style: none;
+    height: 166px;
+    overflow: auto;
+    border: 1px solid #a9a9a9;
+    border-top: 0;
+    padding: 0;
+}
+
+.dropdownCD dd ul li:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdownCD dd ul li label {
+    font-weight: normal;
+    cursor: pointer;
+    -ms-user-select: none;
+    margin: 0;
+    padding: 4px 12px;
+    display: block;
+    width: 100%;
+}
+
+.dropdownCD span.value {
+    display: none;
+}
+
+.dropdownCD dd ul li a {
+    padding: 5px;
+    display: block;
+}
+
+.dropdownCD dd ul li a:hover {
+    background-color: #fff;
+}
+
+.EMIEControllabel {
+    font-size: 11px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.emie-breadcrumb {
+    margin-bottom: 10px;
+}
+
+.emie-breadcrumb div {
+    display: inline-block;
+    font-size: 11px;
+    color: #000;
+}
+
+.emie-breadcrumb div.current {
+    color: #0078d7;
+}
+
+.emie-breadcrumb div:not(.current)::after {
+    content: " > ";
+}
+
+#AddUser {
+    display: inline-block;
+    text-align: center;
+}
+
+.content button,
+.modal .modal-dialog .modal-content button,
+#AddUser {
+    background-color: #ccc;
+    font-size: 14px;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+    border-radius: 0;
+    margin-right: 5px;
+}
+
+.content button:not(:disabled):hover,
+#AddUser:hover {
+    border-color: #b0b0b0;
+    background-color: #ccc;
+    color: #000;
+}
+
+.content button.highlight,
+.modal .modal-dialog .modal-content button.highlight {
+    background-color: #0078d7;
+    border: 1px solid #0078d7;
+    color: #fff;
+}
+
+.content button.highlight:not(:disabled):hover,
+.modal .modal-dialog .modal-content button.highlight:not(:disabled):hover {
+    background-color: #0078d7;
+    border-color: hsla(0, 0%, 0%, 0.2);
+    color: #fff;
+}
+
+.content button:disabled,
+.content button.highlight:disabled,
+.modal .modal-dialog .modal-content button:disabled,
+.modal .modal-dialog .modal-content button.highlight:disabled {
+    color: #b0b0b0;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+}
+
+.newreq-appbuttons {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.disclaimer {
+    font-size: 11px;
+}
+
+.EMIEHeaderTitle {
+    font-size: 24px;
+    font-weight: 200;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#wrapper .form-row .EMIEuploadedfile {
+    width: 286px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: text-bottom;
+}
+
+.form-row .close {
+    float: none;
+    display: inline-block;
+    text-shadow: none;
+    font-size: 16px;
+    margin: 0;
+}
+
+label.EMIEControllabel {
+    cursor: pointer;
+    width: 100px;
+}
+
+.content .panel {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.content .panel-group .panel .panel-collapse ul.list-group {
+    border-top: 0;
+}
+
+.content .panel .panel-heading,
+.content .panel ul.list-group li {
+    background-color: #fff;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
+}
+
+.content .panel .panel-heading {
+    color: #4d4d4d;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+.content .panel .panel-heading .clickable {
+    -ms-user-select: none;
+}
+
+.content .panel .panel-heading .clickable:hover .name {
+    text-decoration: underline;
+}
+
+.content .EMIEmyreqpanel .panel,
+#wrapper .content .panel ul.list-group li:last-child {
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
+}
+
+.content .EMIEmyreqpanel .panel .panel-heading {
+    background-color: #f4f4f4;
+    cursor: pointer;
+    border-bottom: 0;
+}
+
+.content .panel ul.list-group li,
+.content .EMIEmyreqpanel .panel .panel-heading {
+    font-size: 14px;
+    color: #000;
+    padding: 15px;
+    text-transform: none;
+}
+
+.content .EMIEmyreqpanel .panel .panel-heading.collapsed {
+    background-color: #fff;
+}
+
+.content .panel ul.list-group li:hover,
+.content .EMIEmyreqpanel .panel .panel-heading:hover {
+    background-color: #f2f2f2;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.content .EMIEmyreqpanel .panel .EMIEPanelHeader {
+    font-size: 10px;
+    color: #4d4d4d;
+    padding: 20px 15px 15px 15px;
+    text-transform: uppercase;
+}
+
+.content .panel-group .EMIEmyreqpanel .panel .panel-collapse {
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+
+#wrapper .content .panel-group .panel .EMIEmyreqpanel .panel .panel-collapse ul.list-group li:last-child {
+    border-bottom: 0;
+}
+
+.content .panel-group .EMIEmyreqpanel .panel .panel-collapse ul.list-group li input[type=checkbox] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    vertical-align: text-bottom;
+}
+
+.content .EMIEmyreqpanel .panel .panel-heading span.toggle {
+    float: right;
+    margin-top: 2px;
+    margin-right: 10px;
+    font-family: 'Microsoft Symbols';
+}
+
+.content .EMIEmyreqpanel .panel .panel-heading span.toggle:before {
+    content: "\e018";
+}
+
+.content .EMIEmyreqpanel .panel .panel-heading.collapsed span.toggle:before {
+    content: "\e019";
+}
+
+.content .input-group input[uib-datepicker-popup],
+.content .form-group.uib-time input {
+    height: 36px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    color: #808080;
+    border: 1px solid #a9a9a9;
+}
+
+.content .input-group input[uib-datepicker-popup] {
+    width: 340px;
+}
+
+.content .input-group input[uib-datepicker-popup]:focus {
+    color: #000;
+}
+
+.content .input-group input[uib-datepicker-popup] ~ .input-group-btn {
+    left: -35px;
+    z-index: 999;
+}
+
+.content .input-group input[uib-datepicker-popup] ~ .input-group-btn button {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+}
+
+.content .input-group input[uib-datepicker-popup] ~ .input-group-btn button:active {
+    box-shadow: none;
+}
+
+.content .uib-time.am-pm button {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.content .uib-timepicker .uib-separator {
+    padding-left: 5px;
+}
+
+.content .uib-timepicker .uib-time.minutes {
+    padding-left: 5px;
+}
+
+.form-spacer {
+    padding-bottom: 30px;
+}
+
+.modal .modal-dialog .modal-content {
+    border-radius: 0;
+}
+
+.modal .modal-dialog .modal-content .modal-body {
+    padding: 0 15px;
+}
+
+.modal .modal-dialog .modal-content .modal-header,
+.modal .modal-dialog .modal-content .modal-footer {
+    border: 0;
+}
+
+.content .dropdown-menu {
+    border-radius: 0;
+}
+
+li.input-lg {
+    border-radius: 0;
+    cursor: pointer;
+    margin: 0;
+    font-size: 14px;
+}
+
+li.input-lg:hover {
+    background: #f2f2f2;
+}
+
+.EMIEspacer {
+    margin-bottom: 45px;
+}
+
+.content .pagination > li > a {
+    font-size: 15px;
+    color: #000;
+    border: 0;
+    background-color: #fff;
+    margin-right: 5px;
+}
+
+.content .pagination > li > a:focus {
+    color: #000;
+}
+
+.content .pagination > li > a:hover {
+    background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+.content .pagination > li.active > a {
+    background-color: #fff;
+    border: 1px solid #0078d7;
+}
+
+.content .pagination > li.active > a:hover {
+    color: #000;
+}
+
+.content .pagination > li.disabled {
+    display: none;
+}
+
+.content .pagination > li:first-child > a,
+.content .pagination > li:last-child > a {
+    border-radius: 0;
+}
+
+.content .pagination > li:last-child > a {
+    margin: 0;
+}
+
+.input-row {
+    line-height: 36px;
+}
+
+.tabbable > .nav-tabs {
+    margin-bottom: 30px;
+}
+
+.tabbable > .nav-tabs > li > a {
+    border-radius: 0;
+    font-size: 16px;
+}
+
+/**
+***********************
+***********************
+***********************
+       Original
+***********************
+***********************
+***********************
+**/
 .EMIEsubtitle {
     font-size: 0.813em/*13px*/;
     position: relative;
@@ -30,20 +888,6 @@
 a.EMIEnavlink:hover {
     text-decoration: underline !important;
 }
-
-.panel-heading, .panel-heading a {
-    background-color: #737373 !important;
-    color: #fff !important;
-    border-radius: 0px !important;
-}
-
-ul.list-group li {
-    background: #fff !important;
-}
-
-    ul.list-group li:nth-child(odd) {
-        background: #ECECEC !important;
-    }
 
 .Ccheckbox {
     padding-left: 10px;
@@ -66,35 +910,15 @@ ul.list-group li {
     transform: rotate(90deg);
 }
 
-.mslogo {
-    width: 140px;
-    position: relative;
-    top: 1px;
-    left: -8px;
-}
-
 a#Login {
     text-decoration: none;
     color: white;
-}
-
-
-input[type=checkbox] {
-    zoom: 1.4 !important;
-    margin-right: 4px !important;
-    margin-top: 2px !important;
-    margin-bottom: 1px;
 }
 
 .btn-success {
     color: #fff !important;
     background-color: #008270 !important;
     font-size:/* 1.688em*/27px;
-}
-
-.EMIEpage-title {
-    font-size: /*1.250em*/20px;
-    font-weight: bold;
 }
 
 .EMIEusericon {
@@ -106,20 +930,6 @@ input[type=checkbox] {
    // position:absolute;
     //left:67% !important;
 }*/
-
-.user-role {
-}
-
-.user-name {
-}
-
-.EMIEControllabel {
-    font-size:/*0.875em*/14px;
-    vertical-align: super;
-    position: relative;
-    top: 5px;
-    padding-left: 18px;
-}
 
 .EMIEsmall-btn {
     border: 1px solid #028273;
@@ -136,27 +946,9 @@ input[type=checkbox] {
         background-color: #d2d2d2;
     }
 
-
-
-
-
 .row {
     margin-top: 5px !important;
     margin-bottom: 5px !important;
-}
-
-.EMIEadd {
-    margin-left: -20px;
-    color: white !important;
-}
-
-.EMIEbtn {
-    padding: 6px 27px !important;
-    min-height: 42px !important;
-}
-
-.EMIEchkbox {
-    margin: 10px !important;
 }
 
 .EMIEfooter {
@@ -202,42 +994,10 @@ input.ng-dirty.ng-invalid {
     height: 100px;
 }
 
-.EMIEHeaderTitle {
-    padding: .9rem;
-    height: 40px;
-    color: #000 !important;
-    background-color: #f2f2f2 !important;
-    border: 1px solid #D4CBCB;
-    font-size: /*1.000em*/16px;
-    margin-bottom: 2.9rem !important;
-    margin-top: 2rem !important;
-}
-
-
 .btn-sm {
     border-radius: 0px !important;
     min-height: 22px !important;
     font-size: 13px !important;
-}
-
-.EMIEPanelHeader {
-    padding: .9rem;
-    color: #000 !important;
-    background-color: #D2D2D2 !important;
-    font-size: /*1.000em*/16px;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-
-
-
-.EMIELogininfo {
-    font-size:/* 1.063em*/17px;
-    text-align: justify;
-    padding: 20px;
 }
 
 .fontblack {
@@ -250,19 +1010,6 @@ input.ng-dirty.ng-invalid {
     margin: 5px;
 }
 
-.EMIEHeaderUserPanel {
-    color: white;
-}
-
-.EMIEuploadedfile {
-    max-width: 450px !important;
-    display: inline-block !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    padding-right: 5px !important;
-    height: 19px;
-}
-
 .alert {
     padding: 7px !important;
     margin-bottom: 5px !important;
@@ -270,82 +1017,16 @@ input.ng-dirty.ng-invalid {
     border-radius: 0px !important;
 }
 
-#EMIEusermenu {
-    display: none;
-}
-
-ul#EMIEusermenu li {
-    float: left;
-    list-style: none;
-}
-
-.EMIEusermenudisplay {
-    display: block !important;
-}
-
-
 .EMIEchampmenu-open {
     position: relative;
     right: -90px;
     top: -4px;
 }
 
-.EMIEmyreqpanel {
-    border-radius: 0px !important;
-    margin-bottom: 10px;
-}
-
-.EMIEuserpaneltoggler {
-    cursor: pointer;
-    font-weight: bolder;
-    font-size:/*1.875em*/30px;
-    position: relative;
-    top: 2px;
-}
-
 .EMIEshiftright {
     right: -94px !important;
 }
 
-
-
-
-#EMIEsortinglink {
-    color: #fff !important;
-}
-
-
-    #EMIEsortinglink:hover {
-        text-decoration: underline !important;
-    }
-
-.EMIEmyreqpanelbg {
-    background-color: rgba(199, 198, 198, 1) !important;
-    color: rgba(51, 51, 51, 1) !important;
-}
-
-    .EMIEmyreqpanelbg a {
-        background-color: transparent !important;
-        color: #00188F !important;
-        font-weight: bold;
-    }
-
-        .EMIEmyreqpanelbg a:hover {
-            text-decoration: underline !important;
-        }
-
-
-
-/*Status Panel*/
-ul#status-Child li {
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-    padding-top: 40px;
-    text-align: center;
-    margin-right: -4px;
-}
-
 ul#Progress-Child li {
     display: inline-block;
     width: 150px;
@@ -362,13 +1043,6 @@ ul#Progress-Child li {
     padding-top: 40px;
     text-align: center;
     margin-right: -4px;
-}
-
-ul#status-Child li a {
-    color: black;
-    text-decoration: none;
-    width: auto;
-    font-size: 9px/*0.61em*/;
 }
 
 ul#icons li {
@@ -393,12 +1067,6 @@ ul#Req-Status li {
     background-color: transparent;
 }
 
-
-
-select {
-    min-height: 42px !important;
-}
-
 ul#icons li {
     display: inline-block;
     width: 50px;
@@ -413,69 +1081,10 @@ ul#icons li#user-name {
     width: 100px;
 }
 
-.Staus-Selected {
-    color: purple;
-    font-weight: bold;
-}
-
-.EMIESubmit {
-    margin-left: 0px !important;
-}
-
 sup {
     font-size: /*0.875em1*/14px;
     color: red;
 }
-
-#status-Child {
-    margin-left: -40px;
-}
-
-
-.status ul#status-Child li#First-child {
-    background: url('../img/step_1_current.svg') no-repeat -94% 9px;
-    text-align: left;
-}
-
-.status ul#status-Child li#Middle-child-1 {
-    background: url('../img/pending_step_2.svg') no-repeat 50% 8px;
-}
-
-.status ul#status-Child li#Middle-child-2 {
-    background: url('../img/pending_step_2.svg') no-repeat 50% 8px;
-}
-
-.status ul#status-Child li#Middle-child-3 {
-    background: url('../img/pending_step_2.svg') no-repeat 50% 8px;
-}
-
-.status ul#status-Child li#Last-child {
-    background: url('../img/pending_step.svg') no-repeat 244% 8px;
-}
-
-
-select, textarea, input[type="text"], input[type="url"], .btn {
-    border-radius: 0px !important;
-    min-height: 42px !important;
-    font-size: 17px !important;
-}
-
-.ThemeBtn {
-    background-color: #028273 !important;
-    color: white !important;
-    border-color: #028273;
-}
-
-#AddRequest {
-    background: url('../img/AddRequest-icon-2.svg') no-repeat 0% -5px;
-    width: 192px;
-}
-
-#AddUser {
-    background: url('../img/AddUser-icon.svg') no-repeat 0% -5px;
-    width: 192px;
-}
-
 
 .tooltip > .tooltip-inner {
     background-color: #505050 !important;
@@ -498,61 +1107,6 @@ select, textarea, input[type="text"], input[type="url"], .btn {
     background-color: #028273;
     width: 50px;
 }
-
-/*Selected Status bar*/
-.status ul#status-Child li#First-child.Completed {
-    background: url('../img/step_1_complete.svg') no-repeat -8% 9px;
-    text-align: left;
-}
-
-.status ul#status-Child li.Completed#Middle-child-1 {
-    background: url('../img/completed_step.svg') no-repeat 50% 8px;
-    text-align: center;
-}
-
-
-.status ul#status-Child li#Middle-child-2.Completed {
-    background: url('../img/completed_step.svg') no-repeat 50% 8px;
-    text-align: center;
-}
-
-.status ul#status-Child li#Middle-child-3.Completed {
-    background: url('../img/completed_step.svg') no-repeat 50% 8px;
-    text-align: left;
-}
-
-.status ul#status-Child li#Last-child.Current {
-    background: url('../img/last_step.svg') no-repeat 235% 8px;
-}
-
-.status ul#status-Child li#Last-child.Completed {
-    background: url('../img/last_step_completed.svg') no-repeat 238% 8px;
-    text-align: center;
-}
-
-.status ul#status-Child li#Middle-child-1.RolledBack {
-    background: url('../img/last_step_completed.svg') no-repeat 238% 8px;
-    text-align: center;
-}
-/*Status bar current*/
-
-.status ul#status-Child li#Middle-child-1.Current {
-    background: url('../img/current_stage.svg') no-repeat 50% 8px;
-}
-
-.status ul#status-Child li#Middle-child-2.Current {
-    background: url('../img/current_stage.svg') no-repeat 50% 8px;
-}
-
-.status ul#status-Child li#Middle-child-3.Current {
-    background: url('../img/current_stage.svg') no-repeat 50% 8px;
-}
-
-.status ul#status-Child li#Last-child.Current {
-    background: url('../img/last_step.svg') no-repeat 262% 8px;
-}
-
-
 
 ul#Req-Status a {
     color: black;
@@ -731,89 +1285,6 @@ input[type=text]::-ms-clear {
     display: none;
 }
 
-
-/*CUSTOM CONTROLS*/
-
-.dropdownCD {
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-top: 35px;
-}
-
-
-    .dropdownCD dd,
-    .dropdownCD dt {
-        margin: 0px;
-        padding: 0px;
-        border: 1px solid lightgrey;
-    }
-
-    .dropdownCD ul {
-        margin: -1px 0 0 0;
-    }
-
-    .dropdownCD dd {
-        position: relative;
-    }
-
-    .dropdownCD a,
-    .dropdownCD a:visited {
-        color: black;
-        text-decoration: none;
-        outline: none;
-        font-size: 12px;
-    }
-
-    .dropdownCD dt a {
-        /*background-color: #4F6877;*/
-        display: block !important;
-        padding: 12px 20px 5px 10px;
-        min-height: 25px;
-        line-height: 12px;
-        overflow: hidden;
-        border: 0;
-        width: 272px;
-        color: black;
-    }
-
-.dropdown.customDD dt a span,
-.multiSel span {
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 3px 2px 0;
-}
-
-.dropdownCD dd ul {
-    background-color: #fff;
-    border: 0;
-    color: black;
-    display: none;
-    left: 0px;
-    padding: 2px 15px 2px 5px;
-    position: absolute;
-    top: 2px;
-    width: 280px;
-    list-style: none;
-    height: 166px;
-    overflow: auto;
-}
-
-.dropdownCD span.value {
-    display: none;
-}
-
-.dropdownCD dd ul li a {
-    padding: 5px;
-    display: block;
-}
-
-    .dropdownCD dd ul li a:hover {
-        background-color: #fff;
-    }
-
-
 /*For Charts Table*/
 
 .table_report {
@@ -889,96 +1360,9 @@ input[type=text]::-ms-clear {
     padding-left: 7px;
 }
 
-/*Custom Pop-up Header class*/
-.Modal-error {
-    background-color: #A80000;
-    color: white;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.Modal-warning {
-    background-color: #FF8C00;
-    color: white;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.Modal-info {
-    background-color: #00BCF2;
-    color: white;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.Modal-success {
-    background-color: #00B294;
-    color: white;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-
-li.input-lg {
-    height: auto !important;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 20px;
-}
-
-li.input-lg:hover {
- background:#D2D2D2;
-}
-
-
 .dropdown-menu-left{
     word-break:break-all !important;
 }
-
-
-@media screen and (max-width: 1024px) /*and (min-width: 769px)*/ {
-    #EMIEUserPanel{
-        position: relative;
-        right: -23px !important;
-        top: 0px;
-        font-size: 0.813em !important;
-    }
-
-    #EMIEusermenu {
-        right: -24px !important;
-        position: relative;
-        top: 5px;
-    }
-
-    .EMIEtitle{
-        font-size: /*1.063em*/19px;
-    }
-
-
-}
-
-@media screen and (max-width: 768px) {
-    #EMIEUserPanel{
-        position: relative;
-        right: -23px !important;
-        top: 0px;
-        font-size: 0.813em !important;
-    }
-
-    #EMIEusermenu {
-        right: -24px !important;
-        position: relative;
-        top:-13px !important;
-    }
-
-    .EMIEtitle{
-        font-size: /*1.063em*/19px;
-    }
-
-
-}
-
-
 
 .dropbtn {
     /*background-color: #4CAF50;*/

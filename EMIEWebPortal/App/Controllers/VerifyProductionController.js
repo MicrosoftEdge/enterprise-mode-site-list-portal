@@ -6,8 +6,8 @@
         //Initializing the values.
         $scope.isVerifyPageDisabled = true;
 
-        $(".status li").removeClass("Staus-Selected");
-        $(".status #Last-child").addClass("Staus-Selected");
+        $(".status li").removeClass("Status-Selected");
+        $(".status #Last-child").addClass("Status-Selected");
 
 
         //Hide Modal

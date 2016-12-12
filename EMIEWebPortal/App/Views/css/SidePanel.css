@@ -1,271 +1,216 @@
-﻿
+﻿/**
+***********************
+***********************
+***********************
+   Changed by Josh
+***********************
+***********************
+***********************
+**/
+
+@font-face {
+    font-family: Microsoft Symbols;
+    src: url('winjs-symbols.ttf');
+}
 
 #wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    margin-top:99px;
+    padding: 120px 0 0 0;
+    margin: 0;
+    white-space: nowrap;
+    min-height: 100%;
+    overflow: hidden;
 }
 
-
-#wrapper.toggled {
-    padding-left: 182px;
-}
-
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 182px;
-    top:0px;
-    width: 0;
-    height: 100%;
-    margin-left: -182px;
-    overflow-y: auto;
-    overflow-x:hidden;
-    background: #d2d2d2;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    
+#wrapper * {
+    white-space: normal;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 182px;
+    display: none;
 }
 
-#page-content-wrapper {
+#sidebar-wrapper {
+    background-color: #f2f2f2;
+    width: 330px;
+    float: left;
+    padding: 20px 20px 20px 70px;
+    margin: 0;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    overflow: hidden;
+}
+
+#wrapper .content {
+    float: left;
+    vertical-align: top;
+    margin: 0;
+    margin-left: -4px; /* Can't figure out why this is necessary */
+    width: calc(100% - 330px); /* Factors in negative left margin above */
+    padding: 30px;
+    overflow-x: hidden;
+}
+
+#wrapper.toggled .content {
     width: 100%;
-    position: relative;
-    padding: 15px;
+    margin: 0 40px;
 }
 
-#wrapper.toggled #page-content-wrapper {
-    position: relative;
-    margin-right: -182px;
+.count {
+    color: #0078d7;
+    margin-bottom: 20px;
 }
 
-/* Sidebar Styles */
+.count .total-count {
+    font-size: 48px;
+    font-weight: 200;
+}
 
-.sidebar-nav {
-    /*position: absolute;*/
-    top: 0;
-    width: 182px;
-    margin-top: -5px !important;
+.count .total-count-txt {
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+    text-transform: uppercase;
+}
+
+#sidebar-wrapper #accordion {
+    margin-bottom: 20px;
+}
+
+#sidebar-wrapper #accordion .panel {
+    box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #d0d0d0;
+    border-radius: 0;
+}
+
+#sidebar-wrapper #accordion .panel:first-child {
+    border-top: 1px solid #d0d0d0;
+}
+
+#sidebar-wrapper #accordion .panel + .panel {
+    margin: 0;
+}
+
+#sidebar-wrapper #accordion .panel .panel-body {
     padding: 0;
-    list-style: none;
 }
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-    float:left;
-    margin-left:9px;
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 }
 
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .req-tab a {
+    display: block;
+    margin-left: 20px;
+    padding: 10px 5px;
+    border-bottom: 1px solid #d0d0d0;
+}
 
-.sidebar-nav li a{
-      display: block;
-    }
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .req-tab:last-child a {
+    border-bottom: 0;
+}
 
-
-.sidebar-nav li a:hover{
-      text-decoration:none;
-    }
-
-.req-tab
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .req-tab a:hover
 {
-    height:9rem;
-    width:15.7rem;
-    margin-top:7px;
-   
+   background-color: #e8e8e8;
 }
 
-.req-all:hover
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .req-tab .req-type
 {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
+    color: #000;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    display: inline-block;
 }
 
-.newcr-tab:hover
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .in-progress .req-type {
+    background-color: #7fd7f1;
+}
+
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .closed .req-type {
+    background-color: #dceb84;
+}
+
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .rejected .req-type {
+    background-color: #f6a6ac;
+}
+
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .rollbacks .req-type {
+    background-color: #7fd8c9;
+}
+
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .pending .req-type {
+    background-color: #ffd49f;
+}
+
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .req-all .req-type
 {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
+    background-color: #c7b8ff;
 }
 
-.newcr-tab{
-    height:3rem;
-    width:15.7rem;
-    margin-top:15px;
-    background-color:#00B294;
-    margin-left:25px !important;
-}
-
-.newcr-tab:hover
+#sidebar-wrapper #accordion .panel .panel-body ul.sidebar-nav .req-tab .counts
 {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    width: 50px;
 }
 
 .newcr-btn {
-    height: 3rem;
-    width: 14rem;
-    background-color: #00B294;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 14px;
-}
-
-
-.req-tab:hover
-{
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
-}
-
-.req-tab span.req-type
-{
-    color:#fff;
-    position:relative;
-   top:-10px;
-   left:17px;
-   font-size:11.5px;
-   font-weight:600;
-
-}
-
-.req-tab span.counts
-{
- position: relative;
-    top: 15px;
-    left:-5px;
-    color: #fff;
-    font-size: 42px;
-    font-weight:200;
-
-}
-
-.in-progress{
-     background-color:#FF8901;
-}
-
-.req-all
-{
-     background-color:#6452A9;
-}
-.closed{
-     background-color:#32145A;
-}
-
-.rejected{
-     background-color:#A80000;
-
-}
-
-.rollbacks{
-     background-color:#01BCF3;
-
-}
-
-.pending
-{
-    background-color:#004B50;
-
-
-}
-
-.total-count{
-   position:relative;
-   top:70px;
-   left:25px;
-    color:#383838;
-    font-size:36px;
-    font-weight:bold;
-    text-align:left;
-}
-
-.total-count-txt{
-    position:relative;
-   top:60px;
-   left:25px;
-    color:#383838;
-    font-size:17px;
-  text-align:left;
-
-}
-
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 182px;
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-        width: 182px;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-}
-
-
-.toggler {
-   position: fixed;
-    left: 0px;
-    top: 70px;
-    width: 30px;
-    height: 45px;
-    background-color: #d2d2d2;
-    border-radius: 0px 7px 7px 0px;
-    box-shadow: 1px 1px 1px #928B8B;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    padding: 7px 0px 0px 7px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
     color: #000;
-    z-index:1000;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: 0;
+    background-color: #e8e8e8;
+    text-align: left;
 }
 
-a.toggler:hover{
-    text-decoration:none;
+.newcr-btn.collapsed {
+    background-color: transparent;
 }
 
-a.toggler::after(2){
-    text-decoration:none;
+.newcr-btn:hover {
+    background-color: #e8e8e8;
 }
 
-
-.toggler.toggled {
-    margin-left:182px;
+#MyRequest,
+#AllRequest {
+    float: right;
+    margin-top: 2px;
+    margin-right: 10px;
+    font-family: 'Microsoft Symbols';
 }
 
-.panel {
-    background-color:rgba(0,0,0,0) !important;
-    border:none !important;
+#MyRequest.glyphicon-chevron-up:before,
+#AllRequest.glyphicon-chevron-up:before {
+    content: "\e018";
 }
 
-#EMIEsortinglink
-{
- cursor:pointer;
+#MyRequest.glyphicon-chevron-down:before,
+#AllRequest.glyphicon-chevron-down:before {
+    content: "\e019";
+}
+
+.new-req {
+    margin-bottom: 20px;
+}
+
+.new-req a {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    background-color: #0078d7;
+    text-align: center;
+    padding: 7px 10px;
+    border: 1px solid #0078d7;
+}
+
+.new-req a:hover {
+    border-color: hsla(0, 0%, 0%, 0.2);
 }

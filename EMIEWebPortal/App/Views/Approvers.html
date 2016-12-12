@@ -1,20 +1,62 @@
 ﻿<!--<div class="panel-group" data-ng-controller="ApprovalController">-->
 
-<div class="">
-    <div><span class="EMIEpage-title">MY APPROVERS</span><span class="EMIEpage-title pull-right" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div><br/>
+<div class="emie-breadcrumb">
+    <div>Home</div>
+    <div>All Requests</div>
+    <div class="current">Request ID #{{TicketId}}</div>
 </div>
-    <div class="panel panel-default">
+<div class="EMIEpage-title">My Approvers</div>
+<!-- Status Panel -->
+<div class="status">
+    <ul id="status-child">
+        <li id="First-child" class="First-child">
+            <a href="#/RequestPage">
+                <span class="circle"></span>
+                <span class="text">Submit request</span>
+            </a>
+        </li>
+        <li id="Middle-child-1" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/SandboxPage">
+                <span class="circle"></span>
+                <span class="text">Pre-production validation</span>
+            </a>
+        </li>
+        <li id="Middle-child-2" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/ApproversPage">
+                <span class="circle"></span>
+                <span class="text">Approvals</span>
+            </a>
+        </li>
+        <li id="Middle-child-3" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/ProductionChangePage">
+                <span class="circle"></span>
+                <span class="text">Production deployment</span>
+            </a>
+        </li>
+        <li id="Last-child" class="Last-child">
+            <span class="line"></span>
+            <a href="#/SignOffPage">
+                <span class="circle"></span>
+                <span class="text">Production validation</span>
+            </a>
+        </li>
+    </ul>
+    <hr />
+</div>
+<div class="panel panel-default form-row">
     <div class="panel-heading">
         <div class="row">
-            <div class="col-lg-1"><input type="checkbox" disabled /></div>
+            <div class="col-lg-1"><!--<input type="checkbox" disabled />--></div>
             <div class="col-lg-2">Approver</div>
             <div class="col-lg-3">Email</div>
             <div class="col-lg-2">Status</div>
-            <div class="col-lg-4">Comment<button class=" EMIEsmall-btn pull-right" ng-disabled="isreminderbuttondisabled" data-placement="top" ng-click="SendReminderToAll(reminderCheckBox)">SEND REMINDER</button></div>
-
+            <div class="col-lg-4">Comment</div>
         </div>
     </div>
-    <div id="collapse" class=" panel-collapse" ng-disabled="IsCompletePaneDisabled">
+    <div id="collapse" class="panel-collapse" disable-all="IsCompletePaneDisabled">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="approver in approvals">
                 <div class="row">
@@ -29,11 +71,11 @@
             </li>
         </ul>
     </div>
-        <message-center></message-center>
+    <message-center></message-center>
 </div>
-
+<div>
+    <button ng-disabled="isreminderbuttondisabled" data-placement="top" ng-click="SendReminderToAll(reminderCheckBox)">Send reminder</button>
+</div>
 <script>
-
-
     url();
 </script>

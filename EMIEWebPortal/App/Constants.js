@@ -30,8 +30,8 @@ EMIEModule.constant('Constants', {
     ErrorSearchADUser: "Error occurred while retrieving the data from active directory.",
     SelectGroup: "Please select group.",
     ExportUserFileName: "EnterpriseModeUsersList.xlsx",
-    RegisterUserPageHeader: "REGISTER USER",
-    CreateNewUserPageHeader: "CREATE NEW USER",
+    RegisterUserPageHeader: "Register User",
+    CreateNewUserPageHeader: "Create New User",
 
     //---SiteListController Alert Messages
     ErrorSiteInformation: "Error while retrieving sites information",
@@ -65,7 +65,7 @@ EMIEModule.constant('Constants', {
     ErrorTicketSelection: 'No request selected. Please select at least one request.',
     TicketRejected: ' rejected.',
     TicketApproved: ' approved.',
-    NoTicketPending: "You are up to date...there are no pending request for your approval.",
+    NoTicketPending: "You are up-to-date. There are no pending requests for your approval.",
     TicketRetrievalProgress: "Getting ready... Please wait...",
     DataNotAvailable: "There are no requests to display.",
 
@@ -163,24 +163,24 @@ EMIEModule.constant('Constants', {
 
 
     //PopUpTitles
-    PopupTitleSuccess: "SUCCESS!",
-    PopupTitleWentWrong: "SOMETHING WENT WRONG!",
-    PopupTitleWarning: "WARNING!",
-    PopupTitleError: "ERROR!",
-    PopupTitleInfo: "INFO!",
-    PopupTitleAlert: "ALERT!",
-    PopupTitleReminderSent: "REMINDER SENT!",
-    PopupTitleValidationFailed: "VALIDATION FAILED!",
-    PopupTitleServerUnavailable: "SERVER UNAVAILABLE!",
-    PopupTitleEnterProperURL: "ENTER PROPER URL!",
-    PopupTitleOpenRequestFound: "OPEN REQUEST FOUND!",
-    PopupTitleDomainAlreadyPresent: "DOMAIN ALREADY PRESENT!",
-    PopupTitleDomainEdited: "DOMAIN WILL BE EDITED!",
-    PopupTitleDomainDeleted: "DOMAIN WILL BE DELETED!",
-    PopupTitleDomainNotExist: "DOMAIN DOES NOT EXIST!",
-    PopupTitleAlreadyExist: "ALREADY EXIST!",
-    PopupTitleLoginError: "LOGIN ERROR!!",
-    PopupTitleAreYouSure: "ARE YOU SURE?",
+    PopupTitleSuccess: "Success",
+    PopupTitleWentWrong: "Something went wrong",
+    PopupTitleWarning: "Warning",
+    PopupTitleError: "Error",
+    PopupTitleInfo: "Info",
+    PopupTitleAlert: "Alert",
+    PopupTitleReminderSent: "Reminder sent",
+    PopupTitleValidationFailed: "Validation failed",
+    PopupTitleServerUnavailable: "Server unavailable",
+    PopupTitleEnterProperURL: "Enter proper URL",
+    PopupTitleOpenRequestFound: "Open request found",
+    PopupTitleDomainAlreadyPresent: "Domain already present",
+    PopupTitleDomainEdited: "Domain will be edited",
+    PopupTitleDomainDeleted: "Domain will be deleted",
+    PopupTitleDomainNotExist: "Domain does not exist",
+    PopupTitleAlreadyExist: "Already exists",
+    PopupTitleLoginError: "Login error",
+    PopupTitleAreYouSure: "Are you sure?",
 
 
     //Sorting ColumnNamesConstants
@@ -247,6 +247,33 @@ EMIEModule.constant('Constants', {
         ProductionChangesScheduled: 12
 
     },
+    TicketStatusText: {
+        1: "Initiated",
+        2: "Verified on test machine",
+        3: "Approval pending",
+        4: "Partially approved",
+        5: "Approved",
+        6: "Rejected",
+        7: "Production ready",
+        8: "Signed off",
+        9: "Rolled back",
+        10: "Verification failed on test machine",
+        11: "Closed",
+        12: "Production changes scheduled"
+    },
+    StatusPageMapping: {
+        1: "SandboxPage",
+        2: "ApproversPage",
+        3: "ApproversPage",
+        4: "ApproversPage",
+        5: "ProductionChangePage",
+        7: "SignOffPage",
+        8: "SignOffPage",
+        9: "SandboxPage",
+        10: "Request",
+        11: "SignOffPage",
+        12: "ProductionChangePage"
+    },
     ApprovalState: {
         //Ticket Intitiated
         Initiated: 1,
@@ -272,22 +299,22 @@ EMIEModule.constant('Constants', {
     //This data is used for the displaying the headers and filtering out the data on tab selection(in layout) in the AllRequests page
     FilterByTicketStatus: {
         //This filter options selects all the requests logged by logged user
-        AllRequests: "ALL REQUESTS",
+        AllRequests: "All Requests",
 
         //this filter option selects the requests which are in progress(ticket status=2,3,4,5,,7,10)
-        InProgress: "IN PROGRESS",
+        InProgress: "In Progress",
 
         //this filter option selects the requests which are rejected(ticket status=6)
-        Rejected: "REJECTED",
+        Rejected: "Rejected",
 
         //this filter option selects the requests which are closed(ticket status=11)
-        Closed: "CLOSED",
+        Closed: "Closed",
 
         //this filter option selects the requests which are Rollback
-        Rollback: "ROLLBACK",
+        Rollback: "Rolled Back",
 
         //this filter option selects the requests which are pending for approval
-        Pending: "PENDING"
+        Pending: "Pending"
     },
 
     ChangeType: {

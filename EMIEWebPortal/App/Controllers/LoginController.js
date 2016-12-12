@@ -1,9 +1,7 @@
 ﻿
 EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginService, SharedProperties, $window, Constants, $location, $route, $sessionStorage, $timeout)
 {
-    $("#EMIEUserPanel").addClass('hidden');
-    $("#EMIEusermenu").addClass('hidden');
-    $(".EMIEuserpaneltoggler").addClass('hidden');
+    $(".EMIEusermenu").addClass('hidden');
 
     //Clearing out the previous stored values
     $rootScope.TicketCounts = null;
@@ -35,8 +33,7 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                 });
                 SharedProperties.setProperty(null);
                 $scope.IsLogedIn = true;
-                $(".EMIEuserpaneltoggler").removeClass("hidden");
-                $("#EMIEusermenu").removeClass("hidden");
+                $(".EMIEusermenu").removeClass("hidden");
                 $rootScope.Message = "Successful Login done. Welcome " + user.UserName;
                 $rootScope.User = user;
                 $sessionStorage.User =user;
@@ -66,35 +63,21 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                     $(".EMIEstats").removeClass("hidden");
                     $(".EMIEusrconfig").removeClass("hidden");
                     $(".EMIEentapp").removeClass("hidden");
-                    $("#EMIEUserPanel").removeClass();
-                    $("#EMIEUserPanel").toggleClass('col-lg-11');
-                    $("#EMIEUserPanel").toggleClass("text-right");
-                     $("#EMIEusermenu").removeClass();                    
+                    $(".EMIEusermenu").removeClass("hidden");                    
                 }
                 else if($rootScope.User.UserRole.RoleId == Constants.RoleId['BPULead'])
                 {
                     $(".EMIEstats").removeClass("hidden");
-                    $("#EMIEUserPanel").removeClass();
-                    $("#EMIEusermenu").removeClass();
-                    $("#EMIEUserPanel").toggleClass('col-lg-11');
-                    $("#EMIEUserPanel").toggleClass("text-right");
-                    $("#EMIEUserPanel").addClass("EMIEGroupHead");
+                    $(".EMIEusermenu").removeClass("hidden");
                 }
-                else{                  
-                    $("#EMIEUserPanel").removeClass();
-                    $("#EMIEusermenu").removeClass();
-                    $("#EMIEUserPanel").toggleClass('col-lg-11');
-                    $("#EMIEUserPanel").toggleClass("text-right");
-                    $("#EMIEUserPanel").addClass("EMIEnochampmenu");
-                   
+                else {
+                    $(".EMIEusermenu").removeClass("hidden");
                 }
 
                 //For Status Bar
                 $(".status").css("display", "block");
-                $(".status #First-child").addClass("Staus-Selected");
-                //For Toggeled Menu
-                $(".toggler").addClass("toggled");
-                $(".toggler").css("display", "block");
+                $(".status #First-child").addClass("Status-Selected");
+
                 $("#wrapper").removeClass("toggled");
 
                 $scope.$storage = $sessionStorage.$default({
@@ -134,12 +117,6 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
     $scope.Register = function () {
                 $location.path("/Register");
     };
-    
-    //This function will redirects to the chart section
-    $scope.ShowReport = function () {
-        $location.path("/Chart");
-    }
-
 
     //On CLick on Confirm on MODAL
     $scope.Confirm = function (cases, object) {

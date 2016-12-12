@@ -22,7 +22,7 @@ EMIEModule.config(['$routeProvider', function () { }])
                 event.preventDefault();
             }
 
-            if (SharedProperties.getProperty() != null) {
+            if (SharedProperties.getProperty() != null && next && next.$$route && next.$$route.originalPath) {
                 if (next.$$route.originalPath == "/ApproversPage") {
                     if (prop.FinalTicketStatus < 3 || prop.FinalTicketStatus == 9)
                         event.preventDefault();

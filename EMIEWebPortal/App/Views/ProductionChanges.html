@@ -1,73 +1,121 @@
-﻿
-<div><span class="EMIEpage-title">PRODUCTION CHANGES</span> <span class="EMIEpage-title pull-right" ng-hide="IsOldRequest">REQUEST ID #{{TicketId}}</span></div>
-
-<div class="row">
+﻿<div class="emie-breadcrumb">
+    <div>Home</div>
+    <div>All Requests</div>
+    <div class="current">Request ID #{{TicketId}}</div>
 </div>
-<div>
-    <div class="col-lg-12 alert alert-danger" role="alert" ng-show="IsFreezeDateDisplayed" ><b>Freezed Start Date</b> : {{StartDate}}       <b>Freezed End Date</b>: {{EndDate}}</div>
+<div class="EMIEpage-title">Production changes</div>
+<!-- Status Panel -->
+<div class="status">
+    <ul id="status-child">
+        <li id="First-child" class="First-child">
+            <a href="#/RequestPage">
+                <span class="circle"></span>
+                <span class="text">Submit request</span>
+            </a>
+        </li>
+        <li id="Middle-child-1" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/SandboxPage">
+                <span class="circle"></span>
+                <span class="text">Pre-production validation</span>
+            </a>
+        </li>
+        <li id="Middle-child-2" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/ApproversPage">
+                <span class="circle"></span>
+                <span class="text">Approvals</span>
+            </a>
+        </li>
+        <li id="Middle-child-3" class="Middle-child">
+            <span class="line"></span>
+            <a href="#/ProductionChangePage">
+                <span class="circle"></span>
+                <span class="text">Production deployment</span>
+            </a>
+        </li>
+        <li id="Last-child" class="Last-child">
+            <span class="line"></span>
+            <a href="#/SignOffPage">
+                <span class="circle"></span>
+                <span class="text">Production validation</span>
+            </a>
+        </li>
+    </ul>
+    <hr />
+</div>
+<div class="row">
+    <div class="col-lg-12 alert alert-danger" role="alert" ng-show="IsFreezeDateDisplayed">
+        <div class="EMIEHeaderTitle">Freeze in effect</div>
+        <div><b>Freeze start date</b>: {{StartDate}}</div>
+        <div><b>Freeze end date</b>: {{EndDate}}</div>
+    </div>
 </div>
 <div disable-all="DisableProdPage">
-    <div style="margin-top:70px!important;">
-        <div class="row">
-
-            <div class="col-lg-2" style="margin-top:48px">
+    <div class="EMIEHeaderTitle">Select deployment time</div>
+    <div class="form-row">
+        <div>
+            <label for="ProdDateNow" class="EMIEControllabel">
                 <input type="radio" name="ProdDate" id="ProdDateNow" ng-model="NowProdDate" ng-change="ProdDateNow('Now')" ng-click="RadNowClicked($event)" ng-checked="RadNowChecked" value="time" />
-                <label for="ProdDateNow"> Now   </label>
-                <!--This part has been commented, as it is not to be shown now on the html, will be edited later-->
-                <!--<input type="radio" name="ProdDate" id="ProdDateOnDate" ng-model="NowProdDate" ng-change="ProdDateNow('Later')" value="time1" style="margin-left:20px;" />-->
-                <input type="radio" name="ProdDate" id="ProdDateOnDate" ng-model="LaterProdDate" ng-change="ProdDateNow('Later')" ng-click="RadLaterClicked($event)" ng-checked="RadLaterChecked" value="time1" style="margin-left:20px;" />
-                <label for="ProdDateOnDate"> Schedule </label>
+                <span>Now</span>
+            </label>
+        </div>
+        <div>
+            <label for="ProdDateOnDate" class="EMIEControllabel">
+                <input type="radio" name="ProdDate" id="ProdDateOnDate" ng-model="LaterProdDate" ng-change="ProdDateNow('Later')" ng-click="RadLaterClicked($event)" ng-checked="RadLaterChecked" value="time1" />
+                <span>Schedule</span>
+            </label>
+        </div>
+    </div>
+    <div ng-hide="RadNowChecked">
+        <div class="form-spacer">
+            <div class="form-column" ng-hide="prodDatePicker">
+                <div><span class="EMIEControllabel" title="Select the preferred day for deployment to production.">Preferred day</span></div>
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePick"
+                           is-open="popupStartDate.opened" ng-click="openStartDate()" ng-change="FilterSelected()" alt-input-formats="altInputFormats" ng-disabled="DisableProdDate"
+                           datepicker-options="dateOptions" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openStartDate()" ng-disabled="DisableProdDate"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
             </div>
-
-            <div class="col-lg-3" ng-hide="prodDatePicker" style="margin-top:48px">
-
-                 <p class="input-group">
-                     <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="datePick"
-                            is-open="popupStartDate.opened" ng-click="openStartDate()" ng-change="FilterSelected()" alt-input-formats="altInputFormats" ng-disabled="DisableProdDate"
-                            datepicker-options="dateOptions" close-text="Close" />
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="openStartDate()" ng-disabled="DisableProdDate"><i class="glyphicon glyphicon-calendar"></i></button>
-                </span>
-            </p>
-             
+        </div>
+        <div class="form-spacer">
+            <div class="form-column" ng-hide="prodDatePickerTextBoxhidden">
+                <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Group name</span></div>
+                <div>
+                    <input type="text" id="prodDatePicker" class="form-control" ng-model="datePick" disabled />
+                </div>
             </div>
-
-           
-            <div class="col-lg-3" ng-hide="prodDatePickerTextBoxhidden" style="margin-top:48px">
-                <input type="text" id="prodDatePicker" class="form-control" ng-model="datePick" disabled />
-
+            <div class="form-column" ng-show="IsRadButtonNowClicked">
+                <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Group name</span></div>
+                <div>
+                    <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                </div>
             </div>
-            <div class="col-lg-3" style="margin-top:6px" ng-show="IsRadButtonNowClicked">
-                <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+            <div class="form-column" ng-show="IsSceduleProductionChangeClicked">
+                <div><span class="EMIEControllabel" title="Select your preferred start time for deployment to production.">Preferred start time</span></div>
+                <div>
+                    <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                </div>
             </div>
-            <!--change EMIE style line: 649 uib-decrement/increment class-->
-            <div class="col-lg-3" style="margin-top:-20px" ng-show="IsSceduleProductionChangeClicked">
-                <!--  <label style="visibility:hidden">Preferred Time Slot - Start Time</label>-->
-                <label>Preferred Time Slot - Start Time</label>
-                <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-            </div>
-            <div class="col-lg-3" style="margin-top:-20px;" ng-show="IsSceduleProductionChangeClicked">
-                <!--<div class="col-lg-3" style="margin-top:-20px;visibility:hidden">-->
-                <!--<!--Code needed-->
-                <label ng-show="IsSceduleProductionChangeClicked">Preferred Time Slot - End Time</label>
-                <uib-timepicker ng-show="IsSceduleProductionChangeClicked" ng-model="timePickEnd" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-            </div>
-            <div class="col-lg-1">
-                <button ng-disabled="SaveProdDisabled" style="margin-top:47px" type="button" class="btn btn-default EMIEbtn ThemeBtn" data-dismiss="modal" ng-click="SaveProdDatetime()">SAVE</button>
+            <div class="form-column" ng-show="IsSceduleProductionChangeClicked">
+                <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Preferred end time</span></div>
+                <div>
+                    <uib-timepicker ng-show="IsSceduleProductionChangeClicked" ng-model="timePickEnd" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                </div>
             </div>
         </div>
     </div>
-   
-
+    <div class="form-row">
+        <button ng-disabled="SaveProdDisabled" type="button" class="highlight" data-dismiss="modal" ng-click="SaveProdDatetime()">Save</button>
+    </div>
     <message-center></message-center>
-    <div>
+    <div class="row">
         <div class="col-lg-12 alert alert-success" role="alert" ng-show="IsSceduleProductionChange">The change has been scheduled for selected date and time. You can test the configuration after this date and sign off...</div>
     </div>
-
 </div>
-
-
 <script>
-
     url();
 </script>

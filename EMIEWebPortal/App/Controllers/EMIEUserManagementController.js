@@ -3,13 +3,9 @@
         $sessionStorage.User = null;
         $rootScope.User = null;
 
-        //hide  top pannel as it is redirecting to standalone application
-        $("#EMIEUserPanel").addClass('hidden');
-        $("#EMIEusermenu").addClass('hidden');
-        $(".EMIEuserpaneltoggler").addClass('hidden');
+        //hide the top panel, as it is redirecting to standalone application
+        $(".EMIEusermenu").addClass('hidden');
         $("#sidebar-wrapper").addClass('hidden');
-        //hide left pane toggler  as it is redirecting to standalone application
-        $(".toggler").css("display", "none");
     }
 
     $scope.isUserPageDisabled = false;

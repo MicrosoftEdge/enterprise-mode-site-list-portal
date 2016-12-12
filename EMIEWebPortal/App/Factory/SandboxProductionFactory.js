@@ -14,8 +14,12 @@
 
             $scope.UploadedFiles = imgData;
             $scope.DownloadPathOfUploadedFiles = $scope.UploadedFiles.array[0];
-            $scope.DownloadPathOfUploadedFiles = $scope.DownloadPathOfUploadedFiles.replace('~', '');
-            $scope.UploadedFiles.array.shift();
+            if ($scope.DownloadPathOfUploadedFiles) {
+                $scope.DownloadPathOfUploadedFiles = $scope.DownloadPathOfUploadedFiles.replace('~', '');
+            }
+            if ($scope.UploadedFiles.array) {
+                $scope.UploadedFiles.array.shift();
+            }
             if (msg.data != "") {
                 $scope.IsDownloadedDivHidded = false;
             }

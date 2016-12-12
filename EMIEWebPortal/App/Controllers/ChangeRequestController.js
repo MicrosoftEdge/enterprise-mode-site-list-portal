@@ -39,8 +39,8 @@
         $scope.IsOldRequest = true;
         $scope.disableSelectBtn = true;
 
-        $(".status li").removeClass("Staus-Selected");
-        $(".status #First-child").addClass("Staus-Selected");
+        $(".status li").removeClass("Status-Selected");
+        $(".status #First-child").addClass("Status-Selected");
         //Calling initial method to populate fields
         PopulateData();
         init();
@@ -1195,7 +1195,7 @@
                     nextPath == "/User" || nextPath == "/SiteLists" || nextPath == "/Configuration" || nextPath == "/Charts" || nextPath == "/ProductionSites") {
 
                     var modalOptions = {
-                        closeButtonText: 'CANCEL',
+                        closeButtonText: 'Cancel',
                         actionButtonText: 'OK',
                         headerText: Constants.PopupTitleAreYouSure,
                         bodyText: Constants.NavigatePageMessage
@@ -1235,7 +1235,7 @@
                 //uncomment it to load all application on clear of serach box from model
                 // $scope.LoadedApplicationList = $scope.AppListOfSelectedBPU;
             }
-            if (TypedAppName.length > 1) {
+            if (TypedAppName && TypedAppName.length > 1) {
                 //if GroupName is already selected select application from selected group name
                 if ($scope.GroupName != undefined) {
                     CRService.GetAppListOfSelectedBPU($scope.GroupName).success(function (data) {

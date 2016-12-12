@@ -1,100 +1,67 @@
 ﻿<div disable-all="isAllrequestsDisabled">
-    <div class="row">
-        <div class="col-md-5">
-            <span class="EMIEpage-title">{{DisplayValueHeader}}</span>
-        </div>
-        <div class="col-md-4">
-            <div class="pull-right">
-                <a href="#/NewCR" id="AddRequest" class="btn btn-default" type="button"></a>
-
-            </div>
-        </div>
-        <div class="col-md-2" ng-hide="true">
-            <select class="form-control" ng-model="value" ng-selected="value" ng-change="selectedValue(value)" ng-options="value for (key,value) in ticketStatus">{{value}}</select>
-        </div>
-
-        <div class="col-md-3 pull-right">
-            <div class="input-group">
-                <input type="text" name="serachTcktId" id="serachTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by Name or ID" data-toggle="dropdown">
-                <span class="input-group-addon">
-                    <i class=" glyphicon glyphicon-search"></i>
-                </span>
-                <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" style="margin-right:14px; width:250px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
-                    <li ng-repeat="tckt in TicketListToShow" class="input-lg" ng-click=" BindEsrchedTicketToGrid(tckt)" style="margin:5px">{{tckt.TicketId}} {{tckt.Application.ApplicationName | limitTo: 20}}{{tckt.Application.ApplicationName.length > 17 ? '...' : ''}}</li>
-                </ul>
-                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; width: 263px; " ng-model="NoResultText" ng-show="TicketListToShow.length==0 && SearchTicketFromTextBox.length>0 ">No requests matching "{{SearchTicketFromTextBox}}" were found. </span>
-            </div>
-        </div>
-
-        <div class="row" style="margin-top:10px; margin-bottom:10px;"></div>
+    <div class="emie-breadcrumb">
+        <div>Home</div>
+        <div class="current">All Requests</div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <dir-pagination-controls class="pull-right" boundary-links="true" direction-links="true" max-size="10">
-            </dir-pagination-controls>
-        </div>
+    <div class="EMIEpage-title">{{DisplayValueHeader}}</div>
+    <div class="EMIEsearch input-group">
+        <input type="text" name="searchTcktId" id="searchTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by Name or ID" data-toggle="dropdown">
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+        </span>
+        <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" style="margin-right:14px; width:250px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+            <li ng-repeat="tckt in TicketListToShow" class="input-lg" ng-click="BindEsrchedTicketToGrid(tckt)" style="margin:5px">{{tckt.TicketId}} {{tckt.Application.ApplicationName | limitTo: 20}}{{tckt.Application.ApplicationName.length > 17 ? '...' : ''}}</li>
+        </ul>
+        <span class="dropdown-menu dropdown-menu-left" ng-model="NoResultText" ng-show="TicketListToShow.length==0 && SearchTicketFromTextBox.length>0 ">No requests matching "{{SearchTicketFromTextBox}}" were found. </span>
     </div>
-    <div class="alert alert-success" role="alert" ng-show="DisplayNoDataMessage">{{NoDataAvailable}}</div>
-    <div class="alert alert-info" role="alert" ng-show="DisplayWaitMessage">{{RetrievalProgress}}</div>
-    <div class="panel-group" style="margin-top:20px;" ng-show="allrequests.length>0">
-
+    <!--
+    <div ng-hide="true">
+        <select class="form-control" ng-model="value" ng-selected="value" ng-change="selectedValue(value)" ng-options="value for (key,value) in ticketStatus">{{value}}</select>
+    </div>
+    -->
+    <div role="alert" ng-show="DisplayNoDataMessage">{{NoDataAvailable}}</div>
+    <div role="alert" ng-show="DisplayWaitMessage">{{RetrievalProgress}}</div>
+    <div class="panel-group" ng-show="allrequests.length > 0">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
-
-                    <div class="col-lg-1" style="text-align:center"><span id="EMIEsortinglink" ng-click="SortById(allrequests)">ID</span><span class="glyphicon glyphicon-sort" ng-click="SortById(allrequests)"></span></div>
-                    <div class="col-md-2"><span id="EMIEsortinglink" ng-click="SortByName(allrequests)">APPLICATION NAME</span><span class="glyphicon glyphicon-sort" ng-click="SortByName(allrequests)"></span></div>
-
-                    <div class="col-md-7 text-center">STATUS</div>
-                    <div class="col-md-2">
+                    <div class="col-lg-1 clickable" ng-click="SortById(allrequests)">
+                        <span class="name">ID</span>
+                        <span class="glyphicon glyphicon-sort"></span>
                     </div>
+                    <div class="col-lg-3 clickable" ng-click="SortByName(allrequests)">
+                        <span class="name">Application name</span>
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </div>
+                    <div class="col-lg-2">Status</div>
+                    <div class="col-lg-2">Created date</div>
+                    <div class="col-lg-4"></div>
                 </div>
             </div>
             <div id="requestPanel" class="panel-collapse">
                 <ul class="list-group">
                     <li class="list-group-item" dir-paginate="request in allrequests|itemsPerPage:10">
                         <div class="row">
-                            <div class="col-md-1" style="text-align:center">                               
-                               
-                                <a href="#/Request" style="font-weight:bold;" ng-click="GetTicketId(request)">{{request.TicketId}}</a>
-                                <br />
-                                <span style="font-size:80%" title="Time, when request was raised">
-                                    {{request.TicketCreationDateTime}}
+                            <div class="col-lg-1"><a href="#/Request" ng-click="GetTicketId(request)">{{request.TicketId}}</a></div>
+                            <div class="col-lg-3">{{request.Application.ApplicationName}}</div>
+                            <div class="col-lg-2" ng-show="{{ value == request.FinalTicketStatus}}" ng-repeat="(key, value) in ticketStatusEnum">
+                                <span ng-show="key != 'Rejected'" ng-click="GetTicketIdForInternalClick(request)">
+                                    <a href="#/{{PageMapping[value]}}" ng-right-click="">{{StatusText[value]}}</a>
                                 </span>
+                                <span ng-show="key == 'Rejected'">Rejected</span>
                             </div>
-                            <div class="col-md-1" style="word-wrap:break-word">{{request.Application.ApplicationName}}</div>
-                            <div class="col-md-10" ng-show="{{ value == request.FinalTicketStatus}}" ng-repeat="(key, value) in ticketStatusEnum ">
-                                <ul id="Req-Status">
-
-                                    <li id="DataEntry" ng-click="GetTicketIdForInternalClick(request)"><a href="#/Request" ng-right-click="">REQUEST SUBMITTED</a></li>
-                                    <li id="SandBoxTest" class="{{key}}" ng-click="GetTicketIdForInternalClick(request)"><a href="#/SandboxPage" ng-right-click="">PRE-PRODUCTION TESTED</a></li>
-                                    <li id="Rollback" class="{{key}}" ng-show="key == 'RolledBack'" ng-click="GetTicketIdForInternalClick(request)"><a href="#/SandboxPage" ng-right-click="">ROLLED BACK</a></li>
-                                    <li id="RequestSubmit" class="{{key}}" ng-show="key != 'RolledBack'" ng-click="GetTicketIdForInternalClick(request)"><a href="#/ApproversPage" ng-right-click="">AWAITING APPROVAL</a></li>
-                                    <li id="PartiallyApproved" class="{{key}}" ng-show="key != 'Rejected'" ng-click="GetTicketIdForInternalClick(request)"><a href="#/ApproversPage" ng-right-click="">PARTIALLY APPROVED</a></li>
-                                    <li id="Rejected" class="{{key}}" ng-show="key == 'Rejected'" ng-click="GetTicketIdForInternalClick(request)" ng-right-click="">REJECTED</li>
-                                    <li id="Approved" class="{{key}}" ng-click="GetTicketIdForInternalClick(request)"><a href="#/ApproversPage" ng-right-click="">APPROVED</a></li>
-                                    <li id="ProductionReady" class="{{key}}" ng-show="key != 'ProductionChangesScheduled'" ng-click="GetTicketIdForInternalClick(request)"><a href="#/ProductionChangePage" ng-right-click="">PRODUCTION DEPLOYED</a></li>
-                                    <li id="ProductionChangesScheduled" class="{{key}}" ng-show=" key =='ProductionChangesScheduled' " ng-click="GetTicketIdForInternalClick(request)"><a href="#/ProductionChangePage" ng-right-click="">SCHEDULED</a></li>
-                                    <li id="SignedOff" class="{{key}}" ng-click="GetTicketIdForInternalClick(request)"><a href="#/SignOffPage" ng-right-click=""> SIGNED OFF</a></li>
-                                </ul>
-
-                            </div>
-
+                            <div class="col-lg-2">{{request.TicketCreationDateTime}}</div>
+                            <div class="col-lg-4 EMIEhide-overflow"></div>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
-        <dir-pagination-controls class="pull-right" boundary-links="true" direction-links="true" max-size="10">
+        <dir-pagination-controls boundary-links="true" direction-links="true" max-size="10">
         </dir-pagination-controls>
     </div>
-
     <message-center></message-center>
 </div>
-
 <script>
     url(); 
-
-
 </script>

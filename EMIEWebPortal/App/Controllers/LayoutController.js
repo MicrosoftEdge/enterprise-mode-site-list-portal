@@ -17,25 +17,12 @@
 
             $('[data-toggle="tooltip"]').tooltip();
 
-            // Get last status of side panel
-            var togglerlastStatus = localStorage.getItem('togglerlastStatus');
-
-            //Maintain status after refresh
-            if (togglerlastStatus == 'collapsed') {
-                $("#wrapper").addClass("toggled");
-                $(".toggler").removeClass("toggled");
-            }
-            else if (togglerlastStatus == 'expanded' || togglerlastStatus == undefined) {
-                $("#wrapper").removeClass("toggled");
-                $(".toggler").addClass("toggled");
-            }
+            $("#wrapper").removeClass("toggled");
             
             $scope.isLoginHomeDisabled = false;
             User = $sessionStorage.User;
             $rootScope.User = $sessionStorage.User;
-            $("#EMIEUserPanel").removeClass('hidden');
-            $("#EMIEusermenu").removeClass("hidden");
-            $(".EMIEuserpaneltoggler").removeClass("hidden");
+            $(".EMIEusermenu").removeClass("hidden");
             if (User.UserRole.RoleId == Constants.RoleId['Requester']) {
                 $(".req-all").addClass("hidden");
                 $(".pending").addClass("hidden");
@@ -63,17 +50,7 @@
             }
             else if ($rootScope.User.UserRole.RoleId == Constants.RoleId['BPULead']) {
                 $(".EMIEstats").removeClass("hidden");
-                $("#EMIEUserPanel").addClass("EMIEGroupHead");
             }
-            else {
-                $("#EMIEUserPanel").addClass("EMIEnochampmenu");
-
-            }
-        }
-        else if ($sessionStorage.User == null)
-        {
-            //hide left pane toggler if user is not logged in
-            $(".toggler").css("display", "none");
         }
     }
     //This function will be called to get the counts
@@ -93,11 +70,11 @@
             IsAllRequest();
             if ($sessionStorage.IsAllRequest) {
                 $scope.MyRequestToShow = $rootScope.TicketCounts[1].MyRequest;
-                $scope.CountText = "ALL REQUESTS";
+                $scope.CountText = "All Requests";
             }
             else {
                 $scope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-                $scope.CountText = "MY REQUESTS";
+                $scope.CountText = "My Requests";
             }
         });
     }
@@ -132,7 +109,7 @@
         dropdownvalue = Constants.FilterByTicketStatus.InProgress;
         $sessionStorage.SelectedTabValue = dropdownvalue;
         $scope.MyRequestToShow = $rootScope.TicketCounts[1].MyRequest;
-        $scope.CountText = "ALL REQUESTS";
+        $scope.CountText = "All Requests";
 
     }
 
@@ -157,7 +134,7 @@
         dropdownvalue = Constants.FilterByTicketStatus.InProgress;
         $sessionStorage.SelectedTabValue = dropdownvalue;
         $scope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-        $scope.CountText = "MY REQUESTS";
+        $scope.CountText = "My Requests";
 
     }
 
@@ -234,7 +211,7 @@
         $sessionStorage.IsAllRequest = IsAllRequest == "true" ? true : false;
         dropdownvalue = Constants.FilterByTicketStatus.AllRequests;
         dropdownvalue.value = "AllRequestClick";
-        $sessionStorage.Allrequest = "All REQUESTS";
+        $sessionStorage.Allrequest = "All Requests";
         SharedProperties.setProperty(dropdownvalue);
         $location.path("/AllRequests");
         $route.reload();

@@ -4,8 +4,8 @@
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
 
         //Status bar add and remove classes
-        $(".status li").removeClass("Staus-Selected");
-        $(".status #Middle-child-3").addClass("Staus-Selected");
+        $(".status li").removeClass("Status-Selected");
+        $(".status #Middle-child-3").addClass("Status-Selected");
 
         //Hide Modal
         $('#PopUpModal').modal('hide');
