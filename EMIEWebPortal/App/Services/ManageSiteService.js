@@ -39,11 +39,9 @@ EMIEModule.service("ManageSiteService", function ($http, $q) {
         return $http({
             cache: false,
             method: "post",
-            url: "XMLHelper/ClearLists",
+            url: "XMLHelper/ClearLists"
         })
     }
-
-
 
     //this service is used to add the bulk data from a file
     this.BulkAddFromFile = function (info, isSingleAddition) {
@@ -57,6 +55,17 @@ EMIEModule.service("ManageSiteService", function ($http, $q) {
             method: "post",
             url: "XMLHelper/BulkAddFromFile",
             data: JSON.stringify(parameters),
+            dataType: "json"
+        })
+    }
+
+    //this service will directly add a site from the Enterprise Mode Site List Manager to the production XML file
+    this.DirectAddToFile = function (tickets) {
+        return $http({
+            cache: false,
+            method: "post",
+            url: "XMLHelper/AddToV2XMLBulk",
+            data: JSON.stringify(tickets),
             dataType: "json"
         })
     }

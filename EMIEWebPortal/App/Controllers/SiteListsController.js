@@ -1,4 +1,4 @@
-﻿EMIEModule.controller("SiteListsController", function ($scope, ManageSiteService, CommonFunctionsFactory, LoginService, SharedProperties, $compile, $sessionStorage, Constants, $rootScope, filterFilter, $route, $location, FileSaver, Blob, $http, growl) {
+﻿EMIEModule.controller("SiteListsController", function ($scope, ManageSiteService, CommonFunctionsFactory, LoginService, ProdChangesService, SharedProperties, $compile, $sessionStorage, Constants, $rootScope, filterFilter, $route, $location, FileSaver, Blob, $http, growl) {
 
     //HIDE MODAL
     $('#PopUpModal').modal('hide');
@@ -37,7 +37,6 @@
                 PropertyToSort = Constants.SortByOpenIn;
                 SortSiteListData(productionUrls, PropertyToSort);
             }
-
             
             /// <summary>
             /// Implementing the search functionality on the display production sites page
@@ -112,6 +111,11 @@
         $scope.Confirm = function (cases, object) {
             switch (cases) {
                 case "NULL":
+                    break;
+                case "RELOAD":
+                    $scope.HideCancelModal = false;
+                    $scope.disableAll = false;
+                    $route.reload();
                     break;
                 case "ENABLE":
                     $scope.disableAll = false;
@@ -697,6 +701,62 @@
         return function filterFn(item) {
             return (item.value.indexOf(lowercaseQuery) != -1);
         };
+    }
+
+    //===========================================================================================================================================================================
+    //                                                        Bulk add sites to the production list
+    //===========================================================================================================================================================================
+
+    $scope.bulkAddToProduction = function() {
+        $scope.disableAll = true;
+
+        // Create array of tickets
+        var tickets = [];
+
+        // Create a ticket for each site
+        for (var i = 0; i < websitesList.length; i++) {
+            var ticket = {
+                RequestedBy: $rootScope.User,
+                DocMode: {
+                    DocModeID: Constants.CompatModeIDs[EMIEModule.Utility.getDocumentModeIdV2(websitesList[i].DomainDocMode)],
+                },
+                AppSiteUrl: websitesList[i].FullURL,
+                DomainOpenInEdge: (Constants.OpenIn[websitesList[i].OpenIn] > 1),
+            };
+
+            tickets.push(ticket);
+        }
+
+        ManageSiteService.DirectAddToFile(tickets).then(function (result) {
+            if (result.data == 'True') {
+                $scope.HideCancelModal = true;
+
+                // Delete from site list manager
+                var promises = [];
+                for (var i = websitesList.length - 1; i >= 0; i--) {
+                    promises.push(ManageSiteService.DeleteSite(websitesList[i]));
+                }
+
+                Promise.all(promises).then(function () {
+                    $('#PopUpModal').modal('toggle');
+                    $scope.ALERTCONTENT = {
+                        Title: Constants.PopupTitleSuccess,
+                        MethodCase: "RELOAD",
+                        Type: "success"
+                    }
+                    $scope.MESSAGE = Constants.SuccessBulkImport;
+                });
+            }
+            else {
+                $('#PopUpModal').modal('toggle');
+                $scope.ALERTCONTENT = {
+                    Title: Constants.PopupTitleError,
+                    MethodCase: "ENABLE",
+                    Type: "error"
+                }
+                $scope.MESSAGE = Constants.ErrorBulkImport;
+            }
+        });
     }
 
 });

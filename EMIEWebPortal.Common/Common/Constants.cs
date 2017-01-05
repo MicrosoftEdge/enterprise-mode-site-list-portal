@@ -203,7 +203,11 @@ namespace EMIEWebPortal.Common
         /// This constant is for last modified by user
         /// </summary>
         public const string LastEditedBy = "Last Edited By : ";
+        /// <summary>
+        /// This constant is for indicating a bulk import from the Enterprise Mode Site List Manager
+        /// </summary>
+        public const string BulkImport = "Site added via bulk import";
         #endregion
- 
+
     }
 }

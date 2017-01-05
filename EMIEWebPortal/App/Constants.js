@@ -43,6 +43,8 @@ EMIEModule.constant('Constants', {
     DeleteWebsiteEntry: "This will delete website entry from the list. Do you want to continue?",
     BulkUploadError: "Error in bulk upload",
     ProcessWaitMessage: "This might take a little while to complete the operation, are you sure you want to continue?",
+    ErrorBulkImport: "Error while bulk importing sites to the production list.",
+    SuccessBulkImport: "All sites successfully bulk imported to the production list.",
     ItemsPerPageSiteListTool:25,
 
     //---VerifySandbox/VerifyProduction Alert Messages
@@ -380,6 +382,30 @@ EMIEModule.constant('Constants', {
 
         //Register Users
         4: "Register Users"
+    },
+
+    /// <summary>
+    /// This Enum maps the doc modes to their IDs
+    /// </summary>
+    CompatModeIDs: {
+        Default: 1,
+        IE7Enterprise: 2,
+        IE8Enterprise: 3,
+        IE5: 4,
+        IE7: 5,
+        IE8: 6,
+        IE9: 7,
+        IE10: 8,
+        IE11: 9
+    },
+
+    /// <summary>
+    /// This Enum maps the browser to its ID
+    /// </summary>
+    OpenIn: {
+        None: 0,
+        IE11: 1,
+        MSEdge: 2
     }
 
 });

@@ -651,7 +651,7 @@ namespace EMIEWebPortal.Controllers
         ///  This service function Updates Production Deployment Date and Time
         /// </summary>
         /// <param name="ticket">ticket object</param>
-        /// <returns>Success Meassage</returns>       
+        /// <returns>Success Message</returns>       
         public bool UpdateProductionDeployDate(Tickets ticket)
         {
             try

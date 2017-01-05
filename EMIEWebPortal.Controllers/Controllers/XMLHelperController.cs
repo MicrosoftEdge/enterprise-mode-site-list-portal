@@ -89,7 +89,33 @@ namespace EMIEWebPortal.Controllers
             return xmlHelper.PingURL(url);
         }
 
+        /// <summary>
+        /// This method will add the URL in the xml directly from a bulk add using the Enterprise Mode Site List Manager. 
+        /// </summary>
+        /// <param name="tickets">Array of Tickets model objects</param>
+        /// <returns>bool</returns>
+        public bool AddToV2XMLBulk(Tickets[] tickets)
+        {
+            Configuration config = null;
+            if (LoginController.config == null)
+            {
+                using (ConfigurationController configController = new ConfigurationController())
+                {
+                    config = configController.GetConfiguration();
+                }
+            }
+            else
+            {
+                config = LoginController.config;
+            }
 
+            foreach (Tickets ticket in tickets)
+            {
+                xmlHelper.AddToV2XMLBulk(ticket, config);
+            }
+
+            return true;
+        }
 
         /// <summary>
         /// This method searches for previous tickets for the URL entered

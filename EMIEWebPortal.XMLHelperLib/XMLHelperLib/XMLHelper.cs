@@ -1165,6 +1165,108 @@ namespace XMLHelperLib
 
         }
 
+        /// <summary>
+        /// This method will add the URL in the xml directly from a bulk import using the Enterprise Mode Site List Manager. 
+        /// </summary>
+        /// <param name="ticket">Tickets model object</param>
+        public bool AddToV2XMLBulk(Tickets ticket, Configuration config)
+        {
+            Operation operation = Operation.AddInProduction;
+            GetProductionConfigSettings(config);
+
+            //Get access to UNC path
+            using (UNCAccessWithCredentials unc = new UNCAccessWithCredentials())
+            {
+                if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password) || unc.LastError == 1219)
+                {
+                    CheckFile(V2ProdFile);
+                    rootNode = InitializeXMLDetails(operation);
+
+                    string url = ticket.AppSiteUrl;
+                    string[] urlDomain = url.Trim().Split('/');
+                    XmlElement SiteElement = null;
+
+                    XmlNode sitelistNode = xmlDoc.SelectSingleNode("site-list");
+                    if (sitelistNode == null)
+                    {
+                        XmlElement sitelistElement = xmlDoc.CreateElement("site-list");
+                        xmlDoc.AppendChild(sitelistElement);
+                    }
+
+                    #region CreateXmlTags
+                    //Making tags and inserting information
+
+                    //Making site tag for domain element
+                    SiteElement = xmlDoc.CreateElement("site");
+
+                    //updating url attribute for domain
+                    SiteElement.SetAttribute("url", url.ToLower());
+
+                    XmlElement FirstDomainElement = xmlDoc.CreateElement("compat-mode");
+                    XmlElement SecondDomainElement = xmlDoc.CreateElement("open-in");
+                    #endregion
+
+                    //Get all the 'site' nodes from Xml.
+                    XmlNodeList siteNode = rootNode.SelectNodes("site");
+                    //XmlNode previousdomainNode = null;
+                    bool isDomainPresent = false;
+                    foreach (XmlNode domainNode in siteNode)
+                    {
+                        //Check if domain is already present in the Xml, if yes, domain is not to be added or updated again
+                        if (domainNode.Attributes["url"].Value.ToLower().Equals(urlDomain[0].ToLower()))
+                        {
+                            isDomainPresent = true;
+                            //previousdomainNode = domainNode;
+                        }
+                    }
+
+                    //If no such domain is present in the xml, create tags for the same.
+                    if (!isDomainPresent)
+                    {
+                        if (ticket.DocMode.DocModeId >= (int)CompatModes.Default)
+                        {
+                            FirstDomainElement.InnerText = ticket.DocMode.DocModeName;
+
+                            if (ticket.DomainOpenInEdge == true)
+                                SecondDomainElement.InnerText = OpenIn.MSEdge.ToString();
+                            else
+                                SecondDomainElement.InnerText = OpenIn.IE11.ToString();
+                        }
+
+                        SiteElement.AppendChild(FirstDomainElement);
+                        SiteElement.AppendChild(SecondDomainElement);
+                    }
+
+
+                    //Adding logic for the comments of the domain tag.
+                    newComment = xmlDoc.CreateComment(
+                        Constants.Spacing + Constants.Owner + ticket.RequestedBy.UserName +
+                        Constants.Spacing + Constants.Email + ticket.RequestedBy.Email +
+                        Constants.Spacing + Constants.EditedDate + DateTime.Now +
+                        Constants.Spacing + Constants.BulkImport
+                        );
+
+                    //Append enteried to rootnode
+                    if (!isDomainPresent)
+                    {
+                        rootNode.AppendChild(newComment);
+                        rootNode.AppendChild(SiteElement);
+                    }
+
+                    //Get the backup file name/path, so to copy the previous data to backup file and get if needed
+                    string backUpFile = GetBackupFile(xmlVersion, operation);
+                    System.IO.File.Copy(V2ProdFile, backUpFile);
+                    xmlDoc.Save(V2ProdFile);
+                    rwLock.ExitWriteLock();
+
+                    return true;
+                }
+                else
+                {
+                    throw new ArgumentException("Unable to access using UNC");
+                }
+            }
+        }
 
         /// <summary>
         /// This method will add the URL in the xml with sibling comments. 
@@ -2742,6 +2844,10 @@ namespace XMLHelperLib
                 if (unc.NetUseWithCredentials(UNCPath, UserName, Domain, Password) || unc.LastError == 1219)
                 {
                     lines = System.IO.File.ReadAllText(V2ProdFile);
+                }
+                else
+                {
+                    throw new ArgumentException("Unable to access using UNC");
                 }
             }
             return lines;

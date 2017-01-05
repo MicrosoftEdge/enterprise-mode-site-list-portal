@@ -779,7 +779,8 @@
         getXmlStringV2: getXmlStringV2,
         parseBulkAddV2: parseBulkAddV2,
         formatxmlstring: formatxmlstring,
-        checkXmlVersion: checkXmlVersion
+        checkXmlVersion: checkXmlVersion,
+        getDocumentModeIdV2: getDocumentModeIdV2
     };
 
 })();
