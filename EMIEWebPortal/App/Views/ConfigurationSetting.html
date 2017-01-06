@@ -1,14 +1,14 @@
 ﻿<div disable-all="isConfigPageDisabled">
     <div class="emie-breadcrumb">
         <div>Home</div>
-        <div class="current">Configuration Settings</div>
+        <div class="current">Settings</div>
     </div>
     <div>
-        <span class="EMIEpage-title EMIEspacer" ng-hide="IsNewRequest">Configuration Settings</span>
+        <span class="EMIEpage-title EMIEspacer" ng-hide="IsNewRequest">Settings</span>
     </div>
     <form name="form" class="form-column">
         <div>
-            <span class="EMIEHeaderTitle">Group and role configuration</span>
+            <span class="EMIEHeaderTitle">Group and role settings</span>
         </div>
         <div class="form-row">
             <div><span class="EMIEControllabel">Group name</span></div>
@@ -25,7 +25,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="EMIEpage-title">Group details</span>
+                        <span class="EMIEpage-title">Add or edit group names</span>
                     </div>
                     <div class="modal-body">
                         <div class="tabbable">
@@ -120,7 +120,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div><span class="EMIEControllabel">Required approvals</span></div>
+            <div><span class="EMIEControllabel">Required approvers</span></div>
             <div ng-repeat="role in RoleList">
                 <input type="checkbox" ng-model="role.MandatoryApproval" ng-disabled="true">{{role.RoleName}}
                 <a href="" data-toggle="modal" ng-click="SetRoleName(role.RoleName,role.MandatoryApproval)" data-target="#ERModal" ng-hide="role.RoleId == 4"><span class="glyphicon glyphicon-pencil" alt="Edit"></span></a>
@@ -158,10 +158,10 @@
         </div>
         <div>
             <div>
-                <span class="EMIEHeaderTitle">Environment configuration</span>
+                <span class="EMIEHeaderTitle">Environment settings</span>
             </div>
             <div class="form-row">
-                <div><span class="EMIEControllabel">Pre-production XML location</span></div>
+                <div><span class="EMIEControllabel">Pre-production environment</span></div>
                 <div>
                     <input type="text" placeholder="eg. \\server\folder\filename.xml" name="txtSandbaxEnvironment" id="txtSandbaxEnvironment" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="SandboxEnvironment" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
                     <span class="error" ng-show="(form.txtSandbaxEnvironment.$dirty || submitted) && form.txtSandbaxEnvironment.$error.required">Required!</span>
@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div><span class="EMIEControllabel">Production XML location</span></div>
+                <div><span class="EMIEControllabel">Production environment</span></div>
                 <div>
                     <input type="text" placeholder="eg. \\server\folder\filename.xml" name="txtProductionEnvironment" id="txtProductionEnvironment" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="ProductionEnvironment" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
                     <span class="error" ng-show="(form.txtProductionEnvironment.$dirty || submitted) && form.txtProductionEnvironment.$error.required">Required!</span>
@@ -247,7 +247,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div><span class="EMIEControllabel">Attachment location</span></div>
+                <div><span class="EMIEControllabel">Attachments location</span></div>
                 <div>
                     <input type="text" placeholder="eg. \\server\folder\folder" name="txtAttachmentLocation" id="txtAttachmentLocation" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="AttachmentLocation" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
                     <span class="error" ng-show="(form.txtAttachmentLocation.$dirty || submitted) && form.txtAttachmentLocation.$error.required">Required!</span>
@@ -260,7 +260,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="EMIEpage-title">Attachment credentials</span>
+                            <span class="EMIEpage-title">Attachments credentials</span>
                         </div>
                         <div class="modal-body">
                             <div class="form-row">
@@ -290,7 +290,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div><span class="EMIEControllabel">Configuration script location</span></div>
+                <div><span class="EMIEControllabel">Settings location</span></div>
                 <div>
                     <input type="text" placeholder="eg. \\server\folder\folder" name="txtConfigLocation" id="txtConfigLocation" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="ConfigurationLocation" ng-pattern="/^\\(\\[^\s\\]+)+(\\)?$/">
                     <span class="error" ng-show="(form.txtConfigLocation.$dirty || submitted) && form.txtConfigLocation.$error.required">Required!</span>
@@ -303,7 +303,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="EMIEpage-title">Configuration script credentials</span>
+                            <span class="EMIEpage-title">Settings credentials</span>
                         </div>
                         <div class="modal-body">
                             <div class="form-row">
@@ -333,7 +333,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div><span class="EMIEControllabel">Site domain for e-mail notification</span></div>
+                <div><span class="EMIEControllabel">Website domain for e-mail notification</span></div>
                 <div>
                     <input type="text" placeholder="eg. http://site@domain.com" name="txtSiteURL" id="txtSiteURL" class="form-control ng-pristine ng-valid ng-empty ng-touched" required data-ng-model="SiteURL">
                     <span class="error" ng-show="(form.txtSiteURL.$dirty || submitted) && form.txtSiteURL.$error.required">Required!</span>

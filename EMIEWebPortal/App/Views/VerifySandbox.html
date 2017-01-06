@@ -1,9 +1,9 @@
 ﻿<div class="emie-breadcrumb">
     <div>Home</div>
-    <div>All Requests</div>
+    <div>All requests</div>
     <div class="current">Request ID #{{TicketId}}</div>
 </div>
-<div class="EMIEpage-title">Pre-production Verification</div>
+<div class="EMIEpage-title">Pre-production verification</div>
 <!-- Status Panel -->
 <div class="status">
     <ul id="status-child">
@@ -45,7 +45,7 @@
     <hr />
 </div>
 <form name="SandboxForm">
-    <div class="EMIEHeaderTitle">Test result with pre-production environment</div>
+    <div class="EMIEHeaderTitle">App verification results in the pre-production environment</div>
     <div class="form-column">
         <div class="form-row" disable-all="isVerifyPageDisabled">
             <label class="EMIEControllabel"><input ng-disabled="IsSuccessDivReadOnly" id="RadSuccessful" type="radio" ng-click="RadSuccessClicked($event)" ng-model="Successchecked" ng-checked="RadSuccessChecked" value="Checked">Successful</label>
@@ -85,25 +85,46 @@
     </div>
     <!--Success Section-->
     <div ng-hide="IsSuccessDivHidden" disable-all="isVerifyPageDisabled">
-        <div class="EMIEHeaderTitle">Change authority board</div>
-        <div ng-repeat="singleApproval in approvals" ng-disabled="issuccessdivreadonly" class="form-row">
-            <div class="form-column">
-                <input type="text" readonly class="form-control" value="Approver - {{singleApproval.Key}}">
-            </div>
-            <div class="form-column" ng-show="!ApproverDDL">
-                <select class="form-control" name="{{singleApproval.Key}}" id="{{singleApproval.Key}}" ng-disabled="singleApproval.Key=='EMIE Champion'" ng-model="SelectedValue" ng-options="single.UserName for single in singleApproval.Value" ng-change="changeevt(SelectedValue,$index)">
-                    <option value="">Select Name</option>
-                </select>
-                <!--<span class="has-error" ng-show="(SandboxForm.ApprovalName.$dirty || submitted) && SandboxForm.ApprovalName.$error.required">Select service</span>-->
-            </div>
-            <div class="form-column" ng-show="ApproverDDL">
-                <select class="form-control" name="ApprovalNameEdited" ng-disabled="IsSuccessDivReadOnly" ng-model="singleApproval.Value[0]" ng-options="single as single.Approver.UserName for single in singleApproval.Value" required>
-                    <option value="">Select Name</option>
-                </select>
-            </div>
-            <div class="form-column">
-                <input placeholder="Comments" class="form-control" type="text" ng-show="!ApproverCommentsShow" ng-disabled="IsSuccessDivReadOnly" ng-model="textArea[$index]" ng-change="textchanged(textArea,$index)" maxlength="300">
-                <input placeholder="ApproverComments" name="ApproverComments" ng-show="ApproverCommentsShow" class="form-control" type="text" ng-disabled="IsSuccessDivReadOnly" value="{{singleApproval.Value[0].ApproverComments}}" maxlength="300">
+        <div class="EMIEHeaderTitle">My approvers</div>
+        <div class="panel-group form-row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span class="name">Role</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <span class="name">Person(s)</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <span class="name">Comments</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="singleApproval in approvals" ng-disabled="issuccessdivreadonly">
+                            <div class="row">
+                                <div class="col-lg-2">{{singleApproval.Key}}</div>
+                                <div class="col-lg-4" ng-show="!ApproverDDL">
+                                    <select class="form-control" name="{{singleApproval.Key}}" id="{{singleApproval.Key}}" ng-disabled="singleApproval.Key=='EMIE Champion'" ng-model="SelectedValue" ng-options="single.UserName for single in singleApproval.Value" ng-change="changeevt(SelectedValue,$index)">
+                                        <option value="">Select Name</option>
+                                    </select>
+                                    <!--<span class="has-error" ng-show="(SandboxForm.ApprovalName.$dirty || submitted) && SandboxForm.ApprovalName.$error.required">Select service</span>-->
+                                </div>
+                                <div class="col-lg-4" ng-show="ApproverDDL">
+                                    <select class="form-control" name="ApprovalNameEdited" ng-disabled="IsSuccessDivReadOnly" ng-model="singleApproval.Value[0]" ng-options="single as single.Approver.UserName for single in singleApproval.Value" required>
+                                        <option value="">Select Name</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input placeholder="Comments for the {{singleApproval.Key}}" class="form-control" type="text" ng-show="!ApproverCommentsShow" ng-disabled="IsSuccessDivReadOnly" ng-model="textArea[$index]" ng-change="textchanged(textArea,$index)" maxlength="300">
+                                    <input placeholder="Comments for the {{singleApproval.Key}}" name="ApproverComments" ng-show="ApproverCommentsShow" class="form-control" type="text" ng-disabled="IsSuccessDivReadOnly" value="{{singleApproval.Value[0].ApproverComments}}" maxlength="300">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div>
@@ -118,16 +139,16 @@
     <!--Failure Section-->
     <div ng-hide="IsFailureDivHidden" disable-all="isVerifyPageDisabled">
         <div class="form-row">
-            <div class="form-column">
-                <span>Issue Description</span>
+            <div>
+                <span class="EMIEControllabel">Issue description</span>
             </div>
-            <div class="form-column">
-                <textarea ng-disabled="IsSendFailureDisabled" ng-model="FailedComments" rows="6" cols="70" class="form-control" ng-required="true" placeholder=" Issue Description" maxlength="500"></textarea>
+            <div>
+                <textarea ng-disabled="IsSendFailureDisabled" ng-model="FailedComments" rows="6" cols="70" class="form-control" ng-required="true" placeholder="Issue description" maxlength="500"></textarea>
             </div>
         </div>
         <div>
             <button type="button" ng-disabled="FailedComments==null || IsSendFailureDisabled || isVerifyPageDisabled" class="highlight" ng-click="SendFailureDetails(FailedComments)">Send failure details</button>
-            <button type="button" ng-click="Rollback(FailedComments)">Rollback</button>
+            <button type="button" ng-click="Rollback(FailedComments)">Rollback changes</button>
         </div>
     </div>
     <canvas id="imgCanvas" ng-hide="true"></canvas>

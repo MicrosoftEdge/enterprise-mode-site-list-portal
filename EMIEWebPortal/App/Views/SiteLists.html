@@ -8,7 +8,7 @@
 <div ng-model="disableAll">
     <fieldset ng-disabled="disableAll" id="sitelistpage">
         <div class="EMIEsearch input-group open" ng-hide="IsDuplicate">
-            <input type="text" ng-model="search" ng-change="Search(search)" class="form-control" placeholder="Search any record" />
+            <input type="text" ng-model="search" ng-change="Search(search)" class="form-control" placeholder="Search" />
             <span class="input-group-addon">
                 <i class="glyphicon glyphicon-search"></i>
             </span>
@@ -28,14 +28,14 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="EMIEpage-title">Select XML version</span>
+                            <span class="EMIEpage-title">Choose Enterprise Mode schema version</span>
                         </div>
                         <div class="modal-body form-row">
                             <div>
-                                <input type="radio" ng-model="version" value="version1" name="optradio1">v.1
+                                <input type="radio" ng-model="version" value="version1" name="optradio1">Enterprise Mode schema v.1
                             </div>
                             <div>
-                                <input type="radio" ng-model="version" value="version2" name="optradio2">v.2
+                                <input type="radio" ng-model="version" value="version2" name="optradio2">Enterprise Mode schema v.2
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -52,14 +52,14 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="EMIEpage-title">Select XML version</span>
+                            <span class="EMIEpage-title">Choose Enterprise Mode schema version</span>
                         </div>
                         <div class="modal-body form-row">
                             <div>
-                                <input type="radio" ng-model="version" value="version1" name="optradio">v.1
+                                <input type="radio" ng-model="version" value="version1" name="optradio">Enterprise Mode schema v.1
                             </div>
                             <div>
-                                <input type="radio" ng-model="version" value="version2" name="optradio">v.2
+                                <input type="radio" ng-model="version" value="version2" name="optradio">Enterprise Mode schema v.2
                             </div>
                         </div>
                         <div class="modal-footer">

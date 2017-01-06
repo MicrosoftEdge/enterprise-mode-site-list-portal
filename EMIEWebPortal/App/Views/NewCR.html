@@ -55,7 +55,7 @@
         <div disable-all="NewCRDisabled">
             <div class="form-column">
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Group name</span></div>
+                    <div><span class="EMIEControllabel" title="Choose your group's name">Group name</span></div>
                     <div>
                         <select ng-disabled="IsDisabledForEdit" class="form-control" name="BPUName" data-ng-model="GroupName"
                                 data-ng-options="var.BPU as var.BPU for var in AppName | unique:'BPU' | orderBy:'BPU'"
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Select your application name from the list to raise the request">Application name</span></div>
+                    <div><span class="EMIEControllabel" title="Choose the name of the app to change">App name</span></div>
                     <div class="form-dropdown">
                         <input type="text" ng-disabled="IsDisabledForEdit" title="{{TypedApplicationName}}" maxlength="130" name="txtApplicationOfBPU" id="txtApplicationOfBPU"
                                ng-change="GetApplicationOfAutocompleteText(TypedApplicationName)" ng-minlength="2" class="form-control"
@@ -182,20 +182,20 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Displays creator owner for the request">Requested by</span></div>
+                    <div><span class="EMIEControllabel" title="Name of the request creator">Requested by</span></div>
                     <div>
                         <input name="RequestedBy" data-ng-disabled="true" class="form-control" data-ng-model="RequestedBy" />
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Describe the change required with reasoning">Change description</span></div>
+                    <div><span class="EMIEControllabel" title="Enter text about what you want to change and why">Description</span></div>
                     <div>
                         <textarea name="ChngDesc" class="form-control" rows="5" data-ng-model="ChangeDescription" required
                                   ng-class="{'erroneous-field' : (form.ChngDesc.$dirty || submitted) && form.ChngDesc.$error.required}" maxlength="300"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Select change type">Requested change</span></div>
+                    <div><span class="EMIEControllabel" title="Choose the type of change you're requesting">Requested change</span></div>
                     <div>
                         <select name="ChngType" ng-disabled="IsDisabledForEdit" class="form-control" data-ng-model="Changetype" data-ng-change="DisableOnDelete()"
                                 data-ng-options="var as var.ChangeTypeName for var in ChangeType" required
@@ -205,7 +205,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Specify the reason for change">Reason for change</span></div>
+                    <div><span class="EMIEControllabel" title="Choose the reason for your request">Reason for request</span></div>
                     <div>
                         <!--<textarea class="form-control" rows="5"></textarea>-->
                         <select name="ReasonfrChng" class="form-control" data-ng-model="ChangeReason" data-ng-disabled="DisableReasonfrChng"
@@ -216,7 +216,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Provide potential effects of the issue on business">Business impact (optional)</span></div>
+                    <div><span class="EMIEControllabel" title="Enter text about what you think the potential business impact would be">Business impact (optional)</span></div>
                     <div>
                         <textarea class="form-control" rows="5" data-ng-model="BusinessImpact" maxlength="200"></textarea>
                     </div>
@@ -224,14 +224,14 @@
             </div>
             <div class="form-column">
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Specify Application URL">Application URL</span></div>
+                    <div><span class="EMIEControllabel" title="Enter the full URL location to the app">App location (URL)</span></div>
                     <div>
                         <input name="URLName" id="DomainURL" type="url" class="form-control" data-ng-model="AppURL" placeholder="http://site-name" required ng-change="CheckPathIncluded(AppURL)"
                                ng-class="{'erroneous-field' : (form.URLName.$dirty || submitted || valid) && form.URLName.$error.required}" maxlength="200" ng-init="AppURL='http://'">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div><span class="EMIEControllabel" title="Select browser version where issue mitigates">Application best viewed in</span></div>
+                    <div><span class="EMIEControllabel" title="Choose which browser best renders the app">App best viewed in</span></div>
                     <div>
                         <select name="DocModeValidation" class="form-control" data-ng-model="DocModesModel" data-ng-disabled="DisableDocMode"
                                 data-ng-options="var as var.DocModeName disable when var.toggleDocmodeDisable for var in DocModes" ng-required="DisableDocMode == false"
@@ -270,7 +270,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div><span class="EMIEControllabel" title="Does application have multiple pages with different X-UA meta tags?">Are multiple X-UA COMPATIBLE tags used?</span></div>
+                        <div><span class="EMIEControllabel" title="Does application have multiple pages with different X-UA meta tags?">Are multiple X-UA Compatible tags used?</span></div>
                         <div>
                             <select name="Multipletag" class="form-control" data-ng-model="IsMultipleTags" ng-required="IsVisible == 'true'"
                                     ng-class="{'erroneous-field' : (form.Multipletag.$dirty || submitted) && form.Multipletag.$error.required}">
@@ -316,17 +316,14 @@
             <!--Right Panel-->
         </div>
         <div class="form-row">
-            <button type="button" class="highlight" ng-click="SubmitTicket(AppURL,IsEdit)" ng-disabled="IsSubmitted">Save and proceed</button>
+            <button type="button" class="highlight" ng-click="SubmitTicket(AppURL,IsEdit)" ng-disabled="IsSubmitted">Save and continue</button>
             <button type="button" ng-click="EditTicket(AppURL,true)" ng-disabled="IsEditDisabled">Edit</button>
-            <button type="button" ng-click="Reset()" ng-disabled="IsSubmitted">Reset</button>
+            <button type="button" ng-click="Reset()" ng-disabled="IsSubmitted">Clear screen</button>
             <button type="button" ng-click="Cancel()" ng-disabled="IsSubmitted">Cancel</button>
         </div>
         <message-center></message-center>
     </form>
-    <div class="form-column form-row disclaimer">
-        <div class="text-danger">**Disclaimer</div>
-        The application information and details provided here are best to my knowledge. I solely responsible for any inferences occurred due to this change for selected application.
-    </div>
+    <div class="form-column form-row disclaimer">The application information and details provided here are best to my knowledge. I solely responsible for any inferences occurred due to this change for selected application.</div>
     <script>
         url();
     </script>

@@ -1,13 +1,14 @@
 ﻿<div class="emie-breadcrumb">
-    <div class="current">Home</div>
+    <div>Home</div>
+    <div class="current">My approvals</div>
 </div>
 <div>
     <div>
         <div>
-            <span class="EMIEpage-title">My Approvals</span>
+            <span class="EMIEpage-title">My approvals</span>
         </div>
-        <div class="EMIEsearch input-group">
-            <input type="text" name="searchTcktId" id="searchTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by name or ID" data-toggle="dropdown">
+        <div class="EMIEsearch input-group" ng-hide="DisplayWaitMessage || NoPendinglist">
+            <input type="text" name="searchTcktId" id="searchTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by app name or ID" data-toggle="dropdown">
             <label for="searchTcktId">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
@@ -31,7 +32,7 @@
                             <span class="glyphicon glyphicon-sort"></span>
                         </div>
                         <div class="col-lg-4 clickable" ng-click="SortByName(Tickets)">
-                            <span class="name">Application name</span>
+                            <span class="name">App name</span>
                             <span class="glyphicon glyphicon-sort"></span>
                         </div>
                         <div class="col-lg-4">Requester</div>

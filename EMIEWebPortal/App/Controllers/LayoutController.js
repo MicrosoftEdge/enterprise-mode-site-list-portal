@@ -70,11 +70,11 @@
             IsAllRequest();
             if ($sessionStorage.IsAllRequest) {
                 $scope.MyRequestToShow = $rootScope.TicketCounts[1].MyRequest;
-                $scope.CountText = "All Requests";
+                $scope.CountText = "All requests";
             }
             else {
                 $scope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-                $scope.CountText = "My Requests";
+                $scope.CountText = "My requests";
             }
         });
     }
@@ -109,7 +109,7 @@
         dropdownvalue = Constants.FilterByTicketStatus.InProgress;
         $sessionStorage.SelectedTabValue = dropdownvalue;
         $scope.MyRequestToShow = $rootScope.TicketCounts[1].MyRequest;
-        $scope.CountText = "All Requests";
+        $scope.CountText = "All requests";
 
     }
 
@@ -134,7 +134,7 @@
         dropdownvalue = Constants.FilterByTicketStatus.InProgress;
         $sessionStorage.SelectedTabValue = dropdownvalue;
         $scope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-        $scope.CountText = "My Requests";
+        $scope.CountText = "My requests";
 
     }
 

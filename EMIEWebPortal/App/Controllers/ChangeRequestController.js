@@ -775,7 +775,7 @@
                 Object: Ticket,
                 Type: "success"
             }
-            $scope.MESSAGE = "You have successfully " + Action + " the request with ID #" + Ticket.TicketId + ". You will receive an email notification with details, please follow the STEPS TO VALIDATE section to proceed to next step.";
+            $scope.MESSAGE = "You've successfully " + Action + " the request #" + Ticket.TicketId + ". You will receive an email shortly with further details. Please follow the <strong>Steps to validate</strong> section to proceed to the next step.";
         }
 
 

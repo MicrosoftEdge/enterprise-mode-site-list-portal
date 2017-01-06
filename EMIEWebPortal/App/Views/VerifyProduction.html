@@ -1,9 +1,9 @@
 ﻿<div class="emie-breadcrumb">
     <div>Home</div>
-    <div>All Requests</div>
+    <div>All requests</div>
     <div class="current">Request ID #{{TicketId}}</div>
 </div>
-<div class="EMIEpage-title">Production change verification</div>
+<div class="EMIEpage-title">Production verification</div>
 <!-- Status Panel -->
 <div class="status">
     <ul id="status-child">
@@ -45,7 +45,7 @@
     <hr />
 </div>
 <form name="SandboxForm">
-    <div class="EMIEHeaderTitle">Test result with production environment</div>
+    <div class="EMIEHeaderTitle">App verification results in the production environment</div>
     <div class="form-column">
         <div class="form-row" disable-all="isVerifyPageDisabled">
             <label class="EMIEControllabel"><input ng-disabled="IsSuccessDivReadOnly" id="RadSuccessful" type="radio" ng-click="RadSuccessClicked($event)" ng-model="Successchecked" ng-checked="RadSuccessChecked" value="Checked">Successful</label>
@@ -113,10 +113,10 @@
         <div class="form-row">
             <div class="form-column">
                 <div>
-                    <span>Issue Description</span>
+                    <span class="EMIEControllabel">Issue description</span>
                 </div>
                 <div>
-                    <textarea ng-disabled="IsSendFailureDisabled" ng-model="Comments" rows="6" cols="70" class="form-control" required placeholder="Issue Description" maxlength="500"></textarea>
+                    <textarea ng-disabled="IsSendFailureDisabled" ng-model="Comments" rows="6" cols="70" class="form-control" required placeholder="Issue description" maxlength="500"></textarea>
                 </div>
             </div>
         </div>

@@ -1,9 +1,9 @@
 ﻿<div class="emie-breadcrumb">
     <div>Home</div>
-    <div class="current">User Management</div>
+    <div class="current">User management</div>
 </div>
 <div>
-    <span class="EMIEpage-title">User Management</span>
+    <span class="EMIEpage-title">User management</span>
 </div>
 <div disable-all="isUserPageDisabled">
     <div class="form-row">
@@ -26,7 +26,7 @@
             <div>
                 <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"
                         data-ng-options="var.BPU1 as var.BPU1 for var in ExportBPU | unique:'BPU1' | orderBy:'BPU1'">
-                    <option value="">All BPUs</option>
+                    <option value="">All groups</option>
                 </select>
             </div>
         </div>
@@ -35,21 +35,21 @@
         <button ng-click="ExportToExcel(GroupName)">Export to Excel</button>
         <button type="button" ng-hide="BtnActivateUser" ng-click="ActivateUser()">Activate</button>
         <button type="button" ng-hide="BtnDeactivateUser" ng-click="DeactivateUser()">Deactivate</button>
-        <a id="AddUser" href="#/CreateNewUser">Add user</a>
+        <a id="AddUser" href="#/CreateNewUser">Add a new user</a>
     </div>
     <div class="panel panel-default form-row">
         <div class="panel-heading" id="EMIEexpandr">
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-3 clickable" ng-click="sortByName(UserList)">
-                    <span class="name">User name</span>
+                    <span class="name">Name</span>
                     <span class="glyphicon glyphicon-sort"></span>
                 </div>
                 <div class="col-lg-3">
-                    <span class="name">User alias</span>
+                    <span class="name">Email</span>
                 </div>
                 <div class="col-lg-2 clickable" ng-click="sortByRoleName(UserList)">
-                    <span class="name">User role</span>
+                    <span class="name">Role</span>
                     <span class="glyphicon glyphicon-sort"></span>
                 </div>
                 <div class="col-lg-2">
@@ -81,11 +81,11 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="EMIEpage-title">Edit User</span>
+                            <span class="EMIEpage-title">Edit user</span>
                         </div>
                         <div class="modal-body">
                             <div class="form-row">
-                                <div><span class="EMIEControllabel">User name</span></div>
+                                <div><span class="EMIEControllabel">Name</span></div>
                                 <div>
                                     <input type="text" class="form-control" disabled value="{{ selectedUser.User.UserName }}">
                                 </div>

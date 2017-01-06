@@ -216,7 +216,7 @@
                         }
                         //Below code will push the data into tha array
                         pieData.push({
-                            title: TicketCount[i].TicketStatus + "  " + TicketCount[i].Count,
+                            title: TicketCount[i].TicketStatus,
                             value: TicketCount[i].Count,
                             color: colour
                         });
@@ -489,7 +489,7 @@
                         responsive: true,
                         scaleFontColor: "black",
                         scaleFontSize: 15,
-                        graphTitle: "Reasons for change",
+                        graphTitle: "Reasons for request",
                         graphTitleFontFamily: "'Segoe UI'",
                         graphTitleFontSize: 24,
                         graphTitleFontStyle: "lighter",
@@ -530,7 +530,7 @@
                         }
 
                         data.push({
-                            title: changeType[i].ChangeType + " " + changeType[i].Count,
+                            title: Constants.TicketStatus[changeType[i].ChangeType.toString()],
                             value: changeType[i].Count,
                             color: colour,
                         });

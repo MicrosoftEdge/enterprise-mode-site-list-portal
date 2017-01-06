@@ -9,7 +9,7 @@
     <form name="form" id="CreateUserForm" ng-submit="$event.preventDefault()">
         <div class="form-column">
             <div class="form-row">
-                <div><span class="EMIEControllabel">User email</span></div>
+                <div><span class="EMIEControllabel">Email</span></div>
                 <div>
                     <input type="text" name="txtUserEmail" id="txtUserEmail" ng-change="GetUserEmailText(NewUserEmail)" ng-minlength="5" class="form-control" data-ng-model="NewUserEmail" required data-toggle="dropdown">
                     <span class="error" ng-show="(form.txtUserEmail.$dirty || submitted) && form.txtUserEmail.$error.required">Required!</span>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div><span class="EMIEControllabel">User name</span></div>
+                <div><span class="EMIEControllabel">Name</span></div>
                 <div>
                     <input type="text" name="txtUserName" id="txtUserName" class="form-control" data-ng-model="NewUserName" required disabled>
                     <span class="error" ng-show="(form.txtUserName.$dirty || submitted) && form.txtUserName.$error.required">Required!</span>
@@ -51,7 +51,7 @@
                 <button type="reset" ng-click="ClearAllFiledsOfCreatePage()">Clear</button>
             </div>
             <div class="form-row">
-                <div><span ng-show="loginlinkshow">Already registered? <a href="#/Login">Login</a> here.</span></div>
+                <div><span ng-show="loginlinkshow">Already registered? <a href="#/Login">Sign in</a> here.</span></div>
             </div>
         </div>
         <div class="form-column">

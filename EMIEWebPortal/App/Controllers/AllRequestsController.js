@@ -55,7 +55,7 @@
                     var value = $sessionStorage.SelectedTabValue;
                     $scope.value = value;
                     if ($scope.value != 'All Requests')
-                        $scope.DisplayValueHeader = 'Requests ' + value;
+                        $scope.DisplayValueHeader = 'Requests - ' + value;
                     else
                         $scope.DisplayValueHeader = value;
                     //Setting the drop down value the  and displaying the data accordingly
@@ -65,7 +65,7 @@
                     changeonselectionvalue($sessionStorage.LastSelectedValue);
                     $scope.value = $sessionStorage.LastSelectedValue;
                     if ($scope.value != 'All Requests')
-                        $scope.DisplayValueHeader = 'Requests ' + $scope.value;
+                        $scope.DisplayValueHeader = 'Requests - ' + $scope.value;
                     else
                         $scope.DisplayValueHeader = $scope.value;
                 }

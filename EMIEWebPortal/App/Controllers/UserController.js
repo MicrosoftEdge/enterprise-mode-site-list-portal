@@ -78,16 +78,16 @@
         //this function will filter the value according the value selected in the first dropdown
         function filterUser(value) {
             switch (value) {
-                case "All Users":
+                case "All users":
                     GetAllUsersFromDB();
                     break;
-                case "Active Users":
+                case "Active users":
                     GetActivatedUserList();
                     break;
-                case "Inactive Users":
+                case "Inactive users":
                     GetDeactivatedUserList();
                     break;
-                case "Register Users":
+                case "Register users":
                     GetRegisterdUserList();
                     break;
             }
@@ -418,7 +418,7 @@
                     $scope.HideCancelModal = true;
                     $('#PopUpModal').modal('toggle');
                     $scope.ALERTCONTENT = {
-                        Title: "INFO",
+                        Title: Constants.PopupTitleSuccess,
                         MethodCase: "DISABLE",
                         Type: "info"
                     }
