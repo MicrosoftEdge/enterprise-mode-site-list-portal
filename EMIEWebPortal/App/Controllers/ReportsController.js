@@ -214,9 +214,13 @@
                             case TicketStatusConstants.ApprovalPending:
                                 colour = ColorConstants.ApprovalPending;
                         }
+
                         //Below code will push the data into tha array
+                        var concatName = TicketCount[i].TicketStatus;
+                        var id = Constants.TicketStatus[concatName];
                         pieData.push({
-                            title: TicketCount[i].TicketStatus,
+                            //title: TicketCount[i].TicketStatus,
+                            title: Constants.TicketStatusText[id],
                             value: TicketCount[i].Count,
                             color: colour
                         });
@@ -315,13 +319,15 @@
                         }
 
                         //Adding data according to particular Stack bar Chart
+                        var concatName = countBpu.chartData[i].Status;
+                        var id = Constants.TicketStatus[concatName];
+
                         if (Data.length != 0)
                             datasets.push({
                                 fillColor: colour,
                                 pointColor: "rgba(220,220,220,1)",
                                 data: Data,
-                                title: countBpu.chartData[i].Status,
-
+                                title: Constants.TicketStatusText[id],
                             });
                     }
 
@@ -530,7 +536,7 @@
                         }
 
                         data.push({
-                            title: Constants.TicketStatus[changeType[i].ChangeType.toString()],
+                            title: changeType[i].ChangeType,
                             value: changeType[i].Count,
                             color: colour,
                         });

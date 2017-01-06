@@ -4,7 +4,7 @@
         <div class="current">{{DisplayValueHeader}}</div>
     </div>
     <div class="EMIEpage-title">{{DisplayValueHeader}}</div>
-    <div class="EMIEsearch input-group" ng-show="allrequests.length > 0">
+    <div class="EMIEsearch input-group" ng-hide="DisplayNoDataMessage">
         <input type="text" name="searchTcktId" id="searchTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by app name or ID" data-toggle="dropdown">
         <span class="input-group-addon">
             <i class="glyphicon glyphicon-search"></i>
@@ -21,7 +21,7 @@
     -->
     <div role="alert" ng-show="DisplayNoDataMessage">{{NoDataAvailable}}</div>
     <div role="alert" ng-show="DisplayWaitMessage">{{RetrievalProgress}}</div>
-    <div class="panel-group" ng-show="allrequests.length > 0">
+    <div class="panel-group" ng-hide="DisplayNoDataMessage">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">

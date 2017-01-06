@@ -16,19 +16,22 @@
                 <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" style="margin-right:14px; width:258px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
                     <li ng-repeat="usr in UserListToShow" class="input-lg" ng-click="BindSearchedUserToGrid(usr)" style="margin:5px">{{usr.User.UserName | limitTo: 8}}{{usr.User.UserName.length > 30 ? '...' : ''}}{{ usr.User.UserRole.RoleName}} {{ usr.User.UserBPU.BPU1}}</li>
                 </ul>
-                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; width: 271px;" ng-model="NoResultText" ng-show="UserList.length==0 && SearchUserFromTextBox.length>1">No users matching "{{SearchUserFromTextBox}}" were found. </span>
+                <span class="dropdown-menu dropdown-menu-left" style="width: 271px;" ng-model="NoResultText" ng-show="UserList.length==0 && SearchUserFromTextBox.length>1">No users matching "{{SearchUserFromTextBox}}" were found. </span>
             </div>
         </div>
         <div class="form-column">
-            <select class="form-control" ng-model="value" ng-selected="value" ng-change="selectedValueOfDDL(value)" ng-options="value for (key,value) in UserMngmntDDL">{{value}}</select>
+            <select class="form-control"
+                    ng-model="value"
+                    ng-change="selectedValueOfDDL(value)"
+                    ng-options="value for (key,value) in UserMngmntDDL">
+                <option value="">-- Select --</option>
+            </select>
         </div>
         <div class="form-column">
-            <div>
-                <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"
-                        data-ng-options="var.BPU1 as var.BPU1 for var in ExportBPU | unique:'BPU1' | orderBy:'BPU1'">
-                    <option value="">All groups</option>
-                </select>
-            </div>
+            <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"
+                    data-ng-options="var.BPU1 as var.BPU1 for var in ExportBPU | unique:'BPU1' | orderBy:'BPU1'">
+                <option value="">All groups</option>
+            </select>
         </div>
     </div>
     <div class="form-row">

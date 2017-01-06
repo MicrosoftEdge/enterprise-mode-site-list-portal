@@ -803,11 +803,20 @@ label.EMIEControllabel {
     border-radius: 0;
 }
 
+.content span.dropdown-menu {
+    padding: 7px;
+}
+
+.content ul.dropdown-menu {
+    padding: 0;
+}
+
 li.input-lg {
     border-radius: 0;
     cursor: pointer;
     margin: 0;
     font-size: 14px;
+    line-height: 24px;
 }
 
 li.input-lg:hover {
@@ -869,15 +878,8 @@ li.input-lg:hover {
     font-size: 16px;
 }
 
-/**
-***********************
-***********************
-***********************
-       Original
-***********************
-***********************
-***********************
-**/
+/* TODO: Clean below */
+
 .EMIEsubtitle {
     font-size: 0.813em/*13px*/;
     position: relative;

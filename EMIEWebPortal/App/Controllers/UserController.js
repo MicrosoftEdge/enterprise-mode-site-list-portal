@@ -73,21 +73,25 @@
         }
 
         // the selection change in the first dropdown this will call the filterUser function
-        $scope.selectedValueOfDDL = function (value) { filterUser(value); $scope.SearchUserFromTextBox = ""; previousUsers = undefined; };
+        $scope.selectedValueOfDDL = function (value) {
+            filterUser(value);
+            $scope.SearchUserFromTextBox = "";
+            previousUsers = null;
+        };
 
         //this function will filter the value according the value selected in the first dropdown
         function filterUser(value) {
             switch (value) {
-                case "All users":
+                case Constants.UserManagementDDLOptions[1]:
                     GetAllUsersFromDB();
                     break;
-                case "Active users":
+                case Constants.UserManagementDDLOptions[2]:
                     GetActivatedUserList();
                     break;
-                case "Inactive users":
+                case Constants.UserManagementDDLOptions[3]:
                     GetDeactivatedUserList();
                     break;
-                case "Register users":
+                case Constants.UserManagementDDLOptions[4]:
                     GetRegisterdUserList();
                     break;
             }

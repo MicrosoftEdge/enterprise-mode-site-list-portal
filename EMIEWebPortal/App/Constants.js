@@ -380,8 +380,8 @@ EMIEModule.constant('Constants', {
         //InActive Users
         3: "Inactive users",
 
-        //Register Users
-        4: "Register users"
+        //Registered Users
+        4: "Registered users"
     },
 
     /// <summary>
