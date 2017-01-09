@@ -10,7 +10,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-row">
-                            <div><span class="EMIEControllabel">User name</span></div>
+                            <div><span class="EMIEControllabel">Name</span></div>
                             <div>
                                 <input type="text" name="txtEMIEUserName" id="txtEMIEUserName" class="form-control" ng-disabled="ShowNewPasswordDiv" data-ng-model="EMIEUserNameCred" required>
                             </div>
@@ -63,14 +63,14 @@
     <div class="form-row">
         <div class="form-column">
             <div class="input-group">
-                <input type="text" name="serachUser" id="serachUser" ng-change="GetSearchedUserFromAutoComplete(SearchUserFromTextBox)" class="form-control" data-ng-model="SearchUserFromTextBox" placeholder="Search users" data-toggle="dropdown">
+                <input type="text" name="serachUser" id="serachUser" ng-change="GetSearchedUserFromAutoComplete(SearchUserFromTextBox)" class="form-control" data-ng-model="SearchUserFromTextBox" placeholder="Search employees" data-toggle="dropdown">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
                 </span>
                 <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" style="margin-right:14px; width:258px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
                     <li ng-repeat="usr in UserListToShow" class="input-lg" ng-click="BindSearchedUserToGrid(usr)" style="margin:5px">{{usr.User.UserName | limitTo: 8}}{{usr.User.UserName.length > 30 ? '...' : ''}}{{ usr.User.UserRole.RoleName}} {{ usr.User.UserBPU.BPU1}}</li>
                 </ul>
-                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px;  width: 271px; " ng-model="NoResultText" ng-show="EMEIRegisterUserList.length==0 && SearchUserFromTextBox.length>1">No users matching "{{SearchUserFromTextBox}}" were found. </span>
+                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px;  width: 271px; " ng-model="NoResultText" ng-show="EMEIRegisterUserList.length==0 && SearchUserFromTextBox.length>1">No employees matching "{{SearchUserFromTextBox}}" were found. </span>
             </div>
         </div>
         <div class="form-column">
@@ -82,12 +82,12 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-3 clickable" ng-click="sortByName(EMEIRegisterUserList)">
-                    <span class="name">User name</span>
+                    <span class="name">Name</span>
                     <span class="glyphicon glyphicon-sort"></span>
                 </div>
-                <div class="col-lg-3">User alias</div>
+                <div class="col-lg-3">Email</div>
                 <div class="col-lg-2 clickable" ng-click="sortByRoleName(EMEIRegisterUserList)">
-                    <span class="name">User role</span>
+                    <span class="name">Role</span>
                     <span class="glyphicon glyphicon-sort"></span>
                 </div>
                 <div class="col-lg-2">Group name</div>

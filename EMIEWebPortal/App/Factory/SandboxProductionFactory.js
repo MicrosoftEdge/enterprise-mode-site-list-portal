@@ -223,7 +223,7 @@
 
                     //If file size is zero append error message
                     if (event.files[index].size == 0) {
-                        unuploadedFileNames = unuploadedFileNames + "<br>" + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileEmpty + "</b>";
+                        unuploadedFileNames = unuploadedFileNames + "<br />" + event.files[index].name + "<strong>" + Constants.ErrorFileEmpty + "</strong>";
                         IsunuploadedFilesPresent = true;
                     }
                         //If file size is less than 1 MB and not zero
@@ -235,7 +235,7 @@
                             angular.forEach($scope.filesSelected, function (value, key) {
                                 if (value.name == event.files[index].name) {
                                     fileToBeAdded = false;
-                                    unuploadedFileNames = unuploadedFileNames + "<br>" + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileAlreadySelected + "</b>";
+                                    unuploadedFileNames = unuploadedFileNames + "<br />" + event.files[index].name + "<strong>" + Constants.ErrorFileAlreadySelected + "</strong>";
                                 }
                             });
 
@@ -243,7 +243,7 @@
                                 angular.forEach($scope.UploadedFiles.array, function (value, key) {
                                     if (value == event.files[index].name) {
                                         fileToBeAdded = false;
-                                        unuploadedFileNames = unuploadedFileNames + "<br>" + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileAlreadyUploaded + "</b>";
+                                        unuploadedFileNames = unuploadedFileNames + "<br />" + event.files[index].name + "<strong>" + Constants.ErrorFileAlreadyUploaded + "</strong>";
                                     }
                                 });
                             }
@@ -269,14 +269,14 @@
                         }
                     }
                     else {
-                        unuploadedFileNames = unuploadedFileNames + "<br>" + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileSize + "</b>";
+                        unuploadedFileNames = unuploadedFileNames + "<br />The " + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileSize + "</b>";
                         IsunuploadedFilesPresent = true;
                     }
                 }
 
 
                 else {
-                    unuploadedFileNames = unuploadedFileNames + "<br>" + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileType + "</b>";
+                    unuploadedFileNames = unuploadedFileNames + "<br />The" + event.files[index].name + "<b style='font-weight:600'>" + Constants.ErrorFileType + "</b>";
                     IsunuploadedFilesPresent = true;
                 }
             }

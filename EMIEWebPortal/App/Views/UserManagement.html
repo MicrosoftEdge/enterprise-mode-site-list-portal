@@ -1,22 +1,22 @@
 ﻿<div class="emie-breadcrumb">
     <div>Home</div>
-    <div class="current">User management</div>
+    <div class="current">Employee management</div>
 </div>
 <div>
-    <span class="EMIEpage-title">User management</span>
+    <span class="EMIEpage-title">Employee management</span>
 </div>
 <div disable-all="isUserPageDisabled">
     <div class="form-row">
         <div class="form-column-liquid">
             <div class="EMIEsearch input-group">
-                <input type="text" name="serachUser" id="serachUser" ng-change="GetSearchedUserFromAutoComplete(SearchUserFromTextBox)" class="form-control" data-ng-model="SearchUserFromTextBox" placeholder="Search users" data-toggle="dropdown">
+                <input type="text" name="serachUser" id="serachUser" ng-change="GetSearchedUserFromAutoComplete(SearchUserFromTextBox)" class="form-control" data-ng-model="SearchUserFromTextBox" placeholder="Search employees" data-toggle="dropdown">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
                 </span>
                 <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-hide="true" style="margin-right:14px; width:258px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
                     <li ng-repeat="usr in UserListToShow" class="input-lg" ng-click="BindSearchedUserToGrid(usr)" style="margin:5px">{{usr.User.UserName | limitTo: 8}}{{usr.User.UserName.length > 30 ? '...' : ''}}{{ usr.User.UserRole.RoleName}} {{ usr.User.UserBPU.BPU1}}</li>
                 </ul>
-                <span class="dropdown-menu dropdown-menu-left" style="width: 271px;" ng-model="NoResultText" ng-show="UserList.length==0 && SearchUserFromTextBox.length>1">No users matching "{{SearchUserFromTextBox}}" were found. </span>
+                <span class="dropdown-menu dropdown-menu-left" style="width: 271px;" ng-model="NoResultText" ng-show="UserList.length==0 && SearchUserFromTextBox.length>1">No employees matching "{{SearchUserFromTextBox}}" were found. </span>
             </div>
         </div>
         <div class="form-column">
@@ -38,7 +38,7 @@
         <button ng-click="ExportToExcel(GroupName)">Export to Excel</button>
         <button type="button" ng-hide="BtnActivateUser" ng-click="ActivateUser()">Activate</button>
         <button type="button" ng-hide="BtnDeactivateUser" ng-click="DeactivateUser()">Deactivate</button>
-        <a id="AddUser" href="#/CreateNewUser">Add a new user</a>
+        <a id="AddUser" href="#/CreateNewUser">Add a new employee</a>
     </div>
     <div class="panel panel-default form-row">
         <div class="panel-heading" id="EMIEexpandr">
@@ -84,7 +84,7 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="EMIEpage-title">Edit user</span>
+                            <span class="EMIEpage-title">Edit employee</span>
                         </div>
                         <div class="modal-body">
                             <div class="form-row">

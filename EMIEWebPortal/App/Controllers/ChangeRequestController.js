@@ -539,7 +539,7 @@
                                     MethodCase: "OPEN REQUEST",
                                     Type: "info"
                                 }
-                                $scope.MESSAGE = Constants.OpenRequestMessage + exist + Constants.SelectExistingRequestMessage;
+                                $scope.MESSAGE = Constants.OpenRequestMessage;
                             }
                             else {
                                 isToBeAdded = true;

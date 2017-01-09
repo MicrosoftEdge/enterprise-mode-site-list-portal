@@ -305,7 +305,7 @@
                     MethodCase: "NULL",
                     Type: "Error"
                 }
-                $scope.MESSAGE = Constants.InvalidFileFormat;
+                $scope.MESSAGE = Constants.InvalidFileFormat; // TODO: Include file format
             }
         }
 

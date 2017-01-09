@@ -184,7 +184,7 @@
                                 }
 
                             }).error(function (error) {
-                                $scope.status = Constants.UanbleToLoadTicketData+":" + error.message;
+                                $scope.status = Constants.UanbleToLoadTicketData + " " + error.message;
                             });
                         }
                         else if (Ticketapprovals.FinalTicketStatus == Constants.TicketStatus['Approved']) {
@@ -203,7 +203,7 @@
                     }
                 }).error(function (error) {
                     ;
-                    $scope.status = Constants.UanbleToLoadTicketData +":"+ error.message;
+                    $scope.status = Constants.UanbleToLoadTicketData + " " + error.message;
                 });
             }
             else {
