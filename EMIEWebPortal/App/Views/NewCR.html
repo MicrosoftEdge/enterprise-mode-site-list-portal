@@ -2,7 +2,7 @@
 <!--<div notifications-bar class="notifications"></div>-->
 <div class="emie-breadcrumb">
     <div>Home</div>
-    <div class="current" ng-hide="IsNewRequest">New Request</div>
+    <div class="current" ng-hide="IsNewRequest">Create new request</div>
     <div ng-hide="IsOldRequest">All Requests</div>
     <div class="current" ng-hide="IsOldRequest">Request ID #{{TicketId}}</div>
 </div>
@@ -77,21 +77,21 @@
                             <li ng-repeat="app in AppListOfSelectedBPUToShow" class="input-lg" ng-click="searchedApplicationFromDDL(app)" title="{{app.ApplicationName}}" style="margin:5px">{{app.ApplicationName| limitTo: 30}}{{app.ApplicationName.length > 30 ? '...' : ''}}</li>
                         </ul>
                         <span class="dropdown-menu dropdown-menu-left error" ng-show="(form.TypedApplicationName.$dirty || submitted) && form.TypedApplicationName.$error.minlength">Too short!</span>
-                        <span class="dropdown-menu dropdown-menu-left" ng-show="AppListOfSelectedBPUToShow.length==0 && TypedApplicationName.length>1">No application matching "{{TypedApplicationName}}" were found. </span>
+                        <span class="dropdown-menu dropdown-menu-left" ng-show="AppListOfSelectedBPUToShow.length==0 && TypedApplicationName.length>1">No apps matching "{{TypedApplicationName}}" were found. </span>
                     </div>
                     <div class="newreq-appbuttons">
-                        <button type="button" ng-disabled="IsDisabledForEdit" data-toggle="modal" data-target="#appModal" ng-click="LoadAllApplicationsToSearch()">Search all applications</button>
+                        <button type="button" ng-disabled="IsDisabledForEdit" data-toggle="modal" data-target="#appModal" ng-click="LoadAllApplicationsToSearch()">Search all apps</button>
                     </div>
                     <div id="appModal" class="modal fade" role="dialog">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
-                                <div class="modal-header"><span class="EMIEpage-title">All applications</span></div>
+                                <div class="modal-header"><span class="EMIEpage-title">All apps</span></div>
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-lg-8"></div>
                                         <div class="col-lg-4">
                                             <div class="input-group">
-                                                <input type="text" name="modaltxtApplicationOfBPU" ng-minlength="2" id="modaltxtApplicationOfBPU" ng-change="GetApplicationOfAutocompleteText(ModalTypedApplicationName)" class="form-control" data-ng-model="ModalTypedApplicationName" placeholder="Search Application" data-toggle="dropdown">
+                                                <input type="text" name="modaltxtApplicationOfBPU" ng-minlength="2" id="modaltxtApplicationOfBPU" ng-change="GetApplicationOfAutocompleteText(ModalTypedApplicationName)" class="form-control" data-ng-model="ModalTypedApplicationName" placeholder="Search apps" data-toggle="dropdown">
                                                 <span class="input-group-addon">
                                                     <i class="glyphicon glyphicon-search"></i>
                                                 </span>
@@ -99,7 +99,7 @@
                                                     <li ng-repeat="app in AppListOfSelectedBPUToShowInModel" class="input-lg" ng-click="ModalsearchedApplicationFromDDL(app)">{{app.ApplicationName | limitTo: 30}}{{app.ApplicationName.length > 30 ? '...' : ''}}</li>
                                                 </ul>
                                                 <span class="dropdown-menu dropdown-menu-left error" style="width: 232px; padding-left: 8px;" ng-show="(form.modaltxtApplicationOfBPU.$dirty || submitted) && form.modaltxtApplicationOfBPU.$error.minlength">Too short!</span>
-                                                <span class="dropdown-menu dropdown-menu-left" ng-show="AppListOfSelectedBPUToShowInModel.length==0 && ModalTypedApplicationName.length>1">No application matching "{{ModalTypedApplicationName}}" were found. </span>
+                                                <span class="dropdown-menu dropdown-menu-left" ng-show="AppListOfSelectedBPUToShowInModel.length==0 && ModalTypedApplicationName.length>1">No apps matching "{{ModalTypedApplicationName}}" were found. </span>
                                             </div>
                                         </div>
                                         <div></div>
@@ -112,7 +112,7 @@
                                         <div class="panel-heading" id="EMIEexpandr">
                                             <div class="row">
                                                 <div class="col-lg-2"></div>
-                                                <div class="col-lg-7"><span ng-click="sortByAppName(LoadedApplicationList)">Application name</span></div>
+                                                <div class="col-lg-7"><span ng-click="sortByAppName(LoadedApplicationList)">App name</span></div>
                                                 <div class="col-lg-3">Group name</div>
                                             </div>
                                         </div>
@@ -138,17 +138,17 @@
                         </div>
                     </div>
                     <div class="newreq-appbuttons">
-                        <button type="button" data-toggle="modal" data-target="#NewApplicationModal" ng-click="PopulateNewApplicationFormFields()" ng-disabled="IsAddAppDisabled">Add new application</button>
+                        <button type="button" data-toggle="modal" data-target="#NewApplicationModal" ng-click="PopulateNewApplicationFormFields()" ng-disabled="IsAddAppDisabled">Add new app</button>
                         <!-- Modal or Pop-up for Add Application -->
                         <div id="NewApplicationModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                    <div class="modal-header"><span class="EMIEpage-title">Add application</span></div>
+                                    <div class="modal-header"><span class="EMIEpage-title">Add new app</span></div>
                                     <div class="modal-body">
                                         <div class="form-row">
                                             <div>
-                                                <span class="EMIEControllabel">Application name</span>
+                                                <span class="EMIEControllabel">App name</span>
                                             </div>
                                             <div>
                                                 <input type="text" ng-model="NewApplicationName" maxlength="200" class="form-control">
