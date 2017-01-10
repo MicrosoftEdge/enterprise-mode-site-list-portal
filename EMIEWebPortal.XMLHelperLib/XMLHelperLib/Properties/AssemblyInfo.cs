@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("XMLHelperLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft Corp.")]
 [assembly: AssemblyProduct("XMLHelperLib")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Microsoft Corp.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

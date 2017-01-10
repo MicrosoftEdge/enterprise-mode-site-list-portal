@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EMIEWebPortal.Controllers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft Corp.")]
 [assembly: AssemblyProduct("EMIEWebPortal.Controllers")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Microsoft Corp.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

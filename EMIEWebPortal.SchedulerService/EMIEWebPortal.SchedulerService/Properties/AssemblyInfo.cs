@@ -9,9 +9,9 @@ using System.Resources;
 [assembly: AssemblyTitle("EMIESchedulerWindowsService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft Corp.")]
 [assembly: AssemblyProduct("EMIESchedulerWindowsService")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Microsoft Corp.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
