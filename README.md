@@ -1,7 +1,5 @@
-# Enterprise Mode web tool
-This project contains the source code of the Enterprise Mode web tool\*, a utility to help govern the process of site list management in a scalable manner.
-
-\* *Name pending*
+# Enterprise Mode Site List Portal
+This project contains the source code of the Enterprise Mode Site List Portal, a utility to help govern the process of site list management in a scalable manner.
 
 ## Code of Conduct
 
