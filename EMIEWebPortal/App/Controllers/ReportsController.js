@@ -446,22 +446,22 @@
                     //Switch case for assigning colours to different ticket status
                     switch (docmode) {
                         case EMIEModule.Utility.DocModes.IE5DocMode:
-                            colour = ColorConstants.Initiated
+                            colour = ColorConstants.Initiated;
                             break;
                         case EMIEModule.Utility.DocModes.IE7DocMode:
-                            colour = ColorConstants.Approved
+                            colour = ColorConstants.Approved;
                             break;
                         case EMIEModule.Utility.DocModes.IE8DocMode:
-                            colour = ColorConstants.ProductionReady
+                            colour = ColorConstants.ProductionReady;
                             break;
                         case EMIEModule.Utility.DocModes.IE9DocMode:
-                            colour = ColorConstants.ProductionChangesScheduled
+                            colour = ColorConstants.ProductionChangesScheduled;
                             break;
                         case EMIEModule.Utility.DocModes.IE10DocMode:
-                            colour = ColorConstants.PartiallyApproved
+                            colour = ColorConstants.PartiallyApproved;
                             break;
                         case EMIEModule.Utility.DocModes.IE11DocMode:
-                            colour = ColorConstants.BarRejected
+                            colour = ColorConstants.BarRejected;
                             break;
                         case EMIEModule.Utility.DocModes.IE7EnterpriseMode:
                             colour = ColorConstants.SignedOff;
@@ -508,16 +508,15 @@
                 new Chart(pieCtx).Doughnut(pieData, newopts);
 
                 pieData = [];
-                colour;
 
                 for (var browser in browsers) {
                     //Switch case for assigning colours to different ticket status
-                    switch (docmode) {
+                    switch (browser) {
                         case EMIEModule.Utility.OpenInBrowser.IE11:
-                            colour = ColorConstants.Initiated
+                            colour = ColorConstants.Initiated;
                             break;
                         case EMIEModule.Utility.OpenInBrowser.MsEdge:
-                            colour = ColorConstants.Approved
+                            colour = ColorConstants.SignedOff;
                             break;
                         case EMIEModule.Utility.OpenInBrowser.None:
                             colour = ColorConstants.ProductionReady
