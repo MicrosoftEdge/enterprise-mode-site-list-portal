@@ -1,5 +1,5 @@
 ﻿<div class="emie-breadcrumb">
-    <div>Home</div>
+    <div><a href="#/SignInSuccess">Home</a></div>
     <div class="current">Enterprise Mode Site List Manager</div>
 </div>
 <div>
@@ -7,14 +7,21 @@
 </div>
 <div ng-model="disableAll">
     <fieldset ng-disabled="disableAll" id="sitelistpage">
-        <div class="EMIEsearch input-group open" ng-hide="IsDuplicate">
-            <input type="text" ng-model="search" ng-change="Search(search)" class="form-control" placeholder="Search" />
-            <span class="input-group-addon">
-                <i class="glyphicon glyphicon-search"></i>
-            </span>
-            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px;  width: 271px; " ng-show="siteInfo.length==0 && search.length>1">No match for "{{search}}" found. </span>
-        </div>
         <div class="form-row" ng-hide="IsDuplicate">
+            <div class="EMIEsearch input-group open" ng-hide="IsDuplicate">
+                <input type="text" ng-model="search" ng-change="Search(search)" class="form-control" placeholder="Search" />
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px;  width: 271px; " ng-show="siteInfo.length==0 && search.length>1">No match for "{{search}}" found. </span>
+            </div>
+            <div>
+                <p>
+                    This page is intended as an isolated, administrative tool to replicate the functionality of the client Enterprise Mode Site List Manager tool.
+                    These sites are stored separately from the rest of the system. In order to add them to the system and add them to your production list, click the Add sites to production list button below.
+                    Warning: this action will not go through the normal request workflow. It will automatically be directly added to the production list.
+                </p>
+            </div>
             <button type="button" ng-click="AddNewWebsite()">Add new site</button>
             <button type="button" data-toggle="modal" data-target="#modalSavexml" title="Save XML file" ng-disabled="disableSave" ng-click="ClearVersionOfModel()">Save as XML</button>
             <input type="file" class="form-control" style="height:40px !important; display: none" id="file" name="file" title="Add websites from XML file" accept=".xml" on-read-file="showContent($fileContent)" />

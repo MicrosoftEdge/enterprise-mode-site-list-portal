@@ -31,7 +31,7 @@
         //Open in IE11 Browser
         IE11: "IE11",
         MsEdge: "MSEdge",
-        None:"None"
+        None: "None"
     }
 
 
@@ -780,7 +780,9 @@
         parseBulkAddV2: parseBulkAddV2,
         formatxmlstring: formatxmlstring,
         checkXmlVersion: checkXmlVersion,
-        getDocumentModeIdV2: getDocumentModeIdV2
+        getDocumentModeIdV2: getDocumentModeIdV2,
+        DocModes: DocModes,
+        OpenInBrowser: OpenInBrowser
     };
 
 })();

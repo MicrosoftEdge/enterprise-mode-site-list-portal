@@ -1169,7 +1169,7 @@ namespace XMLHelperLib
         /// This method will add the URL in the xml directly from a bulk import using the Enterprise Mode Site List Manager. 
         /// </summary>
         /// <param name="ticket">Tickets model object</param>
-        public bool AddToV2XMLBulk(Tickets ticket, Configuration config)
+        public bool AddToV2XMLBulk(Tickets ticket, Configuration config, bool backup)
         {
             Operation operation = Operation.AddInProduction;
             GetProductionConfigSettings(config);
@@ -1253,9 +1253,13 @@ namespace XMLHelperLib
                         rootNode.AppendChild(SiteElement);
                     }
 
-                    //Get the backup file name/path, so to copy the previous data to backup file and get if needed
-                    string backUpFile = GetBackupFile(xmlVersion, operation);
-                    System.IO.File.Copy(V2ProdFile, backUpFile);
+                    if (backup)
+                    {
+                        //Get the backup file name/path, so to copy the previous data to backup file and get if needed
+                        string backUpFile = GetBackupFile(xmlVersion, operation);
+                        System.IO.File.Copy(V2ProdFile, backUpFile);
+                    }
+
                     xmlDoc.Save(V2ProdFile);
                     rwLock.ExitWriteLock();
 

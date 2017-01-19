@@ -109,9 +109,16 @@ namespace EMIEWebPortal.Controllers
                 config = LoginController.config;
             }
 
+            bool saved = false;
+
             foreach (Tickets ticket in tickets)
             {
-                xmlHelper.AddToV2XMLBulk(ticket, config);
+                xmlHelper.AddToV2XMLBulk(ticket, config, !saved);
+
+                if (!saved)
+                {
+                    saved = true;
+                }
             }
 
             return true;

@@ -172,29 +172,21 @@ body > div:first-child {
     font-size: 24px;
     padding: 0 15px;
     height: 70px;
-}
-
-.EMIEsubheader .navlinks li a::before {
-    font-family: 'Microsoft Symbols';
+    line-height: 70px;
 }
 
 .EMIEsubheader .navlinks li a.usermgmt::before {
+    font-family: 'Microsoft Symbols';
     content: "\e187";
 }
 
-.EMIEsubheader .navlinks li a.reports::before {
-    content: "\e133";
-}
-
 .EMIEsubheader .navlinks li a.tool::before {
+    font-family: 'Microsoft Symbols';
     content: "\e104";
 }
 
-.EMIEsubheader .navlinks li a.production::before {
-    content: "\e15e";
-}
-
 .EMIEsubheader .navlinks li a.settings::before {
+    font-family: 'Microsoft Symbols';
     content: "\e115";
 }
 
@@ -257,16 +249,18 @@ body > div:first-child {
     margin-bottom: 0;
 }
 
-.EMIEsearch.input-group input,
-.EMIEsearch.input-group input:focus {
+.EMIEsearch.input-group input {
     width: 340px;
-    transition: none;
     border: 1px solid #a9a9a9;
     border-radius: 0;
     font-size: 16px;
-    color: #000;
+    color: #808080;
     height: 36px;
-    box-shadow: none;
+}
+
+.EMIEsearch.input-group input:focus {
+    color: #000;
+    border-color: #66afe9;
 }
 
 .EMIEsearch.input-group {
@@ -437,7 +431,7 @@ ul#status-child li a {
 .dropdownCD {
     position: relative;
     z-index: 100;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .dropdownCD dt {
@@ -524,7 +518,7 @@ ul#status-child li a {
 }
 
 .EMIEControllabel {
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
     display: block;
     margin-bottom: 5px;
@@ -547,6 +541,11 @@ ul#status-child li a {
 
 .emie-breadcrumb div:not(.current)::after {
     content: " > ";
+}
+
+.emie-breadcrumb div a,
+.emie-breadcrumb div a:hover {
+    color: #000;
 }
 
 #AddUser {
@@ -609,7 +608,7 @@ ul#status-child li a {
     font-size: 24px;
     font-weight: 200;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 #wrapper .form-row .EMIEuploadedfile {
@@ -739,7 +738,6 @@ label.EMIEControllabel {
 .content .form-group.uib-time input {
     height: 36px;
     border-radius: 0;
-    box-shadow: none;
     font-size: 16px;
     color: #808080;
     border: 1px solid #a9a9a9;
@@ -751,6 +749,7 @@ label.EMIEControllabel {
 
 .content .input-group input[uib-datepicker-popup]:focus {
     color: #000;
+    border-color: #66afe9;
 }
 
 .content .input-group input[uib-datepicker-popup] ~ .input-group-btn {
@@ -876,6 +875,38 @@ li.input-lg:hover {
 .tabbable > .nav-tabs > li > a {
     border-radius: 0;
     font-size: 16px;
+}
+
+.report-tile {
+    width: 153px;
+    height: 153px;
+    background-color: #0078d7;
+    color: #fff;
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.report-count {
+    width: 100%;
+    height: 69px;
+    font-size: 48px;
+    font-weight: 200;
+}
+
+.report-label {
+    width: 100%;
+}
+
+.reflow-spacing {
+    margin-bottom: 10px;
+}
+
+.nomargin {
+    margin: 0px;
 }
 
 /* TODO: Clean below */

@@ -1,14 +1,14 @@
 ﻿<div class="emie-breadcrumb">
-    <div>Home</div>
+    <div><a href="#/SignInSuccess">Home</a></div>
     <div class="current">Employee management</div>
 </div>
 <div>
     <span class="EMIEpage-title">Employee management</span>
 </div>
 <div disable-all="isUserPageDisabled">
-    <div class="form-row">
+    <div class="form-row nomargin">
         <div class="form-column-liquid">
-            <div class="EMIEsearch input-group">
+            <div class="EMIEsearch input-group reflow-spacing">
                 <input type="text" name="serachUser" id="serachUser" ng-change="GetSearchedUserFromAutoComplete(SearchUserFromTextBox)" class="form-control" data-ng-model="SearchUserFromTextBox" placeholder="Search employees" data-toggle="dropdown">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="form-column">
-            <select class="form-control"
+            <select class="form-control reflow-spacing"
                     ng-model="value"
                     ng-change="selectedValueOfDDL(value)"
                     ng-options="value for (key,value) in UserMngmntDDL">
@@ -28,7 +28,7 @@
             </select>
         </div>
         <div class="form-column">
-            <select class="form-control" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"
+            <select class="form-control reflow-spacing" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"
                     data-ng-options="var.BPU1 as var.BPU1 for var in ExportBPU | unique:'BPU1' | orderBy:'BPU1'">
                 <option value="">All groups</option>
             </select>

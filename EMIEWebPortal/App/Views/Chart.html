@@ -1,9 +1,25 @@
 ﻿<div class="emie-breadcrumb">
-    <div>Home</div>
+    <div><a href="#/SignInSuccess">Home</a></div>
     <div class="current">Enterprise Mode reports</div>
 </div>
 <div>
     <span class="EMIEpage-title EMIEspacer">Enterprise Mode reports</span>
+</div>
+<div class="form-row">
+    <div class="report-tile">
+        <div class="report-count">{{productionSitesCount}}</div>
+        <div class="report-label">Total number of websites in site list</div>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-column">
+        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available.</div>
+        <canvas id="DocmodesChart" ng-show="DisplayChart" width="340" height="340"></canvas>
+    </div>
+    <div class="form-column">
+        <div class="alert alert-info" role="alert" ng-show="DisplayNoDataMessage">No data available.</div>
+        <canvas id="BrowserChart" ng-show="DisplayChart" width="340" height="340"></canvas>
+    </div>
 </div>
 <div class="form-row">
     <message-center></message-center>

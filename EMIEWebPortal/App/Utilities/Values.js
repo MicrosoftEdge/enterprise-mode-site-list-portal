@@ -34,56 +34,54 @@ EMIEModule.value('TicketStatusConstants', {
 //String Constants for Colour  settings
 EMIEModule.value('ColorConstants', {
     //InProgress
-    InProgress: '#FF8901',
-
+    InProgress: '#7Fd7F1',
+ 
     //Initiated
-    Initiated: "#FF8C00",
-
+    Initiated: "#5E89C6",
+ 
     //Approved:
-    Approved: "#D83801",
-
+    Approved: "#93BB88",
+ 
     //ProductionReady:
-    ProductionReady: "#008272",
-
+    ProductionReady: "#A7C3D8",
+ 
     //ProductionChangesScheduled
-    ProductionChangesScheduled: "#5C005C",
-
+    ProductionChangesScheduled: "#7B9894",
+ 
     //PartiallyApproved
-    PartiallyApproved: "#00B294",
-
+    PartiallyApproved: "#ECE5B8",
+ 
     //BarRejected= this colour was needed for bar chart reject status 
-    BarRejected: "#0078D7",
-
+    BarRejected: "#F6A6AC",
+ 
     // Rejected= this status is for pie chart
-    Rejected: '#A80000',
-
+    Rejected: '#F6A6AC',
+ 
     // SignedOff
-    SignedOff: '#32145A',
-
+    SignedOff: '#8F74B2',
+ 
     //RolledBack
-    RolledBack: '#01BCF3',
-
+    RolledBack: '#7FD8C9',
+ 
     //Closed =this status is for pie chart
-    Closed: ' #B4009E',
-
+    Closed: '#DCEB84',
+ 
     //ClosBarClosed =this colour was needed for bar chart closed status
-    BarClosed: "#E81123",
-
+    BarClosed: "#DCEB84",
+ 
     //ApprovalPending
-    ApprovalPending: '#004B50',
-
+    ApprovalPending: '#FFD49F',
+ 
     //UAStringDependency
-    UAStringDependency: "#B4A0FF",
-
+    UAStringDependency: "#A97191",
+ 
     //DocModeDependency
-    DocModeDependency: "#0078D7",
-
+    DocModeDependency: "#BBB8C7",
+ 
     //ContentMissing
-    ContentMissing: "#004B1C"
-
-
-
+    ContentMissing: "#F37669"
 });
+
 
 
 //String Constants for Change Type settings

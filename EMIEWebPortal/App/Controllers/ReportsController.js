@@ -1,4 +1,4 @@
-﻿EMIEModule.controller("ReportsController", function ($scope, ReportsService,CommonFunctionsFactory, SharedProperties, LoginService, Constants, $rootScope, $sessionStorage, $location, TicketStatusConstants, ColorConstants, ChangeTypeConstants, ReasonForChangeConstants, growl) {
+﻿EMIEModule.controller("ReportsController", function ($scope, ReportsService, ManageSiteService, CommonFunctionsFactory, SharedProperties, LoginService, Constants, $rootScope, $sessionStorage, $location, TicketStatusConstants, ColorConstants, ChangeTypeConstants, ReasonForChangeConstants, growl) {
 
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     //true-if this page is  accessible for emie champ role and group head
@@ -9,6 +9,9 @@
         $scope.IsFilterbuttonDisabled = true;
         $scope.SelectAll = true;
         $scope.BpuIdsForGroupHead = [];
+        $scope.productionSites = [];
+        $scope.productionSitesCount = "";
+        $scope.productionSitesIEDependency = "";
         $scope.DisplayChart = true;
         $scope.isEMIEChampion = false;
         //populateDatePicker();
@@ -37,6 +40,7 @@
             }
             if ($scope.BpuIdsForGroupHead.length > 0 || $rootScope.User.UserRole.RoleId == Constants.RoleId['EMIEChampion']) {
                 GetTicketStatusCount(start, End, BPUIds);
+                GetProductionList();
                 GetBPUWiseTicketCount(start, End, BPUIds);
                 GetListOfApplication(start, End, BPUIds);
                 GetChangeForReasonCount(start, End, BPUIds);
@@ -169,7 +173,6 @@
             getdata.success(function (TicketCount) {
                 var pieData = [];
                 var colour;
-
                 if (TicketCount.length == 0) {
                     $scope.DisplayNoDataMessage = true;
                     $scope.DisplayChart = false;
@@ -219,7 +222,6 @@
                         var concatName = TicketCount[i].TicketStatus;
                         var id = Constants.TicketStatus[concatName];
                         pieData.push({
-                            //title: TicketCount[i].TicketStatus,
                             title: Constants.TicketStatusText[id],
                             value: TicketCount[i].Count,
                             color: colour
@@ -393,6 +395,167 @@
                     $scope.tickets = tickets;
 
                 }
+            });
+        }
+        //  ----------------------------------------------------Get List of Production Sites--------------------------------------------------------------
+        function GetProductionList() {
+            var sites = [];
+            var getdata = ManageSiteService.getSitesFromProduction();
+            getdata.success(function (data) {
+                var isV1Schema = EMIEModule.Utility.checkXmlVersion(data);
+                if ($rootScope.User != null)
+                    var websitesToAdd = isV1Schema ? EMIEModule.Utility.parseBulkAddTextAsXml(data, $rootScope.User.UserName) : EMIEModule.Utility.parseBulkAddV2(data, $rootScope.User.UserName);
+                angular.forEach(websitesToAdd, function (obj, index) {
+                    var site = {
+                        FullURL: obj.FullURL,
+                        DomainDocMode: obj.DomainDocMode,
+                        //NotesAboutURL: 'Added In Production',
+                        OpenIn: obj.OpenIn
+                        //LastModifiedBy: data.comments[index].Owner,
+                        //TicketId: data.comments[index].TicketId,
+                        //ApplicationName: data.comments[index].Name
+                    }
+                    sites.push(site);
+                })
+                $scope.productionSites = sites;
+                var count = sites.length;
+                $scope.productionSitesCount = count;
+                var browsers = {};
+                var docmodes = {};
+                for (var i = 0; i < count; i++) {
+                    var b = sites[i].OpenIn;
+                    if (browsers.hasOwnProperty(b)) {
+                        browsers[b]++;
+                    }
+                    else {
+                        browsers[b] = 1;
+                    }
+                    var dm = sites[i].DomainDocMode;
+                    if (docmodes.hasOwnProperty(dm)) {
+                        docmodes[dm]++;
+                    }
+                    else {
+                        docmodes[dm] = 1;
+                    }
+                }
+
+                var pieData = [];
+                var colour;
+
+                for (var docmode in docmodes) {
+                    //Switch case for assigning colours to different ticket status
+                    switch (docmode) {
+                        case EMIEModule.Utility.DocModes.IE5DocMode:
+                            colour = ColorConstants.Initiated
+                            break;
+                        case EMIEModule.Utility.DocModes.IE7DocMode:
+                            colour = ColorConstants.Approved
+                            break;
+                        case EMIEModule.Utility.DocModes.IE8DocMode:
+                            colour = ColorConstants.ProductionReady
+                            break;
+                        case EMIEModule.Utility.DocModes.IE9DocMode:
+                            colour = ColorConstants.ProductionChangesScheduled
+                            break;
+                        case EMIEModule.Utility.DocModes.IE10DocMode:
+                            colour = ColorConstants.PartiallyApproved
+                            break;
+                        case EMIEModule.Utility.DocModes.IE11DocMode:
+                            colour = ColorConstants.BarRejected
+                            break;
+                        case EMIEModule.Utility.DocModes.IE7EnterpriseMode:
+                            colour = ColorConstants.SignedOff;
+                            break;
+                        case EMIEModule.Utility.DocModes.IE7EnterpriseMode:
+                            colour = ColorConstants.RolledBack;
+                            break;
+                        case EMIEModule.Utility.DocModes.DefaultMode:
+                            colour = ColorConstants.ApprovalPending;
+                            break;
+                    }
+
+                    pieData.push({
+                        title: docmode,
+                        value: docmodes[docmode],
+                        color: colour
+                    });
+                }
+
+                //this function will set configurations setting for chart
+                var newopts = {
+                    inGraphDataShow: true,
+                    responsive: false,
+                    legend: true,
+                    legendBlockSize: 14,
+                    showSingleLegend: true,
+                    legendBorders: false,
+                    legendFontSize: 14,
+                    legendFontFamily: "'Segoe UI'",
+                    legendFontColor: "black",
+                    inGraphDataRadiusPosition: 2,
+                    //inGraphDataTmpl: "<%=v1+'  '+v2%>",
+                    inGraphDataTmpl: "<%=v2%>",
+                    inGraphDataFontColor: "White",
+                    inGraphDataFontSize: 14,
+                    inGraphDataFontStyle: "normal",
+                    graphTitle: "All websites by docmode",
+                    graphTitleFontFamily: "'Segoe UI'",
+                    graphTitleFontSize: 24,
+                    graphTitleFontStyle: "lighter",
+                    graphTitleFontColor: "Black"
+                }
+                var pieCtx = document.getElementById('DocmodesChart').getContext('2d');
+                new Chart(pieCtx).Doughnut(pieData, newopts);
+
+                pieData = [];
+                colour;
+
+                for (var browser in browsers) {
+                    //Switch case for assigning colours to different ticket status
+                    switch (docmode) {
+                        case EMIEModule.Utility.OpenInBrowser.IE11:
+                            colour = ColorConstants.Initiated
+                            break;
+                        case EMIEModule.Utility.OpenInBrowser.MsEdge:
+                            colour = ColorConstants.Approved
+                            break;
+                        case EMIEModule.Utility.OpenInBrowser.None:
+                            colour = ColorConstants.ProductionReady
+                            break;
+                    }
+
+                    pieData.push({
+                        title: browser,
+                        value: browsers[browser],
+                        color: colour
+                    });
+                }
+
+                //this function will set configurations setting for chart
+                newopts = {
+                    inGraphDataShow: true,
+                    responsive: false,
+                    legend: true,
+                    legendBlockSize: 14,
+                    showSingleLegend: true,
+                    legendBorders: false,
+                    legendFontSize: 14,
+                    legendFontFamily: "'Segoe UI'",
+                    legendFontColor: "black",
+                    inGraphDataRadiusPosition: 2,
+                    //inGraphDataTmpl: "<%=v1+'  '+v2%>",
+                    inGraphDataTmpl: "<%=v2%>",
+                    inGraphDataFontColor: "White",
+                    inGraphDataFontSize: 14,
+                    inGraphDataFontStyle: "normal",
+                    graphTitle: "All websites by browser",
+                    graphTitleFontFamily: "'Segoe UI'",
+                    graphTitleFontSize: 24,
+                    graphTitleFontStyle: "lighter",
+                    graphTitleFontColor: "Black"
+                }
+                pieCtx = document.getElementById('BrowserChart').getContext('2d');
+                new Chart(pieCtx).Doughnut(pieData, newopts);
             });
         }
         //  ----------------------------------------------------Reason For change ---------------------------------------------------------------------
