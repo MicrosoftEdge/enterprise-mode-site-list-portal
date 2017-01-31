@@ -114,7 +114,7 @@
         function GetAllUsersFromDB() {
             $scope.BtnActivateUser = true;
             $scope.BtnDeactivateUser = true;
-            $scope.value = "All employees";
+            $scope.value = Constants.UserManagementDDLOptions[1];
             $scope.UserCheckBoxShow = false;
 
             userService.getAllUsers().success(function (data) {

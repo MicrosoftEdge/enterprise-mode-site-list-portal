@@ -184,7 +184,7 @@
                 $scope.ListofEmieApprovals = angular.copy(AllApprovals[0]);
                 $scope.approvals[0].Value = [];
                 var Approval = {
-                    UserName: "EMIE CHAMPION GROUP"
+                    UserName: "ADMINISTRATOR GROUP"
                 };
                 $scope.approvals[0].Value.push(Approval);
                 $scope.SelectedValue = $scope.approvals[0].Value[0];
@@ -269,9 +269,9 @@
                     var Approvals = {
                         ApprovalState: Constants.ApprovalState['Pending'],
                         Approver: {
-                            UserName: "EMIE CHAMPION GROUP",
+                            UserName: "ADMINISTRATOR GROUP",
                             UserRole: {
-                                RoleName: "EMIE CHAMPIONS"
+                                RoleName: "ADMINISTRATORS"
                             }
                         },
                         ApproverComments: EMIEChampionComments,
@@ -280,7 +280,7 @@
                     };
                     Approval.push(Approvals);
                     approvalsDict.push({
-                        Key: "EMIE CHAMPION",
+                        Key: "ADMINISTRATOR",
                         Value: Approval
                     });
                 }

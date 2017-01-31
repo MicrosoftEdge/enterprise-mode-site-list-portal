@@ -121,9 +121,9 @@ namespace EMIEWebPortal.Common
         /// <summary>
         /// This contant contains the full computer name part 
         /// </summary>
-        public const string EMIEChampGroup = "EMIE CHAMP GROUP";
+        public const string EMIEChampGroup = "ADMINISTRATOR GROUP";
 
-        public const string EMIEChampion = "EMIE Champion";
+        public const string EMIEChampion = "Administrator";
         #endregion
       
         #region UserManagement Constants

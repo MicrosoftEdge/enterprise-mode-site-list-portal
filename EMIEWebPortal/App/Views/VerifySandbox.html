@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col-lg-2">{{singleApproval.Key}}</div>
                                 <div class="col-lg-4" ng-show="!ApproverDDL">
-                                    <select class="form-control" name="{{singleApproval.Key}}" id="{{singleApproval.Key}}" ng-disabled="singleApproval.Key=='EMIE Champion'" ng-model="SelectedValue" ng-options="single.UserName for single in singleApproval.Value" ng-change="changeevt(SelectedValue,$index)">
+                                    <select class="form-control" name="{{singleApproval.Key}}" id="{{singleApproval.Key}}" ng-disabled="singleApproval.Key=='Administrator'" ng-model="SelectedValue" ng-options="single.UserName for single in singleApproval.Value" ng-change="changeevt(SelectedValue,$index)">
                                         <option value="">Select Name</option>
                                     </select>
                                     <!--<span class="has-error" ng-show="(SandboxForm.ApprovalName.$dirty || submitted) && SandboxForm.ApprovalName.$error.required">Select service</span>-->

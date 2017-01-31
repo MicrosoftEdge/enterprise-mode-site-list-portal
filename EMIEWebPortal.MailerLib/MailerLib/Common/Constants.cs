@@ -43,7 +43,7 @@
         /// <summary>
         /// This is the constant for EMIE Champion Group string in Mail
         /// </summary>
-        public const string EMIEChampGroup="EMIE Champion Group";
+        public const string EMIEChampGroup="Administrator Group";
 
         #endregion Public Constants
 

@@ -337,10 +337,10 @@ GO
 
 SET IDENTITY_INSERT [dbo].[Roles] ON 
 GO
-INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (1, N'Requester', N'EMIE Requester', NULL, NULL, NULL, NULL, 1, 1, 1)
-INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (2, N'App Manager', N'EMIE Approver', NULL, NULL, NULL, NULL, 1, 2, 1)
-INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (3, N'Group Head', N'EMIE Approver', NULL, NULL, NULL, NULL, 1, 2, 1)
-INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (4, N'EMIE Champion', N'EMIE Admin', NULL, NULL, NULL, NULL, 1, 3, 1)
+INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (1, N'Requester', N'Requester', NULL, NULL, NULL, NULL, 1, 1, 1)
+INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (2, N'App Manager', N'Approver', NULL, NULL, NULL, NULL, 1, 2, 1)
+INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (3, N'Group Head', N'Approver', NULL, NULL, NULL, NULL, 1, 2, 1)
+INSERT [dbo].[Roles] ([RoleId], [RoleName], [RoleDetails], [CreatedById], [CreatedDate], [ModifiedById], [ModifiedDate], [IsActive], [RolePriority], [MandatoryApproval]) VALUES (4, N'Administrator', N'Administrator', NULL, NULL, NULL, NULL, 1, 3, 1)
 SET IDENTITY_INSERT [dbo].[Roles] OFF 
 GO
 
