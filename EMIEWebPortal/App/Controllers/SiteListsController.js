@@ -113,8 +113,6 @@
                 case "NULL":
                     break;
                 case "RELOAD":
-                    $scope.HideCancelModal = false;
-                    $scope.disableAll = false;
                     $route.reload();
                     break;
                 case "ENABLE":
@@ -729,6 +727,7 @@
 
         ManageSiteService.DirectAddToFile(tickets).then(function (result) {
             if (result.data == 'True') {
+                $scope.disableAll = false;
                 $scope.HideCancelModal = true;
 
                 // Delete from site list manager
