@@ -89,7 +89,7 @@
             </div>
             <div class="form-column" ng-show="IsRadButtonNowClicked">
                 <div>
-                    <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                    <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep"></uib-timepicker>
                 </div>
             </div>
         </div>
@@ -97,13 +97,13 @@
             <div class="form-column" ng-show="IsSceduleProductionChangeClicked">
                 <div><span class="EMIEControllabel" title="Select your preferred start time for deployment to production.">Preferred start time</span></div>
                 <div>
-                    <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                    <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep"></uib-timepicker>
                 </div>
             </div>
             <div class="form-column" ng-show="IsSceduleProductionChangeClicked">
                 <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Preferred end time</span></div>
                 <div>
-                    <uib-timepicker ng-show="IsSceduleProductionChangeClicked" ng-model="timePickEnd" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                    <uib-timepicker ng-show="IsSceduleProductionChangeClicked" ng-model="timePickEnd" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep"></uib-timepicker>
                 </div>
             </div>
         </div>

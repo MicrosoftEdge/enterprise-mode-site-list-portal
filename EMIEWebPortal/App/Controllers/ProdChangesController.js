@@ -277,11 +277,6 @@
                 mstep: [1, 5, 10, 15, 25, 30]
             };
 
-
-            $scope.ismeridian = true;
-            $scope.toggleMode = function () {
-                $scope.ismeridian = !$scope.ismeridian;
-            };
             //DateTime controller related function - End
             //Set production date time if already set previously else get today's date and time
             SetProductionDatetime($scope.Ticket);
