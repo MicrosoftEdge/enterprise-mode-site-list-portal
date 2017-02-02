@@ -27,7 +27,7 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                     $rootScope.TicketCounts = result;
                     $rootScope.IsAllCountCalled = false;
                     $rootScope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-                    $rootScope.CountText = "MY REQUESTS";
+                    $rootScope.CountText = Constants.Requests.My;
                     if ($rootScope.User.UserRole.RoleId == Constants.RoleId['EMIEChampion'])
                         $("#headingTwo").removeClass("hidden");
                 });

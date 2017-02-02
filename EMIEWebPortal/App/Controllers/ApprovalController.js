@@ -67,9 +67,9 @@
                         var Approvals = {
                             ApprovalState: Constants.ApprovalState['Pending'],
                             Approver: {
-                                Email: "ADMINISTRATOR GROUP",
+                                Email: "Administrator group",
                                 UserRole: {
-                                    RoleName: "ADMINISTRATORS"
+                                    RoleName: "Administrators"
                                 }
                             },
                             ApproverComments: EMIEChampionComment,

@@ -69,7 +69,7 @@ EMIEModule.constant('Constants', {
     TicketApproved: ' has been Approved.',
     NoTicketPending: "No requests are awaiting your approval.",
     TicketRetrievalProgress: "Loading...",
-    DataNotAvailable: "There are no requests",
+    DataNotAvailable: "There are no requests.",
 
 
     //reportController
@@ -296,7 +296,16 @@ EMIEModule.constant('Constants', {
 
 
     },
-
+    // Strings for the approval pages
+    Approvals: {
+        All: "All approvals",
+        My: "My approvals"
+    },
+    // Strings for the navbar
+    Requests: {
+        All: "All requests",
+        My: "My requests"
+    },
     //This data is used for the displaying the headers and filtering out the data on tab selection(in layout) in the AllRequests page
     FilterByTicketStatus: {
         //This filter options selects all the requests logged by logged user

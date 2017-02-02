@@ -70,11 +70,11 @@
             IsAllRequest();
             if ($sessionStorage.IsAllRequest) {
                 $scope.MyRequestToShow = $rootScope.TicketCounts[1].MyRequest;
-                $scope.CountText = "All requests";
+                $scope.CountText = Constants.Requests.All;
             }
             else {
                 $scope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-                $scope.CountText = "My requests";
+                $scope.CountText = Constants.Requests.My;
             }
         });
     }
@@ -109,7 +109,7 @@
         dropdownvalue = Constants.FilterByTicketStatus.InProgress;
         $sessionStorage.SelectedTabValue = dropdownvalue;
         $scope.MyRequestToShow = $rootScope.TicketCounts[1].MyRequest;
-        $scope.CountText = "All requests";
+        $scope.CountText = Constants.Requests.All;
 
     }
 
@@ -134,7 +134,7 @@
         dropdownvalue = Constants.FilterByTicketStatus.InProgress;
         $sessionStorage.SelectedTabValue = dropdownvalue;
         $scope.MyRequestToShow = $rootScope.TicketCounts[0].MyRequest;
-        $scope.CountText = "My requests";
+        $scope.CountText = Constants.Requests.My;
 
     }
 
@@ -211,7 +211,7 @@
         $sessionStorage.IsAllRequest = IsAllRequest == "true" ? true : false;
         dropdownvalue = Constants.FilterByTicketStatus.AllRequests;
         dropdownvalue.value = "AllRequestClick";
-        $sessionStorage.Allrequest = "All Requests";
+        $sessionStorage.Allrequest = Constants.Requests.All;
         SharedProperties.setProperty(dropdownvalue);
         $location.path("/AllRequests");
         $route.reload();

@@ -91,37 +91,37 @@ namespace EMIEWebPortal.Common
         /// <summary>
         /// SuccessMessageForActions message
         /// </summary>
-        public const string SuccessMessageForActions = "Action Performed Successfully!!";
+        public const string SuccessMessageForActions = "Action completed successfully.";
 
         /// <summary>
         /// ErrorMessage message
         /// </summary>
-        public const string ErrorMessage = "Some error occurred";
+        public const string ErrorMessage = "An error occurred.";
 
         /// <summary>
         /// UploadedSuccessfully message
         /// </summary>
-        public const string UploadedSuccessfully = " Files Uploaded Successfully";
+        public const string UploadedSuccessfully = " files uploaded successfully.";
 
         /// <summary>
         /// UploadFailed message
         /// </summary>
-        public const string UploadFailed = "Upload Failed";
+        public const string UploadFailed = "Upload failed.";
         
         /// <summary>
         /// DeletedSuccessfully message
         /// </summary>
-        public const string DeletedSuccessfully = " has been deleted successfully";
+        public const string DeletedSuccessfully = " has been deleted successfully.";
 
         /// <summary>
         /// CannotBeDeleted message
         /// </summary>
-        public const string CannotBeDeleted = " cannot be deleted";
+        public const string CannotBeDeleted = " cannot be deleted.";
 
         /// <summary>
         /// This contant contains the full computer name part 
         /// </summary>
-        public const string EMIEChampGroup = "ADMINISTRATOR GROUP";
+        public const string EMIEChampGroup = "Administrator group";
 
         public const string EMIEChampion = "Administrator";
         #endregion

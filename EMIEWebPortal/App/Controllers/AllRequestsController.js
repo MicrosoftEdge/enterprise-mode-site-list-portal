@@ -54,7 +54,7 @@
                 if ($sessionStorage.SelectedTabValue != "") {
                     var value = $sessionStorage.SelectedTabValue;
                     $scope.value = value;
-                    if ($scope.value != 'All requests')
+                    if ($scope.value != Constants.Requests.All)
                         $scope.DisplayValueHeader = 'Requests - ' + value;
                     else
                         $scope.DisplayValueHeader = value;
@@ -64,7 +64,7 @@
                 else {
                     changeonselectionvalue($sessionStorage.LastSelectedValue);
                     $scope.value = $sessionStorage.LastSelectedValue;
-                    if ($scope.value != 'All requests')
+                    if ($scope.value != Constants.Requests.All)
                         $scope.DisplayValueHeader = 'Requests - ' + $scope.value;
                     else
                         $scope.DisplayValueHeader = $scope.value;

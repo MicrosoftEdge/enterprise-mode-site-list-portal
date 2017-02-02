@@ -1780,13 +1780,15 @@ namespace EMIEWebPortal.Controllers
                 //binding the counts of the myrequest into the TicketCount class object 
                 myCountList = BindCounts(GetMyTicketCount(userId), myPendingRequests, false);
 
-                //binding the counts of the allrequest in TicketCount class object
-                allCountList = BindCounts(GetAllTicketCount(), allPendingRequests, true);
-
                 //adding counts to send to the calling angular service
                 BindAllCountList.Add(myCountList);
+
                 if (isEmieChamp)
+                {
+                    //binding the counts of the allrequest in TicketCount class object
+                    allCountList = BindCounts(GetAllTicketCount(), allPendingRequests, true);
                     BindAllCountList.Add(allCountList);
+                }
             }
             catch (Exception)
             {

@@ -25,6 +25,7 @@
         $scope.ShowApproveButton = false;
         $scope.ShowRejectButton = false;
         $scope.HideTitle = true;
+        $scope.Title = Constants.Approvals.My;
         var decreasingOrder = false;
 
 
@@ -67,6 +68,9 @@
         //This function will get the pending approvals for the loggedIn users
         function GetPendingApprovalsByTickets() {
             var IsAllRequest = $sessionStorage.IsAllRequest == true ? true : false;
+            if (IsAllRequest) {
+                $scope.Title = Constants.Approvals.All;
+            }
             approvalService.GetPendingApproverList($rootScope.User, IsAllRequest).success(function (approvedTickets) {
                 $scope.Tickets = approvedTickets;
 

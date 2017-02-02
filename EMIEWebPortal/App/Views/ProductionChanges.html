@@ -82,17 +82,18 @@
         </div>
         <div class="form-spacer">
             <div class="form-column" ng-hide="prodDatePickerTextBoxhidden">
-                <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Group name</span></div>
-                <div>
+                <div><span class="EMIEControllabel" title="Select the preferred day for deployment to production.">Preferred day</span></div>
+                <div class="form-row">
                     <input type="text" id="prodDatePicker" class="form-control" ng-model="datePick" disabled />
                 </div>
             </div>
             <div class="form-column" ng-show="IsRadButtonNowClicked">
-                <div><span class="EMIEControllabel" title="Select your Organizational Group Name">Group name</span></div>
                 <div>
                     <uib-timepicker ng-model="timePickStart" ng-disabled="DisableProdDate" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
                 </div>
             </div>
+        </div>
+        <div class="form-spacer">
             <div class="form-column" ng-show="IsSceduleProductionChangeClicked">
                 <div><span class="EMIEControllabel" title="Select your preferred start time for deployment to production.">Preferred start time</span></div>
                 <div>

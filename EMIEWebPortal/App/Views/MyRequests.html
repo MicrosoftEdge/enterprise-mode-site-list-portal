@@ -1,11 +1,11 @@
 ﻿<div class="emie-breadcrumb">
     <div><a href="#/SignInSuccess">Home</a></div>
-    <div class="current">My approvals</div>
+    <div class="current">{{Title}}</div>
 </div>
 <div>
     <div>
         <div>
-            <span class="EMIEpage-title">My approvals</span>
+            <span class="EMIEpage-title">{{Title}}</span>
         </div>
         <div class="EMIEsearch input-group" ng-hide="DisplayWaitMessage || NoPendinglist">
             <input type="text" name="searchTcktId" id="searchTcktId" ng-change="GetSearchedTicketFromAutoComplete(SearchTicketFromTextBox)" class="form-control" data-ng-model="SearchTicketFromTextBox" placeholder="Search by app name or ID" data-toggle="dropdown">
