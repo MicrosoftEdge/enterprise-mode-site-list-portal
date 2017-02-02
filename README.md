@@ -2,7 +2,8 @@
 This project contains the source code of the Enterprise Mode Site List Portal, a utility to help govern the process of site list management in a scalable manner.
 
 ## Get started
-[Click here](https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal/wiki/Getting-started) to learn how to deploy the tool in your environment.
+1. [Learn how](https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal/wiki/Getting-started) to deploy the tool in your environment.
+2. [Explore](https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal/wiki/Scenario-guide) the various scenarios and features that the tool provides.
 
 ## Code of Conduct
 
