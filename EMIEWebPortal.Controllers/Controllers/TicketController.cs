@@ -357,7 +357,8 @@ namespace EMIEWebPortal.Controllers
             {
 
                 //In case we are appending domain here, uncomment next line
-                logOnId = logOnId + Constants.EmailDomainString;
+                var isEmailPresent = DbEntity.Users.Where(usr => usr.LoginId.Equals(logOnId)).Select(usr => usr.Email).FirstOrDefault();
+                logOnId = isEmailPresent == null ? string.Empty : isEmailPresent.ToString();
 
                 User user = DbEntity.Users.Where(usr => usr.Email == logOnId).First();
                 if (user != null)
@@ -497,8 +498,6 @@ namespace EMIEWebPortal.Controllers
             List<Tickets> listtickets = new List<Tickets>();
             try
             {
-                //In case we are appending domain here, uncomment next line
-                //logOnId = logOnId + Constants.EmailDomainString;
                 listtickets = (from user in DbEntity.Users
                                join ticket in DbEntity.EMIETickets on user.UserId equals ticket.CreatedById
                                where ((bool)isEMIEChampion == true ? user.LoginId.StartsWith("") : user.LoginId == logOnId)

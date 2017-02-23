@@ -746,7 +746,10 @@ namespace EMIEWebPortal.Controllers
                 string email;
                 //Get Email from VID
                 if (logOnId.IndexOf("@") == -1)
-                    email = logOnId + Constants.EmailDomainString;
+                {
+                    var isEmailPresent = DbEntity.Users.Where(user => user.LoginId.Equals(logOnId)).Select(user => user.Email).FirstOrDefault();
+                    email = isEmailPresent == null ? string.Empty : isEmailPresent.ToString();
+                }
                 else
                     email = logOnId;
 
@@ -796,7 +799,10 @@ namespace EMIEWebPortal.Controllers
                 string email;
                 //Get Email from VID
                 if (logOnId.IndexOf("@") == -1)
-                    email = logOnId + Constants.EmailDomainString;
+                {
+                    var isEmailPresent = DbEntity.Users.Where(user => user.LoginId.Equals(logOnId)).Select(user => user.Email).FirstOrDefault();
+                    email = isEmailPresent == null ? string.Empty : isEmailPresent.ToString();
+                }
                 else
                     email = logOnId;
 

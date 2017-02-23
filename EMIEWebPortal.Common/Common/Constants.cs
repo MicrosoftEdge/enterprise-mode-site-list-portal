@@ -12,11 +12,6 @@ namespace EMIEWebPortal.Common
         #region Public Constants
 
         /// <summary>
-        /// This contant contains the constant to merge in login id 
-        /// </summary>
-        public const string EmailDomainString = "@microsoft.com";
-
-        /// <summary>
         /// This constant contains the product category to store in logger
         /// Change this string according to the product being used
         /// </summary>

@@ -40,7 +40,8 @@ namespace EMIEWebPortal.Controllers
             try
             {
                 //In case we are appending domain here, uncomment next line
-                logOnId = logOnId + Constants.EmailDomainString;
+                var isEmailPresent = DbEntity.Users.Where(user => user.LoginId.Equals(logOnId)).Select(user => user.Email).FirstOrDefault();
+                logOnId = isEmailPresent == null ? string.Empty : isEmailPresent.ToString();
 
                 //This query will get the list of tickets which are tagged to the logged in user, Only fetch "Pending" tickets is to be implemented in future
                 IQueryable<int> ticketList = (from user in DbEntity.Users
@@ -98,7 +99,8 @@ namespace EMIEWebPortal.Controllers
                 //In case we are appending domain here, uncomment next line
                 if (userObj == null)
                     return null;
-                userObj.LogOnId = userObj.LogOnId + Constants.EmailDomainString;
+                var isEmailPresent = DbEntity.Users.Where(user => user.LoginId.Equals(userObj.LogOnId)).Select(user => user.Email).FirstOrDefault();
+                userObj.LogOnId = isEmailPresent == null ? string.Empty : isEmailPresent.ToString();
                 if (isAllRequest)
                 {
                     pendingList = (from user in DbEntity.Users
