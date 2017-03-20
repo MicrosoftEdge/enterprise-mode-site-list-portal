@@ -45,16 +45,16 @@
                                     </div>
                                     <div class="form-row">
                                         <div><span class="EMIEControllabel">Group head email</span></div>
-                                        <div>
+                                        <div style="position: relative">
                                             <input type="text" name="txtUserEmail" id="txtUserEmail" ng-change="GetUserEmailText(NewUserEmail)" ng-minlength="3"
                                                    class="form-control" data-ng-model="NewUserEmail" ng-required="(tab.activeTab == 'AddGroup'|| tab.activeTab == undefined) && submitted==false" data-toggle="dropdown" placeholder="Enter email"
                                                    ng-class="{'erroneous-field' : Addsubmitted && form.txtUserEmail.$error.required}">
                                             <span class="error" ng-show="(form.txtUserEmail.$dirty || Addsubmitted) && form.txtUserEmail.$error.minlength">Too short!</span>
-                                            <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="searcheduserlist.length>=1" style="width:425px;height:auto;max-height:400px !important;overflow-y:scroll" role="menu">
+                                            <ul id="color-dropdown-menu" class="dropdown-menu dropdown-menu-right" ng-show="searcheduserlist.length>=1" style="width:425px;height:auto;max-height:400px !important;overflow-y:scroll;left: 0" role="menu">
                                                 <li ng-repeat="user in searcheduserlist" class="input-lg" ng-click="searchedUserFromDDL(user)" style="margin:5px">{{user.DisplayName}}</li>
                                             </ul>
-                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
-                                            <span class="dropdown-menu dropdown-menu-left" style="padding-left: 7px; margin-left: 14px; width: 411px; " ng-show=" NewUserEmail.length>1&& IsSearching  ">Searching user.... </span>
+                                            <span class="dropdown-menu dropdown-menu-left" style="width: 411px" ng-model="NoResultText" ng-show="searcheduserlist.length==0 && NewUserEmail.length>1">No users matching "{{NewUserEmail}}" were found. </span>
+                                            <span class="dropdown-menu dropdown-menu-left" style="width: 411px" ng-show="NewUserEmail.length>1 && IsSearching ">Searching user.... </span>
                                         </div>
                                     </div>
                                     <div class="form-row">

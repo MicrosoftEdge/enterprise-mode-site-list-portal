@@ -721,14 +721,14 @@ EMIEModule.controller('ConfigurationController', function ($scope, $rootScope, C
                 $scope.TempListToBind = [];
                 $scope.IsSearching = false;
             }
-            if (serachUserName.length > 2) {
+            if (serachUserName && serachUserName.length > 2) {
                 if ($scope.TempListToBind.length > 0) {
                     $scope.IsSearching = true;
                     $scope.searcheduserlist = $scope.TempListToBind.filter(createFilterForADUsers(serachUserName));
                     if ($scope.searcheduserlist.length >= 0)
                         $scope.IsSearching = false;
                 }
-                else if ($scope.IsSearching && $scope.searcheduserlist.length <= 0) {
+                else if ($scope.IsSearching && $scope.searcheduserlist && $scope.searcheduserlist.length <= 0) {
                     //do nothing till search is going on for first 3 letters,this is to avoid repeatative search
                     $scope.IsSearching = true;
                 }
