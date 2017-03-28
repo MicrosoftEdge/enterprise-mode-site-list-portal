@@ -1,0 +1,40 @@
+{
+  "name": "enterprise-mode-site-list-portal",
+  "version": "1.0.0",
+  "description": "This project contains the source code of the Enterprise Mode Site List Portal, a utility to help govern the process of site list management in a scalable manner.",
+  "private": true,
+  "scripts": {
+    "install": "git clone --depth 1 https://github.com/Microsoft/fonts.git node_modules/fonts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal.git"
+  },
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal/issues"
+  },
+  "homepage": "https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal#readme",
+  "dependencies": {
+    "alasql": "~0.3.0",
+    "angular": "~1.5.0",
+    "angular-animate": "~1.5.0",
+    "angular-disable-all": "pleerock/angular-disable-all",
+    "angular-file-saver": "~1.1.3",
+    "angular-growl-v2": "~0.7.5",
+    "angular-loading-bar": "~0.8.0",
+    "angular-resource": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-sanitize": "~1.5.0",
+    "angular-ui": "angular-ui/angular-ui-OLDREPO",
+    "angular-ui-bootstrap": "~1.3.2",
+    "angularUtils": "michaelbromley/angularUtils",
+    "bootstrap": "~3.1.1",
+    "canvas-toBlob": "~1.0.0",
+    "chartnew.js": "~3.9.0",
+    "jquery": "~1.11.0",
+    "ngstorage": "~0.3.11",
+    "xlsx": "~0.9.4"
+  }
+}

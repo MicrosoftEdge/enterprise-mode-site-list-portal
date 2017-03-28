@@ -6,3 +6,6 @@
 obj/
 [Bb]in/
 .vs/
+
+# npm
+node_modules/

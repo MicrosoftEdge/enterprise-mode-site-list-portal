@@ -197,12 +197,6 @@
     <Content Include="App\Views\Chart.html" />
     <Content Include="App\Views\ConfigurationSetting.html" />
     <Content Include="App\Views\CreateNewUser.html" />
-    <Content Include="App\Views\css\angular-growl.css" />
-    <Content Include="App\Views\css\angular-growl.min.css" />
-    <Content Include="App\Views\css\bootstrap-theme.css" />
-    <Content Include="App\Views\css\bootstrap-theme.min.css" />
-    <Content Include="App\Views\css\bootstrap.css" />
-    <Content Include="App\Views\css\bootstrap.min.css" />
     <Content Include="App\Views\css\EMIEStyle.css" />
     <Content Include="App\Views\css\SidePanel.css" />
     <Content Include="App\Views\EMIERegisterUsers.html" />
@@ -270,74 +264,14 @@
     <Content Include="App_Data\EmailTemplates\RequestRollbackOnSandBox.html" />
     <Content Include="App_Data\EmailTemplates\RequestScheduledForProduction.html" />
     <Content Include="App_Data\EmailTemplates\UserManagement.html" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\loading-bar.css" />
-    <Content Include="Content\loading-bar.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\alasql.min.js" />
-    <Content Include="Scripts\angular-animate.js" />
-    <Content Include="Scripts\angular-animate.min.js" />
-    <Content Include="Scripts\angular-aria.js" />
-    <Content Include="Scripts\angular-aria.min.js" />
-    <Content Include="Scripts\angular-cookies.js" />
-    <Content Include="Scripts\angular-cookies.min.js" />
-    <Content Include="Scripts\angular-csp.css" />
-    <Content Include="Scripts\angular-disable-all.js" />
-    <Content Include="Scripts\angular-disable-all.min.js" />
-    <Content Include="Scripts\angular-file-saver.bundle.min.js" />
-    <Content Include="Scripts\angular-growl.min.js" />
-    <Content Include="Scripts\angular-loader.js" />
-    <Content Include="Scripts\angular-loader.min.js" />
-    <Content Include="Scripts\angular-message-format.js" />
-    <Content Include="Scripts\angular-message-format.min.js" />
-    <Content Include="Scripts\angular-messages.js" />
-    <Content Include="Scripts\angular-messages.min.js" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-resource.js" />
-    <Content Include="Scripts\angular-resource.min.js" />
-    <Content Include="Scripts\angular-route.js" />
-    <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular-sanitize.js" />
-    <Content Include="Scripts\angular-sanitize.min.js" />
-    <Content Include="Scripts\angular-scenario.js" />
-    <Content Include="Scripts\angular-touch.js" />
-    <Content Include="Scripts\angular-touch.min.js" />
-    <Content Include="Scripts\angular-ui.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\canvas-toBlob.js" />
-    <Content Include="Scripts\ChartNew.js" />
-    <Content Include="Scripts\dirPagination.js" />
-    <Content Include="Scripts\errors.json" />
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="App\Views\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="App\Views\css\winjs-symbols.ttf" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\loading-bar.js" />
-    <Content Include="Scripts\loading-bar.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\ngStorage.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls-1.2.5.min.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls-1.3.2.js" />
-    <Content Include="Scripts\xlsx.core.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -351,8 +285,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Login\" />
