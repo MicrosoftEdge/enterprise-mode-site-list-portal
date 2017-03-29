@@ -10,16 +10,15 @@
         /// </summary>
         #region Public Properties
 
-        //Gets and sets ChangeTypeId value
+        // Gets and sets ChangeTypeId value
         public int ChangeTypeId { get; set; }
 
-        //Gets and sets ChangeTypeName value
+        // Gets and sets ChangeTypeName value
         public string ChangeTypeName { get; set; }
 
-        //Gets and sets IsActive value
+        // Gets and sets IsActive value
         public bool IsActive { get; set; }
 
         #endregion
     }
-
 }

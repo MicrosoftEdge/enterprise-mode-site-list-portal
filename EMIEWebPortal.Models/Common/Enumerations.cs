@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel;
-
-using System.Reflection;
-
-//this namespace will contain all the common entitys and functions which are common to all other files
+﻿// This namespace will contain all the common entities and functions which are common to all other files
 namespace EMIEWebPortal.Common
 {
-    //This is Enum used to declare all possible status of a ticket
+    // This enum is used to declare all possible statuses of a ticket
     public enum ApprovalState
     {
         None = 0,
-        //Ticket Intitiated
+
+        // Ticket Intitiated
         Initiated = 1,
 
-        //Ticket verified on test machine or not
+        // Ticket verified on test machine or not
         VerifiedOnTestMachine = 2,
 
-        //Ticket Approval is pending at some approver
-        Pending=3,
+        // Ticket Approval is pending at some approver
+        Pending = 3,
 
-        //Ticket is approved by all approvers
-        Approved=4,
+        // Ticket is approved by all approvers
+        Approved = 4,
 
-        //Ticket is rejected by any of the approvers
-        Rejected=5,
-
+        // Ticket is rejected by any of the approvers
+        Rejected = 5,
 
         VerificationFailedTestMachine = 7
     }
@@ -41,73 +34,72 @@ namespace EMIEWebPortal.Common
     {
         None = 0,
 
-        Initiated=1,
+        Initiated = 1,
 
-        //Ticket verified on test machine or not
-        VerifiedOnTestMachine=2,
+        // Ticket verified on test machine or not
+        VerifiedOnTestMachine = 2,
 
-        //Ticket Approval is pending at all approvers
-        ApprovalPending=3,
+        // Ticket Approval is pending at all approvers
+        ApprovalPending = 3,
 
-        //Ticket Approval is pending at some approver
-        PartiallyApproved=4,
+        // Ticket Approval is pending at some approver
+        PartiallyApproved = 4,
 
-        //Approved by all Approvers
-        Approved=5,
+        // Approved by all Approvers
+        Approved = 5,
 
-        //Rejectd by any of approvers
-        Rejected=6,
+        // Rejected by any of approvers
+        Rejected = 6,
 
-        //Ticket is scheduled for production changes
-        ProductionReady=7,
+        // Ticket is scheduled for production changes
+        ProductionReady = 7,
 
-        //Ticket is signed off/Closed
-        SignedOff=8,
+        // Ticket is signed off/Closed
+        SignedOff = 8,
 
-        //Ticket is RollBack
-        RolledBack=9,
+        // Ticket is RollBack
+        RolledBack = 9,
 
-        //Verification failed tickets
+        // Verification failed tickets
         VerificationFailedTestMachine = 10,
 
-        //Closed tickets
-        Closed=11,
+        // Closed tickets
+        Closed = 11,
 
-        //Production Changes Scheduled tickets
-        ProductionChangesScheduled =12
-
+        // Production Changes Scheduled tickets
+        ProductionChangesScheduled = 12
     }
 
     /// <summary>
     /// This is operation will be used to specify whether we want to delete/update/insert records 
     /// For e.g. if new request is raised then that request will get inserted and when user click on edit button, 
-    /// hhe/she can modified the save data.  
+    /// he/she can modified the save data.  
     /// </summary>
     public enum Operation
     {
         None = 0,
-        //Ticket Insertion
+
+        // Ticket Insertion
         Insert = 1,
 
-        //Ticket Updation
+        // Ticket Updation
         Update = 2,
 
-        //Ticket Deletion
+        // Ticket Deletion
         Delete = 3,
 
-        //XML Ticket Add
+        // XML Ticket Add
         AddInSandbox = 4,
 
-
+        // Add in production
         AddInProduction = 5,
 
-        //SandBox Rollback
+        // SandBox Rollback
         SandboxRollback = 6,
 
-        //Production Rollback
+        // Production Rollback
         ProductionRollback = 7
     }
-
 
     /// <summary>
     /// This is operation will be used to specify whether we want to delete/update/insert url in xml 
@@ -117,36 +109,16 @@ namespace EMIEWebPortal.Common
     public enum ChangeType
     {
         None = 0,
-        //URL Insertion
+
+        // URL Insertion
         Add = 1,
 
-        //URL Deletion
+        // URL Deletion
         Delete = 2,
 
-        //URL Updation
+        // URL Updation
         Update = 3,
     }
-
-    //Will be considered in future
-    //public class GetEnum
-    //{
-    //    public static string GetEnumDescription(Enum value)
-    //    {
-    //        FieldInfo fi = value.GetType().GetField(value.ToString());
-
-    //        DescriptionAttribute[] attributes =
-    //            (DescriptionAttribute[])fi.GetCustomAttributes(
-    //            typeof(DescriptionAttribute),
-    //            false);
-
-    //        if (attributes != null &&
-    //            attributes.Length > 0)
-    //            return attributes[0].Description;
-    //        else
-    //            return value.ToString();
-    //    }
-    //}
-
 
     /// <summary>
     /// This Enum will handle the actions that we perform while verification sandbox and verification 
@@ -155,21 +127,20 @@ namespace EMIEWebPortal.Common
     {
         None = 0,
 
-        //ProductionSuccess
+        // ProductionSuccess
         ProductionSuccess = 1,
 
-        //ProductionFailure
+        // ProductionFailure
         ProductionFailure = 2,
 
-        //ProductionRollback
+        // ProductionRollback
         ProductionRollback = 3,
 
-        //SandBoxFailure
+        // SandBoxFailure
         SandboxFailure = 4,
 
-        //SandboxRollBack
+        // SandboxRollBack
         SandboxRollback = 5
-
     }
 
     /// <summary>
@@ -197,8 +168,6 @@ namespace EMIEWebPortal.Common
         IE10DocumentMode = 8,
 
         IE11DocumentMode = 9,
-
-        
     }
 
     /// <summary>
@@ -214,25 +183,23 @@ namespace EMIEWebPortal.Common
         MSEdge = 2
     }
 
-
     /// <summary>
     /// This Enum holds role ids of EMIE SSP users
     /// </summary>
     public enum UserRole
     {
         None = 0,
-        //Requester
-        Requester =1,
 
-        //App Manager
+        // Requester
+        Requester = 1,
+
+        // App Manager
         AppManager = 2,
 
-        //Group Head
-        GroupHead =3,
+        // Group Head
+        GroupHead = 3,
 
-        //EMIE Champion
-        EMIEChampion=4
+        // EMIE Champion
+        EMIEChampion = 4
     }
-
-    
 }

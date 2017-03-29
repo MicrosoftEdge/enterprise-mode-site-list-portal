@@ -1822,8 +1822,6 @@ namespace EMIEWebPortal.Controllers
             {
                 throw;
             }
-            return null;
-
         }
 
         /// <summary>

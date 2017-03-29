@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
     /// <summary>
-    /// Model class that will hold one key value pair of configutaion item from list of such config items.
+    /// Model class that will hold one key value pair of configuration items from list of such config items.
     /// </summary>
     public class ConfigurationData
     {
@@ -17,7 +11,7 @@ namespace EMIEWebPortal.Models
         public string key { get; set; }
 
         /// <summary>
-        /// Value of that configuration item e.g. XMl path for SandboxEnvironment key
+        /// Value of that configuration item e.g. XML path for SandboxEnvironment key
         /// </summary>
         public object value { get; set; }
     }

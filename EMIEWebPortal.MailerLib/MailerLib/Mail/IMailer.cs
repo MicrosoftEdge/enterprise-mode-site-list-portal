@@ -1,6 +1,6 @@
 ﻿namespace MailerLib
 {
-    //Interface for mailer functionality
+    // Interface for mailer functionality
     public interface IMailer 
     {
         /// <summary>

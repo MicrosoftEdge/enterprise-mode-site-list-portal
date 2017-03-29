@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
+    using System.Collections.Generic;
+
     public class ApprovalData
     {
         public string Key { get; set; }
+
         public List<Users> Value { get; set; }
 
         public ApprovalData()
-        { }
+        {
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
     /// <summary>
     /// This is a UserLoginRole class, and will hold the information about user and role of user
@@ -11,10 +10,10 @@ namespace EMIEWebPortal.Models
         /// </summary>
         #region Public Properties
 
-        //Get-Set Valid User value
+        // Get-Set Valid User value
         public bool ValidUser { get; set; }
 
-        //Get-Set User Role value
+        // Get-Set User Role value
         public string UserRole { get; set; } 
 
         #endregion

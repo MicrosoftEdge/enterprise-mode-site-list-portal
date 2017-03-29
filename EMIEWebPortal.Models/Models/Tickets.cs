@@ -1,10 +1,9 @@
-﻿using EMIEWebPortal.Common;
-using System;
-using System.Collections.Generic;
-
-
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using Common;
+
     /// <summary>
     /// This is an Ticket model class, and will hold the values for Ticket data
     /// </summary>
@@ -15,72 +14,71 @@ namespace EMIEWebPortal.Models
         /// </summary>
         #region Public Properties
 
-        //Gets and sets TicketId value
+        // Gets and sets TicketId value
         public int TicketId { get; set; }
 
-        //Gets and sets application value for ticket
+        // Gets and sets application value for ticket
         public Applications Application { get; set; }
 
-        //Gets and sets RequestedBy value
+        // Gets and sets RequestedBy value
         public Users RequestedBy { get; set; }
 
-        //Gets and sets Comments for RequestedBy 
+        // Gets and sets Comments for RequestedBy 
         public string Description { get; set; }
 
-        //Gets and sets ChangeType value
+        // Gets and sets ChangeType value
         public ChangeTypes ChangeType { get; set; }
 
-
-        //Gets and sets ReasonForChange value
+        // Gets and sets ReasonForChange value
         public ReasonForChanges ReasonForChange { get; set; }
 
-        //Gets and sets comments for ReasonForChange
+        // Gets and sets comments for ReasonForChange
         public string ReasonForChangeComments { get; set; }
 
-        //Gets and sets BusinessImpact value
+        // Gets and sets BusinessImpact value
         public string BusinessImpact { get; set; }
 
-        //Gets and sets DocMode value
+        // Gets and sets DocMode value
         public DocModes DocMode { get; set; }
 
         #region change type
 
-        //Gets and sets X_UAMetaTage value
+        // Gets and sets X_UAMetaTage value
         public bool? X_UAMetaTage { get; set; }
 
-        //Gets and sets X_UAMetaTageDetails value
+        // Gets and sets X_UAMetaTageDetails value
         public string X_UAMetaTageDetails { get; set; }
 
-        //Gets and sets X_UAHonor value
+        // Gets and sets X_UAHonor value
         public bool? X_UAHonor { get; set; }
 
-        //Gets and sets MultipleX_UA value
+        // Gets and sets MultipleX_UA value
         public bool? MultipleX_UA { get; set; }
 
-        //Gets and sets ExternalFacingSite value
+        // Gets and sets ExternalFacingSite value
         public bool? ExternalFacingSite { get; set; }
 
-        //Gets and sets FQDN value
+        // Gets and sets FQDN value
         public string FQDN { get; set; }
 
         #endregion change type
 
-        //Gets and sets AppSiteUrl value
+        // Gets and sets AppSiteUrl value
         public string AppSiteUrl { get; set; }
 
-        //Gets and sets Open In value
+        // Gets and sets Open In value
         public bool? DomainOpenInEdge { get; set; }
        
-        //Gets and sets FinalTicketStatus value
+        // Gets and sets FinalTicketStatus value
         public TicketStatus FinalTicketStatus { get; set; }
 
-        //Gets and sets list of Approvals for ticket
+        // Gets and sets list of Approvals for ticket
         public List<Approvals> Approvals { get; set; }
 
-        //Gets and sets Scheduled DateTime Start for production changes for ticket
+        // Gets and sets Scheduled DateTime Start for production changes for ticket
         public DateTime? ScheduleDateTimeStart { get; set; }
 
-        //Gets and sets Scheduled DateTime End for production changes for ticket
+        // Gets and sets Scheduled DateTime End for production changes for ticket
         public DateTime? ScheduleDateTimeEnd { get; set; }
 
         /// <summary>
@@ -103,16 +101,15 @@ namespace EMIEWebPortal.Models
         /// </summary>
         public string TicketCreationDateTime { get; set; }
 
-
-        //Gets and sets AppSiteUrl value
+        // Gets and sets AppSiteUrl value
         public string SubDomainUrl { get; set; }
 
-        //Gets and sets Open In value
+        // Gets and sets Open In value
         public bool? SubDomainOpenInEdge { get; set; }
 
         public DocModes SubDomainDocMode { get; set; }
 
-        //Gets and sets X_UAHonor value
+        // Gets and sets X_UAHonor value
         public bool? SubDomainX_UAHonor { get; set; }
 
         /// <summary>
@@ -121,16 +118,15 @@ namespace EMIEWebPortal.Models
         public string ContactSupportEmail { get; set; }
 
         /// <summary>
-        /// gets and sets the datetimeoffset value of  the timezone on which the code is running
+        /// Gets and sets the datetime offset value of the time zone on which the code is running
         /// </summary>
         public int DateTimeOffset { get; set; }
 
         /// <summary>
-        /// gets and sets the rejected comment
+        /// Gets and sets the rejected comment
         /// </summary>
         public string RejectedReason { get; set; }
+
         #endregion
     }
 }
-
-

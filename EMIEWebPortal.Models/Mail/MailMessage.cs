@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// This is Mail class which will club all mailing related data to be sent to Mailer library
     /// </summary>
@@ -36,12 +33,12 @@ namespace EMIEWebPortal.Models
         public Applications application;
       
         /// <summary>
-        /// Attachements to mail
+        /// Attachments to mail
         /// </summary>
         public List<System.Net.Mail.Attachment> attachments;
 
         /// <summary>
-        /// Confirguration object for which mail is to be sent
+        /// Configuration object for which mail is to be sent
         /// </summary>
         public Configuration configurationSettings;
 
@@ -64,7 +61,5 @@ namespace EMIEWebPortal.Models
         /// Password of email account
         /// </summary>
         public string UserPasswordOfEmailAccount;
-
-
     }
 }

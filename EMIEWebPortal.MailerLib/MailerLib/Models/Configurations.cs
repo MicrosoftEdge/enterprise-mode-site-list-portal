@@ -1,7 +1,7 @@
-﻿using System.Configuration;
-
-namespace MailerLib
+﻿namespace MailerLib
 {
+    using System.Configuration;
+
     /// <summary>
     /// Configuration class for providing different config parameter for mails and  mail server
     /// </summary>
@@ -46,11 +46,9 @@ namespace MailerLib
             public static string RequestScheduledForProduction = "RequestScheduledForProduction";
             public static string ProductionChangesDoneThroughScheduler = "RequestScheduledForProduction";
 
-
             public static string RequestFailedOnTestMachine = "RequestRollbackOnSandBox";
             public static string RequestFailedOnProdMachine = "RequestRejected";
 
-            
             public static string UserEdited = "UserManagement";
             public static string UserActivated = "UserManagement";
             public static string UserDeactivated = "UserManagement";
@@ -62,28 +60,30 @@ namespace MailerLib
             public static string ProductionChangesFreezeScheduleEdited = "ProductionChangesFreezeScheduleEdited";
             public static string ApplicationAdded = "ApplicationAdded";
         }
+
         /// <summary>
         /// Get-Set Template path property of web site (App_Data folder of Web site)
         /// </summary>
         private string _TemplatePath = null;
+
         public string TemplatePath
         {
             get
             {
                 return _TemplatePath;
             }
+
             set
             {
                 _TemplatePath = value;
             }
         }
 
-        
-
         /// <summary>
         /// Get-Set RequesterRaisedRequest mail template property 
         /// </summary>
         private string _RequesterRaisedRequest = null;
+
         public string RequesterRaisedRequest
         {
             get
@@ -103,6 +103,7 @@ namespace MailerLib
         /// Get-Set RequestSentForApproval mail template property 
         /// </summary>
         private string _RequestSentForApproval = null;
+
         public string RequestSentForApproval
         {
             get
@@ -118,11 +119,11 @@ namespace MailerLib
             }
         }
 
-
         /// <summary>
         /// Get-Set RequestApproved mail template property 
         /// </summary>
         private string _RequestApproved = null;
+
         public string RequestApproved
         {
             get
@@ -142,6 +143,7 @@ namespace MailerLib
         /// Get-Set RequestScheduledForProduction mail template property 
         /// </summary>
         private string _RequestScheduledForProduction = null;
+
         public string RequestScheduledForProduction
         {
             get
@@ -157,12 +159,11 @@ namespace MailerLib
             }
         }
 
-
-
         /// <summary>
         /// Get-Set ProductionChangesDoneThroughScheduler mail template property 
         /// </summary>
         private string _ProductionChangesDoneThroughScheduler = null;
+
         public string ProductionChangesDoneThroughScheduler
         {
             get
@@ -178,12 +179,11 @@ namespace MailerLib
             }
         }
 
-
-
         /// <summary>
         /// Get-Set RequestSentForApproval mail template property 
         /// </summary>
         private string _SendReminder = null;
+
         public string SendReminder
         {
             get
@@ -199,8 +199,8 @@ namespace MailerLib
             }
         }
 
-        /// </summary>
         private string _RequestRejected = null;
+
         public string RequestRejected
         {
             get
@@ -216,8 +216,8 @@ namespace MailerLib
             }
         }
 
-        /// </summary>
         private string _RequestDelegated = null;
+
         public string RequestDelegated
         {
             get
@@ -233,8 +233,8 @@ namespace MailerLib
             }
         }
 
-        /// </summary>
         private string _RequestFailedOnTestMachine = null;
+
         public string RequestFailedOnTestMachine
         {
             get
@@ -250,9 +250,8 @@ namespace MailerLib
             }
         }
 
-
-           /// </summary>
         private string _RequestFailedOnProdMachine = null;
+
         public string RequestFailedOnProdMachine
         {
             get
@@ -268,9 +267,8 @@ namespace MailerLib
             }
         }
         
-
-        /// </summary>
         private string _RequestRollbackOnSandBox = null;
+
         public string RequestRollbackOnSandBox
         {
             get
@@ -286,8 +284,8 @@ namespace MailerLib
             }
         }
 
-        /// </summary>
         private string _RequestRollbackOnProduction = null;
+
         public string RequestRollbackOnProduction
         {
             get
@@ -303,8 +301,8 @@ namespace MailerLib
             }
         }
 
-        /// </summary>
         private string _SignOff = null;
+
         public string SignOff
         {
             get
@@ -320,8 +318,8 @@ namespace MailerLib
             }
         }
 
-        /// </summary>
         private string _UserEdited = null;
+
         public string UserEdited
         {
             get
@@ -338,6 +336,7 @@ namespace MailerLib
         }
 
         private string _UserActivated = null;
+
         public string UserActivated
         {
             get
@@ -352,7 +351,9 @@ namespace MailerLib
                 return _UserActivated;
             }
         }
+
         private string _UserDeactivated = null;
+
         public string UserDeactivated
         {
             get
@@ -369,6 +370,7 @@ namespace MailerLib
         }
 
         private string _UserAdded = null;
+
         public string UserAdded
         {
             get
@@ -385,6 +387,7 @@ namespace MailerLib
         }
 
         private string _UserRegistrationRequested = null;
+
         public string UserRegistrationRequested
         {
             get
@@ -400,8 +403,8 @@ namespace MailerLib
             }
         }
 
-
         private string _UserRegistered = null;
+
         public string UserRegistered
         {
             get
@@ -417,8 +420,8 @@ namespace MailerLib
             }
         }
 
-
         private string _ProductionChangesFreezeScheduleEdited = null;
+
         public string ProductionChangesFreezeScheduleEdited
         {
             get
@@ -435,6 +438,7 @@ namespace MailerLib
         }
 
         private string _ApplicationAdded = null;
+
         public string ApplicationAdded
         {
             get
@@ -451,6 +455,7 @@ namespace MailerLib
         }
 
         private string _ConfigurationSettingsEdited = null;
+
         public string ConfigurationSettingsEdited
         {
             get
@@ -470,6 +475,7 @@ namespace MailerLib
         /// Get-Set TemplatesFolder property of mail templates in App_data folder of web site
         /// </summary>
         private string _TemplatesFolder = null;
+
         public string TemplatesFolder
         {
             get
@@ -477,9 +483,13 @@ namespace MailerLib
                 if (_TemplatesFolder == null)
                 {
                     _TemplatesFolder = Configurations.GetSetting(Configurations.Keys.TemplatesFolder);
+
                     if (!_TemplatesFolder.EndsWith("\\"))
+                    {
                         _TemplatesFolder += "\\";
+                    }
                 }
+
                 return _TemplatesFolder;
             }
         }
@@ -488,6 +498,7 @@ namespace MailerLib
         /// Get-Set Interval property of SMTP mail server
         /// </summary>
         private double? _interval = null;
+
         public double Interval
         {
             get
@@ -509,12 +520,15 @@ namespace MailerLib
         /// Get-Set Host address property of SMTP mail server
         /// </summary>
         private string _host = null;
+
         public string Host
         {
             get
             {
                 if (_host == null)
+                {
                     _host = GetSetting(Keys.Host);
+                }
 
                 return _host;
             }
@@ -524,6 +538,7 @@ namespace MailerLib
         /// Get-Set port property of SMTP mail server
         /// </summary>
         private int? _port = null;
+
         public int Port
         {
             get
@@ -545,6 +560,7 @@ namespace MailerLib
         /// Get-Set UserName property of mail 'from' address
         /// </summary>
         private string _username = null;
+
         public string Username
         {
             get
@@ -562,6 +578,7 @@ namespace MailerLib
         /// Get-Set Password property of mail 'from' address
         /// </summary>
         private string _password = null;
+
         public string Password
         {
             get
@@ -576,9 +593,10 @@ namespace MailerLib
         }
 
         /// <summary>
-        /// Get-Set Ssl property of smtp server
+        /// Get-Set SSL property of smtp server
         /// </summary>
         private bool? _isSsl = null;
+
         public bool Ssl
         {
             get
@@ -597,18 +615,22 @@ namespace MailerLib
         }
 
         private string _fromEmail = null;
+
         public string FromEmail
         {
             get
             {
                 if (_fromEmail == null)
+                {
                     _fromEmail = GetSetting(Keys.FromEmail);
+                }
 
                 return _fromEmail;
             }
         }
 
         private bool? _HtmlMail = null;
+
         public bool HtmlMail
         {
             get
@@ -627,6 +649,7 @@ namespace MailerLib
         /// Get-Set Contact Support  mail template property 
         /// </summary>
         private string _ContactSupportTeam = null;
+
         public string ContactSupportTeam
         {
             get
@@ -641,6 +664,7 @@ namespace MailerLib
                 return _ContactSupportTeam;
             }
         }
+
         /// <summary>
         /// Get setting from config file
         /// </summary>
@@ -650,6 +674,5 @@ namespace MailerLib
         {
             return ConfigurationManager.AppSettings[key];
         }
-
     }
 }

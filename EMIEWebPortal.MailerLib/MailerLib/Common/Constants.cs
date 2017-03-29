@@ -5,14 +5,8 @@
     /// </summary>
     public static class Constants
     {
-        //This region contains all the public constants
+        // This region contains all the public constants
         #region Public Constants
-
-        /// <summary>
-        /// This is the constant for showing message in Mail for ticket initiated but not sent for approval
-        /// </summary>
-        ///Currently commented -If used in future will uncomment it
-        //public const string NoApproverSelected = "Yet not sent for approval";
 
         /// <summary>
         /// This is the constant for mail type
@@ -23,7 +17,6 @@
         /// This is the constant for date time format to be shown in Mail
         /// </summary>
         public const string DateTimeFormat = "{0:d/M/yyyy HH:mm:ss}";        
-
 
         /// <summary>
         /// This is the constant for approver row created at run time in Mail
@@ -43,9 +36,8 @@
         /// <summary>
         /// This is the constant for EMIE Champion Group string in Mail
         /// </summary>
-        public const string EMIEChampGroup="Administrator Group";
+        public const string EMIEChampGroup = "Administrator Group";
 
         #endregion Public Constants
-
     }
 }

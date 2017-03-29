@@ -1,5 +1,4 @@
-﻿
-namespace EMIEWebPortal.Common
+﻿namespace EMIEWebPortal.Common
 {
     /// <summary>
     /// This class contains all the constant variables that will be used in the application.
@@ -8,7 +7,6 @@ namespace EMIEWebPortal.Common
     /// </summary>
     public static class Constants
     {
-        //This region contains all the public constants
         #region Public Constants
 
         /// <summary>
@@ -33,7 +31,7 @@ namespace EMIEWebPortal.Common
         public const string Update = "UPDATE";
 
         /// <summary>
-        /// This constant contains the string for ticketstatus.
+        /// This constant contains the string for ticket status.
         /// </summary>
         public const string TicketStatus = "The request {0} has been {1} by the user {2}";
 
@@ -58,7 +56,7 @@ namespace EMIEWebPortal.Common
         public const string DeleteUser = "The user named {0} has been made inactive by {1}";
 
         /// <summary>
-        /// This constant contains the string for ticketstatus.
+        /// This constant contains the string for ticket status.
         /// </summary>
         public const string ConfigSettings = "The configuration settings have been set by the user {0}";
 
@@ -67,7 +65,6 @@ namespace EMIEWebPortal.Common
         /// </summary>
         public const string ChangeRequestMethod = "ChangeRequest";
 
-
         /// <summary>
         /// This constant contains the string for ChangeRequestMethod.
         /// </summary>
@@ -75,7 +72,7 @@ namespace EMIEWebPortal.Common
 
         /// <summary>
         /// Contains the path where files will be stored. Currently its on local machine. We can save it to any server.
-        /// Be cautious while copying the new Bins to production. Just copy the Dlls. 
+        /// Be cautious while copying the new Bins to production. Just copy the DLLs. 
         /// </summary>
         public const string FileUploadPath = "~/App/Uploads/";
         public const string FileUploadVerifySandboxSuccessfulPath = "\\VerifySandBox\\Successful\\";
@@ -114,7 +111,7 @@ namespace EMIEWebPortal.Common
         public const string CannotBeDeleted = " cannot be deleted.";
 
         /// <summary>
-        /// This contant contains the full computer name part 
+        /// This constant contains the full computer name part 
         /// </summary>
         public const string EMIEChampGroup = "Administrator group";
 
@@ -170,39 +167,47 @@ namespace EMIEWebPortal.Common
         /// This constant is for the Name of the application
         /// </summary>
         public const string Name = "Name : ";
+
         /// <summary>
         /// This constant is for the Owner of the application(ticket raised by)
         /// </summary>
         public const string Owner = "Owner : ";
+
         /// <summary>
         /// This constant is for the email id of the owner
         /// </summary>
         public const string Email = "Email : ";
+
         /// <summary>
         /// This constant is for the Ticket id of the request
         /// </summary>
         public const string TicketId = "Current Ticket ID : ";
+
         /// <summary>
         /// This constant is for the Edited date of the ticket
         /// </summary>
         public const string EditedDate = "Edited Date : ";
+
         /// <summary>
         /// This constant is for the spacing and new line
         /// </summary>
         public const string Spacing = "\n\t\t";
+
         /// <summary>
         /// This constant is for Previous id's of the request
         /// </summary>
         public const string PreviousTicketId = "Previous IDs : ";
+
         /// <summary>
         /// This constant is for last modified by user
         /// </summary>
         public const string LastEditedBy = "Last Edited By : ";
+
         /// <summary>
         /// This constant is for indicating a bulk import from the Enterprise Mode Site List Manager
         /// </summary>
         public const string BulkImport = "Site added via bulk import";
+        
         #endregion
-
     }
 }

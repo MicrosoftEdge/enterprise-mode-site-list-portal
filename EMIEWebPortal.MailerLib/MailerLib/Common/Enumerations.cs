@@ -1,28 +1,25 @@
-﻿
-//this namespace will contain all the common entitys and functions which are common to all other files
+﻿// This namespace will contain all the common entitys and functions which are common to all other files
 namespace MailerLib
 {
-
-    //This is Enum used to declare all possible status of a ticket
+    // This is Enum used to declare all possible status of a ticket
     public enum ApprovalState
     {
         None = 0,
 
-        //Ticket Intitiated
+        // Ticket Intitiated
         Initiated = 1,
 
-        //Ticket verified on test machine or not
+        // Ticket verified on test machine or not
         VerifiedOnTestMachine = 2,
 
-        //Ticket Approval is pending at some approver
+        // Ticket Approval is pending at some approver
         Pending = 3,
 
-        //Ticket is approved by all approvers
+        // Ticket is approved by all approvers
         Approved = 4,
 
-        //Ticket is rejected by any of the approvers
+        // Ticket is rejected by any of the approvers
         Rejected = 5,
-
 
         VerificationFailedTestMachine = 7
     }
@@ -39,72 +36,69 @@ namespace MailerLib
 
         Initiated = 1,
 
-        //Ticket verified on test machine or not
+        // Ticket verified on test machine or not
         VerifiedOnTestMachine = 2,
 
-        //Ticket Approval is pending at all approvers
+        // Ticket Approval is pending at all approvers
         ApprovalPending = 3,
 
-        //Ticket Approval is pending at some approver
+        // Ticket Approval is pending at some approver
         PartiallyApproved = 4,
 
-        //Approved by all Approvers
+        // Approved by all Approvers
         Approved = 5,
 
-        //Rejectd by any of approvers
+        // Rejectd by any of approvers
         Rejected = 6,
 
-        //Ticket is scheduled for production changes
+        // Ticket is scheduled for production changes
         ProductionReady = 7,
 
-        //Ticket is signed off/Closed
+        // Ticket is signed off/Closed
         SignedOff = 8,
 
-        //Ticket is RollBack
+        // Ticket is RollBack
         RolledBack = 9,
 
-        //Verification failed tickets
+        // Verification failed tickets
         VerificationFailedTestMachine = 10,
 
-        //Closed tickets
+        // Closed tickets
         Closed = 11,
 
-        //Production Changes Scheduled for scheduler
-        ProductionChangesScheduled =12
-
+        // Production Changes Scheduled for scheduler
+        ProductionChangesScheduled = 12
     }
 
     /// <summary>
     /// This is operation will be used to specify whether we want to delete/update/insert records 
     /// For e.g. if new request is raised then that request will get inserted and when user click on edit button, 
-    /// hhe/she can modified the save data.  
+    /// he/she can modified the save data.  
     /// </summary>
     public enum Operation
     {
         None = 0,
 
-        //Ticket Insertion
+        // Ticket Insertion
         Insert = 1,
 
-        //Ticket Updation
+        // Ticket Updation
         Update = 2,
 
-        //Ticket Deletion
+        // Ticket Deletion
         Delete = 3,
 
-        //XML Ticket Add
+        // XML Ticket Add
         AddInSandbox = 4,
-
 
         AddInProduction = 5,
 
-        //SandBox Rollback
+        // SandBox Rollback
         SandboxRollback = 6,
 
-        //Production Rollback
+        // Production Rollback
         ProductionRollback = 7
     }
-
 
     /// <summary>
     /// This is operation will be used to specify whether we want to delete/update/insert url in xml 
@@ -115,13 +109,13 @@ namespace MailerLib
     {
         None = 0,
 
-        //URL Insertion
+        // URL Insertion
         Add = 1,
 
-        //URL Deletion
+        // URL Deletion
         Delete = 2,
 
-        //URL Updation
+        // URL Updation
         Update = 3,
     }
 
@@ -132,21 +126,20 @@ namespace MailerLib
     {
         None = 0,
 
-        //ProductionSuccess
+        // ProductionSuccess
         ProductionSuccess = 1,
 
-        //ProductionFailure
+        // ProductionFailure
         ProductionFailure = 2,
 
-        //ProductionRollback
+        // ProductionRollback
         ProductionRollback = 3,
 
-        //SandBoxFailure
+        // SandBoxFailure
         SandboxFailure = 4,
 
-        //SandboxRollBack
+        // SandboxRollBack
         SandboxRollback = 5
-
     }
 
     /// <summary>
@@ -174,8 +167,6 @@ namespace MailerLib
         IE10DocumentMode = 8,
 
         IE11DocumentMode = 9,
-
-
     }
 
     /// <summary>
@@ -197,16 +188,17 @@ namespace MailerLib
     public enum UserRole
     {
         None = 0,
-        //Requester
+
+        // Requester
         Requester = 1,
 
-        //App Manager
+        // App Manager
         AppManager = 2,
 
-        //Group Head
+        // Group Head
         GroupHead = 3,
 
-        //EMIE Champion
+        // EMIE Champion
         EMIEChampion = 4
     }
 }

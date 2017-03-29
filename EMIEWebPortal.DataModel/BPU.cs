@@ -28,15 +28,15 @@ namespace EMIEWebPortal.DataModel
         public string BPU1 { get; set; }
         public string BPUFullName { get; set; }
         public string OwningOrganization { get; set; }
-        public Nullable<int> BPUTestLeadId { get; set; }
-        public Nullable<int> RedmondLeadId { get; set; }
-        public Nullable<int> EspooLeadId { get; set; }
+        public int? BPUTestLeadId { get; set; }
+        public int? RedmondLeadId { get; set; }
+        public int? EspooLeadId { get; set; }
         public string EngineeringTeamMembers { get; set; }
-        public Nullable<int> CreatedById { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<int> ModifiedById { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public Nullable<bool> IsActive { get; set; }
+        public int? CreatedById { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public int? ModifiedById { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+        public bool? IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }

@@ -1,112 +1,106 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
+    using System.ComponentModel;
+
     /// <summary>
-    /// Enumeration for different Mail type that could besent during Ticket Life Cycle
+    /// Enumeration for different Mail type that could be sent during Ticket Life Cycle
     /// </summary>
     public enum MailMessageType
     {
-
-        //No mail type
+        // No mail type
         [Description("Generic mail")]
         None,
 
-        //Request Initiate
+        // Request Initiate
         [Description("EMIE Change Request Raised !!")]
         RequesterRaisedRequest,
 
-        //Request Sent for Approval
+        // Request Sent for Approval
         [Description("EMIE Change Request Sent for Approval !!")]
         RequestSentForApproval,
 
-        //Request Approved
+        // Request Approved
         [Description("EMIE Change Request Approved !!")]
         RequestApproved,
 
-        //Request Rejected
+        // Request Rejected
         [Description("EMIE Change Request Rejected !!")]
         RequestRejected,
 
-        //Request Delegated
+        // Request Delegated
         [Description("EMIE Change Request Delegated !!")]
         RequestDelegated,
 
-        //Request Sceduled for production
+        // Request Sceduled for production
         [Description("EMIE Change Request Scheduled for Production !!")]
         RequestScheduledForProduction,
 
-        //Request Failed On Test Machine
+        // Request Failed On Test Machine
         [Description("EMIE Change Request Failed On Test Machine !!")]
         RequestFailedOnTestMachine,
 
-        //Requets Rollback Sandbox Machine
+        // Request Rollback Sandbox Machine
         [Description("EMIE Change Request rollback on sandbox machine !!")]
         RequestRollbackOnSandBox,
 
-        //Requets Rollback Production
+        // Request Rollback Production
         [Description("EMIE Change Request rollback on production!!")]
         RequestRollbackOnProduction,
 
-        //Request SignOff
+        // Request SignOff
         [Description("EMIE Change Request Signed Off !!")]
         SignOff,
 
-        //Prod Changes Freeze Schedule edited
+        // Prod Changes Freeze Schedule edited
         [Description("EMIE Production Change Freeze Schedule edited !!")]
         ProductionChangesFreezeScheduleEdited,        
 
-        //Request Failed On Prod Machine
+        // Request Failed On Prod Machine
         [Description("EMIE Change Request Failed On Production Machine !!")]
         RequestFailedOnProdMachine,
 
-        //Prod Changes done by Scheduler service
+        // Prod Changes done by Scheduler service
         [Description("EMIE Production Changes done through scheduler service !!")]
         ProductionChangesDoneThroughScheduler,  
 
-        //User Edited
+        // User Edited
         [Description("EMIE User Edited !!")]
         UserEdited,
 
-        //User Activated
+        // User Activated
         [Description("EMIE User Activated !!")]
         UserActivated,
 
-        //User Deleted
+        // User Deleted
         [Description("EMIE User Deactivated !!")]
         UserDeactivated,
 
-        //User Added
+        // User Added
          [Description("New EMIE User added in system !!")]
         UserAdded,
 
-        //Registration ask by user
+        // Registration ask by user
         [Description("User requested for Registration on EMIE SSP !!")]
         RegistrationRequested,
 
-        //user registered
+        // User registered
         [Description("User registered on EMIE SSP !!")]
         UserRegistered,
 
-        //Reminder for Approval 
+        // Reminder for Approval 
         [Description("Reminder !! Approval of request is pending at your end !!")]
         SendReminder,
 
-        //Application Added
+        // Application Added
         [Description("EMIE Application Added !!")]
         ApplicationAdded,
 
-        //Configuration Settings edited
+        // Configuration Settings edited
         [Description("EMIE configuration settings are edited !!")]
         ConfigurationSettingsEdited,
 
-        //Contact Support Team
+        // Contact Support Team
         [Description("Contact Support Team !!")]
         ContactSupportTeam
-         
     }
 }

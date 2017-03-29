@@ -1,12 +1,11 @@
-using System;
-using System.Runtime.InteropServices;
-using BOOL = System.Boolean;
-using DWORD = System.UInt32;
-using LPWSTR = System.String;
-using NET_API_STATUS = System.UInt32;
-
 namespace EMIEWebPortal.Common
 {
+    using System;
+    using System.Runtime.InteropServices;
+    using DWORD = System.UInt32;
+    using LPWSTR = System.String;
+    using NET_API_STATUS = System.UInt32;
+
     public class UNCAccessWithCredentials : IDisposable
     {
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
@@ -65,6 +64,7 @@ namespace EMIEWebPortal.Common
             {
                 NetUseDelete();
             }
+
             disposed = true;
             GC.SuppressFinalize(this);
         }
@@ -79,14 +79,12 @@ namespace EMIEWebPortal.Common
         /// <returns>True if mapping succeeds.  Use LastError to get the system error code.</returns>
         public bool VerifyAccessWithCredentials(string UNCPath, string user, string domain, string password)
         {
-
             sUNCPath = UNCPath;
             sUser = user;
             sPassword = password;
             sDomain = domain;
             return NetUseWithCredentials();
         }
-
 
         /// <summary>
         /// Connects to a UNC path using the credentials supplied.
@@ -103,7 +101,7 @@ namespace EMIEWebPortal.Common
             It's assumed UNCPath sent here is validated already as UNC Path e.g. \\ServerName\ShareName\FolderName
              */
             string[] splitSrvShare = UNCPath.Split('\\');
-            sUNCPath = "\\\\"+splitSrvShare[2]+"\\"+splitSrvShare[3];
+            sUNCPath = "\\\\" + splitSrvShare[2] + "\\" + splitSrvShare[3];
             sUser = user;
             sPassword = password;
             sDomain = domain;
@@ -146,7 +144,7 @@ namespace EMIEWebPortal.Common
             {
                 returncode = NetUseDel(null, sUNCPath, 2);
                 iLastError = (int)returncode;
-                return (returncode == 0);
+                return returncode == 0;
             }
             catch
             {
@@ -159,6 +157,5 @@ namespace EMIEWebPortal.Common
         {
             Dispose();
         }
-
     }
 }

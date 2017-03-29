@@ -1,6 +1,7 @@
-﻿using System;
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
+    using System;
+
     /// <summary>
     /// This is an ReasonForChange model class, and will hold the values for ReasonForChange data
     /// </summary>
@@ -11,16 +12,15 @@ namespace EMIEWebPortal.Models
         /// </summary>
         #region Public Properties
 
-        //Gets and sets ReasonForChangeId value
-        public Nullable<int> ReasonForChangeId { get; set; }
+        // Gets and sets ReasonForChangeId value
+        public int? ReasonForChangeId { get; set; }
 
-        //Gets and sets ReasonForChangeName value
+        // Gets and sets ReasonForChangeName value
         public string ReasonForChangeName { get; set; }
 
-        //Gets and sets IsActive value
+        // Gets and sets IsActive value
         public bool IsActive { get; set; }
 
         #endregion
     }
-
 }

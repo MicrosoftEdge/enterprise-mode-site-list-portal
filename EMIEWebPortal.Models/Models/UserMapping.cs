@@ -1,7 +1,7 @@
-﻿
-using System;
-namespace EMIEWebPortal.Models
+﻿namespace EMIEWebPortal.Models
 {
+    using System;
+
     public class UserMapping
     {
         /// <summary>
@@ -9,28 +9,28 @@ namespace EMIEWebPortal.Models
         /// </summary>
         #region Public Properties
 
-        //Get-Set  Id value
+        // Get-Set  Id value
         public int Id { get; set; }
 
-        //Get-Set User Id value
+        // Get-Set User Id value
         public int UserId { get; set; }
         
-       //Get-Set User Role Id value
+        // Get-Set User Role Id value
         public int RoleId { get; set; }
 
-        //Get-Set Mapping Details value
+        // Get-Set Mapping Details value
         public string MappingDetails { get; set; }
 
-        //Get-Set IsActive value
+        // Get-Set IsActive value
         public bool? IsActive { get; set; }
 
-        //Get-Set User property value
+        // Get-Set User property value
         public Users User { get; set; }
 
-        //Gets and Sets IsRegistered value of register users
+        // Gets and Sets IsRegistered value of register users
         public bool? IsRegistered { get; set; }
 
-        //Gets and sets ModifiedDate value
+        // Gets and sets ModifiedDate value
         public DateTime? ModifiedDate { get; set; }
 
         #endregion
