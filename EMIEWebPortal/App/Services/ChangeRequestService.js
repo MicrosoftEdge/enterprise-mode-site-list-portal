@@ -1,5 +1,4 @@
 ﻿EMIEModule.service("CRService", function ($timeout, $http, $rootScope) {
-
     //Get All fields data from MVC controller
     this.GetNewRequestFieldsData = function (user, IsEMIEChampion) {
         var parameters = {
@@ -16,7 +15,7 @@
         });
     }
 
-  
+
     //Submitting the ticket to MVC controller
     this.AddRequest = function (ticket, action) {
         var parameters = {
@@ -27,8 +26,8 @@
             cache: false,
             method: "post",
             url: "Ticket/ChangeRequest",
-            data: JSON.stringify(parameters),            
-            dataType: "json"            
+            data: JSON.stringify(parameters),
+            dataType: "json"
         });
 
         return response;
@@ -58,7 +57,7 @@
             params:
                 { findString: findUrl }
         })
-    
+
         return response;
     }
 
@@ -84,7 +83,7 @@
             method: "get",
             url: "XMLHelper/AddInXML",
             params:
-                { ticket : ticket}
+                { ticket: ticket }
         })
         return response
     }
@@ -162,17 +161,17 @@
             dataType: "json"
         });
     }
-    
+
 }).service("SharedProperties", function () {
-        var property = "";
-        return {
-            getProperty: function () {
-                return property;
-            },
-            setProperty: function (value) {
-                property = value;
-            }
-        };
+    var property = "";
+    return {
+        getProperty: function () {
+            return property;
+        },
+        setProperty: function (value) {
+            property = value;
+        }
+    };
 
 
-    })
+})

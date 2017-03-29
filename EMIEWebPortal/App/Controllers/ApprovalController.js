@@ -1,4 +1,4 @@
-﻿EMIEModule.controller("ApprovalController", function ($scope, approvalService, EMIETicketService, Constants,LoginService, SharedProperties, $route, $location, $sessionStorage, $rootScope) {
+﻿EMIEModule.controller("ApprovalController", function ($scope, approvalService, EMIETicketService, Constants, LoginService, SharedProperties, $route, $location, $sessionStorage, $rootScope) {
 
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {

@@ -108,7 +108,6 @@
                                         <input type="checkbox" ng-model="EditIsActive" />Active
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -222,7 +221,7 @@
                         <div class="modal-body">
                             <div class="form-row">
                                 <div><span class="EMIEControllabel">Domain</span></div>
-                                <div >
+                                <div>
                                     <input type="text" name="txtPDUserDomain" id="txtPDUserDomain" class="form-control" data-ng-model="PDUserDomain" required>
                                 </div>
                             </div>
@@ -375,149 +374,149 @@
                 </div>
             </div>
             <!--//===========================================================================================================================================================================
-        //                                                        NEEDED IN FUTURE
-        //===========================================================================================================================================================================-->
+            //                                                        NEEDED IN FUTURE
+            //===========================================================================================================================================================================-->
             <!--<div class="row">
-            <div><span class="EMIEControllabel">SANDBOX ENVIOURMENT</span><sup>*</sup></div>
+                <div><span class="EMIEControllabel">SANDBOX ENVIOURMENT</span><sup>*</sup></div>
 
-            <div class="col-lg-7">
-                <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
+                <div class="col-lg-7">
+                    <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
+                </div>
+
+                <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " ng-click="">...</button></div>
             </div>
 
-            <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " ng-click="">...</button></div>
-        </div>
+            <div class="row">
+                <div><span class="EMIEControllabel">SANDBOX ENV. CRENDENTIALS</span><sup>*</sup></div>
 
-        <div class="row">
-            <div><span class="EMIEControllabel">SANDBOX ENV. CRENDENTIALS</span><sup>*</sup></div>
+                <div class="col-lg-7">
+                    <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
+                </div>
 
-            <div class="col-lg-7">
-                <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text">
-            </div>
-
-            <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " data-toggle="modal" data-target="#myModal1" ng-click="">...</button></div>
-        </div>-->
+                <div class="col-lg-2"><button type="button" class="btn btn-success EMIEadd " data-toggle="modal" data-target="#myModal1" ng-click="">...</button></div>
+            </div>-->
             <!-- Model Popup 2 -->
             <!--<div id="myModal1" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
 
-                <div class="modal-header">
+                    <div class="modal-header">
 
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="row>">
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div><span class="EMIEControllabel">SELECT GROUPS</span></div>
-                                <div class="=col-lg-9">
-                                    <select class="form-control" name="BPUName" data-ng-model="GroupName"
-                                            data-ng-options="var.BPU as var.BPU for var in AppName | unique:'BPU' | orderBy:'BPU'"
-                                            data-ng-change="PopulateApplicationName()" required
-                                            ng-class="{'erroneous-field' : (form.BPUName.$dirty || submitted) && form.BPUName.$error.required}">
-                                        <option value="">--Select--</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-
-                            <div class="row">
-                                <div><span class="EMIEControllabel">SELECT APPS</span></div>
-                                <div class="col-lg-9">
-                                    <select name="Application" class="form-control" data-ng-model="Application" data-ng-disabled="DisabledApplicationName"
-                                            data-ng-options="var as var.ApplicationName for var in SelectedApplications"
-                                            data-ng-change="PopulateGroupName()" required
-                                            ng-class="{'erroneous-field' : (form.Application.$dirty || submitted) && form.Application.$error.required}">
-                                        <option value="">-- Select --</option>
-                                    </select>&nbsp;
-                                </div>
-                            </div>
-
-
-                        </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="radio">
-                                <label><input type="radio" name="optradio">ONE TIME</label>
+                    <div class="modal-body">
+
+                        <div class="row>">
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div><span class="EMIEControllabel">SELECT GROUPS</span></div>
+                                    <div class="=col-lg-9">
+                                        <select class="form-control" name="BPUName" data-ng-model="GroupName"
+                                                data-ng-options="var.BPU as var.BPU for var in AppName | unique:'BPU' | orderBy:'BPU'"
+                                                data-ng-change="PopulateApplicationName()" required
+                                                ng-class="{'erroneous-field' : (form.BPUName.$dirty || submitted) && form.BPUName.$error.required}">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="radio">
-                                <label><input type="radio" name="optradio">WEEKLY</label>
-                            </div>
-                            <div class="radio disabled">
-                                <label><input type="radio" name="optradio" >MONTHLY</label>
-                            </div>
-                        </div>
 
-                        <!-- Modal 2 right side -->
-            <!--<div class="col-lg-8" >
-        <div class="row">
+                            <div class="col-lg-6">
 
-            <div class="col-lg-6">
-                STARTING
-                <div class="col-lg-3" ng-hide="prodDatePicker">
-                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                            ng-model="datePick" is-open="opened" min="minDate" max="'2025-06-22'"
-                            datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
-                            ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-6">
-                TO-->
-            <!--<div class="col-lg-3" ng-hide="prodDatePicker">
-            <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                    ng-model="datePick2" is-open="opened" min="minDate" max="'2025-06-22'"
-                    datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
-                    ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
-        </div>-->
-            <!--</div>
-        </div>-->
-            <!--     <div>RECURE EVERY:<input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="width:25px"> WEEKS ON :</div>
-                                <div >
-                                    <label class="checkbox-inline"><input type="checkbox" value="">SUNDAY</label>
-                                    <label class="checkbox-inline"><input type="checkbox" value="">MONDAY</label>
-                                    <label class="checkbox-inline"><input type="checkbox" value="">TUESDAY</label>
-                                    <label class="checkbox-inline"><input type="checkbox" value="">WEDNESDAY</label>
+                                <div class="row">
+                                    <div><span class="EMIEControllabel">SELECT APPS</span></div>
+                                    <div class="col-lg-9">
+                                        <select name="Application" class="form-control" data-ng-model="Application" data-ng-disabled="DisabledApplicationName"
+                                                data-ng-options="var as var.ApplicationName for var in SelectedApplications"
+                                                data-ng-change="PopulateGroupName()" required
+                                                ng-class="{'erroneous-field' : (form.Application.$dirty || submitted) && form.Application.$error.required}">
+                                            <option value="">-- Select --</option>
+                                        </select>&nbsp;
+                                    </div>
                                 </div>
 
-                                <div>
-                                    <label class="checkbox-inline"><input type="checkbox" value="">THURSDAY</label>
-                                    <label class="checkbox-inline"><input type="checkbox" value="">FRIDAY</label>
-                                    <label class="checkbox-inline"><input type="checkbox" value="">SATERDAY</label>
-                                </div>
+
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">SAVE</button></div>
-                            <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">CANCEL</button></div>
-                        </div>
+                            <div class="col-lg-4">
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio">ONE TIME</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio">WEEKLY</label>
+                                </div>
+                                <div class="radio disabled">
+                                    <label><input type="radio" name="optradio" >MONTHLY</label>
+                                </div>
+                            </div>
 
+                            <!-- Modal 2 right side -->
+            <!--<div class="col-lg-8" >
+            <div class="row">
+
+                <div class="col-lg-6">
+                    STARTING
+                    <div class="col-lg-3" ng-hide="prodDatePicker">
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                                ng-model="datePick" is-open="opened" min="minDate" max="'2025-06-22'"
+                                datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
+                                ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
                     </div>
 
                 </div>
-            </div>
 
-        </div>-->
+
+                <div class="col-lg-6">
+                    TO-->
+            <!--<div class="col-lg-3" ng-hide="prodDatePicker">
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                        ng-model="datePick2" is-open="opened" min="minDate" max="'2025-06-22'"
+                        datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-disabled="DisableProdDate"
+                        ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open($event)" />
+            </div>-->
+            <!--</div>
+            </div>-->
+            <!--     <div>RECURE EVERY:<input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" style="width:25px"> WEEKS ON :</div>
+                                    <div >
+                                        <label class="checkbox-inline"><input type="checkbox" value="">SUNDAY</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">MONDAY</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">TUESDAY</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">WEDNESDAY</label>
+                                    </div>
+
+                                    <div>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">THURSDAY</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">FRIDAY</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">SATERDAY</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">SAVE</button></div>
+                                <div class="col-lg-2"><button type="button" class="btn btn-success ThemeBtn" data-dismiss="modal">CANCEL</button></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>-->
             <!-- Model popup 3 -->
             <!--<div id="myModal2" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>-->
+            </div>-->
             <!-- Right Panel -->
             <!--<div class="col-lg-6">-->
             <div>
@@ -527,8 +526,8 @@
                 <div><span class="EMIEControllabel">Freeze start date</span></div>
                 <div class="input-group">
                     <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                            ng-model="FreezeProductionChangeStartDate" is-open="popupStartDate.opened" ng-click="openStartDate()"
-                            ng-change="ChangeDateForEnd()" datepicker-options="dateOptions" close-text="Close" />
+                           ng-model="FreezeProductionChangeStartDate" is-open="popupStartDate.opened" ng-click="openStartDate()"
+                           ng-change="ChangeDateForEnd()" datepicker-options="dateOptions" close-text="Close" />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
@@ -538,30 +537,30 @@
                 <div><span class="EMIEControllabel">Freeze end date</span></div>
                 <div class="input-group">
                     <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
-                            ng-model="FreezeProductionChangeEndDate" is-open="popupEndDate.opened" ng-click="openEndDate()"
-                            datepicker-options="dateOptions" close-text="Close" />
+                           ng-model="FreezeProductionChangeEndDate" is-open="popupEndDate.opened" ng-click="openEndDate()"
+                           datepicker-options="dateOptions" close-text="Close" />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
             </div>
             <!--//===========================================================================================================================================================================
-        //                                                        NEEDED IN FUTURE
-        //===========================================================================================================================================================================-->
+            //                                                        NEEDED IN FUTURE
+            //===========================================================================================================================================================================-->
             <!--<div class="row">
-            <div><span class="EMIEControllabel">FREEZE PRODUCTION CHANGE</span></div>
-            <div class="col-lg-9">
-                <textarea name="FreezProductionChange" class="form-control" rows="1"></textarea>&nbsp;
-            </div>
-        </div>
-
-        <div class="row" style="margin-right: 60px;">
-            <div class="col-lg-5"></div>
-            <div class="col-lg-3">
-                <button type="button" class="btn btn-success ThemeBtn" ng-click="">EDIT FREEZE SCHEDULE</button>
+                <div><span class="EMIEControllabel">FREEZE PRODUCTION CHANGE</span></div>
+                <div class="col-lg-9">
+                    <textarea name="FreezProductionChange" class="form-control" rows="1"></textarea>&nbsp;
+                </div>
             </div>
 
-        </div>-->
+            <div class="row" style="margin-right: 60px;">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-3">
+                    <button type="button" class="btn btn-success ThemeBtn" ng-click="">EDIT FREEZE SCHEDULE</button>
+                </div>
+
+            </div>-->
             <!--</div>-->
             <div>
                 <button class="highlight" ng-click="Save()">Save</button>

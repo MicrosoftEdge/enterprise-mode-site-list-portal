@@ -1,6 +1,4 @@
-﻿
-EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginService, SharedProperties, $window, Constants, $location, $route, $sessionStorage, $timeout)
-{
+﻿EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginService, SharedProperties, $window, Constants, $location, $route, $sessionStorage, $timeout) {
     $(".EMIEusermenu").addClass('hidden');
 
     //Clearing out the previous stored values
@@ -18,7 +16,7 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
     $scope.Login = function () {
         $scope.isLoginHomeDisabled = true;
         LoginService.GetValidLoggedInUser().success(function (user) {
-           
+
             if (user.UserName != null) {
                 $("#sidebar-wrapper").removeClass('hidden');
                 var getdata = LoginService.GetTicketCount(user.UserId, false);
@@ -36,7 +34,7 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                 $(".EMIEusermenu").removeClass("hidden");
                 $rootScope.Message = "Successful Login done. Welcome " + user.UserName;
                 $rootScope.User = user;
-                $sessionStorage.User =user;
+                $sessionStorage.User = user;
                 //Enable/Disable Layout Page
                 if ($rootScope.User.UserRole.RoleId == Constants.RoleId['Requester']) {
                     $location.path("/SignInSuccessForRequestor");
@@ -49,13 +47,12 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                     $(".req-all").addClass("hidden");
                     $location.path("/SignInSuccess");
                 }
-                else
-                {
+                else {
                     $(".pending").removeClass("hidden");
                     $location.path("/SignInSuccess");
                     $(".req-all").removeClass("hidden");
                     $("#headingTwo").removeClass("hidden");
-                }             
+                }
 
                 if ($rootScope.User.UserRole.RoleId == Constants.RoleId['EMIEChampion']) {
 
@@ -63,10 +60,9 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                     $(".EMIEstats").removeClass("hidden");
                     $(".EMIEusrconfig").removeClass("hidden");
                     $(".EMIEentapp").removeClass("hidden");
-                    $(".EMIEusermenu").removeClass("hidden");                    
+                    $(".EMIEusermenu").removeClass("hidden");
                 }
-                else if($rootScope.User.UserRole.RoleId == Constants.RoleId['BPULead'])
-                {
+                else if ($rootScope.User.UserRole.RoleId == Constants.RoleId['BPULead']) {
                     $(".EMIEstats").removeClass("hidden");
                     $(".EMIEusermenu").removeClass("hidden");
                 }
@@ -90,10 +86,10 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
                 $scope.ALERTCONTENT = {
                     Title: Constants.PopupTitleLoginError,
                     MethodCase: "ENABLEPAGE",
-                    Type:"error"
+                    Type: "error"
                 }
-               $scope.isLoginHomeDisabled = false;
-               $scope.MESSAGE = Constants.ErrorLogInFailed;
+                $scope.isLoginHomeDisabled = false;
+                $scope.MESSAGE = Constants.ErrorLogInFailed;
             }
         })
         .error(function (error) {
@@ -106,16 +102,16 @@ EMIEModule.controller('LoginController', function ($scope, $rootScope, LoginServ
             $scope.ALERTCONTENT = {
                 Title: Constants.PopupTitleLoginError,
                 MethodCase: "ENABLEPAGE",
-                Type:"error"
+                Type: "error"
             }
             $scope.MESSAGE = Constants.ErrorUnAuthorisedUser;
-           
+
         });
 
     };
 
     $scope.Register = function () {
-                $location.path("/Register");
+        $location.path("/Register");
     };
 
     //On CLick on Confirm on MODAL

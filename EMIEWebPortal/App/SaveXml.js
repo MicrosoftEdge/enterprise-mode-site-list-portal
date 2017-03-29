@@ -1,5 +1,4 @@
 ﻿var DocModes = {
-
     //Document modes
     IE5DocMode: "IE5 Document Mode",
     IE7DocMode: "IE7 Document Mode",
@@ -17,9 +16,8 @@
 
     //this is not actually a docmode this is to find the docmodes (means other than enterprisemode and default mode)
     DocumentMode: "Document Mode",
-
-
 }
+
 //Other string values to avoid hardcoding
 var OpenInBrowser = {
     //Open in IE11 Browser
@@ -294,7 +292,7 @@ self.addEventListener('message', function (info) {
     if (info.data.info.operation[0].operationName == "SaveSitesInXml")
         var xmlString = getXMLStringToExport(info);
     if (info.data.info.operation[0].operationName == "BulkUpload")
-        var xmlString =  BulkUploadHelper(info);
+        var xmlString = BulkUploadHelper(info);
     self.postMessage(xmlString);
 }, false);
 
@@ -305,9 +303,9 @@ function BulkUploadHelper(info) {
     var user = info.data.info.operation[0].user;
     var listManageSiteModelObj = []; var errorInBulkUpload = [];
     var isV1Schema = listOfWebsitesToAdd[0].siteUrl != null ? true : false;
-    for(var i=0;i<listOfWebsitesToAdd.length;i++){
-        var key=listOfWebsitesToAdd[i];
-        var IsAdded = false; var bulkuploadfailed = { data: "", Error: "", AddToList: "" }; 
+    for (var i = 0; i < listOfWebsitesToAdd.length; i++) {
+        var key = listOfWebsitesToAdd[i];
+        var IsAdded = false; var bulkuploadfailed = { data: "", Error: "", AddToList: "" };
         if (isV1Schema)
             var data = {
                 NotesAboutURL: key.siteNotes,
@@ -321,7 +319,7 @@ function BulkUploadHelper(info) {
             var data = key;
         if (websitesList.length != 0) {
             for (var j = 0; j < websitesList.length; j++) {
-                var obj=websitesList[j];
+                var obj = websitesList[j];
                 if (data.FullURL == obj.FullURL) {
                     bulkuploadfailed.Error = "Duplicate(original entry with " + obj.DomainDocMode + ")";
                     bulkuploadfailed.data = data;

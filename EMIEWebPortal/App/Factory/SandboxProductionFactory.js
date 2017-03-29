@@ -229,8 +229,7 @@
                         //If file size is less than 1 MB and not zero
                     else if (event.files[index].size < 1000000) {
                         var fileToBeAdded = true;
-                        if ($scope.files.length > 0)
-                        {                           
+                        if ($scope.files.length > 0) {
 
                             angular.forEach($scope.filesSelected, function (value, key) {
                                 if (value.name == event.files[index].name) {

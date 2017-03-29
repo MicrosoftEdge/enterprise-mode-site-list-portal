@@ -52,8 +52,8 @@
         </div>
         <div class="form-row" disable-all="isVerifyPageDisabled ||isDisableAfterComments">
             <div class="EMIEControllabel">Attachments</div>
-            <div> 
-                <input type="file" id="file" class="form-control" name="file" style="height:40px !important;display:none" accept=".txt,.png,.jpg,.jpeg" multiple onchange="angular.element(this).scope().getFileDetails(this)" /> 
+            <div>
+                <input type="file" id="file" class="form-control" name="file" style="height:40px !important;display:none" accept=".txt,.png,.jpg,.jpeg" multiple onchange="angular.element(this).scope().getFileDetails(this)" />
                 <button formnovalidate onclick="document.getElementById('file').click();" data-toggle="tooltip" data-placement="top" title="Only .jpeg, .png, .jpg and .txt files allowed.">Browse</button>
                 <button type="button" ng-click="uploadFiles()" ng-disabled="DisableUploadButton">Upload</button>
             </div>

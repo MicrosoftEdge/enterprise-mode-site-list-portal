@@ -1,5 +1,4 @@
 ﻿EMIEModule.service("ReportsService", function ($http) {
-
     //This Function will fetch the total count of ticket based on final Cr Status 
     this.GetTicketStatusCount = function (startDate, endDate, BPUIds) {
         return $http({
@@ -9,7 +8,7 @@
             params: {
                 startDate: startDate,
                 endDate: endDate,
-                BPUIds:BPUIds,
+                BPUIds: BPUIds,
             },
             ignoreLoadingBar: true
         })
@@ -79,7 +78,7 @@
     this.GetAllBPU = function (user, isEMIEChampion) {
         var parameters = {
             user: user,
-            isEMIEChampion:isEMIEChampion,
+            isEMIEChampion: isEMIEChampion,
         }
         return $http({
             cache: false,
@@ -91,5 +90,5 @@
         })
     }
 
-   })
+})
 

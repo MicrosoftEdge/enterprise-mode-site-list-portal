@@ -1,6 +1,4 @@
 ﻿EMIEModule.controller("VerifySandboxController", function ($scope, $route, CommonFunctionsSanboxProductionFactory, $http, LoginService, EMIETicketService, FileSaver, approvalService, Constants, $location, SharedProperties, $sessionStorage, $rootScope, growl) {
-
-
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
 
@@ -105,13 +103,12 @@
                     $(".status #Middle-child-3").addClass("Current");
                     DisableTicketProgressBar(".status #Last-child", ".status #First-child,.status #Middle-child-1,.status #Middle-child-2,.status #Middle-child-3");
                 }
-                
-                if ($scope.Ticket!="")
-                {
+
+                if ($scope.Ticket != "") {
                     $scope.TicketId = $scope.Ticket.TicketId;
                     $scope.IsOldRequest = false;
                 }
-                if ($scope.Ticket.value == "NonEditableModeOn" || $route.current.$$route.originalPath == "/SandboxPage") {                    
+                if ($scope.Ticket.value == "NonEditableModeOn" || $route.current.$$route.originalPath == "/SandboxPage") {
                     $scope.isVerifyPageDisabled = true;
                     if (TicketsData.FinalTicketStatus >= Constants.TicketStatus['ApprovalPending'] && TicketsData.FinalTicketStatus <= Constants.TicketStatus['SignedOff']) {
                         $scope.RadSuccessChecked = true;
@@ -154,7 +151,7 @@
 
                         //Clean up upload folder and files if page is not disabled
                         EMIETicketService.DeleteUploadedFilesFromDirectoryOnRollBack($scope.Ticket.TicketId).success(function () {
-                           
+
                         }).error(function (error) {
                             $scope.isVerifyPageDisabled = false;
                         });
@@ -364,7 +361,7 @@
         // Handle the click of Success radio button, and display/hide the controls
         $scope.RadSuccessClicked = function (event) {
             if ($scope.Successchecked == event.target.value)
-             
+
                 $scope.Failedchecked = false
             $scope.IsSuccessDivHidden = false;
             $scope.IsFailureDivHidden = true;
@@ -394,7 +391,7 @@
         // Handle the click of failure radio button, and display/hide the controls
         $scope.RadFailedClicked = function (event) {
             if ($scope.Failedchecked == event.target.value)
-               
+
                 $scope.Successchecked = false
             $scope.IsFailureDivHidden = false;
             $scope.IsSuccessDivHidden = true;
@@ -589,7 +586,7 @@
         // Get the details of the files to be uploaded
         $scope.getFileDetails = function (event) {
             //call common function from factory to get attached file details
-            CommonFunctionsSanboxProductionFactory.GetAttachedFileDetails($scope,event)
+            CommonFunctionsSanboxProductionFactory.GetAttachedFileDetails($scope, event)
 
         };
 

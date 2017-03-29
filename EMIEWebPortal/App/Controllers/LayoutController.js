@@ -18,7 +18,7 @@
             $('[data-toggle="tooltip"]').tooltip();
 
             $("#wrapper").removeClass("toggled");
-            
+
             $scope.isLoginHomeDisabled = false;
             User = $sessionStorage.User;
             $rootScope.User = $sessionStorage.User;

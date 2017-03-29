@@ -92,7 +92,7 @@
 
 
     //method to edit the group details
-    this.EditGroup = function (userRole) {        
+    this.EditGroup = function (userRole) {
         return $http({
             cache: false,
             method: "post",
@@ -104,7 +104,7 @@
     }
 
 
-   //method to get the group head name and email
+    //method to get the group head name and email
     this.GetGroupHead = function (GroupDetail) {
         return $http({
             cache: false,

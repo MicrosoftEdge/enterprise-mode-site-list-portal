@@ -1,6 +1,5 @@
 ﻿//Config for routing to change the page while login and after login done
-EMIEModule.config(function ($routeProvider) 
-{    
+EMIEModule.config(function ($routeProvider) {
     $routeProvider.
         when('/Login', {
             templateUrl: '/App/Views/LoginHome.html',

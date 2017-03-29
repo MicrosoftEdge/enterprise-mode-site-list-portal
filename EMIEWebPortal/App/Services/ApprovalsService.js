@@ -1,5 +1,4 @@
 ﻿EMIEModule.service("approvalService", function ($http) {
-
     /// <summary>
     /// method to get all approvers of given ticket
     /// </summary>
@@ -29,10 +28,10 @@
             method: "post",
             url: "Approval/GetPendingApproverList",
             data: JSON.stringify(parameters),
-            dataType:"json"
+            dataType: "json"
         });
     };
-       
+
 
     //this method will send the tickets list which needs to be approved to MVC Controller
     this.PerformRequest = function (SelectedList, LoggedInUserdId, IsSendForApproval, rejectionComments) {
@@ -50,7 +49,7 @@
     };
 
     //this method will send the tickets list which needs to be approved to MVC Controller
-    this.SendReminder = function (SelectedApproversList,TicketData) {   
+    this.SendReminder = function (SelectedApproversList, TicketData) {
         var parameters = {
             listOfApprovers: SelectedApproversList,
             ticket: TicketData
@@ -64,5 +63,5 @@
 
         return response;
     };
-      
+
 })

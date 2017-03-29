@@ -1,5 +1,4 @@
-﻿
-EMIEModule.controller('ConfigurationController', function ($scope, $rootScope, Constants, ConfigurationService, CommonFunctionsFactory, LoginService, SharedProperties, $window, Constants, $location, $route, $sessionStorage, $filter, ConfigConstants, userService, growl) {
+﻿EMIEModule.controller('ConfigurationController', function ($scope, $rootScope, Constants, ConfigurationService, CommonFunctionsFactory, LoginService, SharedProperties, $window, Constants, $location, $route, $sessionStorage, $filter, ConfigConstants, userService, growl) {
 
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     //false-if this page is not accessible other than emie champ role

@@ -11,5 +11,5 @@
                 isEmieChampion: isEmieChampion
             }
         })
-    }  
+    }
 })

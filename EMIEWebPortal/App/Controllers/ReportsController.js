@@ -1,5 +1,4 @@
 ﻿EMIEModule.controller("ReportsController", function ($scope, ReportsService, ManageSiteService, CommonFunctionsFactory, SharedProperties, LoginService, Constants, $rootScope, $sessionStorage, $location, TicketStatusConstants, ColorConstants, ChangeTypeConstants, ReasonForChangeConstants, growl) {
-
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     //true-if this page is  accessible for emie champ role and group head
     if (LoginService.getUserWithRoleAtRedirectionForEMIEChamp(true)) {

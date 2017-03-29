@@ -1,15 +1,13 @@
 ﻿EMIEModule.factory('CommonFunctionsFactory', function (Constants)//factory for all common functions used in VerifySandbox/VerifyProduction controller
 {
     var factory = {};
-
     var data = null;
-
     var dateConstraint = null;
-    
+
     //Common DatePicker function
     factory.DatePicker = function ($scope, DatePickerOptions) {
         dateConstraint = new Date();
-        if (DatePickerOptions ==Constants.DateAfterToday) {
+        if (DatePickerOptions == Constants.DateAfterToday) {
             dateConstraint.setDate(dateConstraint.getDate() + 1);
         }
 
@@ -17,13 +15,13 @@
             $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : dateConstraint;
             $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
         };
-       
+
         populateDatePickerUI($scope, DatePickerOptions);
 
-        if (DatePickerOptions ==Constants.DateAfterToday) {
+        if (DatePickerOptions == Constants.DateAfterToday) {
             $scope.toggleMin();
         }
-    
+
     }
 
 
@@ -39,7 +37,7 @@
             $scope.dt = null;
         };
 
-        if (DatePickerOptions ==Constants.DateAfterToday) {
+        if (DatePickerOptions == Constants.DateAfterToday) {
 
 
             $scope.inlineOptions = {

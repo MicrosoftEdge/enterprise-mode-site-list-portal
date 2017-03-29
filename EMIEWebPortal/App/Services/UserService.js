@@ -1,5 +1,4 @@
 ﻿EMIEModule.service("userService", function ($http) {
-
     /// <summary>
     /// method to get all Users 
     /// </summary>
@@ -51,7 +50,7 @@
             user: UserRole,
             action: action,
             oldUser: OldUserRole,
-            activation:activation
+            activation: activation
         };
         var response = $http({
             method: "post",
@@ -98,7 +97,7 @@
     /// method to validate emie admin
     /// </summary>
     /// <returns>true-validated,false-unauthorised</returns>
-    this.validateEMIEAdmin = function (EMIEUserName,EMIEPassword) {
+    this.validateEMIEAdmin = function (EMIEUserName, EMIEPassword) {
         var isValidated = $http({
             cache: false,
             method: "post",

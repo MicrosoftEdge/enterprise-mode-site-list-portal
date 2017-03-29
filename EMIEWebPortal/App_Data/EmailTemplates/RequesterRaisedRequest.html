@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -8,79 +7,78 @@
 <body>
     <table style="width:70%">
         <tr style="height: 40px; background-color: #FFB900;">
-            
+
             <td style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:white;">New change request</td>
             <td style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;text-align:center;color:white;">#{0}</td>
         </tr>
-        </table>
-        <table style="width:70%">
-            <tr>
-                <td height="20px"></td>
-            </tr>
-
-            <tr style="height:40px;background-color:#D2D2D2">
-                <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:black;">Request details</td>
-            </tr>
-            <tr style="height:35px;">
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Requester</td>
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{1}</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="padding-left:50px;color:#D2D2D2">
-                    <hr />
-                </td>
-            </tr>
-            <tr style="height:20px;">
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Group name</td>
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{2}</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="padding-left:50px;color:#D2D2D2">
-                    <hr />
-                </td>
-            </tr>
-            <tr style="height:20px;">
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">App name</td>
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{3}</td>
-            </tr>
-            <tr style="height:40px;background-color:#D2D2D2">
-                <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:black;">Event details</td>
-            </tr>
-            <tr style="height:35px;">
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Action</td>
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{4}</td>
-            </tr>
-            <tr style="height:35px;">
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Domain</td>
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{5}</td>
-            </tr>
-            <tr style="height:35px;">
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">State</td>
-                <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">Pending validation</td>
-            </tr>
-        </table>
-        <table style="width:70%">
-            <tr style="height:40px;background-color:#D2D2D2">
-                <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:black;">Steps to validate</td>
-            </tr>
-            <tr style="height:35px;">
-                <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:30px">
-                    <ol>
-                        <li>Logon to your test device.</li>
-                        <li>
-                            After successful logon, Run the batch file attached in zipped folder 'EMIE_RegKey' as an Administrator. (This will set the registry key to point to our local sandbox EMIE site list)
-                        </li>
-                        <li>
-                            Open browser (Microsoft Edge for Windows 10 device) and start verifying your application URL.
-                        </li>
-                        <li>
-                            Validate expected behavior and update your request therefore.
-                        </li>
-                        <li>Run the batch file attached in zipped folder 'EMIE_Reset' to revert the changes made into registry.
-                    </ol>
-                </td>
-            </tr>
-        </table>
+    </table>
+    <table style="width:70%">
+        <tr>
+            <td height="20px"></td>
+        </tr>
+        <tr style="height:40px;background-color:#D2D2D2">
+            <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:black;">Request details</td>
+        </tr>
+        <tr style="height:35px;">
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Requester</td>
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{1}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left:50px;color:#D2D2D2">
+                <hr />
+            </td>
+        </tr>
+        <tr style="height:20px;">
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Group name</td>
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{2}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left:50px;color:#D2D2D2">
+                <hr />
+            </td>
+        </tr>
+        <tr style="height:20px;">
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">App name</td>
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{3}</td>
+        </tr>
+        <tr style="height:40px;background-color:#D2D2D2">
+            <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:black;">Event details</td>
+        </tr>
+        <tr style="height:35px;">
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Action</td>
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{4}</td>
+        </tr>
+        <tr style="height:35px;">
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">Domain</td>
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">{5}</td>
+        </tr>
+        <tr style="height:35px;">
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:50px">State</td>
+            <td style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;">Pending validation</td>
+        </tr>
+    </table>
+    <table style="width:70%">
+        <tr style="height:40px;background-color:#D2D2D2">
+            <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;font-weight:bold;color:black;">Steps to validate</td>
+        </tr>
+        <tr style="height:35px;">
+            <td colspan="2" style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050;padding-left:30px">
+                <ol>
+                    <li>Logon to your test device.</li>
+                    <li>
+                        After successful logon, Run the batch file attached in zipped folder 'EMIE_RegKey' as an Administrator. (This will set the registry key to point to our local sandbox EMIE site list)
+                    </li>
+                    <li>
+                        Open browser (Microsoft Edge for Windows 10 device) and start verifying your application URL.
+                    </li>
+                    <li>
+                        Validate expected behavior and update your request therefore.
+                    </li>
+                    <li>Run the batch file attached in zipped folder 'EMIE_Reset' to revert the changes made into registry.
+                </ol>
+            </td>
+        </tr>
+    </table>
     <p>
         <span style="font-family:'Segoe UI Symbol';font-size:medium;color:#505050">
             Log in to the Enterprise Mode Site List Portal by clicking <a href="{6}">here</a>.

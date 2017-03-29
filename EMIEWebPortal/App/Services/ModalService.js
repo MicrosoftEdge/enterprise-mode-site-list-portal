@@ -1,4 +1,4 @@
-﻿EMIEModule.service("modalService", function ($uibModal,Constants) {
+﻿EMIEModule.service("modalService", function ($uibModal, Constants) {
 
     var modalDefaults = {
         backdrop: true,

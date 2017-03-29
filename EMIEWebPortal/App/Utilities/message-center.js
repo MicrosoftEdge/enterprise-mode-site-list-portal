@@ -1,19 +1,18 @@
-﻿
-EMIEModule.directive("messageCenter", function () {
+﻿EMIEModule.directive("messageCenter", function () {
     return {
         templateUrl: "App/Utilities/message-center.html",
 
         link: function (scope, element, attr) {
-    
+
             var ss = scope;
 
             scope.setcss = function (clsname) {
                 var val = clsname;
 
                 if (typeof (val) != "undefined") {
-                     if (val.toLowerCase() == "success") {
-                         return 'Modal-success';
-                        
+                    if (val.toLowerCase() == "success") {
+                        return 'Modal-success';
+
                     }
                     if (val.toLowerCase() == "info") {
 
@@ -31,8 +30,8 @@ EMIEModule.directive("messageCenter", function () {
                 }
 
             }
-                 }
+        }
     }
-       
+
 
 })

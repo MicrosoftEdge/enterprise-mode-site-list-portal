@@ -1,8 +1,6 @@
-﻿EMIEModule.controller('ProdChangesController', function ($scope, $route,CommonFunctionsFactory, ProdChangesService,LoginService, ConfigurationService, $filter, Constants, SharedProperties, $sessionStorage, $rootScope, $location, $filter, ConfigConstants, growl) {
-
+﻿EMIEModule.controller('ProdChangesController', function ($scope, $route, CommonFunctionsFactory, ProdChangesService, LoginService, ConfigurationService, $filter, Constants, SharedProperties, $sessionStorage, $rootScope, $location, $filter, ConfigConstants, growl) {
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
-
         //Status bar add and remove classes
         $(".status li").removeClass("Status-Selected");
         $(".status #Middle-child-3").addClass("Status-Selected");
@@ -11,7 +9,6 @@
         $('#PopUpModal').modal('hide');
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
-
 
         // SSO - If User data is available in localstorage then assign this to rootscope    
         $scope.IsFreezeDateDisplayed = false;
@@ -30,7 +27,6 @@
         Initialize();
 
         $scope.DisableProdPage = false;
-
 
         function SetProductionDatetime(ticket) {
             if (ticket != null) {
@@ -60,7 +56,6 @@
             }
 
         };
-
 
         //This function will get the configures start and end date and then will display it.
         function getConfigurationFreezeDate() {
@@ -256,7 +251,7 @@
         }
 
 
-       
+
         function populateDatePicker() {
             //DateTime controller related function - Start
             $scope.SaveProdDisabled = false;
@@ -426,7 +421,7 @@
                         if (Object.Startdate == Object.EndDate)
                             $scope.MESSAGE = "Change for request #" + $scope.Ticket.TicketId + " is deployed successfully on production site.";
                         else
-                            $scope.MESSAGE = "Change for request #"+ $scope.Ticket.TicketId +" is scheduled to deploy on.";
+                            $scope.MESSAGE = "Change for request #" + $scope.Ticket.TicketId + " is scheduled to deploy on.";
                     }
 
                 }).error(function (error) {

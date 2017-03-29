@@ -1,6 +1,6 @@
-﻿EMIEModule.controller("AllRequestsController", function ($scope, AllRequestsService,CommonFunctionsFactory, SharedProperties, Constants, LoginService, $rootScope, $route, $sessionStorage, $location) {
+﻿EMIEModule.controller("AllRequestsController", function ($scope, AllRequestsService, CommonFunctionsFactory, SharedProperties, Constants, LoginService, $rootScope, $route, $sessionStorage, $location) {
 
-    
+
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
 
@@ -119,8 +119,7 @@
 
         //common function to sort data
         //requests-data to be sorted,PropertyToSort-object property to sort,isCompareValueInt-true if the compare data is in integer value
-        function SortData(requests, PropertyToSort, isCompareValueInt)
-        {
+        function SortData(requests, PropertyToSort, isCompareValueInt) {
             requests = CommonFunctionsFactory.sortData($scope, requests, PropertyToSort, decreasingOrder, isCompareValueInt);
             if (decreasingOrder == true)
                 decreasingOrder = false;

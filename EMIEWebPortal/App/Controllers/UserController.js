@@ -1,5 +1,4 @@
-﻿EMIEModule.controller("UserController", function ($scope, userService, Constants,CommonFunctionsFactory, $location,LoginService, $localStorage, $route, $rootScope, CRService, $timeout, $q, $log, $sessionStorage, growl) {
-
+﻿EMIEModule.controller("UserController", function ($scope, userService, Constants, CommonFunctionsFactory, $location, LoginService, $localStorage, $route, $rootScope, CRService, $timeout, $q, $log, $sessionStorage, growl) {
     ///---------------------------
     ////This can be used in future for using session storage on new tab
     //if (window.addEventListener) {
@@ -540,280 +539,279 @@
 
         //common function to sort data
         //dataToSort-data to be sorted,PropertyToSort-object property to sort
-        function SortUserData(dataToSort, PropertyToSort)
-            {
+        function SortUserData(dataToSort, PropertyToSort) {
             var sortedData = CommonFunctionsFactory.sortData($scope, dataToSort, PropertyToSort, $scope.IsAscending);
-                if ($scope.IsAscending == true)
-                    $scope.IsAscending = false;
-                else
-                    $scope.IsAscending = true;
+            if ($scope.IsAscending == true)
+                $scope.IsAscending = false;
+            else
+                $scope.IsAscending = true;
 
-                $scope.OriginalAllUsers = $scope.UserList;
-            }
+            $scope.OriginalAllUsers = $scope.UserList;
+        }
 
-            function ClearFiledsOfCreatePage() {
-                document.getElementById("CreateUserForm").reset();
-                $scope.form.$setPristine();
-                $scope.NewUserName = null;
-                $scope.selectedBPU = null;
-                $scope.NewUserEmail = null;
-                $scope.NewUserRole = null;
-                $scope.Comments = null;
-                $scope.IsActive = null;
-                $scope.SaveBtnDisable = true;
+        function ClearFiledsOfCreatePage() {
+            document.getElementById("CreateUserForm").reset();
+            $scope.form.$setPristine();
+            $scope.NewUserName = null;
+            $scope.selectedBPU = null;
+            $scope.NewUserEmail = null;
+            $scope.NewUserRole = null;
+            $scope.Comments = null;
+            $scope.IsActive = null;
+            $scope.SaveBtnDisable = true;
+            $scope.searcheduserlist = [];
+        };
+        $scope.ClearAllFiledsOfCreatePage = function () {
+            ClearFiledsOfCreatePage();
+        };
+        $scope.TempListToBind = [];
+        var isServiceCalled = false;
+        $scope.IsSearching = false;
+
+        //method to search user from AD using alias or email
+        $scope.GetUserEmailText = function (serachUserName) {
+
+            var tempSearchUserId = $scope.NewUserEmail;
+            $scope.SaveBtnDisable = true;
+
+            if (serachUserName == undefined || serachUserName == null) {
                 $scope.searcheduserlist = [];
-            };
-            $scope.ClearAllFiledsOfCreatePage = function () {
-                ClearFiledsOfCreatePage();
-            };
-            $scope.TempListToBind = [];
-            var isServiceCalled = false;
-            $scope.IsSearching = false;
-
-            //method to search user from AD using alias or email
-            $scope.GetUserEmailText = function (serachUserName) {
-
-                var tempSearchUserId = $scope.NewUserEmail;
-                $scope.SaveBtnDisable = true;
-
-                if (serachUserName == undefined || serachUserName == null) {
-                    $scope.searcheduserlist = [];
-                    $scope.TempListToBind = [];
-                    $scope.IsSearching = false;
-                }
-                else if (serachUserName.length > 2) {
-                    if ($scope.TempListToBind.length > 0) {
-                        $scope.IsSearching = true;
-                        $scope.searcheduserlist = $scope.TempListToBind.filter(createFilterForADUsers(serachUserName));
-                        if ($scope.searcheduserlist.length >= 0)
-                            $scope.IsSearching = false;
-                    }
-                    else if ($scope.IsSearching && $scope.searcheduserlist.length <= 0) {
-                        //do nothing till search is going on for first 3 letters,this is to avoid repeatative search
-                        $scope.IsSearching = true;
-                    }
-                    else {
-                        $scope.IsSearching = true;
-                        $scope.NewUserName = null;
-                        $scope.NewUserName = null;
-                        $scope.searcheduserlist = [];
-                        userService.getAllADUsers(serachUserName).success(function (data) {
-                            var result = data;
-                            if (typeof result == 'string') {
-                                //if (serachUserName==$scope.NewUserEmail)
-                                //alert(result);
-                                $scope.IsSearching = false;
-                                $scope.searcheduserlist = [];
-                            }
-                            else {
-                                $scope.ADUserList = result;
-                                $scope.searcheduserlist = result;
-                                $scope.TempListToBind = result;
-                                $scope.TempListToBind.map(function (itemBInd) {
-                                    itemBInd.value = itemBInd.DisplayName.toLowerCase() + " " + itemBInd.Email.toLowerCase();
-                                });
-
-                                $scope.searcheduserlist = $scope.TempListToBind.filter(createFilterForADUsers($scope.NewUserEmail));
-
-                                if ($scope.searcheduserlist.length >= 0)
-                                    $scope.IsSearching = false;
-                            }
-
-                            $(".glyphicon-search").dropdown('toggle');
-                            $scope.isUserPageDisabled = false;
-                        }).error(function (error) {
-                            $scope.HideCancelModal = true;
-                            $('#PopUpModal').modal('toggle');
-                            $scope.ALERTCONTENT = {
-                                Title: Constants.PopupTitleError,
-                                MethodCase: "DISABLE",
-                                Type: "error"
-                            }
-                            $scope.MESSAGE = Constants.ErrorSearchADUser;
-
-                        });
-                    }
-                }
-            };
-
-
-            var previousUsers; var previousvalue;
-
-            /// <summary>
-            ///this method performes the search functionality and also restores the data according to the dropdowns selected
-            /// </summary>
-            //Search functionality
-            $scope.GetSearchedUserFromAutoComplete = function (SearchUserFromTextBox) {
-
-                $scope.UserList = previousUsers == undefined ? $scope.UserList : previousUsers;
-                $scope.UserList.map(function (repo) {
-                    repo.value = repo.User.UserName.toLowerCase() + ' ' + repo.User.UserRole.RoleName.toLowerCase();
-                });
-                $scope.OriginalAllUsers.map(function (repo) {
-                    repo.value = repo.User.UserName.toLowerCase() + ' ' + repo.User.UserRole.RoleName.toLowerCase();
-                });
-                if (SearchUserFromTextBox == undefined || SearchUserFromTextBox == "") {
-                    $scope.UserListToShow = $scope.OriginalAllUsers;
-                    //if the search text is cleared then it will restore the data according to the dropdown selected
-                    filterUser($scope.value); previousUsers = undefined;
-                }
-                else previousUsers = $scope.UserList;
-                if (SearchUserFromTextBox.length > 1) {
-                    var requestToFilter = $scope.OriginalAllUsers;
-                    $scope.UserListToShow = requestToFilter.filter(createFilterFor(SearchUserFromTextBox));
-                    $scope.UserList = $scope.UserList.filter(createFilterFor(SearchUserFromTextBox));
-                }
-            };
-
-            /**
-             * Create filter function for a query string
-             */
-            function createFilterFor(query) {
-                var lowercaseQuery = angular.lowercase(query);
-                return function filterFn(item) {
-                    return (item.value.indexOf(lowercaseQuery) != -1);
-                };
+                $scope.TempListToBind = [];
+                $scope.IsSearching = false;
             }
-            /**
-                 * Create filter function for active directory users a query string
-                 */
-            function createFilterForADUsers(query) {
-                var lowercaseQuery = angular.lowercase(query);
-                return function filterFn(item) {
-                    var index = item.value.indexOf(lowercaseQuery)
-                    if (index >= 0)
-                        return true;
-                    // return (item.value.indexOf(lowercaseQuery) === 0);
-                };
-            }
-            $scope.BindSearchedUserToGrid = function (user) {
-                $scope.SearchUserFromTextBox = user.User.UserName;
-                $scope.UserList = [];
-                $scope.UserList.push(user);
-            };
-
-            $scope.BindBPUForSelectedRole = function (User) {
-                var bpuresult = $scope.bpuList.filter(function (bpuobj) {
-                    return bpuobj.BPUId == 0;
-                });
-                if (User.RoleId == 4) {
-
-                    bpuresult[0].AllBPUDiabled = false;
-                    $scope.DDLDisableOnALLGroup = true;
-
-                    if ($scope.User != undefined)
-                        $scope.User.UserBPU = bpuresult[0];
-
-                    $scope.selectedBPU = bpuresult[0];
-
+            else if (serachUserName.length > 2) {
+                if ($scope.TempListToBind.length > 0) {
+                    $scope.IsSearching = true;
+                    $scope.searcheduserlist = $scope.TempListToBind.filter(createFilterForADUsers(serachUserName));
+                    if ($scope.searcheduserlist.length >= 0)
+                        $scope.IsSearching = false;
+                }
+                else if ($scope.IsSearching && $scope.searcheduserlist.length <= 0) {
+                    //do nothing till search is going on for first 3 letters,this is to avoid repeatative search
+                    $scope.IsSearching = true;
                 }
                 else {
-                    bpuresult[0].AllBPUDiabled = true;
-                    $scope.DDLDisableOnALLGroup = false;
-                    $scope.ShowSelectOption = "--Select--";
+                    $scope.IsSearching = true;
+                    $scope.NewUserName = null;
+                    $scope.NewUserName = null;
+                    $scope.searcheduserlist = [];
+                    userService.getAllADUsers(serachUserName).success(function (data) {
+                        var result = data;
+                        if (typeof result == 'string') {
+                            //if (serachUserName==$scope.NewUserEmail)
+                            //alert(result);
+                            $scope.IsSearching = false;
+                            $scope.searcheduserlist = [];
+                        }
+                        else {
+                            $scope.ADUserList = result;
+                            $scope.searcheduserlist = result;
+                            $scope.TempListToBind = result;
+                            $scope.TempListToBind.map(function (itemBInd) {
+                                itemBInd.value = itemBInd.DisplayName.toLowerCase() + " " + itemBInd.Email.toLowerCase();
+                            });
+
+                            $scope.searcheduserlist = $scope.TempListToBind.filter(createFilterForADUsers($scope.NewUserEmail));
+
+                            if ($scope.searcheduserlist.length >= 0)
+                                $scope.IsSearching = false;
+                        }
+
+                        $(".glyphicon-search").dropdown('toggle');
+                        $scope.isUserPageDisabled = false;
+                    }).error(function (error) {
+                        $scope.HideCancelModal = true;
+                        $('#PopUpModal').modal('toggle');
+                        $scope.ALERTCONTENT = {
+                            Title: Constants.PopupTitleError,
+                            MethodCase: "DISABLE",
+                            Type: "error"
+                        }
+                        $scope.MESSAGE = Constants.ErrorSearchADUser;
+
+                    });
                 }
+            }
+        };
+
+
+        var previousUsers; var previousvalue;
+
+        /// <summary>
+        ///this method performes the search functionality and also restores the data according to the dropdowns selected
+        /// </summary>
+        //Search functionality
+        $scope.GetSearchedUserFromAutoComplete = function (SearchUserFromTextBox) {
+
+            $scope.UserList = previousUsers == undefined ? $scope.UserList : previousUsers;
+            $scope.UserList.map(function (repo) {
+                repo.value = repo.User.UserName.toLowerCase() + ' ' + repo.User.UserRole.RoleName.toLowerCase();
+            });
+            $scope.OriginalAllUsers.map(function (repo) {
+                repo.value = repo.User.UserName.toLowerCase() + ' ' + repo.User.UserRole.RoleName.toLowerCase();
+            });
+            if (SearchUserFromTextBox == undefined || SearchUserFromTextBox == "") {
+                $scope.UserListToShow = $scope.OriginalAllUsers;
+                //if the search text is cleared then it will restore the data according to the dropdown selected
+                filterUser($scope.value); previousUsers = undefined;
+            }
+            else previousUsers = $scope.UserList;
+            if (SearchUserFromTextBox.length > 1) {
+                var requestToFilter = $scope.OriginalAllUsers;
+                $scope.UserListToShow = requestToFilter.filter(createFilterFor(SearchUserFromTextBox));
+                $scope.UserList = $scope.UserList.filter(createFilterFor(SearchUserFromTextBox));
+            }
+        };
+
+        /**
+         * Create filter function for a query string
+         */
+        function createFilterFor(query) {
+            var lowercaseQuery = angular.lowercase(query);
+            return function filterFn(item) {
+                return (item.value.indexOf(lowercaseQuery) != -1);
             };
+        }
+        /**
+             * Create filter function for active directory users a query string
+             */
+        function createFilterForADUsers(query) {
+            var lowercaseQuery = angular.lowercase(query);
+            return function filterFn(item) {
+                var index = item.value.indexOf(lowercaseQuery)
+                if (index >= 0)
+                    return true;
+                // return (item.value.indexOf(lowercaseQuery) === 0);
+            };
+        }
+        $scope.BindSearchedUserToGrid = function (user) {
+            $scope.SearchUserFromTextBox = user.User.UserName;
+            $scope.UserList = [];
+            $scope.UserList.push(user);
+        };
 
-            //==================================================================================================================================================================
-            //                                                                    Export To Excel
-            //==================================================================================================================================================================
+        $scope.BindBPUForSelectedRole = function (User) {
+            var bpuresult = $scope.bpuList.filter(function (bpuobj) {
+                return bpuobj.BPUId == 0;
+            });
+            if (User.RoleId == 4) {
 
-            //Populating DropDown With BPUs Name
-            var getData = userService.getAllBPU();
-            getData.success(function (result) {
-                for (var i = result.length - 1; i >= 0; i--) {
-                    if (result[i].BPU1 === 'All') {
-                        result.splice(i, 1);
-                    }
+                bpuresult[0].AllBPUDiabled = false;
+                $scope.DDLDisableOnALLGroup = true;
+
+                if ($scope.User != undefined)
+                    $scope.User.UserBPU = bpuresult[0];
+
+                $scope.selectedBPU = bpuresult[0];
+
+            }
+            else {
+                bpuresult[0].AllBPUDiabled = true;
+                $scope.DDLDisableOnALLGroup = false;
+                $scope.ShowSelectOption = "--Select--";
+            }
+        };
+
+        //==================================================================================================================================================================
+        //                                                                    Export To Excel
+        //==================================================================================================================================================================
+
+        //Populating DropDown With BPUs Name
+        var getData = userService.getAllBPU();
+        getData.success(function (result) {
+            for (var i = result.length - 1; i >= 0; i--) {
+                if (result[i].BPU1 === 'All') {
+                    result.splice(i, 1);
                 }
-                $scope.ExportBPU = result;
+            }
+            $scope.ExportBPU = result;
+        });
+
+        //On the selection of the dropdown values this will call the filterByBPU function
+        $scope.filterByBPU = function () {
+            filterByBPU($scope.Users)
+        };
+
+
+        //this filter is for  filtering the result BPU wise it will filter the data according to the value selected
+        function filterByBPU(Users) {
+            if ($scope.GroupName != null || $scope.GroupName != undefined) {
+                var temp = [];
+                angular.forEach(Users, function (obj, index) {
+                    if (obj.User.UserBPU.BPU1 == $scope.GroupName)
+                        temp.push(obj);
+                })
+                $scope.UserList = temp;
+            }
+            else
+                $scope.UserList = $scope.Users;
+        }
+        //This function will insert the data in the required form in the object
+        function ExportHelper(data, obj) {
+            data.USERNAME = obj.User.UserName;
+            data.USERALIAS = obj.User.Email;
+            data.USERROLE = obj.User.UserRole.RoleName;
+            data.GROUPNAME = obj.User.UserBPU.BPU1;
+            $scope.exportData.push(data);
+        }
+        //Export To Excel
+        $scope.ExportToExcel = function (GroupName) {
+            $scope.exportData = []; var row = []; var column = [];
+
+            //preparing data in required format 
+            angular.forEach($scope.UserList, function (obj, index) {
+                //Defining the data object to get the data to queried using the alasql function
+                var data = { USERNAME: null, USERALIAS: null, USERROLE: null, GROUPNAME: null };
+                //check if the Group name is undefined which is in case of "All Bpus" then call the ExportHelper function
+                (GroupName != undefined) ? (obj.User.UserBPU.BPU1 == GroupName ? ExportHelper(data, obj) : data) : ExportHelper(data, obj);
             });
 
-            //On the selection of the dropdown values this will call the filterByBPU function
-            $scope.filterByBPU = function () {
-                filterByBPU($scope.Users)
+            //Styling the data to be exported as making the header bold and etc.
+            var mystyle = {
+                headers: true,
+                column: { style: { Font: { Bold: "1", Color: "#008270" } } },
             };
-
-
-            //this filter is for  filtering the result BPU wise it will filter the data according to the value selected
-            function filterByBPU(Users) {
-                if ($scope.GroupName != null || $scope.GroupName != undefined) {
-                    var temp = [];
-                    angular.forEach(Users, function (obj, index) {
-                        if (obj.User.UserBPU.BPU1 == $scope.GroupName)
-                            temp.push(obj);
-                    })
-                    $scope.UserList = temp;
+            //querying the required data and downloading the excel file using the alasql.js liberary function
+            alasql.promise('SELECT * INTO XLSX(?,?) FROM ?', [Constants.ExportUserFileName, mystyle, $scope.exportData]).
+            then(function (data) { return true; }).catch(function (err) {
+                //alert('Error: ' + err);
+                $scope.HideCancelModal = true;
+                $('#PopUpModal').modal('toggle');
+                $scope.ALERTCONTENT = {
+                    Title: Constants.PopupTitleError,
+                    MethodCase: "DISABLE",
+                    Type: "error"
                 }
-                else
-                    $scope.UserList = $scope.Users;
-            }
-            //This function will insert the data in the required form in the object
-            function ExportHelper(data, obj) {
-                data.USERNAME = obj.User.UserName;
-                data.USERALIAS = obj.User.Email;
-                data.USERROLE = obj.User.UserRole.RoleName;
-                data.GROUPNAME = obj.User.UserBPU.BPU1;
-                $scope.exportData.push(data);
-            }
-            //Export To Excel
-            $scope.ExportToExcel = function (GroupName) {
-                $scope.exportData = []; var row = []; var column = [];
+                $scope.MESSAGE = err;
 
-                //preparing data in required format 
-                angular.forEach($scope.UserList, function (obj, index) {
-                    //Defining the data object to get the data to queried using the alasql function
-                    var data = { USERNAME: null, USERALIAS: null, USERROLE: null, GROUPNAME: null };
-                    //check if the Group name is undefined which is in case of "All Bpus" then call the ExportHelper function
-                    (GroupName != undefined) ? (obj.User.UserBPU.BPU1 == GroupName ? ExportHelper(data, obj) : data) : ExportHelper(data, obj);
-                });
-
-                //Styling the data to be exported as making the header bold and etc.
-                var mystyle = {
-                    headers: true,
-                    column: { style: { Font: { Bold: "1", Color: "#008270" } } },
-                };
-                //querying the required data and downloading the excel file using the alasql.js liberary function
-                alasql.promise('SELECT * INTO XLSX(?,?) FROM ?', [Constants.ExportUserFileName, mystyle, $scope.exportData]).
-                then(function (data) { return true; }).catch(function (err) {
-                    //alert('Error: ' + err);
-                    $scope.HideCancelModal = true;
-                    $('#PopUpModal').modal('toggle');
-                    $scope.ALERTCONTENT = {
-                        Title: Constants.PopupTitleError,
-                        MethodCase: "DISABLE",
-                        Type: "error"
-                    }
-                    $scope.MESSAGE = err;
-
-                });
-            }
+            });
+        }
 
 
-            //On Click on confirm on MODAL
-            $scope.Confirm = function (cases, object) {
-                switch (cases) {
-                    case "NULL":
-                        break;
-                    case "DISABLE":
-                        $scope.isUserPageDisabled = false;
-                        break;
-                    case "NAVIGATE":// ClearFiledsOfCreatePage();
-                        $location.path("/User");
-                        break;
-                }
-            }
-
-
-            //Method will bew called when user clicks on cancel button after the user creation request is completed 
-            $scope.CancelValidation = function (cases) {
-                switch (cases) {
-                    case "NAVIGATE": $location.path("/User");
-                        break;
-
-                }
+        //On Click on confirm on MODAL
+        $scope.Confirm = function (cases, object) {
+            switch (cases) {
+                case "NULL":
+                    break;
+                case "DISABLE":
+                    $scope.isUserPageDisabled = false;
+                    break;
+                case "NAVIGATE":// ClearFiledsOfCreatePage();
+                    $location.path("/User");
+                    break;
             }
         }
-    });
+
+
+        //Method will bew called when user clicks on cancel button after the user creation request is completed 
+        $scope.CancelValidation = function (cases) {
+            switch (cases) {
+                case "NAVIGATE": $location.path("/User");
+                    break;
+
+            }
+        }
+    }
+});
 
 

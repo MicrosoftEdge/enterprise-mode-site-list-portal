@@ -19,9 +19,9 @@ body {
     min-width: 1280px;
 }
 
-body > div:first-child {
-    height: 100%;
-}
+    body > div:first-child {
+        height: 100%;
+    }
 
 a:focus,
 input[type="file"]:focus,
@@ -49,14 +49,14 @@ hr {
     left: calc(50% - 15px);
 }
 
-#loading-bar-spinner .spinner-icon {
-    width: 30px;
-    height: 30px;
-    border:  solid 5px transparent;
-    border-top-color:  #29d;
-    border-left-color: #29d;
-    border-radius: 50%;
-}
+    #loading-bar-spinner .spinner-icon {
+        width: 30px;
+        height: 30px;
+        border: solid 5px transparent;
+        border-top-color: #29d;
+        border-left-color: #29d;
+        border-radius: 50%;
+    }
 
 .page-margins {
     margin: 0 70px;
@@ -76,75 +76,75 @@ hr {
     background-color: #fff;
 }
 
-.EMIEheader .page-margins {
-    height: 50px;
-}
+    .EMIEheader .page-margins {
+        height: 50px;
+    }
 
-.EMIEheader .user-account {
-    float: right;
-    position: relative;
-}
+    .EMIEheader .user-account {
+        float: right;
+        position: relative;
+    }
 
-.EMIEheader .user-account:hover {
-    background-color: #f2f2f2;
-}
+        .EMIEheader .user-account:hover {
+            background-color: #f2f2f2;
+        }
 
-.EMIEheader .user-account > a {
-    display: block;
-    text-decoration: none;
-    padding: 6px 15px;
-    height: 50px;
-    cursor: default;
-}
+        .EMIEheader .user-account > a {
+            display: block;
+            text-decoration: none;
+            padding: 6px 15px;
+            height: 50px;
+            cursor: default;
+        }
 
-.EMIEheader .user-account > a::before {
-    font-family: 'Microsoft Symbols';
-    content: "\e13d";
-    font-size: 24px;
-    color: #000;
-    position: relative;
-    top: -4px;
-}
+            .EMIEheader .user-account > a::before {
+                font-family: 'Microsoft Symbols';
+                content: "\e13d";
+                font-size: 24px;
+                color: #000;
+                position: relative;
+                top: -4px;
+            }
 
-.EMIEheader .user-account > a div {
-    display: inline-block;
-    margin-left: 5px;
-}
+            .EMIEheader .user-account > a div {
+                display: inline-block;
+                margin-left: 5px;
+            }
 
-.EMIEheader .user-account > a div span {
-    font-size: 12px;
-    color: #000;
-    display: block;
-    width: 151px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
+                .EMIEheader .user-account > a div span {
+                    font-size: 12px;
+                    color: #000;
+                    display: block;
+                    width: 151px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
 
-.EMIEheader .user-account ul.dropdown {
-    display: none;
-    list-style-type: none;
-    position: absolute;
-    z-index: 999;
-    padding: 0;
-    margin: 0;
-    right: 0;
-}
+        .EMIEheader .user-account ul.dropdown {
+            display: none;
+            list-style-type: none;
+            position: absolute;
+            z-index: 999;
+            padding: 0;
+            margin: 0;
+            right: 0;
+        }
 
-.EMIEheader .user-account:hover ul.dropdown {
-    display: block;
-}
+        .EMIEheader .user-account:hover ul.dropdown {
+            display: block;
+        }
 
-.EMIEheader .user-account ul.dropdown li {
-    background-color: #f2f2f2;
-}
+        .EMIEheader .user-account ul.dropdown li {
+            background-color: #f2f2f2;
+        }
 
-.EMIEheader .user-account ul.dropdown li a {
-    display: block;
-    color: #000;
-    padding: 10px 40px;
-    font-size: 14px;
-}
+            .EMIEheader .user-account ul.dropdown li a {
+                display: block;
+                color: #000;
+                padding: 10px 40px;
+                font-size: 14px;
+            }
 
 .mslogo {
     height: 23px;
@@ -156,109 +156,109 @@ hr {
     color: #fff;
 }
 
-.EMIEsubheader .page-margins {
-    height: 70px;
-    line-height: 70px;
-    position: relative;
-}
+    .EMIEsubheader .page-margins {
+        height: 70px;
+        line-height: 70px;
+        position: relative;
+    }
 
-.EMIEsubheader .EMIEtitle {
-    display: inline-block;
-    margin: 10px 0;
-    line-height: 1.1;
-}
+    .EMIEsubheader .EMIEtitle {
+        display: inline-block;
+        margin: 10px 0;
+        line-height: 1.1;
+    }
 
-.EMIEsubheader .EMIEtitle a {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 300;
-    text-decoration: none;
-}
+        .EMIEsubheader .EMIEtitle a {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 300;
+            text-decoration: none;
+        }
 
-.EMIEsubheader .navlinks {
-    display: inline-block;
-    margin: 0;
-    position: absolute;
-    right: 0;
-}
+    .EMIEsubheader .navlinks {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        right: 0;
+    }
 
-.EMIEsubheader .navlinks li {
-    margin: 0 -2px;
-    display: inline-block;
-}
+        .EMIEsubheader .navlinks li {
+            margin: 0 -2px;
+            display: inline-block;
+        }
 
-.EMIEsubheader .navlinks li:hover {
-    background-color: #006cc1;
-    transition: background-color ease-out .5s;
-}
+            .EMIEsubheader .navlinks li:hover {
+                background-color: #006cc1;
+                transition: background-color ease-out .5s;
+            }
 
-.EMIEsubheader .navlinks li a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    padding: 0 15px;
-    height: 70px;
-    line-height: 70px;
-}
+            .EMIEsubheader .navlinks li a {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+                padding: 0 15px;
+                height: 70px;
+                line-height: 70px;
+            }
 
-.EMIEsubheader .navlinks li a.usermgmt::before {
-    font-family: 'Microsoft Symbols';
-    content: "\e187";
-}
+                .EMIEsubheader .navlinks li a.usermgmt::before {
+                    font-family: 'Microsoft Symbols';
+                    content: "\e187";
+                }
 
-.EMIEsubheader .navlinks li a.tool::before {
-    font-family: 'Microsoft Symbols';
-    content: "\e104";
-}
+                .EMIEsubheader .navlinks li a.tool::before {
+                    font-family: 'Microsoft Symbols';
+                    content: "\e104";
+                }
 
-.EMIEsubheader .navlinks li a.settings::before {
-    font-family: 'Microsoft Symbols';
-    content: "\e115";
-}
+                .EMIEsubheader .navlinks li a.settings::before {
+                    font-family: 'Microsoft Symbols';
+                    content: "\e115";
+                }
 
 .EMIELogininfo {
     text-align: center;
     margin-top: 50px;
 }
 
-.EMIELogininfo .message,
-.EMIELogininfo .login {
-    display: inline-block;
-    padding: 40px 50px;
-    font-size: 14px;
-    color: #000;
-    text-align: left;
-    width: 40%;
-}
+    .EMIELogininfo .message,
+    .EMIELogininfo .login {
+        display: inline-block;
+        padding: 40px 50px;
+        font-size: 14px;
+        color: #000;
+        text-align: left;
+        width: 40%;
+    }
 
-.EMIELogininfo .message {
-    background-color: #f2f2f2;
-}
+    .EMIELogininfo .message {
+        background-color: #f2f2f2;
+    }
 
-.EMIELogininfo .login {
-    vertical-align: top;
-}
+    .EMIELogininfo .login {
+        vertical-align: top;
+    }
 
-.EMIELogininfo .login h1 {
-    margin: 0 0 20px 0;
-    font-size: 36px;
-    font-weight: 200;
-}
+        .EMIELogininfo .login h1 {
+            margin: 0 0 20px 0;
+            font-size: 36px;
+            font-weight: 200;
+        }
 
-.EMIELogininfo .login .EMIEbtn,
-.EMIELogininfo .login .EMIEbtn:hover {
-    padding: 7px 25px;
-    background-color: #0078d7;
-    border-width: 0;
-    margin-bottom: 20px;
-    border-radius: 0;
-    color: #fff;
-}
+        .EMIELogininfo .login .EMIEbtn,
+        .EMIELogininfo .login .EMIEbtn:hover {
+            padding: 7px 25px;
+            background-color: #0078d7;
+            border-width: 0;
+            margin-bottom: 20px;
+            border-radius: 0;
+            color: #fff;
+        }
 
-.EMIELogininfo .login a.register {
-    font-weight: 600;
-}
+        .EMIELogininfo .login a.register {
+            font-weight: 600;
+        }
 
 .EMIEpage-title {
     font-size: 36px;
@@ -285,10 +285,10 @@ hr {
     height: 36px;
 }
 
-.EMIEsearch.input-group input:focus {
-    color: #000;
-    border-color: #66afe9;
-}
+    .EMIEsearch.input-group input:focus {
+        color: #000;
+        border-color: #66afe9;
+    }
 
 .EMIEsearch.input-group {
     display: block;
@@ -311,96 +311,96 @@ ul#status-child {
     margin: 0;
 }
 
-ul#status-child li {
-    display: inline-block;
-    width: 150px;
-    text-align: center;
-    vertical-align: top;
-    position: relative;
-}
+    ul#status-child li {
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+        vertical-align: top;
+        position: relative;
+    }
 
-ul#status-child li span {
-    display: block;
-}
+        ul#status-child li span {
+            display: block;
+        }
 
-ul#status-child li span.circle {
-    border: 1px solid #b3b3b3;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    margin: 0 auto;
-    z-index: 10;
-    position: relative;
-    background-color: #fff;
-}
+            ul#status-child li span.circle {
+                border: 1px solid #b3b3b3;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                margin: 0 auto;
+                z-index: 10;
+                position: relative;
+                background-color: #fff;
+            }
 
-ul#status-child li.Current span.circle {
-    border: 1px solid #4c9d4c;
-}
+        ul#status-child li.Current span.circle {
+            border: 1px solid #4c9d4c;
+        }
 
-ul#status-child li.Completed span.circle {
-    border: 1px solid #4c9d4c;
-    background-color: #4c9d4c;
-}
+        ul#status-child li.Completed span.circle {
+            border: 1px solid #4c9d4c;
+            background-color: #4c9d4c;
+        }
 
-ul#status-child li.Current span.circle::before,
-ul#status-child li.Completed span.circle::before {
-    display: block;
-    font-family: 'Microsoft Symbols';
-    content: "\e10b";
-    font-weight: 200;
-    font-size: 12px;
-    margin-top: 3px;
-    margin-left: -1px;
-}
+            ul#status-child li.Current span.circle::before,
+            ul#status-child li.Completed span.circle::before {
+                display: block;
+                font-family: 'Microsoft Symbols';
+                content: "\e10b";
+                font-weight: 200;
+                font-size: 12px;
+                margin-top: 3px;
+                margin-left: -1px;
+            }
 
-ul#status-child li.Current span.circle::before {
-    color: #000;
-}
+        ul#status-child li.Current span.circle::before {
+            color: #000;
+        }
 
-ul#status-child li.Completed span.circle::before {
-    color: #fff;
-}
+        ul#status-child li.Completed span.circle::before {
+            color: #fff;
+        }
 
-ul#status-child li span.line {
-    width: 135px;
-    height: 1px;
-    background-color: #b3b3b3;
-    position: absolute;
-    top: 37px;
-    left: -70px;
-    z-index: 9;
-}
+        ul#status-child li span.line {
+            width: 135px;
+            height: 1px;
+            background-color: #b3b3b3;
+            position: absolute;
+            top: 37px;
+            left: -70px;
+            z-index: 9;
+        }
 
-ul#status-child li.Current span.line,
-ul#status-child li.Completed span.line {
-    background-color: #4c9d4c;
-}
+        ul#status-child li.Current span.line,
+        ul#status-child li.Completed span.line {
+            background-color: #4c9d4c;
+        }
 
-ul#status-child li.RolledBack span.line {
-    border-color: orange;
-}
+        ul#status-child li.RolledBack span.line {
+            border-color: orange;
+        }
 
-ul#status-child li span.text {
-    font-size: 11px;
-    color: hsla(0, 0%, 0%, 0.4);
-    text-transform: uppercase;
-    margin: 5px auto 0 auto;
-    width: 100px;
-    line-height: 12px;
-    padding-bottom: 25px;
-}
+        ul#status-child li span.text {
+            font-size: 11px;
+            color: hsla(0, 0%, 0%, 0.4);
+            text-transform: uppercase;
+            margin: 5px auto 0 auto;
+            width: 100px;
+            line-height: 12px;
+            padding-bottom: 25px;
+        }
 
-ul#status-child li.Status-Selected span.text {
-    color: #000;
-    font-weight: 600;
-}
+        ul#status-child li.Status-Selected span.text {
+            color: #000;
+            font-weight: 600;
+        }
 
-ul#status-child li a {
-    display: block;
-    color: black;
-    padding-top: 25px;
-}
+        ul#status-child li a {
+            display: block;
+            color: black;
+            padding-top: 25px;
+        }
 
 .status hr {
     margin: 5px 0 30px 0;
@@ -422,34 +422,34 @@ ul#status-child li a {
     margin-bottom: 30px;
 }
 
-.form-row input,
-.form-row select,
-.form-row textarea {
-    width: 340px;
-    border-radius: 0;
-    border: 1px solid #a9a9a9;
-    font-size: 16px;
-    color: #808080;
-    padding: 4px 12px;
-}
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        width: 340px;
+        border-radius: 0;
+        border: 1px solid #a9a9a9;
+        font-size: 16px;
+        color: #808080;
+        padding: 4px 12px;
+    }
 
-.form-row input,
-.form-row select {
-    height: 36px;
-}
+    .form-row input,
+    .form-row select {
+        height: 36px;
+    }
 
-.form-row input[type=checkbox],
-.form-row input[type=radio] {
-    width: 16px;
-    height: 16px;
-    margin: 5px;
-}
+        .form-row input[type=checkbox],
+        .form-row input[type=radio] {
+            width: 16px;
+            height: 16px;
+            margin: 5px;
+        }
 
-.form-row input:focus,
-.form-row select:focus,
-.form-row textarea:focus {
-    color: #000;
-}
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            color: #000;
+        }
 
 .form-dropdown {
     position: relative;
@@ -461,88 +461,88 @@ ul#status-child li a {
     margin: 0 0 10px 0;
 }
 
-.dropdownCD dt {
-    margin: 0;
-    padding: 0;
-    border: 1px solid #a9a9a9;
-}
+    .dropdownCD dt {
+        margin: 0;
+        padding: 0;
+        border: 1px solid #a9a9a9;
+    }
 
-.dropdownCD dd {
-    position: relative;
-}
+    .dropdownCD dd {
+        position: relative;
+    }
 
-.dropdownCD a,
-.dropdownCD a:visited {
-    font-size: 16px;
-    color: #808080;
-    text-decoration: none;
-    outline: none;
-    padding: 4px 12px;
-    -ms-user-select: none;
-}
+    .dropdownCD a,
+    .dropdownCD a:visited {
+        font-size: 16px;
+        color: #808080;
+        text-decoration: none;
+        outline: none;
+        padding: 4px 12px;
+        -ms-user-select: none;
+    }
 
-.dropdownCD a::after {
-    font-family: 'Microsoft Symbols';
-    content: "\e019";
-    color: #000;
-    position: absolute;
-    right: 13px;
-    top: 7px;
-}
+        .dropdownCD a::after {
+            font-family: 'Microsoft Symbols';
+            content: "\e019";
+            color: #000;
+            position: absolute;
+            right: 13px;
+            top: 7px;
+        }
 
-.dropdownCD dt a {
-    display: block;
-    overflow: hidden;
-    border: 0;
-    width: 340px;
-    height: 36px;
-    font-weight: normal;
-    line-height: 26px;
-    cursor: pointer;
-}
+    .dropdownCD dt a {
+        display: block;
+        overflow: hidden;
+        border: 0;
+        width: 340px;
+        height: 36px;
+        font-weight: normal;
+        line-height: 26px;
+        cursor: pointer;
+    }
 
-.dropdownCD dd ul {
-    background-color: #fff;
-    color: #000;
-    display: none;
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 340px;
-    list-style: none;
-    height: 166px;
-    overflow: auto;
-    border: 1px solid #a9a9a9;
-    border-top: 0;
-    padding: 0;
-}
+    .dropdownCD dd ul {
+        background-color: #fff;
+        color: #000;
+        display: none;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 340px;
+        list-style: none;
+        height: 166px;
+        overflow: auto;
+        border: 1px solid #a9a9a9;
+        border-top: 0;
+        padding: 0;
+    }
 
-.dropdownCD dd ul li:hover {
-    background-color: #f2f2f2;
-}
+        .dropdownCD dd ul li:hover {
+            background-color: #f2f2f2;
+        }
 
-.dropdownCD dd ul li label {
-    font-weight: normal;
-    cursor: pointer;
-    -ms-user-select: none;
-    margin: 0;
-    padding: 4px 12px;
-    display: block;
-    width: 100%;
-}
+        .dropdownCD dd ul li label {
+            font-weight: normal;
+            cursor: pointer;
+            -ms-user-select: none;
+            margin: 0;
+            padding: 4px 12px;
+            display: block;
+            width: 100%;
+        }
 
-.dropdownCD span.value {
-    display: none;
-}
+    .dropdownCD span.value {
+        display: none;
+    }
 
-.dropdownCD dd ul li a {
-    padding: 5px;
-    display: block;
-}
+    .dropdownCD dd ul li a {
+        padding: 5px;
+        display: block;
+    }
 
-.dropdownCD dd ul li a:hover {
-    background-color: #fff;
-}
+        .dropdownCD dd ul li a:hover {
+            background-color: #fff;
+        }
 
 .EMIEControllabel {
     font-size: 12px;
@@ -556,24 +556,24 @@ ul#status-child li a {
     margin-bottom: 10px;
 }
 
-.emie-breadcrumb div {
-    display: inline-block;
-    font-size: 11px;
-    color: #000;
-}
+    .emie-breadcrumb div {
+        display: inline-block;
+        font-size: 11px;
+        color: #000;
+    }
 
-.emie-breadcrumb div.current {
-    color: #0078d7;
-}
+        .emie-breadcrumb div.current {
+            color: #0078d7;
+        }
 
-.emie-breadcrumb div:not(.current)::after {
-    content: " > ";
-}
+        .emie-breadcrumb div:not(.current)::after {
+            content: " > ";
+        }
 
-.emie-breadcrumb div a,
-.emie-breadcrumb div a:hover {
-    color: #000;
-}
+        .emie-breadcrumb div a,
+        .emie-breadcrumb div a:hover {
+            color: #000;
+        }
 
 #AddUser {
     display: inline-block;
@@ -592,35 +592,35 @@ ul#status-child li a {
     margin-right: 5px;
 }
 
-.content button:not(:disabled):hover,
-#AddUser:hover {
-    border-color: #b0b0b0;
-    background-color: #ccc;
-    color: #000;
-}
+    .content button:not(:disabled):hover,
+    #AddUser:hover {
+        border-color: #b0b0b0;
+        background-color: #ccc;
+        color: #000;
+    }
 
-.content button.highlight,
-.modal .modal-dialog .modal-content button.highlight {
-    background-color: #0078d7;
-    border: 1px solid #0078d7;
-    color: #fff;
-}
+    .content button.highlight,
+    .modal .modal-dialog .modal-content button.highlight {
+        background-color: #0078d7;
+        border: 1px solid #0078d7;
+        color: #fff;
+    }
 
-.content button.highlight:not(:disabled):hover,
-.modal .modal-dialog .modal-content button.highlight:not(:disabled):hover {
-    background-color: #0078d7;
-    border-color: hsla(0, 0%, 0%, 0.2);
-    color: #fff;
-}
+        .content button.highlight:not(:disabled):hover,
+        .modal .modal-dialog .modal-content button.highlight:not(:disabled):hover {
+            background-color: #0078d7;
+            border-color: hsla(0, 0%, 0%, 0.2);
+            color: #fff;
+        }
 
-.content button:disabled,
-.content button.highlight:disabled,
-.modal .modal-dialog .modal-content button:disabled,
-.modal .modal-dialog .modal-content button.highlight:disabled {
-    color: #b0b0b0;
-    background-color: #ccc;
-    border: 1px solid #ccc;
-}
+        .content button:disabled,
+        .content button.highlight:disabled,
+        .modal .modal-dialog .modal-content button:disabled,
+        .modal .modal-dialog .modal-content button.highlight:disabled {
+            color: #b0b0b0;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+        }
 
 .newreq-appbuttons {
     display: inline-block;
@@ -683,41 +683,41 @@ label.EMIEControllabel {
     padding: 10px 15px;
 }
 
-.content .panel .panel-heading .clickable {
-    -ms-user-select: none;
-}
+    .content .panel .panel-heading .clickable {
+        -ms-user-select: none;
+    }
 
-.content .panel .panel-heading .clickable:hover .name {
-    text-decoration: underline;
-}
+        .content .panel .panel-heading .clickable:hover .name {
+            text-decoration: underline;
+        }
 
 .content .EMIEmyreqpanel .panel,
 #wrapper .content .panel ul.list-group li:last-child {
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
 }
 
-.content .EMIEmyreqpanel .panel .panel-heading {
-    background-color: #f4f4f4;
-    cursor: pointer;
-    border-bottom: 0;
-}
+    .content .EMIEmyreqpanel .panel .panel-heading {
+        background-color: #f4f4f4;
+        cursor: pointer;
+        border-bottom: 0;
+    }
 
-.content .panel ul.list-group li,
-.content .EMIEmyreqpanel .panel .panel-heading {
-    font-size: 14px;
-    color: #000;
-    padding: 15px;
-    text-transform: none;
-}
+    .content .panel ul.list-group li,
+    .content .EMIEmyreqpanel .panel .panel-heading {
+        font-size: 14px;
+        color: #000;
+        padding: 15px;
+        text-transform: none;
+    }
 
-.content .EMIEmyreqpanel .panel .panel-heading.collapsed {
-    background-color: #fff;
-}
+        .content .EMIEmyreqpanel .panel .panel-heading.collapsed {
+            background-color: #fff;
+        }
 
-.content .panel ul.list-group li:hover,
-.content .EMIEmyreqpanel .panel .panel-heading:hover {
-    background-color: #f2f2f2;
-}
+        .content .panel ul.list-group li:hover,
+        .content .EMIEmyreqpanel .panel .panel-heading:hover {
+            background-color: #f2f2f2;
+        }
 
 .clickable {
     cursor: pointer;
@@ -753,9 +753,9 @@ label.EMIEControllabel {
     font-family: 'Microsoft Symbols';
 }
 
-.content .EMIEmyreqpanel .panel .panel-heading span.toggle:before {
-    content: "\e018";
-}
+    .content .EMIEmyreqpanel .panel .panel-heading span.toggle:before {
+        content: "\e018";
+    }
 
 .content .EMIEmyreqpanel .panel .panel-heading.collapsed span.toggle:before {
     content: "\e019";
@@ -774,25 +774,25 @@ label.EMIEControllabel {
     width: 340px;
 }
 
-.content .input-group input[uib-datepicker-popup]:focus {
-    color: #000;
-    border-color: #66afe9;
-}
+    .content .input-group input[uib-datepicker-popup]:focus {
+        color: #000;
+        border-color: #66afe9;
+    }
 
-.content .input-group input[uib-datepicker-popup] ~ .input-group-btn {
-    left: -35px;
-    z-index: 999;
-}
+    .content .input-group input[uib-datepicker-popup] ~ .input-group-btn {
+        left: -35px;
+        z-index: 999;
+    }
 
-.content .input-group input[uib-datepicker-popup] ~ .input-group-btn button {
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-}
+        .content .input-group input[uib-datepicker-popup] ~ .input-group-btn button {
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+        }
 
-.content .input-group input[uib-datepicker-popup] ~ .input-group-btn button:active {
-    box-shadow: none;
-}
+            .content .input-group input[uib-datepicker-popup] ~ .input-group-btn button:active {
+                box-shadow: none;
+            }
 
 .content .uib-time.am-pm button {
     background-color: #ccc;
@@ -816,14 +816,14 @@ label.EMIEControllabel {
     border-radius: 0;
 }
 
-.modal .modal-dialog .modal-content .modal-body {
-    padding: 0 15px;
-}
+    .modal .modal-dialog .modal-content .modal-body {
+        padding: 0 15px;
+    }
 
-.modal .modal-dialog .modal-content .modal-header,
-.modal .modal-dialog .modal-content .modal-footer {
-    border: 0;
-}
+    .modal .modal-dialog .modal-content .modal-header,
+    .modal .modal-dialog .modal-content .modal-footer {
+        border: 0;
+    }
 
 .content .dropdown-menu {
     border-radius: 0;
@@ -845,9 +845,9 @@ li.input-lg {
     line-height: 24px;
 }
 
-li.input-lg:hover {
-    background: #f2f2f2;
-}
+    li.input-lg:hover {
+        background: #f2f2f2;
+    }
 
 .EMIEspacer {
     margin-bottom: 45px;
@@ -861,22 +861,22 @@ li.input-lg:hover {
     margin-right: 5px;
 }
 
-.content .pagination > li > a:focus {
-    color: #000;
-}
+    .content .pagination > li > a:focus {
+        color: #000;
+    }
 
-.content .pagination > li > a:hover {
-    background-color: hsla(0, 0%, 0%, 0.1);
-}
+    .content .pagination > li > a:hover {
+        background-color: hsla(0, 0%, 0%, 0.1);
+    }
 
 .content .pagination > li.active > a {
     background-color: #fff;
     border: 1px solid #0078d7;
 }
 
-.content .pagination > li.active > a:hover {
-    color: #000;
-}
+    .content .pagination > li.active > a:hover {
+        color: #000;
+    }
 
 .content .pagination > li.disabled {
     display: none;
@@ -899,10 +899,10 @@ li.input-lg:hover {
     margin-bottom: 30px;
 }
 
-.tabbable > .nav-tabs > li > a {
-    border-radius: 0;
-    font-size: 16px;
-}
+    .tabbable > .nav-tabs > li > a {
+        border-radius: 0;
+        font-size: 16px;
+    }
 
 .report-tile {
     width: 153px;
@@ -939,7 +939,7 @@ li.input-lg:hover {
 /* TODO: Clean below */
 
 .EMIEsubtitle {
-    font-size: 0.813em/*13px*/;
+    font-size: 0.813em /*13px*/;
     position: relative;
     top: -5px;
     color: #fff;
@@ -978,7 +978,7 @@ a#Login {
 .btn-success {
     color: #fff !important;
     background-color: #008270 !important;
-    font-size:/* 1.688em*/27px;
+    font-size: /* 1.688em*/ 27px;
 }
 
 .EMIEusericon {
@@ -1122,7 +1122,7 @@ ul#Req-Status li {
     padding-top: 40px;
     text-align: center;
     margin-right: -5px;
-    font-size: /*0.61em*/9px;
+    font-size: /*0.61em*/ 9px;
     font-weight: bold;
     background-color: transparent;
 }
@@ -1142,7 +1142,7 @@ ul#icons li#user-name {
 }
 
 sup {
-    font-size: /*0.875em1*/14px;
+    font-size: /*0.875em1*/ 14px;
     color: red;
 }
 
@@ -1366,7 +1366,7 @@ input[type=text]::-ms-clear {
 
     .table_report tr th {
         background-color: #5B9AD4;
-        font-size: /*1.063em*/17px;
+        font-size: /*1.063em*/ 17px;
         font-weight: bold;
         text-align: center;
         color: white;
@@ -1397,7 +1397,7 @@ input[type=text]::-ms-clear {
 
 .glyphicon-sort {
     cursor: pointer;
-    font-size:/*0.625em*/ 10px;
+    font-size: /*0.625em*/ 10px;
     margin-left: 5px;
     color: #000;
 }
@@ -1416,19 +1416,19 @@ input[type=text]::-ms-clear {
 }
 
 .glyphicon-pencil {
-    font-size: /*0.813em*/13px;
+    font-size: /*0.813em*/ 13px;
     padding-left: 7px;
 }
 
-.dropdown-menu-left{
-    word-break:break-all !important;
+.dropdown-menu-left {
+    word-break: break-all !important;
 }
 
 .dropbtn {
     /*background-color: #4CAF50;*/
     color: white;
     /*padding: 16px;*/
-    font-size: /*0.875em*/16px;
+    font-size: /*0.875em*/ 16px;
     border: none;
     cursor: pointer;
 }
@@ -1443,26 +1443,23 @@ input[type=text]::-ms-clear {
     position: absolute;
     background-color: black;
     min-width: 200px;
-    padding-top:10px;
+    padding-top: 10px;
     /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
-    font-size:0.875em
-    
-   
+    font-size: 0.875em;
 }
 
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
 
-.dropdown-content a:hover {
-    background-color: lightgray;
-    color:black;
-    /*border-radius:10px;*/
-
-}
+        .dropdown-content a:hover {
+            background-color: lightgray;
+            color: black;
+            /*border-radius:10px;*/
+        }
 
 .dropdown:hover .dropdown-content {
     display: block;

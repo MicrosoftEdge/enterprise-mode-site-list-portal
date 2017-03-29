@@ -1,5 +1,4 @@
 ﻿EMIEModule.controller("SiteListsController", function ($scope, ManageSiteService, CommonFunctionsFactory, LoginService, ProdChangesService, SharedProperties, $compile, $sessionStorage, Constants, $rootScope, filterFilter, $route, $location, FileSaver, Blob, $http, growl) {
-
     //HIDE MODAL
     $('#PopUpModal').modal('hide');
     $('body').removeClass('modal-open');
@@ -13,11 +12,11 @@
         if (LoginService.getUserWithRoleAtRedirectionForUser(false)) {
             //calling the function to display the production sites
             var productionSites; ShowProductionSites();
-            
+
             //setting the items per page varriable from constatnt
             $scope.itemsPerPage = Constants.ItemsPerPageSiteListTool;
-            
-            
+
+
             /// <summary>
             /// Applying the filters to the columns of the production sites display page
             /// </summary>
@@ -37,7 +36,7 @@
                 PropertyToSort = Constants.SortByOpenIn;
                 SortSiteListData(productionUrls, PropertyToSort);
             }
-            
+
             /// <summary>
             /// Implementing the search functionality on the display production sites page
             /// </summary>
@@ -45,7 +44,7 @@
             $scope.SearchProductionSites = function Search(search) {
                 $rootScope.productionsiteInfo = searchProdBackup == undefined ? $rootScope.productionsiteInfo : searchProdBackup;
                 $rootScope.productionsiteInfo.map(function (repo) {
-                    repo.value = repo.FullURL.toLowerCase() + ' ' + repo.DomainDocMode.toLowerCase() + ' ' + repo.OpenIn.toLowerCase() ;
+                    repo.value = repo.FullURL.toLowerCase() + ' ' + repo.DomainDocMode.toLowerCase() + ' ' + repo.OpenIn.toLowerCase();
                 });
                 //restore data when user delete the search data
                 if (search == undefined || search == "")
@@ -56,12 +55,12 @@
             }
         }
     }
-    //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
-    //false-if this page is not accessible other than emie champ role
-   else if (LoginService.getUserWithRoleAtRedirectionForEMIEChamp(false)) {
+        //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
+        //false-if this page is not accessible other than emie champ role
+    else if (LoginService.getUserWithRoleAtRedirectionForEMIEChamp(false)) {
         $scope.IsDuplicate = false; $scope.disableAll = false;
 
-       
+
 
         $scope.itemsPerPage = Constants.ItemsPerPageSiteListTool;
 
@@ -622,7 +621,7 @@
             if (search.length > 1)
                 $scope.siteInfo = $scope.siteInfo.filter(createFilterFor(search));
         }
-       
+
 
         //===========================================================================================================================================================================
         //                                                        Sort Functionality Implementation
@@ -641,7 +640,7 @@
             SortSiteListData(siteInfo, PropertyToSort)
         }
 
-        
+
     }
     //===========================================================================================================================================================================
     //                                                        Displaying the production sites in to the tool
@@ -671,7 +670,7 @@
             })
             $scope.disableProduction = false;
             productionSites = sites;
-            $rootScope.productionsiteInfo=sites;
+            $rootScope.productionsiteInfo = sites;
         }).error(function () {
             $scope.disableProduction = false;
         });
@@ -705,7 +704,7 @@
     //                                                        Bulk add sites to the production list
     //===========================================================================================================================================================================
 
-    $scope.bulkAddToProduction = function() {
+    $scope.bulkAddToProduction = function () {
         $scope.disableAll = true;
 
         // Create array of tickets

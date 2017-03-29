@@ -1,2 +1,2 @@
-﻿EMIEModule.service("LogoutService", function ($http) {    
+﻿EMIEModule.service("LogoutService", function ($http) {
 })

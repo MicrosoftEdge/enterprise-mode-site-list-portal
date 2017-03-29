@@ -23,8 +23,7 @@
             <select class="form-control reflow-spacing"
                     ng-model="value"
                     ng-change="selectedValueOfDDL(value)"
-                    ng-options="value for (key,value) in UserMngmntDDL">
-            </select>
+                    ng-options="value for (key,value) in UserMngmntDDL"></select>
         </div>
         <div class="form-column">
             <select class="form-control reflow-spacing" name="BPUName" data-ng-model="GroupName" ng-change="filterByBPU()"

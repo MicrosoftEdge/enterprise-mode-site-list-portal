@@ -1,5 +1,4 @@
 ﻿EMIEModule.controller("VerifyProductionController", function ($scope, $route, LoginService, FileSaver, CommonFunctionsSanboxProductionFactory, VerifyProdutionService, $location, SharedProperties, $rootScope, Constants, EMIETicketService, $sessionStorage, growl) {
-
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
 
@@ -168,7 +167,7 @@
                         $scope.IsFailureDivDescHidden = true;
                         $scope.IsSuccessDivisionButtonHidden = false;
 
-                       
+
                     }
                 });
             }

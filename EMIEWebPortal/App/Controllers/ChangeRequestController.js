@@ -1,4 +1,4 @@
-﻿EMIEModule.controller("CRCntrl", function ($scope, CRService,CommonFunctionsFactory, LoginService, SharedProperties, Constants, $location, $route, $rootScope, $sessionStorage, growl, modalService) {
+﻿EMIEModule.controller("CRCntrl", function ($scope, CRService, CommonFunctionsFactory, LoginService, SharedProperties, Constants, $location, $route, $rootScope, $sessionStorage, growl, modalService) {
 
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
@@ -81,7 +81,7 @@
 
                 if (Ticket != "" && Ticket != null) {
                     $scope.NewCRDisabled = true;
-                    if (Ticket.value == "NonEditableModeOn" || $route.current.$$route.originalPath == "/RequestPage" ||  $route.current.$$route.originalPath == "/Request") {
+                    if (Ticket.value == "NonEditableModeOn" || $route.current.$$route.originalPath == "/RequestPage" || $route.current.$$route.originalPath == "/Request") {
 
                         $scope.isDisabled = true;
                         $scope.IsNewRequest = true;
@@ -1406,7 +1406,7 @@
 
         //Populate Add Application dropdown fields
         $scope.PopulateNewApplicationFormFields = function () {
-            
+
             CRService.GetAllBPUOfUser($rootScope.User).success(function (data) {
                 $scope.NewAllBPUList = data;
             }).error(function (error) {
@@ -1431,9 +1431,9 @@
                 {
                     ApplicationName: $scope.NewApplicationName,
                     BPUId: $scope.NewGroupName.BPUId,
-                    ApplicationState:{
-                        ApplicationStateId:$scope.IsActiveApp,
-                    },    
+                    ApplicationState: {
+                        ApplicationStateId: $scope.IsActiveApp,
+                    },
                     User: $rootScope.User
                 }
                 CRService.AddNewApplication(Application).success(function (data) {

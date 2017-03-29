@@ -3,19 +3,19 @@ EMIEModule.config(['$routeProvider', function ($routeProvider, CRService) {
     $routeProvider.
         when('/NewCR', {
             templateUrl: '/App/Views/NewCR.html',
-            controller: 'CRCntrl'           
+            controller: 'CRCntrl'
         }).
     when('/Request', {
         templateUrl: '/App/Views/NewCR.html',
-        controller: 'CRCntrl'               
+        controller: 'CRCntrl'
     }).
     when('/RequestPage', {
         templateUrl: '/App/Views/NewCR.html',
-        controller: 'CRCntrl'               
+        controller: 'CRCntrl'
     }).
     otherwise('/Login', {
-            templateUrl: '/App/Views/LoginHome.html',
-            controller: 'LoginController'
-        });
-    
-}]); 
+        templateUrl: '/App/Views/LoginHome.html',
+        controller: 'LoginController'
+    });
+
+}]);

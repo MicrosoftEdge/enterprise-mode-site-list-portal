@@ -60,7 +60,7 @@ EMIEModule.constant('Constants', {
     SignedOffFail: " wasn't able to be signed off. Please contact your site administrator.",
     RollbackSuccess: " has been successfully rolled back.",
     RollbackFailed: " could not be rolled back. Please contact the site administrator.",
-    
+
     //My Request Messages
     ErrorPendingApprovalRetrieval: "An error occured while getting the pending approvals for these tickets: ",
     ErrorTicketRetrieval: "An error while getting your ticket data: ",
@@ -155,12 +155,12 @@ EMIEModule.constant('Constants', {
     //title messages
     TitleInvalidFields: "Incorrect fields",
     TitleEmptyFields: "Empty fields",
-    TitleIncorrectApplication:"Incorrect app name",
+    TitleIncorrectApplication: "Incorrect app name",
     TitleInvalidUser: "Incorrect employee",
     TitleError: "Error",
     TitleWarning: "Warning",
     TitlePasswordMismatch: "Passwords don't match",
-    TitleDuplicatePassword:"Duplicate password",
+    TitleDuplicatePassword: "Duplicate password",
 
 
     //PopUpTitles
@@ -188,13 +188,13 @@ EMIEModule.constant('Constants', {
     SortByFullURL: 'FullURL',
     SortByDomainDocMode: 'DomainDocMode',
     SortByNotesAboutURL: 'NotesAboutURL',
-    SortByOpenIn:'OpenIn',
+    SortByOpenIn: 'OpenIn',
     SortByUserName: 'User.UserName',
     SortByRoleName: 'User.UserRole.RoleName',
     SortByTicketID: 'TicketId',
     SortByApplicationName: 'Application',
     SortByApplicationNameOnAllRequestPage: 'Application.ApplicationName',
-    SortByApplicationNameOnCRPage:'ApplicationName',
+    SortByApplicationNameOnCRPage: 'ApplicationName',
 
     //Datepicker options
     DateAfterToday: "AfterToday",

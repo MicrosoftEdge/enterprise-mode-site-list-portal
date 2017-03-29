@@ -1,12 +1,9 @@
-﻿EMIEModule.controller("MyApprovalController", function ($scope, LoginService,CommonFunctionsFactory, approvalService, SharedProperties, Constants, $rootScope, $sessionStorage, $location, growl) {
-
+﻿EMIEModule.controller("MyApprovalController", function ($scope, LoginService, CommonFunctionsFactory, approvalService, SharedProperties, Constants, $rootScope, $sessionStorage, $location, growl) {
     //check user with role on redirection pages ,if user is unauthorized redirect to logout else continue
     if (LoginService.getUserWithRoleAtRedirectionForUser()) {
-
-
         //check config settings are set or not ,else redirect to config page
-        if($sessionStorage.User.UserRole.RoleId == Constants.RoleId['EMIEChampion'])
-        GetConfigurationAtStart();
+        if ($sessionStorage.User.UserRole.RoleId == Constants.RoleId['EMIEChampion'])
+            GetConfigurationAtStart();
 
         $scope.NoPendingRequets = Constants.NoTicketPending;
         $scope.RetrievalProgress = Constants.TicketRetrievalProgress;

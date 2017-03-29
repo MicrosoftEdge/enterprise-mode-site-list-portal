@@ -35,49 +35,49 @@ EMIEModule.value('TicketStatusConstants', {
 EMIEModule.value('ColorConstants', {
     //InProgress
     InProgress: '#7Fd7F1',
- 
+
     //Initiated
     Initiated: "#5E89C6",
- 
+
     //Approved:
     Approved: "#93BB88",
- 
+
     //ProductionReady:
     ProductionReady: "#A7C3D8",
- 
+
     //ProductionChangesScheduled
     ProductionChangesScheduled: "#7B9894",
- 
+
     //PartiallyApproved
     PartiallyApproved: "#ECE5B8",
- 
+
     //BarRejected= this colour was needed for bar chart reject status 
     BarRejected: "#F6A6AC",
- 
+
     // Rejected= this status is for pie chart
     Rejected: '#F6A6AC',
- 
+
     // SignedOff
     SignedOff: '#8F74B2',
- 
+
     //RolledBack
     RolledBack: '#7FD8C9',
- 
+
     //Closed =this status is for pie chart
     Closed: '#DCEB84',
- 
+
     //ClosBarClosed =this colour was needed for bar chart closed status
     BarClosed: "#DCEB84",
- 
+
     //ApprovalPending
     ApprovalPending: '#FFD49F',
- 
+
     //UAStringDependency
     UAStringDependency: "#A97191",
- 
+
     //DocModeDependency
     DocModeDependency: "#BBB8C7",
- 
+
     //ContentMissing
     ContentMissing: "#F37669"
 });

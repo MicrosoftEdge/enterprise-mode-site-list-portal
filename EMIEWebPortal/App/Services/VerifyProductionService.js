@@ -1,6 +1,4 @@
 ﻿EMIEModule.service("VerifyProdutionService", function ($http) {
-   
-
     this.SignOff = function (Ticket, Actions) {
         var parameters = {
             ticket: Ticket,
@@ -70,12 +68,12 @@
             url: "Ticket/DeleteUploadedFilesFromDirectoryOnRollback",
             params: {
                 ticketId: TicketId,
-                isVerifyPage:false
+                isVerifyPage: false
             }
         });
     }
     //to send mail to contact support team
-    this.ContactSupport = function (Ticket,SupportEmail) {
+    this.ContactSupport = function (Ticket, SupportEmail) {
         var parameters = {
             ticket: Ticket,
             contactSupportEmail: SupportEmail

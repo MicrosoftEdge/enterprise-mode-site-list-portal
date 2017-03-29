@@ -5,7 +5,7 @@ EMIEModule.config(['$routeProvider', function ($routeProvider) {
         when('/Approvers', {
             templateUrl: '/App/Views/Approvers.html',
             controller: 'ApprovalController'
-        }).   
+        }).
     when('/MyRequests', {
         templateUrl: '/App/Views/MyRequests.html',
         controller: 'MyApprovalController'
@@ -14,5 +14,5 @@ EMIEModule.config(['$routeProvider', function ($routeProvider) {
         templateUrl: '/App/Views/Approvers.html',
         controller: 'ApprovalController'
     });
-    
-}]); 
+
+}]);

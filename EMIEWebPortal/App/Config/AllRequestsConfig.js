@@ -2,6 +2,6 @@
     $routeProvider.
         when('/AllRequests', {
             templateUrl: '/App/Views/AllRequests.html',
-            controller: 'AllRequestsController'      
+            controller: 'AllRequestsController'
         });
 }]);
