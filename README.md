@@ -1,11 +1,12 @@
 # Enterprise Mode Site List Portal
-This project contains the source code of the Enterprise Mode Site List Portal, a utility to help govern the process of site list management in a scalable manner.
+This project contains source code for the Enterprise Mode Site List Portal, a tool to help you with your site list management in a scalable manner.
 
 ![Enterprise Mode Site List Portal - Create new request page](https://cloud.githubusercontent.com/assets/7266075/22607091/3cc4e554-ea0b-11e6-90fa-50d0af5e6509.png)
 
 ## Get started
-1. [Learn how](https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal/wiki/Getting-started) to deploy the tool in your environment.
-2. [Explore](https://github.com/MicrosoftEdge/enterprise-mode-site-list-portal/wiki/Scenario-guide) the various scenarios and features that the tool provides.
+1. [Prepare](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/use-the-enterprise-mode-portal) to review the prerequisites to using this portal tool.
+2. [Set up](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/set-up-enterprise-mode-portal) to set up your environment.
+3. [Use](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/workflow-processes-enterprise-mode-portal) to see how to use the portal in your organization.
 
 ## Code of Conduct
 
