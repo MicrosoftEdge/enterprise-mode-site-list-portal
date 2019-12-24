@@ -60,9 +60,7 @@ namespace EMIEWebPortal.Controllers
                 if (!String.IsNullOrEmpty(userLogOnID))
                 {
 
-                    var Index = userLogOnID.Split('\\');
-                    //Get only v-id
-                    userLogOnID = Index[1];
+
 
                     //Get complete user object for logged in user
 
