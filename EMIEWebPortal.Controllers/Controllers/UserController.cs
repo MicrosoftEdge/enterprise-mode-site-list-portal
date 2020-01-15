@@ -645,7 +645,9 @@ namespace EMIEWebPortal.Controllers
         /// <returns>result of insert operation</returns>
         private int CreateNewUser(UserMapping user)
         {
-            var logonId = user.User.Email.Split('@');
+            var logonId = User.Identity.Name;
+            var Index = logonId.Split('\\');
+            logonId = Index[1];
 
             User newUser = new User();
             newUser.UserName = user.User.UserName;
@@ -655,7 +657,7 @@ namespace EMIEWebPortal.Controllers
             newUser.ModifiedById = user.User.CreatedById;
             newUser.ModifiedDate = DateTime.Now;
             newUser.IsActive = user.IsActive;
-            newUser.LoginId = logonId[0].ToString();
+            newUser.LoginId = logonId;
 
             DbEntity.Users.Add(newUser);
 
