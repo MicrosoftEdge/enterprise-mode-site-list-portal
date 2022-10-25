@@ -9633,7 +9633,7 @@
             </summary>
             <remarks>
             The public services currently resolved using IDbDependencyResolver are documented here:
-            http://msdn.microsoft.com/en-us/data/jj680697
+            http://msdn.microsoft.com/data/jj680697
             </remarks>
         </member>
         <member name="M:System.Data.Entity.Infrastructure.DependencyResolution.IDbDependencyResolver.GetService(System.Type,System.Object)">
