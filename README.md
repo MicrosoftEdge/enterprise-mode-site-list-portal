@@ -4,9 +4,9 @@ This project contains source code for the Enterprise Mode Site List Portal, a to
 ![Enterprise Mode Site List Portal - Create new request page](https://cloud.githubusercontent.com/assets/7266075/22607091/3cc4e554-ea0b-11e6-90fa-50d0af5e6509.png)
 
 ## Get started
-1. [Prepare](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/use-the-enterprise-mode-portal) by reviewing the system requirements, the available role assignments, and the employee workflows.
-2. [Set up](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/set-up-enterprise-mode-portal) by following the steps to set up and configure your environment.
-3. [Use](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/workflow-processes-enterprise-mode-portal) by following the steps to learn how to use and manage the Enterprise Mode Portal.
+1. [Prepare](https://learn.microsoft.com/internet-explorer/ie11-deploy-guide/use-the-enterprise-mode-portal) by reviewing the system requirements, the available role assignments, and the employee workflows.
+2. [Set up](https://learn.microsoft.com/internet-explorer/ie11-deploy-guide/set-up-enterprise-mode-portal) by following the steps to set up and configure your environment.
+3. [Use](https://learn.microsoft.com/internet-explorer/ie11-deploy-guide/workflow-processes-enterprise-mode-portal) by following the steps to learn how to use and manage the Enterprise Mode Portal.
 
 ## Code of Conduct
 
